@@ -1,0 +1,52 @@
+.nav__access {
+    position: absolute;
+    width: 100%;
+    float: left;
+}
+
+.top_banner--blk {
+    width: 100%;
+    float: left;
+    height: 100vh;
+    display: flex;
+    @extend %gradient__bg;
+        div{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.main__container{
+    min-height: 100%;
+    width: 100%;
+    padding: 167px 0 0 0;
+    @media (max-width: 660px) {
+        padding: 100px 0 0 0;
+    }
+}
+.collapse_blk{
+    .card{
+        background: none;
+        border: none;
+        position: relative;
+    }
+    .card-header{
+        background: none;
+        border: none;
+        .fa{
+            font-size: 30px;
+            color: red;
+        }
+    }
+    .collapse.show{
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            left: 32px;
+            border-left: 3px solid #000;
+            height: 119%;
+            top: -14px;
+        }
+    }
+}

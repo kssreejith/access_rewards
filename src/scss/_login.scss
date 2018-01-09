@@ -1,0 +1,215 @@
+.login__blk {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    .left_blk {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        float: left;
+        @extend %gradient__bg;
+        @media (max-width: 767px) {
+            height: auto;
+            padding: 25px 0 50px;
+        }
+        img {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+        }
+        .content__blk {
+            padding: 0 100px;
+            @media (max-width: 900px) {
+                padding: 110px 24px 0px;
+            }
+            @media (max-width: 550px) {
+                padding: 70px 24px 0px;
+            }
+            h1,
+            p {
+                margin: 0;
+                padding: 0;
+                color: #fff;
+                font-weight: 300;
+                @media (max-width: 550px) {
+                    display: none;
+                }
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 14px;
+                margin: 20px 0 16px 0;
+            }
+            .btn {
+                background: transparent;
+                width: 162px;
+                height: 38px;
+                text-align: center;
+                border: 1px solid #fff;
+                color: #fff;
+                font-weight: 300;
+                border-radius: 0;
+                font-size: 13px;
+                line-height: 36px;
+                padding: 0;
+                .fa {
+                    font-size: 16px;
+                    display: inline-block;
+                    padding: 0 0px 0 4px;
+                }
+            }
+        }
+    }
+    .right_blk {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        float: left;
+        @media (max-width: 767px) {
+            height: auto;
+            padding: 50px 0;
+        }
+        .login__form {
+            width: 300px;
+            margin: 0 auto;
+            h2,h3 {
+                width: 100%;
+                text-align: center;
+                font-size: 33px;
+                color: #606060;
+                font-weight: 300;
+                margin: 0 0 43px 0;
+            }
+            h3{
+                font-size: 20px;
+                text-align: left;
+                color: #606060;
+                font-weight: 400;
+                margin: 60px 0 0 0;
+            }
+            p{
+                margin: 20px 0 40px 0;
+                padding: 0;
+                color: #606060;
+                font-size: 12px;
+                font-weight: 300;
+            }
+            .form-group {
+                margin: 0 0 20px 0;
+                .form-control {
+                    height: 40px;
+                    border-radius: 0;
+                    border: 1px solid #000;
+                    font-weight: 400px;
+                    color: #606060;
+                }
+                a{
+                    color: #ff8e4e;
+                    font-size: 12px;
+                    font-weight: 400;
+                    margin:-10px 0 10px 0;
+                }
+            }
+            .btn {
+                width: 100%;
+                margin: 16px 0 0 0;
+                height: 34px;
+                padding: 0;
+                border-radius: 50px;
+                border: none;
+                @extend %gradient__btn;
+            }
+            .back {
+                font-weight: 400;
+                color: #606060;
+                font-size: 16px;
+                margin: 25px 0 0 0;
+                float: left;
+            }
+        }
+    }
+}
+
+.sign_up--blk {
+    width: 100%;
+    float: left;
+    min-height: 100vh;
+    display: flex;
+    @extend %gradient__bg;
+    .signup__wrapper{
+        width: 450px;
+        height: auto;
+        min-height: 100px;
+        margin: 170px auto 50px;
+        @media (max-width: 600px) {
+            margin: 100px auto 50px;
+        }
+        h1,p{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        h1{
+            font-size: 50px;
+            font-weight: 100;
+            margin: 0 0 10px 0;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0 0 35px 0
+        }
+        .signup__holder{
+            background: #fff;
+            padding: 45px 75px;
+            text-align:center;
+            border-radius: 5px;
+            
+             @media (max-width: 600px) {
+                padding: 45px 35px;
+             }
+            h2{
+                margin: 0 0 40px 0;
+                padding: 0;
+                font-size: 30px;
+                font-weight: 300;
+                color: #606060;
+            }
+            label{
+                float: left;
+                width: 100%;
+                text-align: left;
+                color: #606060;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 0 4px 0;
+            }
+            .form-group {
+                margin: 0 0 20px 0;
+                .form-control {
+                    height: 40px;
+                    border-radius: 0;
+                    border: 1px solid #000;
+                    font-weight: 400px;
+                    color: #606060;
+                }
+            }
+            .btn {
+                width: 100%;
+                margin: 16px 0 0 0;
+                height: 34px;
+                padding: 0;
+                border-radius: 50px;
+                border: none;
+                @extend %gradient__btn;
+            }
+            
+        }
+    }
+}

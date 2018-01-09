@@ -1,0 +1,121 @@
+.profile__blk {
+    .row {
+       
+    }
+    .top_nav {
+        width: 100%;
+        float: left;
+        padding: 0;
+        margin: 0 0 25px 15px;
+        li {
+            display: inline-block;
+            a {
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+                color: #606060;
+                font-weight: 400;
+                .plus1,
+                .plus2 {
+                    float: left;
+                }
+                .plus2 {
+                    path {
+                        fill: #de727c!important;
+                    }
+                }
+                span {
+                    float: left;
+                    margin: 8px 25px 0 13px;
+                }
+            }
+        }
+    }
+    .left_blk {
+        .media {
+            border: 1px solid #e0e0e0;
+            padding: 14px;
+            width: 96%;
+            @media (max-width: 767px) {
+                width:100%;
+            }
+            h5 {
+                margin: 0;
+                padding: 0;
+            }
+            span {
+                margin: 0;
+                padding: 0;
+            }
+            .media-body {
+                padding: 5px 0 0 30px;
+                h5,
+                span {
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+                span {
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .right_blk {
+        padding-bottom: 50px;
+        form {
+            margin: -26px 0 0 0;
+            padding: 0 0 0 47px;
+            @media (max-width: 767px) {
+                margin:30px 0 0 15px;
+                padding: 0 0 0 0;  
+                margin: 30px 0 0 0;
+            }
+            label {
+                font-size: 15px;
+                color: #606060;
+                font-weight: 500;
+                margin: 0 0 3px 0;
+                width: 100%;
+            }
+            .form-control{
+                background: #fafafa;
+                border: 1px solid #e0e0e0;
+                border-radius: 0;
+            }
+            .radio-inline{
+                display: inline;
+                padding: 0 15px 0 0;
+                margin: 8px 0 20px 0;
+                float: left;
+                label{
+                    width: auto;
+                    font-weight: 400;
+                    color: #000;
+                    font-size: 14px;
+                    margin: 0;
+                    &::before{
+                        border: 1px solid #f68d52;
+                    }
+                }
+                input[type="radio"]:checked + label::before {
+                    border-color: #f68d52;
+                }
+                input[type="radio"]:checked + label::after {
+                    background-color: #f68d52;
+                }
+                input[type="radio"]:focus + label::before{
+                    outline: none!important;
+                }
+            }
+            .btn {
+                width: 100%;
+                margin: 16px 0 0 0;
+                height: 37px;
+                padding: 0;
+                border: none;
+                @extend %gradient__btn;
+            }
+        }        
+    }
+}

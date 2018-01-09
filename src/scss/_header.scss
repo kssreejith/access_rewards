@@ -1,0 +1,86 @@
+.nav__access {
+    min-height: 42px;
+    margin: 0 0 0 0;
+    padding: 30px 40px;
+    z-index: 1;
+    &.inner__nav--bg{
+        @extend %gradient__nav;
+    }
+    @media (max-width: 660px) {
+        margin: 0 0 0 0;
+        padding: 15px 20px;
+        .tablez--logo{
+            display: none;
+        }
+    }
+    .ml-auto{
+        @media (max-width: 767px) {
+            flex-direction: row;
+        }
+    }
+    .navbar-brand{
+        padding: 0;
+        margin: -5px 0 0 0;
+        img{
+            height: 28px;
+            @media (max-width: 600px) {
+                height: 18px;
+            }
+        }
+    }
+    .tablez_logo {
+        height: 40px;
+        margin: 0 0 0 0;
+    }
+    .search {
+        img {
+            height: 18px;
+            margin: -5px 0 0 0;
+        }
+    }
+    .fa {
+        font-size: 21px;
+        color: #fff;
+        position: relative;
+        &:after {
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            display: inline-block;
+            content: "";
+            height: 20px;
+            position: absolute;
+            left: -18px;
+            opacity: 1;
+            top: 50%;
+            margin-top: -10px;
+            -webkit-transition: top 0.3s ease-out, margin-top 0.3s ease-out, height 0.3s ease-out, border-color 0.25s ease;
+            transition: top 0.3s ease-out, margin-top 0.3s ease-out, height 0.3s ease-out, border-color 0.25s ease;
+        }
+    }
+    ul {
+        li {
+            a {
+                padding: 0 0 0 18px !important;
+                margin: 12px 0 0 18px;
+                &.login_btn{
+                    border: 1px solid #fff;
+                    width: 70px;
+                    height: 22px;
+                    margin: 9px -18px 0 30px;
+                    border-radius: 50px;
+                    color: #fff;
+                    text-align: center;
+                    padding: 0!important;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 20px;
+                    display: block;
+                    text-decoration: none;
+                    @media (max-width: 600px) {
+                        margin: 9px -18px 0 0px;
+                    }
+                }
+            }
+        }
+    }
+  
+}
