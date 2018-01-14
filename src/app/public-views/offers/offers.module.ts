@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ContactComponent } from './contact.component';
+import { OffersComponent } from './offers.component';
 
 @NgModule({
   declarations: [
-    ContactComponent
+    OffersComponent
   ],
   imports: [
     BrowserModule
   ],
   exports: [
-    ContactComponent
+    OffersComponent
   ]
 })
-export class ContactModule { }
+export class OffersModule { }

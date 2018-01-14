@@ -343,34 +343,22 @@
 
 .our__brand--blk {
     background: url(../assets/img/ourbrand__bg.svg);
-    padding: 40px 0 0;
+    padding: 42px 0 110px;
     width: 100%;
     float: left;
     background-repeat: no-repeat!important;
     background-size: cover!important;
     background-position: 0% 0%!important;
     background-attachment: fixed!important;
-    h1,
-    h2,
-    p {
+    h1{
         font-size: 32px;
-        color: #000;
+        color: #fff;
         font-weight: 300;
         margin: 0 0 40px 0;
         width: 100%;
         text-align: center;
     }
-    h2 {
-        font-size: 17px;
-        font-weight: 500;
-        margin: 25px 0 15px;
-    }
-    p {
-        font-size: 13px;
-        font-weight: 400;
-        width: 80%;
-        margin: 0 auto 40px;
-    }
+   
     .card {
         padding: 15px;
         border-radius: 0;
@@ -410,5 +398,79 @@
                 margin: 0;
             }
         }
+        &.view__all--brand{
+            background:none;
+            height: 100%;
+            border:none;
+            .card-header {
+                background:none;
+                height: 100%;
+                .btn{
+                    width: auto;
+                    margin:0;
+                    height: 40px;
+                    padding: 0 30px;
+                    border: none;
+                    font-weight: 500;
+                    font-size: 16px;
+                    @extend %gradient__btn;
+                    border-radius: 50px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.offer--blk {
+    margin: 0 0 100px 0;
+    
+    .left_blk {
+        padding-right: 50px;
+        @media (max-width: 767px) {
+            padding-right:0;
+        }
+        p {
+            color: #000;
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0 0 50px 0;
+        }
+        
+     
+    }
+    .main_heading {
+        margin: 5px 0 50px 0;
+    }
+    .offers__blk{
+        width: 130px;
+        height: 130px;
+        border: 2px solid rgba(77, 81, 210, 0.3);
+        margin: 0 0 30px 0;
+        border-radius: 50%;
+        text-align: center;
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        &:hover{
+            border: 2px solid rgba(77, 81, 210, 1);
+        }
+        div{
+            width:100%;
+            text-align:center;
+            img{
+                width:70px;
+            }
+        }
+        
+    }
+    .col{
+        margin:auto;
     }
 }

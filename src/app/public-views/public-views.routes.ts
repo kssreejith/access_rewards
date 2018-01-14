@@ -8,8 +8,8 @@ import { SignupComponent } from "./signup/signup.component"
 import { TransactionHistoryComponent } from "./transaction-history/transaction-history.component"
 import { PointsCalculatorComponent } from "./points-calculator/points-calculator.component"
 import { ContactComponent } from "./contact/contact.component"
-
-
+import { OffersComponent } from "./offers/offers.component"
+import { AboutComponent } from "./about/about.component"
 export const ROUTES:Routes = [
     {
         path: '', component: <any>PublicViewsComponent,
@@ -22,7 +22,9 @@ export const ROUTES:Routes = [
             { path: 'signup', component: SignupComponent },
             { path: 'transaction-history', component: TransactionHistoryComponent },
             { path: 'points-calculator', component: PointsCalculatorComponent },
-            { path: 'contact', component: ContactComponent },             
+            { path: 'contact', component: ContactComponent },
+            { path: 'offers', component: OffersComponent },
+            { path: 'about', component: AboutComponent },
         ]
     }
 ];

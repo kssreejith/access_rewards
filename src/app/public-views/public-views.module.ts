@@ -12,7 +12,8 @@ import { SignupModule } from './signup/signup.module'
 import { TransactionHistoryModule } from './transaction-history/transaction-history.module'
 import { PointsCalculatorModule } from './points-calculator/points-calculator.module'
 import { ContactModule } from './contact/contact.module'
-
+import { OffersModule } from './offers/offers.module'
+import { AboutModule } from './about/about.module'
 
 /** /Sub modules */
 @NgModule({
@@ -31,6 +32,9 @@ import { ContactModule } from './contact/contact.module'
 		TransactionHistoryModule,
 		PointsCalculatorModule,
 		ContactModule,
+		OffersModule,
+		AboutModule,
+	
 
 	],
 	exports: [
