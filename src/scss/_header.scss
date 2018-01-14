@@ -1,7 +1,7 @@
 .nav__access {
     min-height: 42px;
     margin: 0 0 0 0;
-    padding: 30px 40px;
+    padding:20px 40px;
     z-index: 1;
     &.inner__nav--bg{
         @extend %gradient__nav;

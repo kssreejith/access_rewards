@@ -7,6 +7,9 @@ import { appRouting } from './app.routes';
 import { AppComponent } from './app.component';
 import { PublicViewsModule } from './public-views/public-views.module';
 import { PrivateviewsModule } from './private-views/private-views.module'
+import { HeaderModule } from 'app/shared/layouts/header/header.module';
+import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import { SideMenuModule } from 'app/shared/layouts/side-menu/side-menu.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { PrivateviewsModule } from './private-views/private-views.module'
     PublicViewsModule,
     PrivateviewsModule,
     RouterModule,
-    appRouting
+    appRouting,
+    HeaderModule,
+    AuthHeaderModule,
+    SideMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
