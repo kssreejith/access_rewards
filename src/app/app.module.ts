@@ -10,6 +10,9 @@ import { PrivateviewsModule } from './private-views/private-views.module'
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { SideMenuModule } from 'app/shared/layouts/side-menu/side-menu.module';
+import { BrandService } from 'app/shared/services/brand.service';
+import { ApiService } from 'app/shared/services/api.services';
+import { BaseHttpService } from 'app/shared/services/base-http.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,7 @@ import { SideMenuModule } from 'app/shared/layouts/side-menu/side-menu.module';
     AuthHeaderModule,
     SideMenuModule
   ],
-  providers: [],
+  providers: [BrandService, ApiService, BaseHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,6 +16,7 @@ import { OffersModule } from './offers/offers.module'
 import { AboutModule } from './about/about.module'
 import { BrandModule } from './brand/brand.module'
 import { OurbrandModule } from './ourbrand/ourbrand.module'
+import { OtpModule } from './otp/otp.module';
 
 
 /** /Sub modules */
@@ -39,7 +40,8 @@ import { OurbrandModule } from './ourbrand/ourbrand.module'
 		AboutModule,
 		BrandModule,
 		OurbrandModule,
-	
+		OtpModule,
+
 
 	],
 	exports: [

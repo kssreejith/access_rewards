@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html'
+  selector: 'otp',
+  templateUrl: './otp.component.html'
 })
-export class LoginComponent {
+export class OtpComponent {
   public showSideMenu = false;
   public searchMenu = false;
 
@@ -27,7 +27,7 @@ export class LoginComponent {
 
   }
 
-  login() {
-    this.router.navigate(['/otp']);
+  enter() {
+    this.router.navigate(['/index']);
   }
 }

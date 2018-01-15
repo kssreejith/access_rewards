@@ -1,4 +1,4 @@
-import {Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { PublicViewsComponent } from "./public-views.component"
 import { IndexComponent } from "./index/index.component"
 import { LoginComponent } from "./login/login.component"
@@ -12,14 +12,16 @@ import { OffersComponent } from "./offers/offers.component"
 import { AboutComponent } from "./about/about.component"
 import { BrandComponent } from "./brand/brand.component"
 import { OurbrandComponent } from "./ourbrand/ourbrand.component"
+import { OtpComponent } from './otp/otp.component';
 
-export const ROUTES:Routes = [
+export const ROUTES: Routes = [
     {
         path: '', component: <any>PublicViewsComponent,
         children: [
             { path: '', redirectTo: 'index', pathMatch: 'full' },
             { path: 'index', component: IndexComponent },
             { path: 'login', component: LoginComponent },
+            { path: 'otp', component: OtpComponent },
             { path: 'forgot-password', component: ForgotPasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'signup', component: SignupComponent },
