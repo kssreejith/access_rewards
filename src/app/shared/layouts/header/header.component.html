@@ -1,5 +1,5 @@
 <!-- Top Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark nav__access inner__nav--bg">
+<nav class="navbar navbar-expand-md navbar-dark nav__access ">
   <a class="navbar-brand" href="#">
     <img src="assets/img/logo.svg">
   </a>
@@ -78,7 +78,7 @@
   </ul>
 </nav>
 <div *ngIf="showSideMenu">
-  <div class="nav__holder">
+  <div class="nav__holder  animated slideInRight">
     <a class="nav_close" (click)="showNav(false)">
       <img src="assets/img/close.svg" alt="">
     </a>
@@ -95,7 +95,7 @@
 
       </div>
       <div class="col-3">
-        <a class="nav">
+        <a href="/brand" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Brands</h1>
@@ -105,7 +105,7 @@
 
       </div>
       <div class="col-3">
-        <a class="nav">
+        <a href="/offers" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Offers</h1>
@@ -115,7 +115,7 @@
 
       </div>
       <div class="col-3">
-        <a class="nav">
+        <a href="/points-calculator" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Points Calculator</h1>
@@ -128,15 +128,13 @@
   </div>
 </div>
 
-<div *ngIf="searchMenu">
   <!-- search -->
-  <div id="search__holder" class="row align-items-center">
+  <div id="search__holder"  *ngIf="searchMenu"  class="row align-items-center animated pulse">
     <a class="nav_close" (click)="showSearchMenu(false)">
-      <img src="assets/img/close.svg" alt="">
+      <i class="fa fa-times" aria-hidden="true"></i>
     </a>
     <div>
       <input type="text" placeholder="Start Typing...">
     </div>
   </div>
 
-</div>

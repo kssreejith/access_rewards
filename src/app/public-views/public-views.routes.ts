@@ -10,6 +10,9 @@ import { PointsCalculatorComponent } from "./points-calculator/points-calculator
 import { ContactComponent } from "./contact/contact.component"
 import { OffersComponent } from "./offers/offers.component"
 import { AboutComponent } from "./about/about.component"
+import { BrandComponent } from "./brand/brand.component"
+import { OurbrandComponent } from "./ourbrand/ourbrand.component"
+
 export const ROUTES:Routes = [
     {
         path: '', component: <any>PublicViewsComponent,
@@ -25,6 +28,8 @@ export const ROUTES:Routes = [
             { path: 'contact', component: ContactComponent },
             { path: 'offers', component: OffersComponent },
             { path: 'about', component: AboutComponent },
+            { path: 'brand', component: BrandComponent },
+            { path: 'ourbrand', component: OurbrandComponent },
         ]
     }
 ];

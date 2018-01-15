@@ -14,6 +14,9 @@ import { PointsCalculatorModule } from './points-calculator/points-calculator.mo
 import { ContactModule } from './contact/contact.module'
 import { OffersModule } from './offers/offers.module'
 import { AboutModule } from './about/about.module'
+import { BrandModule } from './brand/brand.module'
+import { OurbrandModule } from './ourbrand/ourbrand.module'
+
 
 /** /Sub modules */
 @NgModule({
@@ -34,6 +37,8 @@ import { AboutModule } from './about/about.module'
 		ContactModule,
 		OffersModule,
 		AboutModule,
+		BrandModule,
+		OurbrandModule,
 	
 
 	],
