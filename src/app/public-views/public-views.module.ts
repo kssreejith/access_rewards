@@ -16,6 +16,7 @@ import { OffersModule } from './offers/offers.module'
 import { AboutModule } from './about/about.module'
 import { BrandModule } from './brand/brand.module'
 import { OurbrandModule } from './ourbrand/ourbrand.module'
+import { FaqModule } from './faq/faq.module'
 import { OtpModule } from './otp/otp.module';
 
 
@@ -41,6 +42,7 @@ import { OtpModule } from './otp/otp.module';
 		BrandModule,
 		OurbrandModule,
 		OtpModule,
+		FaqModule,
 
 
 	],

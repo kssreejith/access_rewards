@@ -13,6 +13,7 @@ import { AboutComponent } from "./about/about.component"
 import { BrandComponent } from "./brand/brand.component"
 import { OurbrandComponent } from "./ourbrand/ourbrand.component"
 import { OtpComponent } from './otp/otp.component';
+import { FaqComponent } from "./faq/faq.component"
 
 export const ROUTES: Routes = [
     {
@@ -32,6 +33,7 @@ export const ROUTES: Routes = [
             { path: 'about', component: AboutComponent },
             { path: 'brand', component: BrandComponent },
             { path: 'ourbrand', component: OurbrandComponent },
+            { path: 'faq', component: FaqComponent },
         ]
     }
 ];

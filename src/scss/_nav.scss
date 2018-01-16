@@ -6,6 +6,9 @@
     z-index: 9999;
     color: #fff;
     @extend %gradient__navmain-bg;
+    @media (max-width: 660px) {
+        padding-top: 20vh;
+    }
     .nav_close {
         position: absolute;
         top: 10px;
@@ -15,6 +18,7 @@
         cursor: pointer;
         img {
             width: 65px;
+          
         }
     }
     .nav {
@@ -30,6 +34,10 @@
         text-decoration: none!important;
         &:hover {
             @extend %gradient__navlink_click;
+        }
+        @media (max-width: 660px) {
+            height: auto;
+            background: none;
         }
         .nav__item {
             width: 100%;
@@ -49,11 +57,17 @@
             }
             img {
                 width: 90px;
+                @media (max-width: 660px) {
+                    display: none;
+                }
             }
             .fa {
                 color: #fff;
                 font-size: 20px;
                 margin: 25px 0 0 0;
+                @media (max-width: 660px) {
+                    margin: 15px 0 0 0;
+                }
             }
         }
     }
