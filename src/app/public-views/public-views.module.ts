@@ -18,6 +18,7 @@ import { BrandModule } from './brand/brand.module'
 import { OurbrandModule } from './ourbrand/ourbrand.module'
 import { FaqModule } from './faq/faq.module'
 import { OtpModule } from './otp/otp.module';
+import { TablezModule } from './tablez/tablez.module';
 
 
 /** /Sub modules */
@@ -43,6 +44,8 @@ import { OtpModule } from './otp/otp.module';
 		OurbrandModule,
 		OtpModule,
 		FaqModule,
+		FaqModule,
+		TablezModule,
 
 
 	],

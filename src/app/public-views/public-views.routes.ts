@@ -14,6 +14,7 @@ import { BrandComponent } from "./brand/brand.component"
 import { OurbrandComponent } from "./ourbrand/ourbrand.component"
 import { OtpComponent } from './otp/otp.component';
 import { FaqComponent } from "./faq/faq.component"
+import { TablezComponent } from "./tablez/tablez.component"
 
 export const ROUTES: Routes = [
     {
@@ -34,6 +35,7 @@ export const ROUTES: Routes = [
             { path: 'brand', component: BrandComponent },
             { path: 'ourbrand', component: OurbrandComponent },
             { path: 'faq', component: FaqComponent },
+            { path: 'tablez', component: TablezComponent },
         ]
     }
 ];
