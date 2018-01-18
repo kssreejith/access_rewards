@@ -5,17 +5,17 @@ footer{
    
     padding:50px 0 70px;
     h4{
-        font-weight:500;
+        font-weight:400;
         font-size:16px;
-        color:#fff;
+        color:#777777!important;
         margin: 0 0 20px 0;
     }
     p{
         width:100%;
             float: left;
             display:inline-block;
-            font-weight:400;
-            color:#9baabb;
+            font-weight:300;
+            color:#cccccc;
             font-size:16px;
             margin: 0 0 10px 0;
             text-decoration:none;
@@ -29,14 +29,14 @@ footer{
             width:100%;
             float: left;
             display:inline-block;
-            font-weight:400;
-            color:#9baabb;
+            font-weight:300;
+            color:#ccc;
             font-size:16px;
             margin: 0 0 5px 0;
             text-decoration:none;
             a{
-                font-weight:400;
-                color:#9baabb;
+                font-weight:300;
+                color:#ccc;
                 font-size:16px;
                 text-decoration:none;
                 &:hover{
