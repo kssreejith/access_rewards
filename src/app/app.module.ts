@@ -18,6 +18,7 @@ import { OfferService } from 'app/shared/services/offer.service';
 import { LoginService } from 'app/shared/services/login.service';
 import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
 import { ProfileService } from 'app/shared/services/profile.service';
+import { TruncateModule } from 'ng2-truncate';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProfileService } from 'app/shared/services/profile.service';
     HeaderModule,
     AuthHeaderModule,
     SideMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TruncateModule
   ],
   providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService],

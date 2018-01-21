@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { IndexComponent } from './index.component';
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import { TruncateModule } from 'ng2-truncate';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.mod
   imports: [
     BrowserModule,
     HeaderModule,
-    AuthHeaderModule
+    AuthHeaderModule,
+    TruncateModule
   ],
   exports: [
     IndexComponent

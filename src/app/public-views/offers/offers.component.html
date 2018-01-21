@@ -3,86 +3,88 @@
 </auth-header>
 
 <section class="main__container">
-    <div class="container ">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-10 offer--blk">
-                <div class="main_heading">Offers</div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 left_blk">
-                        <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising in apparel, food and beverage, toys, and baby wear. Special offers, especially for you. Find limited-time offers to maximize
-                            savings, earn reward points, enjoy additional benefits and more. Check back here more often to know the latest lip-smacking deals and start enjoying the benefits right away.</p>
+  <div class="container ">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-10 offer--blk">
+        <div class="main_heading">Offers</div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 left_blk">
+            <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising in apparel,
+              food and beverage, toys, and baby wear. Special offers, especially for you. Find limited-time offers to maximize
+              savings, earn reward points, enjoy additional benefits and more. Check back here more often to know the latest
+              lip-smacking deals and start enjoying the benefits right away.</p>
 
-                    </div>
-                </div>
-                <div class="col col-lg-6 ">
-                    <div class="row" *ngFor="let item of brands">
-                        <div class="col col-lg-4" (click)="cancelDialog(item)">
-                            <a class="offers__blk" data-toggle="modal" data-target="#exampleModal">
-                                <div>
-                                    <img src="{{item.logo}}" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Button trigger modal -->
-
-
-                <!-- Modal -->
-                <div class="modal fade offer__popup" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-                            <div class="modal-body">
-                                <div class="carousel slide media-carousel" id="media">
-
-                                    <div class="row align-items-center">
-                                        <a data-slide="prev" class="left carousel-control"><i class="fa fa-angle-left" aria-hidden="true"></i>
-										</a>
-                                        <div class="col-9 col-lg-10">
-                                            <div class="sub_heading">Participating Brands</div>
-                                            <h3>Jan - 21 - 2018</h3>
-                                            <p>ToysRUs is relentlessly striving to be the best toy and baby retail company for the world. Founded in 1948 by Charles Lazarus, ToysRUs revolutionized quality, value and selection and realized that success meant
-                                                focusing on the everyday shopper. It has solidified its position by offering a differentiated shopping experience through its family of brands. ToysRUs opened its first store in Bengaluru at Phoenix Market
-                                                City in 2017.</p>
-                                            <img src="assets/img/logo6.svg" alt="">
-                                        </div>
-                                        <a data-slide="next" class="right carousel-control"><i class="fa fa-angle-right" aria-hidden="true"></i>
-										</a>
-                                    </div>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col col-lg-6 ">
+          <div class="row" *ngFor="let item of brands">
+            <div class="col col-lg-4" (click)="getOfferData(item.brand_id)">
+              <a class="offers__blk" data-toggle="modal" data-target="#exampleModal">
+                <div>
+                  <img src="{{item.logo}}" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade offer__popup" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="modal-body" *ngIf="offerDetails">
+                <div class="carousel slide media-carousel" id="media">
+
+                  <div class="row align-items-center">
+                    <a *ngIf="sliderPagination > 0" (click)="showOfferDetails(offers.length, false)" data-slide="prev" class="left carousel-control">
+                      <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </a>
+                    <div class="col-9 col-lg-10">
+                      <div class="sub_heading">{{offerDetails.tittle}}</div>
+                      <h3>{{offerDetails.end_date}}</h3>
+                      <p>{{offerDetails.description}}</p>
+                      <img src="{{offerDetails.logo}}" alt="Offer Logo">
+                    </div>
+                    <a *ngIf="sliderPagination < offers.length-1" (click)="showOfferDetails(offers.length, true)" data-slide="next" class="right carousel-control">
+                      <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <footer class="footer">
-    <div class="container">
-        <ul>
-            <li>
-                <a href="/about">ABOUT </a>
-            </li>
-            <li>
-                <a href="/brand">BRANDS </a>
-            </li>
-            <li>
-                <a>OFFERS </a>
-            </li>
-            <li>
-                <a href="/contact">CONTACT US</a>
-            </li>
-        </ul>
-        <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
+  <div class="container">
+    <ul>
+      <li>
+        <a href="/about">ABOUT </a>
+      </li>
+      <li>
+        <a href="/brand">BRANDS </a>
+      </li>
+      <li>
+        <a>OFFERS </a>
+      </li>
+      <li>
+        <a href="/contact">CONTACT US</a>
+      </li>
+    </ul>
+    <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
     </span>
-    </div>
+  </div>
 </footer>
