@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PointsCalculatorComponent {
   public brands: any;
-  public amount: any = '0000';
+  public amountCalculated: any = '0000';
   public signupForm: FormGroup;
 
   constructor(
@@ -26,6 +26,7 @@ export class PointsCalculatorComponent {
 
   calculate() {
     console.log(this.signupForm.value);
+    this.amountCalculated = (this.signupForm.value.amount / 100) * 4;
   }
   getBrandData() {
 

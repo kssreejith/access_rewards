@@ -20,7 +20,6 @@ import { FaqModule } from './faq/faq.module'
 import { OtpModule } from './otp/otp.module';
 import { TablezModule } from './tablez/tablez.module';
 
-
 /** /Sub modules */
 @NgModule({
 	declarations: [
@@ -46,8 +45,7 @@ import { TablezModule } from './tablez/tablez.module';
 		FaqModule,
 		FaqModule,
 		TablezModule,
-
-
+		RouterModule
 	],
 	exports: [
 		PublicViewsComponent

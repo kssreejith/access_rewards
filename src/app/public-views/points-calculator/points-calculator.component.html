@@ -24,20 +24,20 @@
 
 
             <form [formGroup]="signupForm">
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <select class="custom-select">
                   <option *ngFor="let item of brands" [value]="item.brand_id">
                     {{item.brand_name}}</option>
                 </select>
-                <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
-              </div>
+                <small id="emailHelp" class="form-text text-muted">Enter Phone number</small>
+              </div> -->
               <div class="form-group">
                 <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Enter item amount(Rs)">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter First name</small> -->
               </div>
               <button class="btn" (click)="calculate()">CALCULATE POINTS</button>
               <div class="point-blk">
-                <span>{{amount}}</span>
+                <span>{{amountCalculated}}</span>
               </div>
             </form>
 

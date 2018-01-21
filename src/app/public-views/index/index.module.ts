@@ -4,6 +4,7 @@ import { IndexComponent } from './index.component';
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { TruncateModule } from 'ng2-truncate';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TruncateModule } from 'ng2-truncate';
     BrowserModule,
     HeaderModule,
     AuthHeaderModule,
-    TruncateModule
+    TruncateModule,
+    RouterModule
   ],
   exports: [
     IndexComponent

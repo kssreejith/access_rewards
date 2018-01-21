@@ -413,7 +413,7 @@
         <div class="col col-lg-10">
           <h1>Our Brands</h1>
           <div *ngFor="let item of brands" class="row spacing10">
-            <a href="/ourbrand/{{item.brand_id}}">
+            <a [routerLink]="['/ourbrand', item.brand_id]">
               <div class="col-lg-3 col-md-6">
                 <div class="card">
                   <div class="card-header">
@@ -434,7 +434,7 @@
             <div class="card view__all--brand">
               <div class="card-header">
                 <div class="o_auto">
-                  <a href="/brand" class="btn">View All Brands</a>
+                  <a [routerLink]="['/brand']" class="btn">View All Brands</a>
                 </div>
               </div>
 
@@ -672,7 +672,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <a href="#">
+          <a [routerLink]="['/']">
             <img src="assets/img/logo.svg">
           </a>
         </div>
@@ -683,26 +683,26 @@
               <a>Store Locator </a>
             </li>
             <li>
-              <a href="/about">About us </a>
+              <a [routerLink]="['/about']">About us </a>
             </li>
             <li>
-              <a href="/tablez">About Tablez </a>
+              <a [routerLink]="['/tablez']">About Tablez </a>
             </li>
             <li>
-              <a href="/brand">Participating Brands </a>
+              <a [routerLink]="['/brand']">Participating Brands </a>
             </li>
             <li>
-              <a href="/points-calculator">Points Calculator </a>
+              <a [routerLink]="['/points-calculator']">Points Calculator </a>
             </li>
 
             <li>
-              <a href="/faq">FAQs</a>
+              <a [routerLink]="['/faq']">FAQs</a>
             </li>
             <li>
               <a>Programme Rules </a>
             </li>
             <li>
-              <a href="/contact">Contact Us</a>
+              <a [routerLink]="['/contact']">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -737,7 +737,7 @@
   <div id="copyright">
     <div class="container">
       <p>© 2018 Accessrewards. All Rights Reserved
-        <a href="">www.tablez.com</a>
+        <a [routerLink]="['/']">www.tablez.com</a>
       </p>
     </div>
 
