@@ -377,8 +377,15 @@
             border: none;
             border-radius: 0;
             div {
-                width: 100%;
+                width: 186px;
                 text-align: center;
+                float: left;
+                height: 100px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    float: left;
+                }
             }
         }
         .card-body {
@@ -821,8 +828,85 @@
     background: #222;
 }
 
-html {
-    margin: 0;
-    padding: 0;
-    background: #222;
+.offer__popup {
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .media-carousel {
+        margin-bottom: 0;
+        padding: 0 40px 30px 40px;
+        margin-top: 20px;
+    }
+    .carousel-control {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 15%;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+        i {
+            color: #fff;
+        }
+    }
+    .media-carousel .carousel-control.left {
+        left: -12px;
+        background-image: none;
+        background: none repeat scroll 0 0 #524ad1;
+        border: 4px solid #FFFFFF;
+        border-radius: 23px 23px 23px 23px;
+        height: 40px;
+        width: 40px;
+        margin-top: 40px
+    }
+    .media-carousel .carousel-control.right {
+        right: -51px !important;
+        background-image: none;
+        background: none repeat scroll 0 0 #524ad1;
+        border: 4px solid #FFFFFF;
+        border-radius: 23px 23px 23px 23px;
+        height: 40px;
+        width: 40px;
+        margin-top: 40px;
+        left: auto;
+    }
+    .media-carousel .carousel-indicators {
+        right: 50%;
+        top: auto;
+        bottom: 0px;
+        margin-right: -19px;
+    }
+    .media-carousel .carousel-indicators li {
+        background: #c0c0c0;
+    }
+    .media-carousel .carousel-indicators .active {
+        background: #333333;
+    }
+    .media-carousel img {
+        width: 100px;
+    }
+    .sub_heading {
+        margin: 5px 0 0px 0;
+        padding: 0;
+        font-size: 25px;
+        color: #000;
+        font-weight: 300;
+        width: 100%;
+        text-align: left;
+    }
+    h3 {
+        margin: 0 0 17px 0;
+        padding: 0;
+        font-size: 15px;
+        color: #ff9b00f5;
+        font-weight: 500;
+        width: 100%;
+        text-align: left;
+    }
 }
