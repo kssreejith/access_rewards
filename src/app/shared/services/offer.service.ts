@@ -6,11 +6,11 @@ import { Observable } from 'rxjs/Rx';
 import { ApiService } from './api.services';
 
 @Injectable()
-export class BrandService {
+export class OfferService {
     constructor(public http: Http, private apiService: ApiService) {
 
     }
-    getBrandData(url: string, param?: any) {
+    getOfferData(url: string, param?: any) {
 
         return new Observable(observer => {
             this.apiService.getTablez(url, param)

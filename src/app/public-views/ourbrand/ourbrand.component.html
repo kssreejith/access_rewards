@@ -3,31 +3,27 @@
 </auth-header>
 
 <section class="main__container">
-    <div class="container ">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-10 contacts--blk content__holder">
-                <div class="sub_heading">
-                    <img src="assets/img/logo6.svg" alt="">
-                </div>
-                <div class="row content__blk row align-items-center">
-
-
-                    <div class="col-lg-12 col-md-12 right_blk">
-
-                        <p>The world famous super-premium handcrafted ice cream brand for the family. Churned from the finest
-                            ingredients and mixed by friendly crew members, enjoy your favorite flavors mixed with candy,
-                            cakes, fruits or nuts on a frozen granite stone! With exclusive brand outlets in India including
-                            one in Cochin and two in Bengaluru, Cold Stone’s Ice Cream Cakes, Smoothies, Milkshakes will
-                            make it your new favourite place for premium, hand-crafted treats!
-                        </p>
-                        <a target="blank" href="https://www.coldstonecreamery.com/locator/">http://Cold Stone.in/ </a>
-                        <div class="brand__img--blk">
-                            <img src="assets/img/ice cream photo 2.png" alt="">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+  <div class="container ">
+    <div class="row justify-content-md-center" *ngIf="brandDetails">
+      <div class="col col-lg-10 contacts--blk content__holder">
+        <div class="sub_heading">
+          <img src="{{brandDetails.brand_logo}}" alt="">
         </div>
+        <div class="row content__blk row align-items-center">
+
+
+          <div class="col-lg-12 col-md-12 right_blk">
+
+            <p>{{brandDetails.description}}
+            </p>
+            <a target="blank" href="{{brandDetails.website_url}}">{{brandDetails.brand_name}}</a>
+            <div class="brand__img--blk">
+              <img src="assets/img/ice cream photo 2.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </div>
 </section>

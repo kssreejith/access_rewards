@@ -33,7 +33,7 @@ export const ROUTES: Routes = [
             { path: 'offers', component: OffersComponent },
             { path: 'about', component: AboutComponent },
             { path: 'brand', component: BrandComponent },
-            { path: 'ourbrand', component: OurbrandComponent },
+            { path: 'ourbrand/:id', component: OurbrandComponent },
             { path: 'faq', component: FaqComponent },
             { path: 'tablez', component: TablezComponent },
         ]

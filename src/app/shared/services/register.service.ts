@@ -6,14 +6,13 @@ import { Observable } from 'rxjs/Rx';
 import { ApiService } from './api.services';
 
 @Injectable()
-export class BrandService {
+export class RegisterService {
     constructor(public http: Http, private apiService: ApiService) {
 
     }
-    getBrandData(url: string, param?: any) {
-
+    registerToApp(url: string, param?: any) {
         return new Observable(observer => {
-            this.apiService.getTablez(url, param)
+            this.apiService.post(url, param)
                 .map((res: any) => res.json())
                 .subscribe(res => {
                     console.log("res", res)

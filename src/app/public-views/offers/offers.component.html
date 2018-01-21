@@ -1,100 +1,55 @@
 <!-- Top Navigation -->
 <auth-header>
-    </auth-header>
+</auth-header>
 
 <section class="main__container">
-    <div class="container ">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-10 offer--blk">
-                <div class="main_heading">Offers</div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 left_blk">
-                        <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising
-                            in apparel, food and beverage, toys, and baby wear. Special offers, especially for you. Find
-                            limited-time offers to maximize savings, earn reward points, enjoy additional benefits and more.
-                            Check back here more often to know the latest lip-smacking deals and start enjoying the benefits
-                            right away.</p>
+  <div class="container ">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-10 offer--blk">
+        <div class="main_heading">Offers</div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 left_blk">
+            <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising in apparel,
+              food and beverage, toys, and baby wear. Special offers, especially for you. Find limited-time offers to maximize
+              savings, earn reward points, enjoy additional benefits and more. Check back here more often to know the latest
+              lip-smacking deals and start enjoying the benefits right away.</p>
 
-                    </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 ">
+          <div class="row" *ngFor="let item of brands">
+            <div class="col col-lg-4" (click)="cancelDialog(item)" >
+              <a class="offers__blk">
+                <div>
+                  <img src="{{item.logo}}" alt="">
                 </div>
-                <div class="col col-lg-6 ">
-                    <div class="row">
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo7.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                       
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo5.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo6.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo4.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo3.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo2.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-lg-4">
-                            <a class="offers__blk">
-                                <div>
-                                    <img src="assets/img/logo1.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                      
-                    </div>
-
-                </div>
+              </a>
             </div>
+          </div>
 
         </div>
+      </div>
+
     </div>
+  </div>
 </section>
 <footer class="footer">
-    <div class="container">
-        <ul>
-            <li>
-                <a href="/about">ABOUT </a>
-            </li>
-            <li>
-                <a href="/brand">BRANDS </a>
-            </li>
-            <li>
-                <a>OFFERS </a>
-            </li>
-            <li>
-                <a href="/contact">CONTACT US</a>
-            </li>
-        </ul>
-        <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
-        </span>
-    </div>
+  <div class="container">
+    <ul>
+      <li>
+        <a href="/about">ABOUT </a>
+      </li>
+      <li>
+        <a href="/brand">BRANDS </a>
+      </li>
+      <li>
+        <a>OFFERS </a>
+      </li>
+      <li>
+        <a href="/contact">CONTACT US</a>
+      </li>
+    </ul>
+    <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
+    </span>
+  </div>
 </footer>

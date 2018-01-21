@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { PointsCalculatorComponent } from './points-calculator.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,7 +11,9 @@ import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.mod
   ],
   imports: [
     BrowserModule,
-    AuthHeaderModule
+    AuthHeaderModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     PointsCalculatorComponent

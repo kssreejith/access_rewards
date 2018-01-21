@@ -99,10 +99,10 @@
     <div class="col-lg-6 col-md-6  align-items-center right_blk">
       <div class="login__form">
         <h2>Access Login</h2>
-        <form>
+        <form class="form-horizontal" [formGroup]="signupForm">
           <div class="form-group">
-            <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="Mobile Number" placeholder="Mobile Number">
-            <!-- <small id="emailHelp" class="form-text text-muted text-left">Email</small> -->
+            <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
+            <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
           </div>
           <button (click)="login()" class="btn btn-primary">Login</button>
           <a class="back" href="">
@@ -120,7 +120,7 @@
       <img src="assets/img/close.svg" alt="">
     </a>
     <div class="row justify-content-around no-gutters">
-       <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -131,7 +131,7 @@
         </a>
 
       </div>
-       <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a href="/brand" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -141,7 +141,7 @@
         </a>
 
       </div>
-       <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -151,7 +151,7 @@
         </a>
 
       </div>
-       <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">

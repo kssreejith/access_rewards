@@ -3,43 +3,22 @@
 </auth-header>
 
 <section class="main__container grey_bg">
-    <div class="container ">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-10 contacts--blk content__holder">
-                <div class="sub_heading">Participating Brands</div>
-                <div class="row content__blk row align-items-center">
-                    <div class="media">
-                        <div class="img__blk">
-                            <img class="mr-3" src="assets/img/logo1.svg" alt="Generic placeholder image">
-                        </div>
-                        <div class="media-body">
-                            <p>ToysRUs is relentlessly striving to be the best toy and baby retail company for the world. Founded
-                                in 1948 by Charles Lazarus, ToysRUs revolutionized quality, value and selection and realized
-                                that success meant focusing on the everyday shopper. It has solidified its position by offering
-                                a differentiated shopping experience through its family of brands. ToysRUs opened its first
-                                store in Bengaluru at Phoenix Market City in 2017. </p>
-                            <a target="blank" href="http://toysrus.in/">http://toysrus.in/</a>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <div class="img__blk">
-                            <img class="mr-3" src="assets/img/logo2.svg" alt="Generic placeholder image">
-                        </div>
-                        <div class="media-body">
-                            <p>ToysRUs is relentlessly striving to be the best toy and baby retail company for the world. Founded
-                                in 1948 by Charles Lazarus, ToysRUs revolutionized quality, value and selection and realized
-                                that success meant focusing on the everyday shopper. It has solidified its position by offering
-                                a differentiated shopping experience through its family of brands. ToysRUs opened its first
-                                store in Bengaluru at Phoenix Market City in 2017. BabiesRUs is the leading retailer with
-                                baby registry of strollers, baby gear, cribs, baby furniture, baby bedding, formula &amp;
-                                more. With thousands of exclusive products marketed under its private brands, BabiesRUs delivers
-                                affordable and quality playthings and other infant care products. From car seats to diapers,
-                                find everything to make your baby happy! </p>
-                            <a target="blank" href="http://babiesrus.in/">http://babiesrus.in/</a>
-                        </div>
-                    </div>
-                </div>
+  <div class="container ">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-10 contacts--blk content__holder">
+        <div class="sub_heading">Participating Brands</div>
+        <div *ngFor="let item of brands" class="row content__blk row align-items-center">
+          <div class="media" (click)="getBrandDetails(item.brand_id)">
+            <div class="img__blk">
+              <img class="mr-3" src="{{item.logo}}" alt="Generic placeholder image">
             </div>
+            <div class="media-body">
+              <p>{{item.description}}</p>
+              <a target="blank" href="{{item.website_url}}">{{item.brand_name}}</a>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </div>tablez
+  </div>
 </section>

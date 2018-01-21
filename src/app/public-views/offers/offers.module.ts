@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { OffersComponent } from './offers.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import { OffersComponent } from 'app/public-views/offers/offers.component';
 
 @NgModule({
   declarations: [

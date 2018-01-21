@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { appRouting } from './app.routes';
 import { AppComponent } from './app.component';
@@ -13,6 +13,9 @@ import { SideMenuModule } from 'app/shared/layouts/side-menu/side-menu.module';
 import { BrandService } from 'app/shared/services/brand.service';
 import { ApiService } from 'app/shared/services/api.services';
 import { BaseHttpService } from 'app/shared/services/base-http.service';
+import { RegisterService } from 'app/shared/services/register.service';
+import { OfferService } from 'app/shared/services/offer.service';
+import { LoginService } from 'app/shared/services/login.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,10 @@ import { BaseHttpService } from 'app/shared/services/base-http.service';
     appRouting,
     HeaderModule,
     AuthHeaderModule,
-    SideMenuModule
+    SideMenuModule,
+    ReactiveFormsModule
   ],
-  providers: [BrandService, ApiService, BaseHttpService],
+  providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
