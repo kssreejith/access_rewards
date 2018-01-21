@@ -54,6 +54,10 @@
       <a class="login_btn" href="/login">Login
       </a>
     </li>
+    <li class="nav-item">
+      <a class="login_btn" href="/profile">Profile
+      </a>
+    </li>
     <li class="nav-item" (click)="showSearchMenu(true)">
       <a class="nav-link search">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -83,8 +87,8 @@
       <img src="assets/img/close.svg" alt="">
     </a>
     <div class="row justify-content-around no-gutters">
-        <div class="col-12 col-lg-3 col-md-3">
-        <a class="nav">
+      <div class="col-12 col-lg-3 col-md-3">
+        <a (click)="showNav(false)" href="/index#fws_5a5a4fb8d4bfc" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Store Locator</h1>
@@ -94,7 +98,7 @@
         </a>
 
       </div>
-        <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a href="/brand" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -104,7 +108,7 @@
         </a>
 
       </div>
-        <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a href="/offers" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -114,7 +118,7 @@
         </a>
 
       </div>
-        <div class="col-12 col-lg-3 col-md-3">
+      <div class="col-12 col-lg-3 col-md-3">
         <a href="/points-calculator" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
@@ -128,13 +132,12 @@
   </div>
 </div>
 
-  <!-- search -->
-  <div id="search__holder"  *ngIf="searchMenu"  class="row align-items-center animated pulse">
-    <a class="nav_close" (click)="showSearchMenu(false)">
-      <i class="fa fa-times" aria-hidden="true"></i>
-    </a>
-    <div>
-      <input type="text" placeholder="Start Typing...">
-    </div>
+<!-- search -->
+<div id="search__holder" *ngIf="searchMenu" class="row align-items-center animated pulse">
+  <a class="nav_close" (click)="showSearchMenu(false)">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </a>
+  <div>
+    <input type="text" placeholder="Start Typing...">
   </div>
-
+</div>

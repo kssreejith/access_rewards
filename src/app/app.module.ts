@@ -16,6 +16,8 @@ import { BaseHttpService } from 'app/shared/services/base-http.service';
 import { RegisterService } from 'app/shared/services/register.service';
 import { OfferService } from 'app/shared/services/offer.service';
 import { LoginService } from 'app/shared/services/login.service';
+import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
+import { ProfileService } from 'app/shared/services/profile.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { LoginService } from 'app/shared/services/login.service';
     SideMenuModule,
     ReactiveFormsModule
   ],
-  providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService],
+  providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
+    TranscationHistoryService, ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
