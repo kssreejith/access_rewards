@@ -24,6 +24,8 @@
         font-weight: 500;
         color: #fff;
         margin: 70px 0 0 0;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
         span {
             font-weight: 300!important;
         }
@@ -35,6 +37,8 @@
         font-size: 16px;
         font-weight: 500;
         color: #fff;
+        -webkit-animation-delay: 1.5s;
+        animation-delay: 1.5s;
         @media (max-width: 660px) {
             font-size: 14px;
             margin-top: 20px;
@@ -43,6 +47,8 @@
     img {
         width: 255px;
         margin: 20vh 0 0 0;
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5;
         @media (max-width: 660px) {
             width: 120px;
         }
@@ -838,7 +844,7 @@
     }
     .media-carousel {
         margin-bottom: 0;
-        padding: 0 40px 30px 40px;
+        padding: 0 20px 30px 20px;
         margin-top: 20px;
     }
     .carousel-control {

@@ -76,10 +76,10 @@
 }
 
 // best in chrome
-$total: 300; // total particles
-$orb-size:250px;
-$particle-size: 4px;
-$time: 14s;
+$total: 450; // total particles
+$orb-size:330px;
+$particle-size: 5px;
+$time: 7s;
 $base-hue: 0; // change for diff colors (180 is nice)
 .wrap {
     position: relative;
@@ -115,7 +115,7 @@ $base-hue: 0; // change for diff colors (180 is nice)
         // grab the nth particle
         animation: orbit#{$i} $time infinite;
         animation-delay: ($i * .01s);
-        background-color: hsla($hue, 100%, 50%, 1);
+        background-color: #fff;
     }
     @keyframes orbit#{$i} {
         20% {
