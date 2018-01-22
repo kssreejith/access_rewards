@@ -491,6 +491,9 @@
     .search {
         background: #fff;
         border-radius: 5px 0 0 5px;
+        @media (max-width: 575px) {
+            border-radius: 0!important;
+        }
         .custom-select {
             width: 100%;
             float: left;
@@ -508,6 +511,10 @@
         border-radius: 0 5px 5px 0;
         color: #fff;
         @extend %gradient__btn;
+        @media (max-width: 575px) {
+            width: 100%;
+            border-radius: 0!important;
+        }
     }
     .justify-content-md-center {
         -ms-flex-pack: center !important;
@@ -914,5 +921,14 @@
         font-weight: 500;
         width: 100%;
         text-align: left;
+    }
+}
+
+.map__block {
+    ngui-map {
+        height: 400px;
+        @media (max-width: 575px) {
+            height: 460px;
+        }
     }
 }

@@ -405,8 +405,6 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
     </section>
 
 
@@ -446,11 +444,9 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
     </section>
 
-    <div id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%;">
+    <div class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
         <ngui-map zoom="5" center="Bengaluru, India">
             <marker *ngFor="let pos of positions" [position]="pos"></marker>
         </ngui-map>
@@ -478,140 +474,92 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-2 col-lg-2 col-md-2 col-sm-2">
-                                <button (click)="positions = getRandomMarkers()">
+                        <div class="col-2 col-lg-2 col-md-2 col-sm-2">
+                            <button (click)="positions = getRandomMarkers()">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <a [routerLink]="['/']">
-                            <img src="assets/img/logo.svg">
-                        </a>
-                    </div>
-                    <div class="col-lg-2">
-                        <h4>PAGES</h4>
-                        <ul>
-                            <li>
-                                <a>Store Locator </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/about']">About us </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/tablez']">About Tablez </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/brand']">Participating Brands </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/points-calculator']">Points Calculator </a>
-                            </li>
-
-                            <li>
-                                <a [routerLink]="['/faq']">FAQs</a>
-                            </li>
-                            <li>
-                                <a>Programme Rules </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/contact']">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a [routerLink]="['/']">
+                        <img src="assets/img/logo.svg">
+                    </a>
                 </div>
+                <div class="col-lg-2">
+                    <h4>PAGES</h4>
+                    <ul>
+                        <li>
+                            <a>Store Locator </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/about']">About us </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/tablez']">About Tablez </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brand']">Participating Brands </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/points-calculator']">Points Calculator </a>
+                        </li>
 
-                <footer>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <a href="#">
-                                    <img src="assets/img/logo.svg">
-                                </a>
-                            </div>
-                            <div class="col-lg-2">
-                                <h4>PAGES</h4>
-                                <ul>
-                                    <li>
-                                        <a>Store Locator </a>
-                                    </li>
-                                    <li>
-                                        <a href="/about">About us </a>
-                                    </li>
-                                    <li>
-                                        <a href="/tablez">About Tablez </a>
-                                    </li>
-                                    <li>
-                                        <a href="/brand">Participating Brands </a>
-                                    </li>
-                                    <li>
-                                        <a href="/points-calculator">Points Calculator </a>
-                                    </li>
+                        <li>
+                            <a [routerLink]="['/faq']">FAQs</a>
+                        </li>
+                        <li>
+                            <a>Programme Rules </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/contact']">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>GET IN TOUCH </h4>
+                    <p>Abhimanyu Rathore
+                        <br> abhimanyu.rathore@in.tablez.com
+                    </p>
+                    <ul>
+                        <li>
 
-                                    <li>
-                                        <a href="/faq">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a>Programme Rules </a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <h4>GET IN TOUCH </h4>
-                                <p>Abhimanyu Rathore
-                                    <br> abhimanyu.rathore@in.tablez.com
-                                </p>
-                                <ul>
-                                    <li>
+                        </li>
+                        <li>
 
-                                    </li>
-                                    <li>
+                        </li>
 
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h4>FIND US
-                                </h4>
-                                <p>LuLu Tower, 971/B, M K K Nair Road, Vazhakkala, Kochi, Kerala 682030
-                                </p>
-                                <br>
-                                <br>
-                                <p>Sathya Sai Layout, Whitefield, Bengaluru, Karnataka 560066
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <div id="copyright">
-                    <div class="container">
-                        <p>© 2018 Accessrewards. All Rights Reserved
-                            <a href="">www.tablez.com</a>
-                        </p>
-                    </div>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>FIND US
+                    </h4>
+                    <p>LuLu Tower, 971/B, M K K Nair Road, Vazhakkala, Kochi, Kerala 682030
+                    </p>
+                    <br>
+                    <br>
+                    <p>Sathya Sai Layout, Whitefield, Bengaluru, Karnataka 560066
+                    </p>
                 </div>
             </div>
-        </footer>
-        <div id="copyright">
-            <div class="container">
-                <p>© 2018 Accessrewards. All Rights Reserved
-                    <a [routerLink]="['/']">www.tablez.com</a>
-                </p>
-            </div>
-
-
         </div>
+    </footer>
+    <div id="copyright">
+        <div class="container">
+            <p>© 2018 Accessrewards. All Rights Reserved
+                <a [routerLink]="['/']">www.tablez.com</a>
+            </p>
+        </div>
+
+
+    </div>
 </main>
