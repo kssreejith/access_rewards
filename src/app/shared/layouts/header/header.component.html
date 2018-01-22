@@ -1,6 +1,6 @@
 <!-- Top Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark nav__access ">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" [routerLink]="['/']">
     <img src="assets/img/logo.svg">
   </a>
   <ul class="navbar-nav ml-auto">
@@ -51,11 +51,11 @@
 
     </li>
     <li class="nav-item">
-      <a class="login_btn" href="/login">Login
+      <a class="login_btn" [routerLink]="['/login']">Login
       </a>
     </li>
     <li class="nav-item">
-      <a class="login_btn" href="/profile">Profile
+      <a class="login_btn" [routerLink]="['/profile']">Profile
       </a>
     </li>
     <li class="nav-item" (click)="showSearchMenu(true)">
@@ -88,7 +88,7 @@
     </a>
     <div class="row justify-content-around no-gutters">
       <div class="col-12 col-lg-3 col-md-3">
-        <a (click)="showNav(false)" href="/index#fws_5a5a4fb8d4bfc" class="nav">
+        <a (click)="showNav(false)" href='/index#fws_5a5a4fb8d4bfc' class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Store Locator</h1>
@@ -99,7 +99,7 @@
 
       </div>
       <div class="col-12 col-lg-3 col-md-3">
-        <a href="/brand" class="nav">
+        <a [routerLink]="['/brand']" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Brands</h1>
@@ -109,7 +109,7 @@
 
       </div>
       <div class="col-12 col-lg-3 col-md-3">
-        <a href="/offers" class="nav">
+        <a [routerLink]="['/offers']" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Offers</h1>
@@ -119,7 +119,7 @@
 
       </div>
       <div class="col-12 col-lg-3 col-md-3">
-        <a href="/points-calculator" class="nav">
+        <a [routerLink]="['/points-calculator']" class="nav">
           <div class="nav__item">
             <img src="assets/img/menu_icon.svg" alt="">
             <h1>Points Calculator</h1>

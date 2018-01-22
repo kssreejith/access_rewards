@@ -1,6 +1,6 @@
 <!-- Top Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark nav__access">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" [routerLink]="['/']">
     <img src="assets/img/logo.svg">
   </a>
   <ul class="navbar-nav ml-auto grey_color">
@@ -92,7 +92,7 @@
           </div>
 
           <button (click)="enter()" class="btn btn-primary">Enter</button>
-          <a class="back" href="">
+          <a class="back" [routerLink]="['/']">
             < Back</a>
         </form>
       </div>

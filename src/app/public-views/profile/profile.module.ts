@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ProfileComponent } from './profile.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.mod
   ],
   imports: [
     BrowserModule,
-    AuthHeaderModule
+    AuthHeaderModule,
+    RouterModule
   ],
   exports: [
     ProfileComponent

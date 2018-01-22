@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { BrandService } from 'app/shared/services/brand.service';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 @Component({
   selector: 'index',
   templateUrl: './index.component.html'
 })
 export class IndexComponent {
   public brands: any;
-  private selectedBrand: {
-    name: string,
-    location: string,
+  public positions = [];
 
-  }
+  public cityIndex = 0;
+  public brandIndex = 0;
   public bandList: any;
   constructor(
     public brandService: BrandService
@@ -152,8 +152,22 @@ export class IndexComponent {
           }
         ]
       }
-    ]
+    ];
+    this.positions = this.getRandomMarkers();
 
+
+  }
+  getRandomMarkers() {
+
+    console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].lat);
+    console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].long);
+
+
+    const positions = [];
+
+    positions.push([this.bandList[this.brandIndex].brand_city[this.cityIndex].lat,
+    this.bandList[this.brandIndex].brand_city[this.cityIndex].long]);
+    return positions;
   }
 
   getBrandData() {
