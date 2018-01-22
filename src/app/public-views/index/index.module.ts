@@ -5,6 +5,7 @@ import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { TruncateModule } from 'ng2-truncate';
 import { RouterModule } from '@angular/router';
+import { NguiMapModule } from '@ngui/map';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     HeaderModule,
     AuthHeaderModule,
     TruncateModule,
-    RouterModule
+    RouterModule,
+    NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })    
   ],
   exports: [
     IndexComponent

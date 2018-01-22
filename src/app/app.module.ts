@@ -19,6 +19,7 @@ import { LoginService } from 'app/shared/services/login.service';
 import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
 import { ProfileService } from 'app/shared/services/profile.service';
 import { TruncateModule } from 'ng2-truncate';
+import { NguiMapModule } from '@ngui/map';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { TruncateModule } from 'ng2-truncate';
     AuthHeaderModule,
     SideMenuModule,
     ReactiveFormsModule,
-    TruncateModule
+    TruncateModule,
+    NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
+
   ],
   providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService],
