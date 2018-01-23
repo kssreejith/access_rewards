@@ -54,31 +54,16 @@ export class SignupComponent implements OnInit {
   public onFormSubmit() {
     this.user = this.signupForm.value;
 
-    const demo = '<Request>' +
-      '<SecurityToken>4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=</SecurityToken>' +
-      '<FirstName>Gokul</FirstName>' +
-      '<LastName>BS</LastName>' +
-      '<DateOfBirth>01 12 1987</DateOfBirth>' +
-      '<PinCode>695002</PinCode>' +
-      '<EmailId>gokultvm@gmail.com</EmailId>' +
-      '<MobileNo>9446173962</MobileNo>' +
-      '<EasyPin>Abc1234</EasyPin>' +
-      '<UserName>apiuser@Tablez</UserName>' +
-      '<Gender>Male</Gender>' +
-      '<MemberShipCardNumber></MemberShipCardNumber>' +
-      '<StoreCode>DemoA</StoreCode>' +
-      '<AssignMembershipCard>0</AssignMembershipCard>' +
-      '<ChannelCode>Online</ChannelCode>' +
-      '<CustomerTypeCode>Loyalty</CustomerTypeCode>' +
-      '<ReferralCode></ReferralCode>' +
-      '<CountryCode>91</CountryCode>' +
-      '<ChildName>amit</ChildName>' +
-      '<ChildDOB>13 Nov 2010</ChildDOB>' +
-      '<AnniversaryDate></AnniversaryDate>' +
-      '</Request>';
+    const demo = {
+      "UserName": "Sweetgingeruser",
+      "UserPassword": "Sweetgingeruser123",
+      "DevId": "0e91d83d-32c5-4858-b1bc-74c3cbae8802",
+      "AppId": "a9bdcb5c-ae88-4a4e-bf7d-692eda18140b",
+      "ProgramCode": "SweetGinger"
+    }
 
     let responseData: any;
-    this.registerService.registerToApp('http://LPaaSwebapi.revalweb.com/api/RegisterEasyAccount',
+    this.registerService.registerToApp('/api/GenerateSecurityToken',
       demo).subscribe(
       data => responseData = data,
       error => {

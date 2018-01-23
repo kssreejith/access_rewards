@@ -23,8 +23,8 @@ export class ApiService {
     }
 
     createLassHeader(headers: Headers) {
-        headers.append('Content-Type', 'text/plain');
-        headers.append('Accept', '*');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'q=0.8;application/json;q=0.9');
 
         return new Promise((resolve, reject) => {
             //   if (this.global.state['token']) {
@@ -97,27 +97,6 @@ export class ApiService {
 
     post(url, params): Observable<any> {
 
-        // const demo = {
-        //     "SecurityToken": "4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=",
-        //     "FirstName": "Gokul",
-        //     "LastName": "BS",
-        //     "DateOfBirth": "01 12 1987",
-        //     "PinCode": "695002",
-        //     "EmailId": "gokultvm@gmail.com",
-        //     "MobileNo": "9446173962",
-        //     "EasyPin": "Abc1234",
-        //     "UserName": "apiuser@Tablez",
-        //     "Gender": "Male",
-        //     "MemberShipCardNumber": "",
-        //     "StoreCode": "DemoA",
-        //     "AssignMembershipCard": "",
-        //     "ChannelCode": "Online",
-        //     "ReferralCode": "",
-        //     "CountryCode": "91",
-        //     "ChildName": "",
-        //     "ChildDOB": "",
-        //     "AnniversaryDate": ""
-        // }
         return new Observable(observer => {
             const header = new Headers();
             this.createLassHeader(header)

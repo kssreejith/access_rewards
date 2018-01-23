@@ -13,6 +13,7 @@ export class IndexComponent {
   public cityIndex = 0;
   public brandIndex = 0;
   public bandList: any;
+  public cityList: any;
   constructor(
     public brandService: BrandService
   ) {
@@ -111,7 +112,7 @@ export class IndexComponent {
         {
           // tslint:disable-next-line:max-line-length
           city: 'Kochi', brand_location: 'Lulu International Shopping Mall Pvt Ltd, Ground floor, NH 47, Edappally, Cochin - 682024, Phone: 0484 - 4059034',
-          lat: '10.0270255', long: '10.0270255'
+          lat: '10.0270255', long: '76.3080941'
         }]
       },
       {
@@ -119,17 +120,17 @@ export class IndexComponent {
           {
             // tslint:disable-next-line:max-line-length
             city: 'Bangalore', brand_location: 'SPRINGFIELD,UNIT NO-FF-16-FIRST FLOOR,NO 172/1, SRINIVAS INDUSTRIAL ESTATE,BILEKAHALLI,BANNERGHATT.',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '12.9011', long: '77.60106700000006'
           },
           {
             // tslint:disable-next-line:max-line-length
             city: 'Bangalore', brand_location: 'Phonix Market City,Shop No-LG-32 & 32A (Spring Field), Whitefield Main Road, Mahadevpura, Devasandra Industrial Estate, Krishnarajapura, Bengaluru, Karnataka 560048',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '12.9969211', long: '77.6967062'
           },
           {
             // tslint:disable-next-line:max-line-length
             city: 'Mumbai', brand_location: 'SPRINGFIELD,Unit no:f-2 & f-3, 1st floor, skyzone mall, high street phoenix, 462,senapati bapat marg, lower parel, mumbai-400013',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '18.9940439', long: '72.82509010000001'
           }
         ]
       },
@@ -138,25 +139,44 @@ export class IndexComponent {
           {
             // tslint:disable-next-line:max-line-length
             city: 'Bangalore', brand_location: 'WOMEN \'SECRET,UNIT NO-SF-13 & 14-2ND FLOOR,NO 172/1, SRINIVAS INDUSTRIAL ESTATE,BILEKAHALLI,BANNERGHATT',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '12.9011', long: '77.60106700000006'
           },
           {
             // tslint:disable-next-line:max-line-length
             city: 'Bangalore', brand_location: 'Phonix Market City,Shop No-LG-28, (Women’Secret), Whitefield Main Road, Mahadevpura, Devasandra Industrial Estate, Krishnarajapura, Bengaluru, Karnataka 560048',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '12.9969211', long: '77.6967062'
           },
           {
             // tslint:disable-next-line:max-line-length
             city: 'Mumbai', brand_location: 'WOMEN \'SECRETUNIT NO: F-24,1ST FLOOR, SKYZONE MALL, HIGH STREET PHOENIX,462, SENAPATI BAPAT MARG, LOWER PAREL, MUMBAI-400013',
-            lat: '10.0270255', long: '10.0270255'
+            lat: '18.9947788', long: '72.82526110000003'
           }
         ]
       }
     ];
     this.positions = this.getRandomMarkers();
+    this.onBrandChange(0);
 
 
   }
+  onBrandChange(val) {
+    console.log('onBrandChange', val);
+    console.log('brandIndex', this.brandIndex);
+    this.cityList = {};
+
+    this.brandIndex = val;
+
+    this.cityList = this.bandList[val]['brand_city'];
+  }
+
+  onCityChange(val) {
+    console.log('onCityChange', val);
+    console.log('cityIndex', this.cityIndex);
+    this.cityIndex = val;
+
+
+  }
+
   getRandomMarkers() {
 
     console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].lat);

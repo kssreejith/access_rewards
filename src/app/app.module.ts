@@ -20,6 +20,7 @@ import { TranscationHistoryService } from 'app/shared/services/transcation_histo
 import { ProfileService } from 'app/shared/services/profile.service';
 import { TruncateModule } from 'ng2-truncate';
 import { NguiMapModule } from '@ngui/map';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { NguiMapModule } from '@ngui/map';
     SideMenuModule,
     ReactiveFormsModule,
     TruncateModule,
+    ParticlesModule,
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],

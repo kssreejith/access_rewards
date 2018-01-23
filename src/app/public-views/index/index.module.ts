@@ -6,6 +6,7 @@ import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.mod
 import { TruncateModule } from 'ng2-truncate';
 import { RouterModule } from '@angular/router';
 import { NguiMapModule } from '@ngui/map';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NguiMapModule } from '@ngui/map';
     AuthHeaderModule,
     TruncateModule,
     RouterModule,
+    FormsModule,
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })    
   ],
   exports: [
