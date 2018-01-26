@@ -486,8 +486,12 @@
     float: left;
     width: 100%;
     position: absolute;
-    top: 270px;
+    top: 260px;
     height: 60px;
+    z-index: 9;
+    .row {
+        margin: 0 0 0 0!important;
+    }
     .search {
         background: #fff;
         border-radius: 5px 0 0 5px;
@@ -925,10 +929,20 @@
 }
 
 .map__block {
+    position: relative;
     ngui-map {
         height: 400px;
         @media (max-width: 575px) {
             height: 460px;
         }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.57);
+        left: 0;
+        top: 0;
     }
 }
