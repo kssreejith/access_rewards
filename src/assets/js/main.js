@@ -114,6 +114,6 @@
 // animate();
 
 $('#myCarousel').carousel({
-    interval: 5,
+    interval: 3,
     cycle: true
 });
