@@ -500,7 +500,7 @@
     float: left;
     width: 100%;
     position: absolute;
-    top: 460px;
+    top: 260px;
     height: 60px;
     z-index: 9;
     .row {
@@ -949,9 +949,9 @@
     position: relative;
     z-index: 9;
     ngui-map {
-        height: 600px;
+        height: 400px;
         @media (max-width: 575px) {
-            height: 660px;
+            height: 460px;
         }
     }
     // &:after {
