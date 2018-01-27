@@ -13,7 +13,7 @@ export class TranscationHistoryService {
     getTranscationHistory(url: string, param?: any) {
         return new Observable(observer => {
             this.apiService.post(url, param)
-                .map((res: any) => res.json())
+                .map((res: any) => res)
                 .subscribe(res => {
                     console.log("res", res)
                     observer.next(res);

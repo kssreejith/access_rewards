@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'app/shared/services/profile.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
+import { User } from 'app/public-views/signup/User';
 
 @Component({
   selector: 'profile',
   templateUrl: './profile.component.html'
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+
+  // Property for the user
+  private user: User;
   public userDetails: any;
   // Gender list for the select control element
   genderList: string[];
@@ -31,6 +35,7 @@ export class ProfileComponent {
     // Use the formbuilder to build the Form model
     this.signupForm = this.fb.group({
       FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
       MobileNo: ['', Validators.required],
       day: ['', Validators.required],
       month: ['', Validators.required],
@@ -42,8 +47,14 @@ export class ProfileComponent {
       StoreCode: ['DemoA', Validators.requiredTrue],
       ChannelCode: ['Online', Validators.requiredTrue]
     });
-  }
 
+  }
+  ngOnInit() {
+    const d = new Date();
+    for (let i = (d.getFullYear() - 18); i > (d.getFullYear() - 100); i--) {
+      this.years.push(i);
+    }
+  }
   getProfileDetails() {
 
     const demo = {
@@ -67,6 +78,28 @@ export class ProfileComponent {
         this.userDetails = responseData;
 
       });
+  }
+  public onFormSubmit() {
+    this.user = this.signupForm.value;
+    this.user.DateOfBirth = this.signupForm.value.day + ' ' + this.signupForm.value.month + ' ' + this.signupForm.value.year;
+    console.log(this.user);
+
+
+    let responseData: any;
+    this.registerService.registerToApp('/api/RegisterEasyAccount',
+      this.user).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+      },
+      () => {
+        console.log('responseData', responseData.status);
+      });
+    if (this.signupForm.valid) {
+      this.user = this.signupForm.value;
+      console.log(this.user);
+      /* Any API call logic via services goes here */
+    }
   }
 
 }

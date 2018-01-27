@@ -110,7 +110,10 @@ export class ApiService {
                 .then(() => {
                     const options = new RequestOptions({ headers: header });
                     const userToken: any = this._webStorageService.getData('generateSecurityToken');
-                    params.SecurityToken = userToken;
+                    if (userToken) {
+                        params.SecurityToken = userToken;
+
+                    }
                     this.http.post(url, params, options)
                         .subscribe(response => {
                             console.log(response);
