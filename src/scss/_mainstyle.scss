@@ -321,7 +321,8 @@
     background: #fff;
     padding: 40px 0 0;
     position: relative;
-    z-index: 1;
+    z-index: 9;
+    margin: 100vh 0 0 0;
     h1,
     h2,
     p {
@@ -353,10 +354,12 @@
     padding: 42px 0 110px;
     width: 100%;
     float: left;
+    z-index: 9;
     background-repeat: no-repeat!important;
     background-size: cover!important;
     background-position: 0% 0%!important;
     background-attachment: fixed!important;
+    position: relative;
     h1 {
         font-size: 32px;
         color: #fff;
@@ -855,8 +858,7 @@
     }
     .media-carousel {
         margin-bottom: 0;
-        padding: 0 20px 30px 20px;
-        margin-top: 20px;
+        padding: 10px 20px;
     }
     .carousel-control {
         position: relative;
@@ -872,26 +874,24 @@
             color: #fff;
         }
     }
-    .media-carousel .carousel-control.left {
-        left: -12px;
-        background-image: none;
-        background: none repeat scroll 0 0 #524ad1;
-        border: 4px solid #FFFFFF;
-        border-radius: 23px 23px 23px 23px;
-        height: 40px;
-        width: 40px;
-        margin-top: 40px
-    }
-    .media-carousel .carousel-control.right {
-        right: -51px !important;
-        background-image: none;
-        background: none repeat scroll 0 0 #524ad1;
-        border: 4px solid #FFFFFF;
-        border-radius: 23px 23px 23px 23px;
-        height: 40px;
-        width: 40px;
-        margin-top: 40px;
-        left: auto;
+    .media-carousel {
+        .carousel-control {
+            &.left,
+            &.right {
+                background-image: none;
+                background: none repeat scroll 0 0 #524ad1;
+                border: 4px solid #FFFFFF;
+                border-radius: 23px 23px 23px 23px;
+                height: 40px;
+                width: 40px;
+            }
+            &.left {
+                left: 0;
+            }
+            &.right {
+                right: 0;
+            }
+        }
     }
     .media-carousel .carousel-indicators {
         right: 50%;
@@ -909,27 +909,33 @@
         width: 100px;
     }
     .sub_heading {
-        margin: 5px 0 0px 0;
+        margin: 0 0 0px 0;
         padding: 0;
-        font-size: 25px;
-        color: #000;
-        font-weight: 300;
+        font-size: 26px;
+        color: #6b6b6b;
+        font-weight: 500;
         width: 100%;
-        text-align: left;
+        text-transform: capitalize;
     }
     h3 {
-        margin: 0 0 17px 0;
+        margin: -4px 0 23px 0;
         padding: 0;
         font-size: 15px;
         color: #ff9b00f5;
         font-weight: 500;
         width: 100%;
-        text-align: left;
+    }
+    p {
+        font-size: 15px;
+        margin: 10px 5% 30px;
+        width: 90%;
+        float: left;
     }
 }
 
 .map__block {
     position: relative;
+    z-index: 9;
     ngui-map {
         height: 400px;
         @media (max-width: 575px) {
