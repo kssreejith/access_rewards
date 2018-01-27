@@ -21,6 +21,8 @@ import { ProfileService } from 'app/shared/services/profile.service';
 import { TruncateModule } from 'ng2-truncate';
 import { NguiMapModule } from '@ngui/map';
 import { ParticlesModule } from 'angular-particle';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { AppConfigurationService } from 'app/shared/services/app-configuration.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { ParticlesModule } from 'angular-particle';
 
   ],
   providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
-    TranscationHistoryService, ProfileService],
+    TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

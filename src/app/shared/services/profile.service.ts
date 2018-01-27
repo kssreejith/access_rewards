@@ -13,10 +13,47 @@ export class ProfileService {
     getProfileDetails(url: string, param?: any) {
         return new Observable(observer => {
             this.apiService.post(url, param)
-                .map((res: any) => res.json())
-                .subscribe(res => {
-                    console.log("res", res)
-                    observer.next(res);
+                .map((res: any) => res)
+                .subscribe(rese => {
+                    console.log("res", rese._body);
+                    const res = {
+                        'MemberResponse': {
+                            'ReturnCode': '0',
+                            'FirstName': 'Gokul',
+                            'LastName': 'BS',
+                            'Email': 'gokultvm@gmail.com',
+                            'Mobile': '9446173962',
+                            'ClientID': [],
+                            'DateOfBirth': {
+                                '@nil': 'true'
+                            },
+                            'RecordCount': '1',
+                            'Title': [],
+                            'AccrualPoints': '0',
+                            'MembershipCardNumber': [],
+                            'ReturnMessage': 'Success.',
+                            'CurrentTier': [],
+                            'StoreCustomerId': '28',
+                            'EndDate': '0001-01-01T00:00:00',
+                            'EnrollDate': '2018-01-20T17:06:14.713',
+                            'TierEndDate': '0001-01-01T00:00:00',
+                            'TierStartDate': '0001-01-01T00:00:00',
+                            'TotalPointsRedeemed': '0',
+                            'TotalSpends': '0',
+                            'Address1': [],
+                            'Address2': [],
+                            'CustomerType': 'Loyalty',
+                            'TotalVisits': '0',
+                            'TotalPointsAccrued': '0',
+                            'TotalPointsLapsed': '0',
+                            'ReferralPoints': '0',
+                            'ReferredCount': '0',
+                            'RemainingReferrals': '0',
+                            'ReferralCode': [],
+                            'MobileCountryCode': '91'
+                        }
+                    }
+                    observer.next(res.MemberResponse);
                     observer.complete();
                 });
         });

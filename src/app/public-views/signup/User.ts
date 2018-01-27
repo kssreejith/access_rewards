@@ -7,17 +7,17 @@ export class User {
     PinCode: string;
     MobileNo: number;
     EasyPin: string;
-    UserName: string;
+    UserName = 'apiuser@Tablez';
     MemberShipCardNumber: number;
-    StoreCode: string;
+    StoreCode = 'DemoA';
     AssignMembershipCard: string;
-    ChannelCode: string;
+    ChannelCode = 'Online';
     ReferralCode: string;
     CountryCode: string;
     ChildName: string;
     ChildDOB: string;
     AnniversaryDate: string;
-    email: string;
+    EmailId: string;
     // Both the passwords are in a single object
     password: {
         pwd: string;

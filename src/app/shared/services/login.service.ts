@@ -22,4 +22,40 @@ export class LoginService {
         });
 
     }
+    generateSecurityToken(url: string, param?: any) {
+        return new Observable(observer => {
+            this.apiService.post(url, param)
+                .map((res: any) => res.json())
+                .subscribe(res => {
+                    console.log("res", res)
+                    observer.next(res);
+                    observer.complete();
+                });
+        });
+
+    }
+    confirmOtp(url: string, param?: any) {
+        return new Observable(observer => {
+            this.apiService.post(url, param)
+                .map((res: any) => res.json())
+                .subscribe(res => {
+                    console.log("res", res)
+                    observer.next(res);
+                    observer.complete();
+                });
+        });
+
+    }
+    generateOTP(url: string, param?: any) {
+        return new Observable(observer => {
+            this.apiService.post(url, param)
+                .map((res: any) => res.json())
+                .subscribe(res => {
+                    console.log("res", res)
+                    observer.next(res);
+                    observer.complete();
+                });
+        });
+
+    }
 }

@@ -10,19 +10,33 @@ import { RegisterService } from 'app/shared/services/register.service';
   templateUrl: './signup.component.html',
 })
 export class SignupComponent implements OnInit {
-
-  // Inject the formbuilder into the constructor
-  constructor(private fb: FormBuilder, public registerService: RegisterService) { }
-
-  // Property for the user
-  private user: User;
-
   // Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
 
+  // Property for the user
+  private user: User;
+
+
+  day: number;
+  month: string;
+  year: number;
+
+  // tslint:disable-next-line:max-line-length
+  // tslint:disable-next-line:member-ordering
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+  years = [];
+
+  // Inject the formbuilder into the constructor
+  constructor(private fb: FormBuilder, public registerService: RegisterService) { }
 
   ngOnInit() {
+
+    const d = new Date();
+    for (let i = (d.getFullYear() - 18); i > (d.getFullYear() - 100); i--) {
+      this.years.push(i);
+    }
 
     this.genderList = ['Male', 'Female', 'Others'];
 
@@ -30,16 +44,16 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       FirstName: ['', Validators.required],
       MobileNo: ['', Validators.required],
+      day: ['', Validators.required],
+      month: ['', Validators.required],
+      year: ['', Validators.required],
       email: ['', [Validators.required,
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      // password: this.fb.group({
-      //   pwd: ['', [Validators.required,
-      //   Validators.minLength(8)]],
-      //   confirmPwd: ['', [Validators.required,
-      //   Validators.minLength(8)]]
-      // }),
-      terms: ['', Validators.requiredTrue]
-    })
+      terms: ['', Validators.requiredTrue],
+      UserName: ['apiuser@Tablez', Validators.requiredTrue],
+      StoreCode: ['DemoA', Validators.requiredTrue],
+      ChannelCode: ['Online', Validators.requiredTrue]
+    });
 
   }
 
@@ -53,18 +67,13 @@ export class SignupComponent implements OnInit {
 
   public onFormSubmit() {
     this.user = this.signupForm.value;
+    this.user.DateOfBirth = this.signupForm.value.day + ' ' + this.signupForm.value.month + ' ' + this.signupForm.value.year;
+    console.log(this.user);
 
-    const demo = {
-      "UserName": "Sweetgingeruser",
-      "UserPassword": "Sweetgingeruser123",
-      "DevId": "0e91d83d-32c5-4858-b1bc-74c3cbae8802",
-      "AppId": "a9bdcb5c-ae88-4a4e-bf7d-692eda18140b",
-      "ProgramCode": "SweetGinger"
-    }
 
     let responseData: any;
-    this.registerService.registerToApp('/api/GenerateSecurityToken',
-      demo).subscribe(
+    this.registerService.registerToApp('/api/RegisterEasyAccount',
+      this.user).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
