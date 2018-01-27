@@ -413,8 +413,8 @@
             <div class="row justify-content-md-center">
                 <div class="col col-lg-10">
                     <h1>Our Brands</h1>
-                    <div *ngFor="let item of brands" class="row spacing10">
-                        <a class="col-lg-3 col-md-6" [routerLink]="['/ourbrand', item.brand_id]">
+                    <div class="row spacing10">
+                        <a class="col-lg-3 col-md-6" *ngFor="let item of brands" [routerLink]="['/ourbrand', item.brand_id]">
 
                             <div class="card">
                                 <div class="card-header">
@@ -424,7 +424,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{item.brand_name}}</h5>
-                                    <p class="card-text">{{item.description | truncate : 120 : "…"}}</p>
+                                    <p class="card-text">{{item.description | truncate : 100 : "…"}}</p>
                                 </div>
                             </div>
 
@@ -439,7 +439,9 @@
 
                             </div>
                         </div>
+
                     </div>
+
 
                 </div>
             </div>
