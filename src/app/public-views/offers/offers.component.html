@@ -15,13 +15,15 @@
                     </div>
                 </div>
                 <div class="col col-lg-6 ">
-                    <div class="row" *ngFor="let item of brands">
-                        <div class="col col-lg-4" (click)="getOfferData(item.brand_id)">
-                            <a class="offers__blk" data-toggle="modal" data-target="#exampleModal">
-                                <div>
-                                    <img src="{{item.logo}}" alt="">
-                                </div>
-                            </a>
+                    <div class="row">
+                        <div class="col col-lg-4" *ngFor="let item of brands">
+                            <div (click)="getOfferData(item.brand_id)">
+                                <a class="offers__blk" data-toggle="modal" data-target="#exampleModal">
+                                    <div>
+                                        <img src="{{item.logo}}" alt="">
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
 

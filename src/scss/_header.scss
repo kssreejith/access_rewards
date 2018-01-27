@@ -12,6 +12,14 @@
         .tablez--logo {
             display: none;
         }
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #4858d3;
+        z-index: 5;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
     }
     .ml-auto {
         @media (max-width: 767px) {
@@ -94,4 +102,41 @@
             }
         }
     }
+}
+
+.nav__fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #4858d3;
+    z-index: 15;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+    padding: 10px 40px 5px;
+    @media (max-width: 660px) {
+        padding: 10px 20px 5px;
+    }
+    // a {
+    //     color: #000!important;
+    // }
+    // ul li a.login_btn {
+    //     border: 1px solid #000;
+    // }
+    // .fa {
+    //     color: #000!important;
+    // }
+    // svg {
+    //     g {
+    //         path {
+    //             fill: #000!important;
+    //         }
+    //         rect {
+    //             fill: #000!important;
+    //         }
+    //         polygon {
+    //             fill: #000!important;
+    //         }
+    //     }
+    // }
 }
