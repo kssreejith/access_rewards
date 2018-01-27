@@ -375,6 +375,7 @@
         </div>
     </div>
 
+
     <section class="rewards__blk">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -449,8 +450,14 @@
     </section>
 
     <div class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map zoom="5" center="Bengaluru, India">
-            <marker *ngFor="let pos of positions" [position]="pos"></marker>
+        <ngui-map zoom="6" center="Bengaluru, India">
+            <marker *ngFor="let pos of positions.pos" [position]="pos" (click)="clicked($event, positions.addr)"></marker>
+            <info-window id="iw">
+                <div *ngIf="marker.display">
+                    {{marker.addr}}
+                </div>
+
+            </info-window>
         </ngui-map>
         <div class="map__search__blk">
             <div class="row justify-content-md-center">

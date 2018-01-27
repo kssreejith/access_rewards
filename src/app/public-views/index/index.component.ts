@@ -8,12 +8,22 @@ import 'rxjs/add/observable/of';
 })
 export class IndexComponent {
   public brands: any;
-  public positions = [];
+  public positions = {
+    pos: [],
+    addr: null
+  };
 
   public cityIndex = 0;
   public brandIndex = 0;
   public bandList: any;
   public cityList: any;
+  public marker = {
+    display: true,
+    lat: null,
+    lng: null,
+    addr: null
+  };
+
   constructor(
     public brandService: BrandService
   ) {
@@ -159,6 +169,12 @@ export class IndexComponent {
 
 
   }
+  clicked({ target: marker }, address) {
+    this.marker.addr = address;
+
+    marker.nguiMapComponent.openInfoWindow('iw', marker);
+  }
+
   onBrandChange(val) {
     console.log('onBrandChange', val);
     console.log('brandIndex', this.brandIndex);
@@ -183,10 +199,16 @@ export class IndexComponent {
     console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].long);
 
 
-    const positions = [];
+    const positions = {
+      pos: [],
+      addr: null
+    };
+    positions.addr = this.bandList[this.brandIndex].brand_city[this.cityIndex].brand_location;
+    positions.pos = [];
 
-    positions.push([this.bandList[this.brandIndex].brand_city[this.cityIndex].lat,
+    positions.pos.push([this.bandList[this.brandIndex].brand_city[this.cityIndex].lat,
     this.bandList[this.brandIndex].brand_city[this.cityIndex].long]);
+
     return positions;
   }
 
