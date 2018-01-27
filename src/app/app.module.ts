@@ -23,6 +23,7 @@ import { NguiMapModule } from '@ngui/map';
 import { ParticlesModule } from 'angular-particle';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppConfigurationService } from 'app/shared/services/app-configuration.service';
+import { WINDOW_PROVIDERS } from './window.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { AppConfigurationService } from 'app/shared/services/app-configuration.s
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],
-  providers: [BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
+  providers: [WINDOW_PROVIDERS, BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
   bootstrap: [AppComponent]
 })

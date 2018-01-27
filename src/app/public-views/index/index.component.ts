@@ -23,7 +23,11 @@ export class IndexComponent {
     lng: null,
     addr: null
   };
-
+  mapProps: any = {
+    center: 'Bengaluru, India',
+    zoom: 8
+  };
+  mapInfo: any = {};
   constructor(
     public brandService: BrandService
   ) {
@@ -169,10 +173,18 @@ export class IndexComponent {
 
 
   }
-  clicked({ target: marker }, address) {
-    this.marker.addr = address;
+  clicked({ target: marker }, position) {
+
+    this.marker.addr = position.addr;
 
     marker.nguiMapComponent.openInfoWindow('iw', marker);
+  }
+
+  showZoom() {
+    this.mapProps.center = this.bandList[this.brandIndex].brand_city[this.cityIndex].brand_location;
+    this.mapProps.zoom = 11;
+
+    console.log("this.mapProps", this.mapProps)
   }
 
   onBrandChange(val) {

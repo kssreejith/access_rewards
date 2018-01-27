@@ -447,15 +447,24 @@
                 </div>
             </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map zoom="6" center="Bengaluru, India">
-            <marker *ngFor="let pos of positions.pos" [position]="pos" (click)="clicked($event, positions.addr)"></marker>
-            <info-window id="iw">
-                <div *ngIf="marker.display">
-                    {{marker.addr}}
-                </div>
+  <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
+    <ngui-map [center]="mapProps.center" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true"
+      [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
+      <marker *ngFor="let pos of positions.pos" [icon]="{
+        url: 'assets/img/marker.svg',
+        anchor: [16,16],
+        size: [29,50],
+        scaledSize: [29,50]
+      }" [position]="pos" (click)="clicked($event, positions)">
+      </marker>
+      <info-window id="iw">
+        <div *ngIf="marker.display">
+          {{marker.addr}}
+        </div>
 
             </info-window>
         </ngui-map>
@@ -485,8 +494,13 @@
                             </div>
                         </div>
 
+<<<<<<< Updated upstream
                         <div class="col-2 col-lg-2 col-md-2 col-sm-2">
                             <button (click)="positions = getRandomMarkers()">
+=======
+            <div class="col-2 col-lg-2 col-md-2 col-sm-2">
+              <button (click)="positions = getRandomMarkers();showZoom()">
+>>>>>>> Stashed changes
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
                         </div>
