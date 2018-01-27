@@ -73,33 +73,47 @@
             <form [formGroup]="signupForm">
               <div class="form-group">
                 <label>Phone number</label>
-                <input type="tel" class="form-control" id="MobileNo" 
-                [ngModel]="userDetails.Mobile"
-                formControlName="MobileNo" placeholder="MobileNo" 
-                aria-describedby="MobileNo">
+                <input type="tel" class="form-control" id="MobileNo" [ngModel]="userDetails.Mobile" formControlName="MobileNo" placeholder="MobileNo"
+                  aria-describedby="MobileNo">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
               </div>
               <div class="form-group">
                 <label>First name</label>
-                <input type="email" class="form-control" placeholder="Enter First name">
+                <input type="text" class="form-control" [ngModel]="userDetails.FirstName" formControlName="FirstName" placeholder="Enter First name">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter First name</small> -->
               </div>
               <div class="form-group">
-                <label>Middle name</label>
-                <input type="email" class="form-control" placeholder="Enter Middle name">
-                <!-- <small id="emailHelp" class="form-text text-muted">Enter Middle name</small> -->
-              </div>
-              <div class="form-group">
                 <label>Last name</label>
-                <input type="email" class="form-control" placeholder="Enter Last name">
+                <input type="text" class="form-control" [ngModel]="userDetails.LastName" formControlName="LastName" placeholder="Enter Last name">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter Last name</small> -->
               </div>
               <div class="row justify-content-between no-gutters">
-                <div class="col-lg-5">
+                <label>Birth Date</label>
+                <div class="col-4">
                   <div class="form-group">
-                    <label>Birth Date</label>
-                    <input type="email" class="form-control" placeholder="Enter Birth Date">
-                    <!-- <small id="emailHelp" class="form-text text-muted">Enter Birth Date</small> -->
+                    <label>Day</label>
+                    <select class="custom-select form-control" [ngModel]="userDetails.day" formControlName="day">
+                      <option *ngFor="let item of days; let i=index" [value]="item">
+                        {{item}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label>Months</label>
+                    <select class="custom-select form-control" [ngModel]="userDetails.month" formControlName="month">
+                      <option *ngFor="let item of months; let i=index" [value]="item">
+                        {{item}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label>Years</label>
+                    <select class="custom-select form-control" [ngModel]="userDetails.year" formControlName="year">
+                      <option *ngFor="let item of years; let i=index" [value]="item">
+                        {{item}}</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-lg-5">
@@ -134,7 +148,7 @@
 
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" class="form-control" placeholder="Enter Email Address">
+                <input type="email" class="form-control" [ngModel]="userDetails.Email" formControlName="email" placeholder="Enter Email Address">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter Email Address</small> -->
               </div>
 
@@ -173,7 +187,7 @@
               </div>
               <div class="row justify-content-between no-gutters">
                 <div class="col-lg-5">
-                  <button type="submit" class="btn btn-primary btn-block" href="javascript:void(0)">SUBMIT</button>
+                  <button type="submit" type="submit" (click)="onFormSubmit()" class="btn btn-primary btn-block">SUBMIT</button>
                 </div>
               </div>
             </form>

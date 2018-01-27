@@ -15,24 +15,78 @@ export class TransactionHistoryComponent {
   }
   getTranscationHistory() {
 
-    const demo = '<Request>' +
-      '<EasyId>9446173962</EasyId>' +
-      '<SecurityToken>4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=</SecurityToken>' +
-      '<TransactionTypeId>0</TransactionTypeId>' +
-      '<TransactionDetailsCount>30</TransactionDetailsCount>' +
-      '<PageSize>10</PageSize>' +
-      '<PageNumber>1</PageNumber>' +
-      '</Request>';
+    const demo = {
+      'EasyId': 9599111327,
+      'TransactionTypeId': 0
+    };
 
     let responseData: any;
-    this.transcationHistory.getTranscationHistory('http://LPaaSwebapi.revalweb.com/api/GetCustomerTransactionDetails', demo).subscribe(
+    this.transcationHistory.getTranscationHistory('/api/GetCustomerTransactionDetails', demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
       },
       () => {
         console.log('responseData', responseData);
-        this.transcationHistoryList = responseData.data;
+        const demo = {
+          'MemberTransactionResponseListDTO': [{
+            'ReturnCode': '0',
+            'BillNo': '041120161445270764',
+            'BillDate': '2016-11-04T14:45:27.077',
+            'TotalBilledAmount': '0.0000',
+            'Mobile': '9599111327',
+            'TotalAccruedPoints': '55.0000',
+            'TotalRedeemPoints': '0.0000',
+            'EnrolledDate': '0001-01-01T00:00:00',
+            'IsEnableReferralAccruals': 'false',
+            'UserName': {
+              'CardNumber': []
+            },
+            'IsVoucher': 'false',
+            'IsRefunded': 'false',
+            'Code': {
+              'Brand': []
+            },
+            'Narration': 'test',
+            'AccruedPoints': '21413.0000',
+            'MemberShipCardNumber': {
+              'IsPointType': 'true',
+              'Tier': 'false',
+              'RecordCount': '24'
+            },
+            'StoreCode': 'demo001'
+          },
+          {
+            'ReturnCode': '0',
+            'BillNo': '041120161444115566',
+            'BillDate': '2016-11-04T14:44:11.557',
+            'TotalBilledAmount': '0.0000',
+            'Mobile': '9599111327',
+            'TotalAccruedPoints': '55.0000',
+            'TotalRedeemPoints': '0.0000',
+            'EnrolledDate': '0001-01-01T00:00:00',
+            'IsEnableReferralAccruals': 'false',
+            'UserName': {
+              'CardNumber': []
+            },
+            'IsVoucher': 'false',
+            'IsRefunded': 'false',
+            'Code': {
+              'Brand': []
+            },
+            'Narration': 'test',
+            'AccruedPoints': '21413.0000',
+            'MemberShipCardNumber': {
+              'IsPointType': 'true',
+              'Tier': 'false',
+              'RecordCount': '24'
+            },
+            'StoreCode': 'demo001'
+          }
+          ]
+        }
+
+        this.transcationHistoryList = demo.MemberTransactionResponseListDTO;
 
       });
   }
