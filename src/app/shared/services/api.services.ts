@@ -1,12 +1,13 @@
 import { Injectable, } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, Response, Headers, RequestOptions, BaseRequestOptions, URLSearchParams } from '@angular/http';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
 
 @Injectable()
 export class ApiService {
     headers: Headers;
     options: RequestOptions;
-    constructor(private http: Http) {
+    constructor(private http: Http, private _webStorageService: WebStorageService) {
 
         this.options = new RequestOptions({ headers: this.headers });
     }
@@ -48,6 +49,7 @@ export class ApiService {
                         params.set(key, val);
                     }
                 }
+
                 this.options = new RequestOptions({ headers: header, search: params });
                 return this.options;
             })
@@ -66,6 +68,11 @@ export class ApiService {
                 const val = param[key];
                 params.set(key, val);
             }
+        }
+        const userToken: any = this._webStorageService.getData('generateSecurityToken');
+        if (userToken) {
+            params.set('SecurityToken', userToken);
+
         }
 
         const headers = new Headers();
@@ -102,20 +109,86 @@ export class ApiService {
             this.createLassHeader(header)
                 .then(() => {
                     const options = new RequestOptions({ headers: header });
+                    const userToken: any = this._webStorageService.getData('generateSecurityToken');
+                    params.SecurityToken = userToken;
                     this.http.post(url, params, options)
                         .subscribe(response => {
-                            console.log("hereeee");
+                            console.log(response);
                             observer.next(response);
+                            // console.log(this.xml2json(response));
                             observer.complete();
                         }, (e) => {
-                            console.log("eroor in post");
+                            console.log('eroor in post');
 
                             observer.error(e);
                         });
                 });
         });
     }
+    objectToXml(obj) {
+        let xml = '';
 
+        for (const prop in obj) {
+            if (!obj.hasOwnProperty(prop)) {
+                continue;
+            }
+
+            if (obj[prop] === undefined) {
+                continue;
+
+            }
+
+            xml += '<' + prop + '>';
+            if (typeof obj[prop] === 'object') {
+                xml += this.objectToXml(new Object(obj[prop]));
+
+            } else {
+                xml += obj[prop];
+
+            }
+
+            xml += '</' + prop + '>';
+        }
+
+        return xml;
+    }
+    xml2json(xml) {
+
+        // Create the return object
+        let obj = {};
+
+        if (xml.nodeType === 1) { // element
+            // do attributes
+            if (xml.attributes.length > 0) {
+                obj['@attributes'] = {};
+                for (let j = 0; j < xml.attributes.length; j++) {
+                    const attribute = xml.attributes.item(j);
+                    obj['@attributes'][attribute.nodeName] = attribute.nodeValue;
+                }
+            }
+        } else if (xml.nodeType === 3) { // text
+            obj = xml.nodeValue;
+        }
+
+        // do children
+        if (xml.hasChildNodes()) {
+            for (let i = 0; i < xml.childNodes.length; i++) {
+                const item = xml.childNodes.item(i);
+                const nodeName = item.nodeName;
+                if (typeof (obj[nodeName]) === 'undefined') {
+                    obj[nodeName] = this.xml2json(item);
+                } else {
+                    if (typeof (obj[nodeName].push) === 'undefined') {
+                        const old = obj[nodeName];
+                        obj[nodeName] = [];
+                        obj[nodeName].push(old);
+                    }
+                    obj[nodeName].push(this.xml2json(item));
+                }
+            }
+        }
+        return obj;
+    };
     delete(url) {
         return new Observable(observer => {
             const header = new Headers();

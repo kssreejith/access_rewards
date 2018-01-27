@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ProfileComponent } from './profile.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AuthHeaderModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ProfileComponent

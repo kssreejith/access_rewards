@@ -11,5 +11,5 @@ export class AppConfigurationService {
 
     /** General */
     public platform = 'webPortal';
-  
+
 }

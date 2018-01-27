@@ -25,31 +25,32 @@ export class LoginComponent {
   }
 
   showNav(status) {
-    console.log("sfdsdf");
+    console.log('sfdsdf');
     this.showSideMenu = status;
 
   }
 
   showSearchMenu(status) {
-    console.log("sfdsdf");
+    console.log('sfdsdf');
     this.searchMenu = status;
 
   }
 
   public login() {
     console.log('login', this.signupForm.value);
-    const login = '<Request>' +
-      '<MemberID></MemberID>' +
-      '<EmailID>gokultvm@gmail.com</EmailID>' +
-      '<MobileNumber>9446173962</MobileNumber>' +
-      '<StoreCode>DemoA</StoreCode>' +
-      '<UserName>apiuser@Tablez</UserName>' +
+    const login = {
       // tslint:disable-next-line:max-line-length
-      '<SecurityToken>4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=</SecurityToken>' +
-      '</Request>';
+      'SecurityToken': '4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=',
+      'MemberID': '',
+      'MobileNumber': '9446173962',
+      'EmailId': 'gokultvm@gmail.com',
+      'MobileNo': '9446173962',
+      'UserName': 'apiuser@Tablez',
+      'StoreCode': 'DemoA'
+    };
 
     let responseData: any;
-    this.loginService.loginToApp('http://LPaaSwebapi.revalweb.com/api/GenerateOTP',
+    this.loginService.generateOTP('/api/GenerateOTP',
       login).subscribe(
       data => responseData = data,
       error => {

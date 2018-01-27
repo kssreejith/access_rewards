@@ -3,7 +3,7 @@
 </auth-header>
 
 <section class="main__container">
-  <div class="container profile__blk">
+  <div class="container profile__blk" *ngIf="userDetails">
     <div class="row justify-content-md-center">
       <div class="col col-lg-9">
         <div class="row">
@@ -58,22 +58,25 @@
               <img src="assets/img/avatar.svg" alt="avatar">
               <div class="media-body">
                 <h5>Hello</h5>
-                <span>Abhimanyu</span>
+                <span>{{userDetails.FirstName}}</span>
 
               </div>
             </div>
             <div class="rating__blk">
-              <h1>1000</h1>
+              <h1>{{userDetails.ReferralPoints}}</h1>
               <!-- <img src="assets/img/rating.svg" alt=""> -->
               <p>Loyalty Points</p>
             </div>
           </div>
 
           <div class="col-lg-7 col-md-7 right_blk">
-            <form>
+            <form [formGroup]="signupForm">
               <div class="form-group">
                 <label>Phone number</label>
-                <input type="email" class="form-control" placeholder="Enter Phone number">
+                <input type="tel" class="form-control" id="MobileNo" 
+                [ngModel]="userDetails.Mobile"
+                formControlName="MobileNo" placeholder="MobileNo" 
+                aria-describedby="MobileNo">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
               </div>
               <div class="form-group">
