@@ -72,7 +72,7 @@ export class SignupComponent implements OnInit {
 
 
     let responseData: any;
-    this.registerService.registerToApp('/api/RegisterEasyAccount',
+    this.registerService.registerToApp('http://lpaaswebapi.easyrewardz.com/api/RegisterEasyAccount',
       this.user).subscribe(
       data => responseData = data,
       error => {

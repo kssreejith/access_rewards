@@ -21,7 +21,7 @@ export class TransactionHistoryComponent {
     };
 
     let responseData: any;
-    this.transcationHistory.getTranscationHistory('/api/GetCustomerTransactionDetails', demo).subscribe(
+    this.transcationHistory.getTranscationHistory('http://lpaaswebapi.easyrewardz.com/api/GetCustomerTransactionDetails', demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');

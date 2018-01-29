@@ -104,7 +104,7 @@
             <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
             <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
           </div>
-          <button (click)="login()" class="btn btn-primary">Login</button>
+          <button [disabled]="!signupForm.valid || disableClick" (click)="login()" class="btn btn-primary">Login</button>
           <a class="back" [routerLink]="['/']">
             < Back</a>
         </form>

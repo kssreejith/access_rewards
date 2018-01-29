@@ -15,9 +15,9 @@ export class HeaderComponent {
   public searchMenu = false;
   public navIsFixed = false;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    @Inject(WINDOW) private window: Window) { }
+  @Inject(DOCUMENT) private document: Document;
+  @Inject(WINDOW) private window: Window;
+  constructor() { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

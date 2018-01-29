@@ -32,7 +32,6 @@ export class OtpComponent {
   enter() {
     const login = {
       // tslint:disable-next-line:max-line-length
-      'SecurityToken': '4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=',
       'EasyId': '9446173962',
       'UserName': 'apiuser@Tablez',
       'SmsCode': '166923',
@@ -42,7 +41,8 @@ export class OtpComponent {
 
 
     let responseData: any;
-    this.loginService.confirmOtp('/api/ConfirmOTP',
+
+    this.loginService.confirmOtp('http://lpaaswebapi.easyrewardz.com/api/ConfirmOTP',
       login).subscribe(
       data => responseData = data,
       error => {

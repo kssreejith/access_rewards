@@ -3,31 +3,32 @@
 </auth-header>
 
 <section class="main__container">
-    <div class="container ">
-        <div class="row justify-content-md-center" *ngIf="brandDetails">
-            <div class="col col-lg-10 contacts--blk content__holder">
-                <div>
-                    <a href="/brand"><i class="fa fa-angle-left" aria-hidden="true"></i>
-                       Back </a>
-                </div>
-                <div class="sub_heading">
-                    <img src="{{brandDetails.brand_logo}}" alt="">
-                </div>
-                <div class="row content__blk row align-items-center">
-
-
-                    <div class="col-lg-12 col-md-12 right_blk">
-
-                        <p>{{brandDetails.description}}
-                        </p>
-                        <a target="blank" href="{{brandDetails.website_url}}">{{brandDetails.brand_name}}</a>
-                        <div class="brand__img--blk">
-                            <img src="assets/img/ice cream photo 2.png" alt="">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+  <div class="container ">
+    <div class="row justify-content-md-center" *ngIf="brandDetails">
+      <div class="col col-lg-10 contacts--blk content__holder">
+        <div>
+          <a [routerLink]="['/brand']">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Back </a>
         </div>
+        <div class="sub_heading">
+          <img src="{{brandDetails.brand_logo}}" alt="">
+        </div>
+        <div class="row content__blk row align-items-center">
+
+
+          <div class="col-lg-12 col-md-12 right_blk">
+
+            <p>{{brandDetails.description}}
+            </p>
+            <a target="blank" href="{{brandDetails.website_url}}">{{brandDetails.brand_name}}</a>
+            <div class="brand__img--blk">
+              <img src="assets/img/ice cream photo 2.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </div>
 </section>

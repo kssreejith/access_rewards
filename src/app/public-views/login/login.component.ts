@@ -13,6 +13,7 @@ export class LoginComponent {
   public showSideMenu = false;
   public searchMenu = false;
   public signupForm: FormGroup;
+  public disableClick = false;
 
   constructor(
     public router: Router, private fb: FormBuilder,
@@ -39,24 +40,24 @@ export class LoginComponent {
   public login() {
     console.log('login', this.signupForm.value);
     const login = {
-      // tslint:disable-next-line:max-line-length
-      'SecurityToken': '4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=',
-      'MemberID': '',
-      'MobileNumber': '9446173962',
-      'EmailId': 'gokultvm@gmail.com',
-      'MobileNo': '9446173962',
+      'MobileNumber': this.signupForm.value.MobileNo,
       'UserName': 'apiuser@Tablez',
       'StoreCode': 'DemoA'
     };
-
+    this.disableClick = true;
     let responseData: any;
-    this.loginService.generateOTP('/api/GenerateOTP',
+    this.loginService.generateOTP('http://lpaaswebapi.easyrewardz.com/api/GenerateOTP',
+      // this.loginService.generateOTP('/api/GenerateOTP',
       login).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
+        this.disableClick = false;
+
       },
       () => {
+        this.disableClick = false;
+
         console.log('responseData', responseData);
 
         this.router.navigate(['/otp']);
