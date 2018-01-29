@@ -2,6 +2,7 @@ import { Component, ViewChild, HostListener, Inject } from '@angular/core';
 import { SideMenuComponent } from 'app/shared/layouts/side-menu/side-menu.component';
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'app/window.service';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
 
 @Component({
   selector: 'ur-header',
@@ -14,10 +15,13 @@ export class HeaderComponent {
   public showSideMenu = false;
   public searchMenu = false;
   public navIsFixed = false;
+  public loggedIn: any;
 
   @Inject(DOCUMENT) private document: Document;
   @Inject(WINDOW) private window: Window;
-  constructor() { }
+  constructor(private _webStorageService: WebStorageService) {
+    this.loggedIn = this._webStorageService.getData('generateSecurityToken');
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

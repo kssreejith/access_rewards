@@ -40,13 +40,11 @@ export class LoginComponent {
   public login() {
     console.log('login', this.signupForm.value);
     const login = {
-      'MobileNumber': this.signupForm.value.MobileNo,
-      'UserName': 'apiuser@Tablez',
-      'StoreCode': 'DemoA'
+      'mobile': this.signupForm.value.MobileNo
     };
     this.disableClick = true;
     let responseData: any;
-    this.loginService.generateOTP('http://lpaaswebapi.easyrewardz.com/api/GenerateOTP',
+    this.loginService.generateOTP('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GenerateOTP',
       // this.loginService.generateOTP('/api/GenerateOTP',
       login).subscribe(
       data => responseData = data,
@@ -60,7 +58,7 @@ export class LoginComponent {
 
         console.log('responseData', responseData);
 
-        this.router.navigate(['/otp']);
+        this.router.navigate(['/otp', this.signupForm.value.MobileNo]);
       });
   }
 

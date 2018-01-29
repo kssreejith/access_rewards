@@ -108,11 +108,6 @@ export class ApiService {
             this.createHeader(header)
                 .then(() => {
                     const options = new RequestOptions({ headers: header });
-                    const userToken: any = this._webStorageService.getData('generateSecurityToken');
-                    if (userToken) {
-                        params.SecurityToken = userToken;
-
-                    }
                     this.http.post(url, params, options)
                         .subscribe(response => {
                             console.log(response);
@@ -131,19 +126,13 @@ export class ApiService {
 
         return new Observable(observer => {
             const header = new Headers();
-            this.createLassHeader(header)
+            this.createHeader(header)
                 .then(() => {
                     const options = new RequestOptions({ headers: header });
-                    const userToken: any = this._webStorageService.getData('generateSecurityToken');
-                    if (userToken) {
-                        params.SecurityToken = userToken;
-
-                    }
                     this.http.post(url, params, options)
                         .subscribe(response => {
                             console.log(response);
                             observer.next(response);
-                            // console.log(this.xml2json(response));
                             observer.complete();
                         }, (e) => {
                             console.log('eroor in post');

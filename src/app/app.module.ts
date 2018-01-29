@@ -23,7 +23,7 @@ import { NguiMapModule } from '@ngui/map';
 import { ParticlesModule } from 'angular-particle';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppConfigurationService } from 'app/shared/services/app-configuration.service';
-import { WINDOW_PROVIDERS } from './window.service';
+import { WindowRefService } from './window.service';
 import { ContactService } from 'app/shared/services/contact.service';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,7 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],
-  providers: [ContactService, WINDOW_PROVIDERS, BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
+  providers: [ContactService, WindowRefService, BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
   bootstrap: [AppComponent]
 })

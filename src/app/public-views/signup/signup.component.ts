@@ -43,17 +43,24 @@ export class SignupComponent implements OnInit {
     // Use the formbuilder to build the Form model
     this.signupForm = this.fb.group({
       FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
       MobileNo: ['', Validators.required],
       day: ['', Validators.required],
       month: ['', Validators.required],
       year: ['', Validators.required],
       email: ['', [Validators.required,
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      terms: ['', Validators.requiredTrue],
-      UserName: ['apiuser@Tablez', Validators.requiredTrue],
-      StoreCode: ['DemoA', Validators.requiredTrue],
-      ChannelCode: ['Online', Validators.requiredTrue]
+      ChildName: [''],
+      childDay: [''],
+      childMonth: [''],
+      childYear: [''],
+      PinCode: [''],
+      annDay: [''],
+      annMonth: [''],
+      annYear: [''],
+      Gender: ['']
     });
+
 
   }
 
@@ -72,7 +79,8 @@ export class SignupComponent implements OnInit {
 
 
     let responseData: any;
-    this.registerService.registerToApp('http://lpaaswebapi.easyrewardz.com/api/RegisterEasyAccount',
+    this.registerService.registerToApp(
+      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/RegisterEasyAccount',
       this.user).subscribe(
       data => responseData = data,
       error => {
