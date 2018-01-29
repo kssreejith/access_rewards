@@ -6,23 +6,27 @@
     &.inner__nav--bg {
         @extend %gradient__nav;
     }
-    @media (max-width: 660px) {
+    @media (max-width: 768px) {
         margin: 0 0 0 0;
         padding: 15px 20px;
-        .tablez--logo {
-            display: none;
-        }
         position: fixed;
         top: 0;
+        min-height: 20px;
         width: 100%;
         background: #4858d3;
-        z-index: 5;
+        z-index: 9999;
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
         -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
         -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+        .tablez--logo {
+            display: none;
+        }
+    }
+    @media (max-width: 440px) {
+        padding: 10px 10px 16px;
     }
     .ml-auto {
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             flex-direction: row;
         }
     }
@@ -74,7 +78,7 @@
                 margin: 12px 0 0 18px;
                 @media (max-width: 600px) {
                     padding: 0 0 0 5px !important;
-                    margin: 12px 0 0 5px;
+                    margin: 10px 0 0 5px;
                 }
                 &.login_btn {
                     border: 1px solid #fff;
@@ -117,26 +121,4 @@
     @media (max-width: 660px) {
         padding: 10px 20px 5px;
     }
-    // a {
-    //     color: #000!important;
-    // }
-    // ul li a.login_btn {
-    //     border: 1px solid #000;
-    // }
-    // .fa {
-    //     color: #000!important;
-    // }
-    // svg {
-    //     g {
-    //         path {
-    //             fill: #000!important;
-    //         }
-    //         rect {
-    //             fill: #000!important;
-    //         }
-    //         polygon {
-    //             fill: #000!important;
-    //         }
-    //     }
-    // }
 }
