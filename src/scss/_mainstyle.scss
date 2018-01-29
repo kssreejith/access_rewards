@@ -10,6 +10,9 @@
     height: 100vh;
     display: flex;
     @extend %gradient__bg;
+    @media (max-width: 768px) {
+        height: 80vh;
+    }
     div {
         width: 100%;
         text-align: center;
@@ -30,7 +33,7 @@
             font-weight: 300!important;
         }
         @media (max-width: 660px) {
-            font-size: 26px;
+            font-size: 23px;
         }
     }
     p {
@@ -40,7 +43,7 @@
         -webkit-animation-delay: 1.5s;
         animation-delay: 1.5s;
         @media (max-width: 660px) {
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 20px;
         }
     }
@@ -59,7 +62,7 @@
     min-height: 100%;
     width: 100%;
     padding: 167px 0 0 0;
-    @media (max-width: 660px) {
+    @media (max-width: 768px) {
         padding: 100px 0 0 0;
     }
 }
@@ -116,7 +119,7 @@
     }
     .table-responsive {
         .table {
-            @media (max-width: 767px) {
+            @media (max-width: 768px) {
                 margin: 10px 0 0 0;
                 width: 800px;
                 max-width: none;
@@ -133,7 +136,7 @@
     font-weight: 100;
     width: 100%;
     text-align: center;
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
         margin: 5px 0 30px 0;
     }
 }
@@ -146,8 +149,9 @@
     font-weight: 300;
     width: 100%;
     text-align: center;
-    @media (max-width: 767px) {
-        margin: 5px 0 30px 0;
+    @media (max-width: 768px) {
+        margin: 0px 0 20px 0;
+        font-size: 30px;
     }
     img {
         width: 15%;
@@ -157,7 +161,7 @@
 .points__calculator--blk {
     .left_blk {
         padding-right: 50px;
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             padding-right: 0;
         }
         p {
@@ -205,7 +209,7 @@
         form {
             margin: 0 0 0 0;
             padding: 0 0 0 26px;
-            @media (max-width: 767px) {
+            @media (max-width: 768px) {
                 padding: 0 0 0 0;
                 margin: 30px 0 0 0;
             }
@@ -249,13 +253,16 @@
     .left_blk {
         img {
             width: 100%;
+            @media (max-width: 767px) {
+                margin: 40px 0;
+            }
         }
     }
     .right_blk {
         form {
             margin: 0 0 0 0;
             padding: 0 0 0 0;
-            @media (max-width: 767px) {
+            @media (max-width: 768px) {
                 padding: 0 0 0 0;
                 margin: 30px 0 0 0;
             }
@@ -321,8 +328,11 @@
     background: #fff;
     padding: 40px 0 0;
     position: relative;
-    z-index: 9;
+    z-index: 99;
     margin: 100vh 0 0 0;
+    @media (max-width: 768px) {
+        margin: 0 0 0 0;
+    }
     h1,
     h2,
     p {
@@ -354,7 +364,7 @@
     padding: 42px 0 110px;
     width: 100%;
     float: left;
-    z-index: 9;
+    z-index: 99;
     background-repeat: no-repeat!important;
     background-size: cover!important;
     background-position: 0% 0%!important;
@@ -457,7 +467,7 @@
     margin: 0 0 100px 0;
     .left_blk {
         padding-right: 50px;
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             padding-right: 0;
         }
         p {
@@ -546,6 +556,9 @@
 
 .content__holder {
     margin: 0 0 50px 0;
+    @media (max-width: 768px) {
+        margin: 0 5px 50px 15px;
+    }
     h1 {
         font-weight: 300;
         font-size: 22px;
@@ -559,6 +572,10 @@
         color: #f17f21;
         text-decoration: none;
         float: left;
+        &:hover {
+            color: #4a55d3;
+            text-decoration: underline;
+        }
     }
     .media {
         -webkit-box-align: center!important;
@@ -577,11 +594,14 @@
             width: 12vw;
             margin: 0 30px 0 0;
             text-align: center;
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
                 width: 15vw;
             }
             img {
                 width: auto;
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -665,6 +685,9 @@
         color: #606060;
         font-weight: 400;
         font-size: 21px;
+        @media (max-width: 600px) {
+            font-size: 16px;
+        }
         &:hover,
         &:active,
         &:focus {
@@ -680,6 +703,9 @@
         span {
             margin: 3px 0 0 15px;
             float: left;
+            @media (max-width: 600px) {
+                margin: 9px 0 0 15px;
+            }
         }
     }
     .btn-primary:focus,
@@ -700,6 +726,9 @@
             border-radius: 0;
             margin: -9px 0 -9px 0;
             padding: 15px 2.25rem;
+            @media (max-width: 600px) {
+                padding: 15px 1rem;
+            }
             &.card-body {
                 p {
                     font-weight: 300;
@@ -951,7 +980,7 @@
 
 .map__block {
     position: relative;
-    z-index: 9;
+    z-index: 99;
     ngui-map {
         height: 400px;
         @media (max-width: 575px) {

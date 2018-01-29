@@ -9,7 +9,7 @@
         display: flex;
         float: left;
         @extend %gradient__bg;
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             height: auto;
             padding: 25px 0 50px;
         }
@@ -69,7 +69,7 @@
         height: 100vh;
         display: flex;
         float: left;
-        @media (max-width: 767px) {
+        @media (max-width: 768px) {
             height: auto;
             padding: 50px 0;
         }
@@ -161,11 +161,17 @@
             font-size: 50px;
             font-weight: 100;
             margin: 0 0 10px 0;
+            @media (max-width: 600px) {
+                font-size: 35px;
+            }
         }
         p {
             font-size: 14px;
             font-weight: 300;
-            margin: 0 0 35px 0
+            margin: 0 0 35px 0;
+            @media (max-width: 600px) {
+                font-size: 13px;
+            }
         }
         .signup__holder {
             background: #fff;
