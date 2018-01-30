@@ -5,8 +5,8 @@ $particle-size: 4px;
 $time: 7s;
 $base-hue: 0; // change for diff colors (180 is nice)
 .wrap {
-    position: fixed;
     top: 50vh;
+    position: relative;
     left: 50%;
     width: 0;
     height: 0;
@@ -64,7 +64,6 @@ $base-hue: 0; // change for diff colors (180 is nice)
     $time: 14s;
     $base-hue: 0; // change for diff colors (180 is nice)
     .wrap {
-        position: fixed;
         top: 50vh;
         left: 50%;
         width: 0;
