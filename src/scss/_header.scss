@@ -9,7 +9,7 @@
     @media (max-width: 768px) {
         margin: 0 0 0 0;
         padding: 15px 20px;
-        position: relative;
+        position: absolute;
         top: 0;
         min-height: 20px;
         width: 100%;
@@ -114,12 +114,13 @@
     top: 0;
     width: 100%;
     background: #4858d3;
-    z-index: 15;
+    z-index: 9999;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
     padding: 10px 40px 5px;
     @media (max-width: 660px) {
         padding: 10px 20px 5px;
+        position: initial;
     }
 }

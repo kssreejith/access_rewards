@@ -8,6 +8,7 @@
     @extend %gradient__navmain-bg;
     @media (max-width: 660px) {
         padding-top: 10vh;
+        position: absolute;
     }
     .nav_close {
         position: absolute;

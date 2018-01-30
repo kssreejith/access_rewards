@@ -153,16 +153,13 @@
         margin: 0px 0 20px 0;
         font-size: 30px;
     }
-    img {
-        width: 15%;
-    }
 }
 
 .points__calculator--blk {
     .left_blk {
         padding-right: 50px;
         @media (max-width: 768px) {
-            padding-right: 0;
+            padding-right: 15px;
         }
         p {
             color: #000;
@@ -468,7 +465,7 @@
     .left_blk {
         padding-right: 50px;
         @media (max-width: 768px) {
-            padding-right: 0;
+            padding-right: 15px;
         }
         p {
             color: #000;
@@ -557,7 +554,7 @@
 .content__holder {
     margin: 0 0 50px 0;
     @media (max-width: 768px) {
-        margin: 0 5px 50px 15px;
+        margin: 0 15px 50px 15px;
     }
     h1 {
         font-weight: 300;

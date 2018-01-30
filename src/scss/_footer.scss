@@ -84,11 +84,24 @@ footer {
     line-height: 60px;
     background-color: #fff!important;
     padding: 0!important;
+    @media (max-width: 460px) {
+        height: 40px;
+        line-height: 40px;
+        bottom: 10px;
+    }
     ul {
         width: auto;
+        @media (max-width: 360px) {
+            width: 100%;
+        }
         li {
             width: auto;
             float: left;
+            @media (max-width: 360px) {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 20px 0;
+            }
             a {
                 margin: 0 20px 0 0;
                 &:hover {
@@ -99,6 +112,11 @@ footer {
     }
     span {
         float: right;
+        @media (max-width: 460px) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
     }
 }
 

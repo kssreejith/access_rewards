@@ -113,7 +113,8 @@
 // }
 // animate();
 
+
 $('#myCarousel').carousel({
-    interval: 1,
+    interval: 100,
     cycle: true
 });
