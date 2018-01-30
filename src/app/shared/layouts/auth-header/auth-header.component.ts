@@ -1,7 +1,7 @@
 import { Component, ViewChild, HostListener, Inject } from '@angular/core';
 import { SideMenuComponent } from 'app/shared/layouts/side-menu/side-menu.component';
 import { DOCUMENT } from '@angular/platform-browser';
-import { WINDOW } from 'app/window.service';
+import { WindowRefService } from 'app/window.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { Router } from '@angular/router';
 @Component({
@@ -17,9 +17,9 @@ export class AuthHeaderComponent {
   public navIsFixed = false;
   public loggedIn: any;
 
-  @Inject(DOCUMENT) private document: Document;
-  @Inject(WINDOW) private window: Window;
   constructor(
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(WindowRefService) private window: Window,
     private _webStorageService: WebStorageService,
     public router: Router
   ) {
