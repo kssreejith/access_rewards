@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'app/shared/services/login.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
 
 @Component({
   selector: 'otp',
@@ -9,12 +11,24 @@ import { LoginService } from 'app/shared/services/login.service';
 export class OtpComponent {
   public showSideMenu = false;
   public searchMenu = false;
+  public mobileNum: number;
+  public signupForm: FormGroup;
+  public disableClick = false;
 
   constructor(
+    public activateRoute: ActivatedRoute,
     public router: Router,
-    public loginService: LoginService
+    private fb: FormBuilder,
+    public loginService: LoginService,
+    private _webStorageService: WebStorageService
   ) {
-
+    this.activateRoute.params.subscribe(params => {
+      this.mobileNum = params['id'];
+    });
+    this.signupForm = this.fb.group({
+      mobile: [this.mobileNum, Validators.required],
+      otp: ['', Validators.required]
+    })
   }
 
   showNav(status) {
@@ -30,27 +44,18 @@ export class OtpComponent {
   }
 
   enter() {
-    const login = {
-      // tslint:disable-next-line:max-line-length
-      'EasyId': '9446173962',
-      'UserName': 'apiuser@Tablez',
-      'SmsCode': '166923',
-      'TransactionCode': 'Test_Bill',
-      'StoreCode': 'DemoA'
-    }
-
-
     let responseData: any;
 
-    this.loginService.confirmOtp('http://lpaaswebapi.easyrewardz.com/api/ConfirmOTP',
-      login).subscribe(
+    this.loginService.confirmOtp('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/ConfirmOTP',
+      this.signupForm.value).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
       },
       () => {
+        
         console.log('responseData', responseData);
-
+        this._webStorageService.saveData('mobile', this.signupForm.value.mobile);
         this.router.navigate(['/index']);
       });
   }

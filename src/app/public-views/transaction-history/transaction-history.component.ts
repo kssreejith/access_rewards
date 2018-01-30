@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
 
 @Component({
   selector: 'transaction-history',
@@ -8,7 +9,8 @@ import { TranscationHistoryService } from 'app/shared/services/transcation_histo
 export class TransactionHistoryComponent {
   public transcationHistoryList: any;
   constructor(
-    public transcationHistory: TranscationHistoryService
+    public transcationHistory: TranscationHistoryService,
+    private _webStorageService: WebStorageService
   ) {
     this.getTranscationHistory();
 
@@ -16,18 +18,18 @@ export class TransactionHistoryComponent {
   getTranscationHistory() {
 
     const demo = {
-      'EasyId': 9599111327,
-      'TransactionTypeId': 0
+      'mobile': this._webStorageService.getData('mobile')
     };
 
     let responseData: any;
-    this.transcationHistory.getTranscationHistory('http://lpaaswebapi.easyrewardz.com/api/GetCustomerTransactionDetails', demo).subscribe(
+    this.transcationHistory.getTranscationHistory(
+      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GetCustomerTransactionDetails', demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
       },
       () => {
-        console.log('responseData', responseData);
+        console.log('asdsad', responseData);
         const demo = {
           'MemberTransactionResponseListDTO': [{
             'ReturnCode': '0',

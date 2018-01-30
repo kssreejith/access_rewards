@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
             { path: '', redirectTo: 'index', pathMatch: 'full' },
             { path: 'index', component: IndexComponent },
             { path: 'login', component: LoginComponent },
-            { path: 'otp', component: OtpComponent },
+            { path: 'otp/:id', component: OtpComponent },
             { path: 'forgot-password', component: ForgotPasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'signup', component: SignupComponent },

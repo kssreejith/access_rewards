@@ -3,12 +3,14 @@ import { ProfileService } from 'app/shared/services/profile.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
 import { User } from 'app/public-views/signup/User';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
 
 @Component({
   selector: 'profile',
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
+  availablePoints: any;
 
   // Property for the user
   private user: User;
@@ -16,6 +18,7 @@ export class ProfileComponent implements OnInit {
   // Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
+  public disableClick = false;
 
 
 
@@ -30,8 +33,14 @@ export class ProfileComponent implements OnInit {
   years = [];
 
   // Inject the formbuilder into the constructor
-  constructor(private fb: FormBuilder, public registerService: RegisterService, public profileService: ProfileService) {
+  constructor(
+    private fb: FormBuilder,
+    public registerService: RegisterService,
+    public profileService: ProfileService,
+    private _webStorageService: WebStorageService) {
     this.getProfileDetails();
+    this.getCustomerAvailablePoints();
+
     // Use the formbuilder to build the Form model
     this.signupForm = this.fb.group({
       FirstName: ['', Validators.required],
@@ -42,10 +51,15 @@ export class ProfileComponent implements OnInit {
       year: ['', Validators.required],
       email: ['', [Validators.required,
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      terms: ['', Validators.requiredTrue],
-      UserName: ['apiuser@Tablez', Validators.requiredTrue],
-      StoreCode: ['DemoA', Validators.requiredTrue],
-      ChannelCode: ['Online', Validators.requiredTrue]
+      ChildName: [''],
+      childDay: [''],
+      childMonth: [''],
+      childYear: [''],
+      PinCode: [''],
+      annDay: [''],
+      annMonth: [''],
+      annYear: [''],
+      Gender: ['']
     });
 
   }
@@ -58,35 +72,60 @@ export class ProfileComponent implements OnInit {
   getProfileDetails() {
 
     const demo = {
-      Request: {
-        'EasyId': 9446173962,
-        // tslint:disable-next-line:max-line-length
-        'SecurityToken': '4U28faapggN7BFWgL2etQNvx8pfvsK6xZIhvdqUsyyn1+DvVk2yQv5vPY5t0QloFMvyEJZJWHVGzYQN3domQo0FPHwhTus7yo9bi0fvuUe9NT+57iRJpOXadYjZg/oc9QAvccqaaiVAC01xzmGLrPL053YVr0OnqQ2TGWrwBWH4AvP3JFQkmpoJyc9TtU8Nkb/33fjqxvjdMUIlnzQXip1Xa3Ooib1+k+b46Va5698U=',
-        'SortExpression': 'LastUpdated',
-        'SortDirection': 'desc',
-      }
+      'mobile': this._webStorageService.getData('mobile')
     };
 
     let responseData: any;
-    this.profileService.getProfileDetails('api/Searchmember', demo).subscribe(
+    this.profileService.getProfileDetails('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/Searchmember', demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
       },
       () => {
-        console.log('responseData', responseData);
+        console.log('responseData', new Date(responseData.DateOfBirth));
+
         this.userDetails = responseData;
+        const date = new Date(responseData.DateOfBirth);
+
+        if (date) {
+          this.userDetails.day = date.getDate();
+          this.userDetails.month = this.months[date.getMonth()];
+          this.userDetails.year = date.getFullYear();
+
+        }
+
+      });
+  }
+
+  getCustomerAvailablePoints() {
+
+    const demo = {
+      'mobile': this._webStorageService.getData('mobile')
+    };
+
+    let responseData: any;
+    this.profileService.getCustomerAvailablePoints(
+      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/CustomerAvailablePoints', demo).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+      },
+      () => {
+        console.log('zxcxzc', responseData);
+        this.availablePoints = responseData.availablePointsl
 
       });
   }
   public onFormSubmit() {
     this.user = this.signupForm.value;
     this.user.DateOfBirth = this.signupForm.value.day + ' ' + this.signupForm.value.month + ' ' + this.signupForm.value.year;
+    this.user.ChildDOB = this.signupForm.value.childDay + ' ' + this.signupForm.value.childMonth + ' ' + this.signupForm.value.childYear;
+    this.user.AnniversaryDate = this.signupForm.value.annDay + ' ' + this.signupForm.value.annMonth + ' ' + this.signupForm.value.annYear;
     console.log(this.user);
 
 
     let responseData: any;
-    this.registerService.registerToApp('http://lpaaswebapi.easyrewardz.com/api/RegisterEasyAccount',
+    this.registerService.registerToApp('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/RegisterEasyAccount',
       this.user).subscribe(
       data => responseData = data,
       error => {
@@ -95,11 +134,6 @@ export class ProfileComponent implements OnInit {
       () => {
         console.log('responseData', responseData.status);
       });
-    if (this.signupForm.valid) {
-      this.user = this.signupForm.value;
-      console.log(this.user);
-      /* Any API call logic via services goes here */
-    }
   }
 
 }
