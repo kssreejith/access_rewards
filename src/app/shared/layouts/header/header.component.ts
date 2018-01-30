@@ -3,6 +3,7 @@ import { SideMenuComponent } from 'app/shared/layouts/side-menu/side-menu.compon
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'app/window.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ur-header',
@@ -19,8 +20,11 @@ export class HeaderComponent {
 
   @Inject(DOCUMENT) private document: Document;
   @Inject(WINDOW) private window: Window;
-  constructor(private _webStorageService: WebStorageService) {
-    this.loggedIn = this._webStorageService.getData('generateSecurityToken');
+  constructor(
+    private _webStorageService: WebStorageService,
+    public router: Router
+  ) {
+    this.loggedIn = this._webStorageService.getData('mobile');
   }
 
   @HostListener('window:scroll', [])
@@ -42,6 +46,13 @@ export class HeaderComponent {
   showSearchMenu(status) {
     console.log('sfdsdf');
     this.searchMenu = status;
+
+  }
+
+  logout() {
+    this._webStorageService.removeData('mobile');
+    this.router.navigate(['/login']);
+
 
   }
 

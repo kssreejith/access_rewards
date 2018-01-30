@@ -53,7 +53,7 @@ export class OtpComponent {
         console.error('api ERROR');
       },
       () => {
-        
+
         console.log('responseData', responseData);
         this._webStorageService.saveData('mobile', this.signupForm.value.mobile);
         this.router.navigate(['/index']);

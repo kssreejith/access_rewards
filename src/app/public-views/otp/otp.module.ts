@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { OtpComponent } from './otp.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderModule } from 'app/shared/layouts/header/header.module';
+import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeaderModule,
+    AuthHeaderModule
   ],
   exports: [
     OtpComponent

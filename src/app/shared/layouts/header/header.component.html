@@ -49,13 +49,17 @@
         </g>
       </svg>
 
-    </li>
+    </li> 
     <li class="nav-item" *ngIf="!loggedIn">
       <a class="login_btn" [routerLink]="['/login']">Login
       </a>
     </li>
     <li class="nav-item" *ngIf="loggedIn">
       <a class="login_btn" [routerLink]="['/profile']">Profile
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="loggedIn" (click)="logout()">
+      <a class="login_btn">Logout
       </a>
     </li>
     <li class="nav-item" (click)="showSearchMenu(true)">
