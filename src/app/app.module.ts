@@ -28,10 +28,12 @@ import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanActivateViaAuthGuard } from './authGuard.service';
 import { ParticlesModule } from 'angular-particle';
+import { ParticleComponent } from './particle.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParticleComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,6 @@ import { ParticlesModule } from 'angular-particle';
   providers: [CanActivateViaAuthGuard, ContactService, WindowRefService,
     BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ParticleComponent]
 })
 export class AppModule { }
