@@ -57,6 +57,6 @@ import { ParticleComponent } from './particle.component';
   providers: [CanActivateViaAuthGuard, ContactService, WindowRefService,
     BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
-  bootstrap: [AppComponent, ParticleComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

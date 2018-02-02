@@ -24,7 +24,7 @@
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
         "scss/style.scss",
-        "../node_modules/ngx-toastr/toastr.css"
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
