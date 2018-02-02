@@ -18,7 +18,7 @@ export class TransactionHistoryComponent {
   getTranscationHistory() {
 
     const demo = {
-      'mobile': 7259033632
+      'mobile': this._webStorageService.getData('mobile')
     };
 
     let responseData: any;
@@ -30,8 +30,10 @@ export class TransactionHistoryComponent {
       },
       () => {
         console.log('asdsad', responseData);
+        if (responseData.MemberTransactionResponseListDTO) {
+          this.transcationHistoryList = responseData.MemberTransactionResponseListDTO;
 
-        // this.transcationHistoryList = demo.MemberTransactionResponseListDTO;
+        }
 
       });
   }

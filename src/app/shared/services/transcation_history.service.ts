@@ -15,8 +15,9 @@ export class TranscationHistoryService {
             this.apiService.post(url, param)
                 .map((res: any) => res)
                 .subscribe(res => {
-                    console.log("res", res)
-                    observer.next(res);
+                    console.log("res", JSON.parse(res._body));
+
+                    observer.next(JSON.parse(res._body));
                     observer.complete();
                 });
         });
