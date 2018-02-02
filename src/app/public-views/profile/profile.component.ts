@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ProfileService } from 'app/shared/services/profile.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
 import { User } from 'app/public-views/signup/User';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'profile',
@@ -37,7 +38,12 @@ export class ProfileComponent implements OnInit {
     private fb: FormBuilder,
     public registerService: RegisterService,
     public profileService: ProfileService,
-    private _webStorageService: WebStorageService) {
+    private _webStorageService: WebStorageService,
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef
+  ) {
+    this.toastr.setRootViewContainerRef(vcr);
+
     this.getProfileDetails();
     this.getCustomerAvailablePoints();
 
@@ -133,6 +139,8 @@ export class ProfileComponent implements OnInit {
       },
       () => {
         console.log('responseData', responseData);
+        this.toastr.success('Successfully LoggedIn!', 'Success!');
+
         this.getProfileDetails();
         this.getCustomerAvailablePoints();
       });

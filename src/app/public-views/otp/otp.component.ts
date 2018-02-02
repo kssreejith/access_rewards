@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from 'app/shared/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'otp',
@@ -20,8 +21,12 @@ export class OtpComponent {
     public router: Router,
     private fb: FormBuilder,
     public loginService: LoginService,
-    private _webStorageService: WebStorageService
+    private _webStorageService: WebStorageService,
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef
   ) {
+    this.toastr.setRootViewContainerRef(vcr);
+
     this.activateRoute.params.subscribe(params => {
       this.mobileNum = params['id'];
     });
@@ -54,6 +59,7 @@ export class OtpComponent {
         console.error('api ERROR');
       },
       () => {
+        this.toastr.success('Successfully updated.', 'Success!');
 
         console.log('responseData', responseData);
         this._webStorageService.saveData('mobile', this.signupForm.value.mobile);

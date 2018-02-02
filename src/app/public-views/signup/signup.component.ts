@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 // Import the User model
 import { User } from './User';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
 import { Router } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'signup',
@@ -33,8 +34,13 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public registerService: RegisterService,
-    public router: Router
-  ) { }
+    public router: Router,
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef
+  ) {
+    this.toastr.setRootViewContainerRef(vcr);
+
+  }
 
   ngOnInit() {
 
@@ -92,6 +98,8 @@ export class SignupComponent implements OnInit {
         console.error('api ERROR');
       },
       () => {
+        this.toastr.success('Successfully registered.', 'Success!');
+
         console.log('responseData', responseData.status);
         this.router.navigate(['/login']);
 

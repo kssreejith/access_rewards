@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.mod
     FormsModule,
     ReactiveFormsModule,
     HeaderModule,
-    AuthHeaderModule
+    AuthHeaderModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot()
   ],
   exports: [
     OtpComponent
