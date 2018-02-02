@@ -50,7 +50,7 @@ export class AuthHeaderComponent {
 
   logout() {
     this._webStorageService.removeData('mobile');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/index']);
 
 
   }

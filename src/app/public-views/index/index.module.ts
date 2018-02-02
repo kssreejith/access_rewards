@@ -7,6 +7,7 @@ import { TruncateModule } from 'ng2-truncate';
 import { RouterModule } from '@angular/router';
 import { NguiMapModule } from '@ngui/map';
 import { FormsModule } from '@angular/forms';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     TruncateModule,
     RouterModule,
     FormsModule,
+    ParticlesModule,
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })    
   ],
   exports: [

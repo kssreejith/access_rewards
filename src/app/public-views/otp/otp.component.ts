@@ -57,7 +57,7 @@ export class OtpComponent {
 
         console.log('responseData', responseData);
         this._webStorageService.saveData('mobile', this.signupForm.value.mobile);
-        this.router.navigate(['/index']);
+        this.router.navigate(['/profile']);
       });
   }
 }

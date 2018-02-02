@@ -132,7 +132,9 @@ export class ProfileComponent implements OnInit {
         console.error('api ERROR');
       },
       () => {
-        console.log('responseData', responseData.status);
+        console.log('responseData', responseData);
+        this.getProfileDetails();
+        this.getCustomerAvailablePoints();
       });
   }
 

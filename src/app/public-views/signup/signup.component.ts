@@ -4,6 +4,7 @@ import { User } from './User';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'signup',
@@ -29,7 +30,11 @@ export class SignupComponent implements OnInit {
   years = [];
 
   // Inject the formbuilder into the constructor
-  constructor(private fb: FormBuilder, public registerService: RegisterService) { }
+  constructor(
+    private fb: FormBuilder,
+    public registerService: RegisterService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
 
@@ -88,11 +93,9 @@ export class SignupComponent implements OnInit {
       },
       () => {
         console.log('responseData', responseData.status);
+        this.router.navigate(['/login']);
+
       });
-    if (this.signupForm.valid) {
-      this.user = this.signupForm.value;
-      console.log(this.user);
-      /* Any API call logic via services goes here */
-    }
+
   }
 }

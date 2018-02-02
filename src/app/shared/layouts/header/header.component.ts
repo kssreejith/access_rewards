@@ -52,8 +52,7 @@ export class HeaderComponent {
 
   logout() {
     this._webStorageService.removeData('mobile');
-    this.router.navigate(['/login']);
-
+    this.document.location.href = '/index';
 
   }
 

@@ -20,13 +20,14 @@ import { TranscationHistoryService } from 'app/shared/services/transcation_histo
 import { ProfileService } from 'app/shared/services/profile.service';
 import { TruncateModule } from 'ng2-truncate';
 import { NguiMapModule } from '@ngui/map';
-import { ParticlesModule } from 'angular-particle';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppConfigurationService } from 'app/shared/services/app-configuration.service';
 import { WindowRefService } from './window.service';
 import { ContactService } from 'app/shared/services/contact.service';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CanActivateViaAuthGuard } from './authGuard.service';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [
@@ -45,13 +46,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SideMenuModule,
     ReactiveFormsModule,
     TruncateModule,
-    ParticlesModule,
     BrowserAnimationsModule,
+    ParticlesModule,
     ToastModule.forRoot(),
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],
-  providers: [ContactService, WindowRefService, BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
+  providers: [CanActivateViaAuthGuard, ContactService, WindowRefService,
+    BrandService, ApiService, BaseHttpService, RegisterService, OfferService, LoginService,
     TranscationHistoryService, ProfileService, WebStorageService, AppConfigurationService],
   bootstrap: [AppComponent]
 })

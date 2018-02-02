@@ -15,6 +15,7 @@ import { OurbrandComponent } from "./ourbrand/ourbrand.component"
 import { OtpComponent } from './otp/otp.component';
 import { FaqComponent } from "./faq/faq.component"
 import { TablezComponent } from "./tablez/tablez.component"
+import { CanActivateViaAuthGuard } from 'app/authGuard.service';
 
 export const ROUTES: Routes = [
     {
@@ -25,9 +26,17 @@ export const ROUTES: Routes = [
             { path: 'login', component: LoginComponent },
             { path: 'otp/:id', component: OtpComponent },
             { path: 'forgot-password', component: ForgotPasswordComponent },
-            { path: 'profile', component: ProfileComponent },
+            {
+                path: 'profile',
+                canActivate: [CanActivateViaAuthGuard],
+                component: ProfileComponent
+            },
             { path: 'signup', component: SignupComponent },
-            { path: 'transaction-history', component: TransactionHistoryComponent },
+            {
+                path: 'transaction-history',
+                canActivate: [CanActivateViaAuthGuard],
+                component: TransactionHistoryComponent
+            },
             { path: 'points-calculator', component: PointsCalculatorComponent },
             { path: 'contact', component: ContactComponent },
             { path: 'offers', component: OffersComponent },

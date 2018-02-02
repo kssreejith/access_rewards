@@ -62,7 +62,7 @@ export class LoginComponent {
         console.log('responseData', responseData);
         this._webStorageService.saveData('RequestID', responseData.RequestID);
 
-        this.router.navigate(['/otp', this.signupForm.value.MobileNo]);
+        this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
       });
   }
 

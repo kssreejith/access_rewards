@@ -33,7 +33,7 @@ export class BrandComponent {
   }
 
   getBrandDetails(id?: number) {
-    this.router.navigate(['/ourbrand', id]);
+    this.router.navigate(['/ourbrand', id], { skipLocationChange: true });
 
   }
 }
