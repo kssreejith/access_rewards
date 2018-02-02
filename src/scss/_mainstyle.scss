@@ -49,9 +49,10 @@
     }
     img {
         width: 255px;
-        margin: 20vh 0 0 0;
+        margin: 24vh 0 0 0;
         -webkit-animation-delay: 0.5s;
         animation-delay: 0.5;
+        visibility: hidden;
         @media (max-width: 660px) {
             width: 120px;
         }
