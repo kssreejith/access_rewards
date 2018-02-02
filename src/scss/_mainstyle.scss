@@ -68,6 +68,9 @@
 }
 
 .transaction__history--blk {
+    .table-responsive {
+        min-height: 53vh;
+    }
     .top__table-search {
         margin: 25px 0 0 0;
         .form-control {
@@ -100,6 +103,7 @@
                     font-size: 15px;
                     text-align: center;
                     font-weight: 300;
+                    vertical-align: middle;
                 }
             }
         }
@@ -993,4 +997,8 @@
     //     left: 0;
     //     top: 0;
     // }
+}
+
+.modal {
+    z-index: 99999999;
 }
