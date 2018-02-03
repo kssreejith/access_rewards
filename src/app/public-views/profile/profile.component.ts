@@ -139,7 +139,7 @@ export class ProfileComponent implements OnInit {
       },
       () => {
         console.log('responseData', responseData);
-        this.toastr.success('Successfully LoggedIn!', 'Success!');
+        this.toastr.success('Profile updated successfully.', 'Success!');
 
         this.getProfileDetails();
         this.getCustomerAvailablePoints();

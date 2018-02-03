@@ -73,8 +73,8 @@
             <form [formGroup]="signupForm">
               <div class="form-group">
                 <label>Phone number</label>
-                <input type="tel" class="form-control" id="MobileNo" [ngModel]="userDetails.Mobile" formControlName="MobileNo" placeholder="MobileNo"
-                  aria-describedby="MobileNo">
+                <input type="tel" class="form-control" [disabled]="true" id="MobileNo" [ngModel]="userDetails.Mobile" formControlName="MobileNo"
+                  placeholder="MobileNo" aria-describedby="MobileNo">
                 <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
               </div>
               <div class="form-group">
@@ -91,8 +91,8 @@
                 <label>Birth Date</label>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Day</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.day" formControlName="day">
+                      <option value="null" disabled="true" [selected]="true">Days</option>
                       <option *ngFor="let item of days; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -100,8 +100,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Months</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.month" formControlName="month">
+                      <option value="null" disabled="true" [selected]="true">Months</option>                      
                       <option *ngFor="let item of months; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -109,8 +109,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Years</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.year" formControlName="year">
+                      <option value="null" disabled="true" [selected]="true">Years</option>
                       <option *ngFor="let item of years; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -141,9 +141,8 @@
                 <label>Anniversary Date</label>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Day</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annDay" formControlName="annDay">
-                      <option selected>Days</option>
+                      <option value="null" disabled="true" [selected]="true">Days</option>
                       <option *ngFor="let item of days; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -151,9 +150,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Months</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annMonth" formControlName="annMonth">
-                      <option selected>Months</option>
+                      <option value="null" disabled="true" [selected]="true">Months</option>
                       <option *ngFor="let item of months; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -161,9 +159,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Years</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annYear" formControlName="annYear">
-                      <option selected>Years</option>
+                      <option value="null" disabled="true" [selected]="true">Years</option>
                       <option *ngFor="let item of years; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -198,8 +195,8 @@
                 <label>Child’s date of birth</label>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Day</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.childDay" formControlName="childDay">
+                      <option value="null" disabled="true" [selected]="true">Days</option>
                       <option *ngFor="let item of days; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -207,8 +204,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Months</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.childMonth" formControlName="childMonth">
+                      <option value="null" disabled="true" [selected]="true">Months</option>
                       <option *ngFor="let item of months; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -216,8 +213,8 @@
                 </div>
                 <div class="col-4">
                   <div class="form-group">
-                    <label>Years</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.childYear" formControlName="childYear">
+                      <option value="null" disabled="true" [selected]="true">Years</option>
                       <option *ngFor="let item of years; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
