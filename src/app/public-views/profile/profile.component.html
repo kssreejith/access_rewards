@@ -143,6 +143,7 @@
                   <div class="form-group">
                     <label>Day</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annDay" formControlName="annDay">
+                      <option selected>Days</option>
                       <option *ngFor="let item of days; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -152,6 +153,7 @@
                   <div class="form-group">
                     <label>Months</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annMonth" formControlName="annMonth">
+                      <option selected>Months</option>
                       <option *ngFor="let item of months; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -161,6 +163,7 @@
                   <div class="form-group">
                     <label>Years</label>
                     <select class="custom-select form-control" [ngModel]="userDetails.annYear" formControlName="annYear">
+                      <option selected>Years</option>
                       <option *ngFor="let item of years; let i=index" [value]="item">
                         {{item}}</option>
                     </select>

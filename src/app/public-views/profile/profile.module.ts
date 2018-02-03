@@ -4,7 +4,8 @@ import { ProfileComponent } from './profile.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthHeaderModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastModule
   ],
   exports: [
     ProfileComponent
