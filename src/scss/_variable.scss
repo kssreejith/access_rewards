@@ -214,3 +214,35 @@ a {
         background: #fff;
     }
 }
+
+.main--holder {
+    public-views {
+        about,
+        brand,
+        contact,
+        faq,
+        forgot-password,
+        login,
+        offers,
+        otp,
+        ourbrand,
+        points-calculator,
+        profile,
+        signup,
+        tablez,
+        transaction-history {
+            position: absolute;
+            z-index: 999;
+            width: 100%;
+        }
+    }
+}
+
+.modal-backdrop {
+    z-index: 998;
+    background-color: rgba(68, 93, 212, 0.4117647058823529);
+}
+
+.modal {
+    z-index: 99999999;
+}
