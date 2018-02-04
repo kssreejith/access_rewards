@@ -2,714 +2,687 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Access rewards</title>
-    <base href="/">
+  <meta charset="utf-8">
+  <title>Access rewards</title>
+  <base href="/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <meta name="description" content="Moving particles to the next level">
-    <meta name="keywords" content="particle, particle canvas, particle js, particle javascript, particle filter, particle image, particle webgl, particleslider">
-    <meta name="author" content="Nextcode">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1,user-scalable=0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="Moving particles to the next level">
+  <meta name="keywords" content="particle, particle canvas, particle js, particle javascript, particle filter, particle image, particle webgl, particleslider">
+  <meta name="author" content="Nextcode">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="/assets/style.css" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch.png">
-    <meta property="og:site_name" content="NextParticle">
-    <meta property="og:site" content="https://nextparticle.nextco.de">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nextparticle.nextco.de">
-    <meta property="og:title" content="NextParticle">
-    <meta property="og:description" content="Moving particles to the next level">
-    <meta property="og:image" content="https://nextparticle.nextco.de/og-image.png">
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch.png">
+  <meta property="og:site_name" content="NextParticle">
+  <meta property="og:site" content="https://nextparticle.nextco.de">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nextparticle.nextco.de">
+  <meta property="og:title" content="NextParticle">
+  <meta property="og:description" content="Moving particles to the next level">
+  <meta property="og:image" content="https://nextparticle.nextco.de/og-image.png">
 
 </head>
 
 <body>
 
 
-    <div class="layout-default page-home">
-        <header>
-            <div id="particleWrapper"><img id="logo" src="assets/img/plh.png" style="display: none;" class="next-particle" data-init-position="random" data-init-direction="random" data-fade-position="random" data-fade-direction="random">
-            </div>
-            <div class="settings">
-                <div id="settings" class="settings__toggle">
-                    <i data-icon="settings">
+  <div class="layout-default page-home">
+    <header>
+      <div id="particleWrapper">
+        <img id="logo" src="assets/img/plh.png" style="display: none;" class="next-particle" data-init-position="random" data-init-direction="random"
+          data-fade-position="random" data-fade-direction="random">
+      </div>
+      <div class="settings">
+        <div id="settings" class="settings__toggle">
+          <i data-icon="settings">
             <svg width="20" height="20" viewBox="0 0 14 14" class="icon icon__setting">
               <path d="M13.404 8.122l-.524-.562v-.018c.011-.125.019-.251.024-.378v-.112a4.952 4.952 0 0 0-.011-.404 5.061 5.061 0 0 0-.01-.19l.525-.559c.25-.267.705-.621.566-.958L13.4 3.545c-.14-.338-.711-.267-1.077-.28l-.767-.027c-.058-.07-.12-.136-.18-.202l-.008-.01c-.022-.023-.04-.047-.061-.07-.033-.035-.07-.068-.104-.103-.048-.049-.096-.098-.146-.146-.082-.078-.168-.153-.253-.226l-.012-.009-.013-.014-.025-.769c-.011-.363.06-.936-.275-1.076L9.082.033c-.336-.14-.693.315-.96.563l-.561.525a6.129 6.129 0 0 0-.377-.024c-.035-.002-.07 0-.108 0-.08-.001-.162-.004-.245 0a5.74 5.74 0 0 0-.314.018l-.037.002c-.008.001-.013 0-.02.002L5.9.592c-.266-.249-.621-.705-.959-.566L3.546.6c-.338.14-.267.712-.28 1.077l-.027.768c-.009.006-.017.015-.025.023a6.043 6.043 0 0 0-.27.237l-.094.096c-.062.06-.124.123-.184.187l-.088.101c-.04.044-.08.087-.119.134l-.769.023c-.364.011-.936-.06-1.076.275L.033 4.918c-.14.336.314.692.563.958l.525.562c-.009.087-.013.174-.017.262l-.002.025c-.007.15-.01.298-.005.447.002.065.007.129.011.194.004.053.005.106.01.159v.015l-.525.56c-.25.266-.706.62-.567.957L.6 10.453c.14.338.713.268 1.077.28l.768.027.017.02c.078.093.16.184.245.276.03.033.061.06.092.092.062.063.125.126.19.187l.099.087c.045.04.09.081.135.118l.023.768c.012.364-.06.938.276 1.078l1.396.581c.336.14.691-.315.958-.563l.562-.524h.019c.072.008.144.01.216.014l.063.004.098.005h.116c.094.002.188 0 .28-.004l.123-.007.186-.01.56.525c.267.25.62.706.957.567l1.396-.575c.338-.14.268-.712.281-1.077l.026-.767c.066-.055.13-.112.19-.168.01-.01.02-.017.029-.025.021-.02.044-.037.062-.056.037-.033.07-.07.103-.102.049-.05.1-.098.15-.15a5.721 5.721 0 0 0 .233-.264.11.11 0 0 0 .013-.013l.768-.024c.364-.012.938.06 1.078-.276l.581-1.396c.14-.336-.315-.693-.563-.959zM10.07 7A3.071 3.071 0 1 1 3.93 7a3.071 3.071 0 0 1 6.142 0z"></path>
             </svg>
           </i>
-                    <i data-icon="close">
+          <i data-icon="close">
             <svg width="14" height="14" viewBox="0 0 14 14" class="icon icon__close">
               <path d="M7 5.586L1.707.293A1 1 0 1 0 .293 1.707L5.586 7 .293 12.293a1 1 0 0 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 1 0 12.293.293L7 5.586z"></path>
             </svg>
           </i>
-                </div>
-                <div id="sidebar" class="settings__menu">
-                    <ul>
-                        <li class="settings__value settings__value--toggle">
-                            <span>Tint Image</span>
-                            <input id="color" type="color" value="#7f99f8" class="input">
-                            <div id="tint" class="toggle"></div>
-                        </li>
-                        <li class="settings__value settings__value--range">
-                            <output id="particleGapOutput">4</output>Particle Gap
-                            <input id="particleGap" type="range" step="1" min="1" max="10" value="4" class="input">
-                        </li>
-                        <li class="settings__value settings__value--range">
-                            <output id="gravityOutput">0.08</output>Gravity
-                            <input id="gravity" type="range" step="0.01" min="0.01" max="1" value="0.08" class="input">
-                        </li>
-                        <li class="settings__value settings__value--range">
-                            <output id="mouseForceOutput">30</output>Mouse Force
-                            <input id="mouseForce" type="range" step="10" min="-200" max="200" value="30" class="input">
-                        </li>
-                        <li class="settings__value settings__value--range">
-                            <output id="noiseOutput">30</output>Noise
-                            <input id="noise" type="range" step="10" min="0" max="500" value="30" class="input">
-                        </li>
-                        <li class="settings__value settings__value--range">
-                            <output id="sizeOutput">250</output>Size
-                            <input id="size" type="range" step="10" min="50" max="600" value="250" class="input">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        </div>
+        <div id="sidebar" class="settings__menu">
+          <ul>
+            <li class="settings__value settings__value--toggle">
+              <span>Tint Image</span>
+              <input id="color" type="color" value="#7f99f8" class="input">
+              <div id="tint" class="toggle"></div>
+            </li>
+            <li class="settings__value settings__value--range">
+              <output id="particleGapOutput">4</output>Particle Gap
+              <input id="particleGap" type="range" step="1" min="1" max="10" value="4" class="input">
+            </li>
+            <li class="settings__value settings__value--range">
+              <output id="gravityOutput">0.08</output>Gravity
+              <input id="gravity" type="range" step="0.01" min="0.01" max="1" value="0.08" class="input">
+            </li>
+            <li class="settings__value settings__value--range">
+              <output id="mouseForceOutput">30</output>Mouse Force
+              <input id="mouseForce" type="range" step="10" min="-200" max="200" value="30" class="input">
+            </li>
+            <li class="settings__value settings__value--range">
+              <output id="noiseOutput">30</output>Noise
+              <input id="noise" type="range" step="10" min="0" max="500" value="30" class="input">
+            </li>
+            <li class="settings__value settings__value--range">
+              <output id="sizeOutput">250</output>Size
+              <input id="size" type="range" step="10" min="50" max="600" value="250" class="input">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="layout-default__scripts">
+    <div>
+      <script type="text/javascript" async src="/assets/ga.js"></script>
+      <script type="text/javascript">
+        window.images = {
+          nextparticle: "download1.svg",
+          plh: "download2.png",
+          api: "download3.svg",
+          browser: "download4.svg",
+          color: "download5.svg",
+          format: "download6.svg",
+          responsive: "download7.svg",
+          settings: "download8.svg",
+          touch: "download9.svg",
+          updates: "download10.svg",
+          wordpress: "download11.svg"
+        }
+
+      </script>
+      <script type="text/javascript">
+        for (var imageTags = document.getElementsByTagName("IMG"), imageIndex = 0; imageIndex < imageTags.length; imageIndex++) {
+          var imageTag = imageTags[imageIndex];
+          imageTag.dataset.src && (imageTag.src = images[imageTag.dataset.src])
+        }
+
+      </script>
     </div>
+    <div>
+      <script type="text/javascript">
+        window.icons = {
+          settings: '<svg width="20" height="20" viewBox="0 0 14 14" class="icon icon__setting"><path d="M13.404 8.122l-.524-.562v-.018c.011-.125.019-.251.024-.378v-.112a4.952 4.952 0 0 0-.011-.404 5.061 5.061 0 0 0-.01-.19l.525-.559c.25-.267.705-.621.566-.958L13.4 3.545c-.14-.338-.711-.267-1.077-.28l-.767-.027c-.058-.07-.12-.136-.18-.202l-.008-.01c-.022-.023-.04-.047-.061-.07-.033-.035-.07-.068-.104-.103-.048-.049-.096-.098-.146-.146-.082-.078-.168-.153-.253-.226l-.012-.009-.013-.014-.025-.769c-.011-.363.06-.936-.275-1.076L9.082.033c-.336-.14-.693.315-.96.563l-.561.525a6.129 6.129 0 0 0-.377-.024c-.035-.002-.07 0-.108 0-.08-.001-.162-.004-.245 0a5.74 5.74 0 0 0-.314.018l-.037.002c-.008.001-.013 0-.02.002L5.9.592c-.266-.249-.621-.705-.959-.566L3.546.6c-.338.14-.267.712-.28 1.077l-.027.768c-.009.006-.017.015-.025.023a6.043 6.043 0 0 0-.27.237l-.094.096c-.062.06-.124.123-.184.187l-.088.101c-.04.044-.08.087-.119.134l-.769.023c-.364.011-.936-.06-1.076.275L.033 4.918c-.14.336.314.692.563.958l.525.562c-.009.087-.013.174-.017.262l-.002.025c-.007.15-.01.298-.005.447.002.065.007.129.011.194.004.053.005.106.01.159v.015l-.525.56c-.25.266-.706.62-.567.957L.6 10.453c.14.338.713.268 1.077.28l.768.027.017.02c.078.093.16.184.245.276.03.033.061.06.092.092.062.063.125.126.19.187l.099.087c.045.04.09.081.135.118l.023.768c.012.364-.06.938.276 1.078l1.396.581c.336.14.691-.315.958-.563l.562-.524h.019c.072.008.144.01.216.014l.063.004.098.005h.116c.094.002.188 0 .28-.004l.123-.007.186-.01.56.525c.267.25.62.706.957.567l1.396-.575c.338-.14.268-.712.281-1.077l.026-.767c.066-.055.13-.112.19-.168.01-.01.02-.017.029-.025.021-.02.044-.037.062-.056.037-.033.07-.07.103-.102.049-.05.1-.098.15-.15a5.721 5.721 0 0 0 .233-.264.11.11 0 0 0 .013-.013l.768-.024c.364-.012.938.06 1.078-.276l.581-1.396c.14-.336-.315-.693-.563-.959zM10.07 7A3.071 3.071 0 1 1 3.93 7a3.071 3.071 0 0 1 6.142 0z"/></svg>',
+          close: '<svg width="14" height="14" viewBox="0 0 14 14" class="icon icon__close"><path d="M7 5.586L1.707.293A1 1 0 1 0 .293 1.707L5.586 7 .293 12.293a1 1 0 0 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 1 0 12.293.293L7 5.586z"/></svg>'
+        }
 
-    <div class="layout-default__scripts">
-        <div>
-            <script type="text/javascript" async src="/assets/ga.js"></script>
-            <script type="text/javascript">
-                window.images = {
-                    nextparticle: "download1.svg",
-                    plh: "download2.png",
-                    api: "download3.svg",
-                    browser: "download4.svg",
-                    color: "download5.svg",
-                    format: "download6.svg",
-                    responsive: "download7.svg",
-                    settings: "download8.svg",
-                    touch: "download9.svg",
-                    updates: "download10.svg",
-                    wordpress: "download11.svg"
-                }
-            </script>
-            <script type="text/javascript">
-                for (var imageTags = document.getElementsByTagName("IMG"), imageIndex = 0; imageIndex < imageTags.length; imageIndex++) {
-                    var imageTag = imageTags[imageIndex];
-                    imageTag.dataset.src && (imageTag.src = images[imageTag.dataset.src])
-                }
-            </script>
-        </div>
-        <div>
-            <script type="text/javascript">
-                window.icons = {
-                    settings: '<svg width="20" height="20" viewBox="0 0 14 14" class="icon icon__setting"><path d="M13.404 8.122l-.524-.562v-.018c.011-.125.019-.251.024-.378v-.112a4.952 4.952 0 0 0-.011-.404 5.061 5.061 0 0 0-.01-.19l.525-.559c.25-.267.705-.621.566-.958L13.4 3.545c-.14-.338-.711-.267-1.077-.28l-.767-.027c-.058-.07-.12-.136-.18-.202l-.008-.01c-.022-.023-.04-.047-.061-.07-.033-.035-.07-.068-.104-.103-.048-.049-.096-.098-.146-.146-.082-.078-.168-.153-.253-.226l-.012-.009-.013-.014-.025-.769c-.011-.363.06-.936-.275-1.076L9.082.033c-.336-.14-.693.315-.96.563l-.561.525a6.129 6.129 0 0 0-.377-.024c-.035-.002-.07 0-.108 0-.08-.001-.162-.004-.245 0a5.74 5.74 0 0 0-.314.018l-.037.002c-.008.001-.013 0-.02.002L5.9.592c-.266-.249-.621-.705-.959-.566L3.546.6c-.338.14-.267.712-.28 1.077l-.027.768c-.009.006-.017.015-.025.023a6.043 6.043 0 0 0-.27.237l-.094.096c-.062.06-.124.123-.184.187l-.088.101c-.04.044-.08.087-.119.134l-.769.023c-.364.011-.936-.06-1.076.275L.033 4.918c-.14.336.314.692.563.958l.525.562c-.009.087-.013.174-.017.262l-.002.025c-.007.15-.01.298-.005.447.002.065.007.129.011.194.004.053.005.106.01.159v.015l-.525.56c-.25.266-.706.62-.567.957L.6 10.453c.14.338.713.268 1.077.28l.768.027.017.02c.078.093.16.184.245.276.03.033.061.06.092.092.062.063.125.126.19.187l.099.087c.045.04.09.081.135.118l.023.768c.012.364-.06.938.276 1.078l1.396.581c.336.14.691-.315.958-.563l.562-.524h.019c.072.008.144.01.216.014l.063.004.098.005h.116c.094.002.188 0 .28-.004l.123-.007.186-.01.56.525c.267.25.62.706.957.567l1.396-.575c.338-.14.268-.712.281-1.077l.026-.767c.066-.055.13-.112.19-.168.01-.01.02-.017.029-.025.021-.02.044-.037.062-.056.037-.033.07-.07.103-.102.049-.05.1-.098.15-.15a5.721 5.721 0 0 0 .233-.264.11.11 0 0 0 .013-.013l.768-.024c.364-.012.938.06 1.078-.276l.581-1.396c.14-.336-.315-.693-.563-.959zM10.07 7A3.071 3.071 0 1 1 3.93 7a3.071 3.071 0 0 1 6.142 0z"/></svg>',
-                    close: '<svg width="14" height="14" viewBox="0 0 14 14" class="icon icon__close"><path d="M7 5.586L1.707.293A1 1 0 1 0 .293 1.707L5.586 7 .293 12.293a1 1 0 0 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 1 0 12.293.293L7 5.586z"/></svg>'
-                }
-            </script>
-            <script type="text/javascript">
-                for (var iconTags = document.getElementsByTagName("I"), iconIndex = 0; iconIndex < iconTags.length; iconIndex++) {
-                    var iconTag = iconTags[iconIndex];
-                    iconTag.dataset.icon && (iconTag.innerHTML = icons[iconTag.dataset.icon])
-                }
-            </script>
-        </div>
-        <div>
-            <script type="text/javascript">
-                "use strict";
-                var $elems = document.all;
-                if (!$elems) {
-                    $elems = {};
-                    for (var allElements = document.getElementsByTagName("*"), i = 0, n = allElements.length; i < n; ++i) {
-                        var el = allElements[i];
-                        el.id && ($elems[el.id] = el)
-                    }
-                }
-            </script>
-            <script type="text/javascript">
-                "use strict";
+      </script>
+      <script type="text/javascript">
+        for (var iconTags = document.getElementsByTagName("I"), iconIndex = 0; iconIndex < iconTags.length; iconIndex++) {
+          var iconTag = iconTags[iconIndex];
+          iconTag.dataset.icon && (iconTag.innerHTML = icons[iconTag.dataset.icon])
+        }
 
-                function _classCallCheck(t, i) {
-                    if (!(t instanceof i)) throw new TypeError("Cannot call a class as a function")
-                }
-                var _createClass = function() {
-                    function t(t, i) {
-                        for (var e = 0; e < i.length; e++) {
-                            var h = i[e];
-                            h.enumerable = h.enumerable || !1, h.configurable = !0, "value" in h && (h.writable = !0), Object.defineProperty(
-                                t, h.key, h)
-                        }
-                    }
-                    return function(i, e, h) {
-                        return e && t(i.prototype, e), h && t(i, h), i
-                    }
-                }();
-                ! function(t) {
-                    var i = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
-                        function(t) {
-                            setTimeout(t, 10)
-                        },
-                        e = void 0,
-                        h = void 0,
-                        s = void 0,
-                        a = void 0,
-                        n = void 0,
-                        o = void 0,
-                        r = void 0,
-                        d = void 0,
-                        c = void 0,
-                        m = void 0,
-                        l = void 0,
-                        g = void 0,
-                        v = void 0,
-                        u = void 0,
-                        x = void 0,
-                        f = void 0,
-                        p = void 0,
-                        y = void 0,
-                        M = void 0,
-                        w = void 0,
-                        I = void 0,
-                        _ = void 0,
-                        P = void 0,
-                        b = void 0,
-                        E = void 0,
-                        k = void 0,
-                        F = void 0,
-                        H = void 0,
-                        A = function() {
-                            function t(i) {
-                                _classCallCheck(this, t);
-                                var e = {};
-                                i && (i.nodeName ? (e = JSON.parse(JSON.stringify(i.dataset)), "IMG" === i.nodeName ? e.image = i : e.wrapperElement =
-                                        i) : e = i), this.state = "stopped", this.touches = [], this.on("imageLoaded", this._onImageLoaded),
-                                    this._initImage(e)
-                            }
-                            return _createClass(t, [{
-                                key: "on",
-                                value: function(t, i) {
-                                    this.events = this.events || {}, this.events[t] = this.events[t] || [], this.events[t].push(i)
-                                }
-                            }, {
-                                key: "emit",
-                                value: function(t, i) {
-                                    var e = this.events[t];
-                                    if (e && e.length)
-                                        for (var h = 0; h < e.length; h++) {
-                                            var s = e[h];
-                                            s.call(this, i)
-                                        }
-                                }
-                            }, {
-                                key: "start",
-                                value: function(t) {
-                                    var i = t || {};
-                                    this.initPosition = i.initPosition || this.initPosition, this.initDirection = i.initDirection ||
-                                        this.initDirection, this.canvas && (this.canvas.width = this.width, this.canvas.height =
-                                            this.height, this.canvas.style.display = ""), this._initOrigins(), this._initParticles(),
-                                        "running" !== this.state && (this.state = "running", this.disableInteraction || (
-                                            "ontouchstart" in window || window.navigator.msPointerEnabled ? (document.body.addEventListener(
-                                                    "touchstart", this._touchHandler), document.body.addEventListener("touchmove", this
-                                                    ._touchHandler), document.body.addEventListener("touchend", this._clearTouches),
-                                                document.body.addEventListener("touchcancel", this._clearTouches)) : (this.canvas.addEventListener(
-                                                "mousemove", this._mouseHandler), this.canvas.addEventListener("mouseout", this._clearTouches))
-                                        ), this._animate())
-                                }
-                            }, {
-                                key: "stop",
-                                value: function(t) {
-                                    var i = t || {};
-                                    this.fadePosition = i.fadePosition || this.fadePosition, this.fadeDirection = i.fadeDirection ||
-                                        this.fadeDirection, this._fade(), document.body.removeEventListener("touchstart", this._touchHandler),
-                                        document.body.removeEventListener("touchmove", this._touchHandler), document.body.removeEventListener(
-                                            "touchend", this._clearTouches), document.body.removeEventListener("touchcancel", this._clearTouches),
-                                        this.canvas.removeEventListener("mousemove", this._mouseHandler), this.canvas.removeEventListener(
-                                            "mouseout", this._clearTouches)
-                                }
-                            }, {
-                                key: "_animate",
-                                value: function() {
-                                    var t = this;
-                                    "stopped" !== this.state ? (this._calculate(), this._draw(), i(function() {
-                                        return t._animate()
-                                    })) : this.emit("stopped")
-                                }
-                            }, {
-                                key: "_onImageLoaded",
-                                value: function(t) {
-                                    this.imageWidth = this.image.naturalWidth || this.image.width, this.imageHeight = this.image.naturalHeight ||
-                                        this.image.height, this.imageRatio = this.imageWidth / this.imageHeight, this.width = this.width ||
-                                        this.imageWidth, this.height = this.height || this.imageHeight, this.renderSize = (this.width +
-                                            this.height) / 4, this.srcImage && (this.srcImage.style.display = "none"), this._initSettings(
-                                            t), this._initContext(t), this._initResponsive(t), this.start()
-                                }
-                            }, {
-                                key: "_initImage",
-                                value: function(t) {
-                                    var i = this;
-                                    this.srcImage = t.image, !this.srcImage && t.imageId && (this.srcImage = document.getElementById(
-                                            t.imageId)), this.imageUrl = t.imageUrl || this.srcImage.src, this.image = document.createElement(
-                                            "img"), this.wrapperElement = t.wrapperElement || this.srcImage.parentElement, this.image
-                                        .onload = function() {
-                                            return i.emit("imageLoaded", t)
-                                        }, this.image.crossOrigin = "Anonymous", t.addTimestamp && (/\?/.test(this.imageUrl) ? this
-                                            .imageUrl += "&d=" + Date.now() : this.imageUrl += "?d=" + Date.now()), this.image.src =
-                                        this.imageUrl
-                                }
-                            }, {
-                                key: "_initContext",
-                                value: function(t) {
-                                    this.canvas = t.canvas, this.canvas || this.context || !this.wrapperElement || (this.canvas =
-                                            document.createElement("canvas"), this.wrapperElement.appendChild(this.canvas)), this.convas &&
-                                        (this.convas.style.display = "none"), this.context = t.context, this.renderer = t.renderer ||
-                                        "default"
-                                }
-                            }, {
-                                key: "_defaultInitContext",
-                                value: function(t) {
-                                    this.context = this.context || this.canvas.getContext("2d")
-                                }
-                            }, {
-                                key: "_webglInitContext",
-                                value: function() {
-                                    this.context = this.context || this.canvas.getContext("webgl") || this.canvas.getContext(
-                                            "experimental-webgl"), this.fragmentShaderScript =
-                                        "\n        void main(void) {\n         gl_FragColor = vec4(1, 1, 1, 0.7);\n        }\n      ",
-                                        this.vertexShaderScript =
-                                        "\n        attribute vec3 vertexPosition;\n        vec3 offset = vec3(-5, 3, 100);\n        vec3 mirror = vec3(0.01, -0.01, 1);\n\n        uniform mat4 modelViewMatrix;\n        uniform mat4 perspectiveMatrix;\n\n        void main(void) {\n          gl_Position = perspectiveMatrix * modelViewMatrix * vec4(mirror * vertexPosition + offset, 1.0);\n          gl_PointSize = 1.0;\n        }\n      ",
-                                        this.context.viewport(0, 0, this.width, this.height);
-                                    var t = this.context.createShader(this.context.VERTEX_SHADER);
-                                    this.context.shaderSource(t, this.vertexShaderScript), this.context.compileShader(t);
-                                    var i = this.context.createShader(this.context.FRAGMENT_SHADER);
-                                    this.context.shaderSource(i, this.fragmentShaderScript), this.context.compileShader(i), this.program =
-                                        this.context.createProgram(), this.context.attachShader(this.program, t), this.context.attachShader(
-                                            this.program, i), this.context.linkProgram(this.program), this.context.useProgram(this.program),
-                                        this.vertexPosition = this.context.getAttribLocation(this.program, "vertexPosition"), this.context
-                                        .enableVertexAttribArray(this.vertexPosition), this.context.clearColor(0, 0, 0, 1), this.context
-                                        .clearDepth(1), this.context.enable(this.context.BLEND), this.context.disable(this.context.DEPTH_TEST),
-                                        this.context.blendFunc(this.context.SRC_ALPHA, this.context.ONE), this.vertexBuffer = this.context
-                                        .createBuffer(), this.context.bindBuffer(this.context.ARRAY_BUFFER, this.vertexBuffer),
-                                        this.context.clear(this.context.COLOR_BUFFER_BIT | this.context.DEPTH_BUFFER_BIT);
-                                    var e = this.width / this.height,
-                                        h = 1 * Math.tan(1 * Math.PI / 360),
-                                        s = -h,
-                                        a = h * e,
-                                        n = -a,
-                                        o = (a + n) / (a - n),
-                                        r = (h + s) / (h - s),
-                                        d = 2 / (a - n),
-                                        c = 2 / (h - s),
-                                        m = [d, 0, o, 0, 0, c, r, 0, 0, 0, 10001 / 9999, 2e4 / 9999, 0, 0, -1, 0],
-                                        l = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-                                        g = this.context.getAttribLocation(this.program, "vertexPosition");
-                                    this.context.vertexAttribPointer(g, 3, this.context.FLOAT, !1, 0, 0);
-                                    var v = this.context.getUniformLocation(this.program, "modelViewMatrix"),
-                                        u = this.context.getUniformLocation(this.program, "perspectiveMatrix");
-                                    this.context.uniformMatrix4fv(v, !1, new Float32Array(m)), this.context.uniformMatrix4fv(u, !
-                                        1, new Float32Array(l))
-                                }
-                            }, {
-                                key: "_initSettings",
-                                value: function(t) {
-                                    this.width = 1 * t.width || this.width, this.height = 1 * t.height || this.height, this.maxWidth =
-                                        t.maxWidth, this.maxHeight = t.maxHeight, this.minWidth = t.minWidth, this.minHeight = t.minHeight,
-                                        this.maxWidth && (/%$/.test(this.maxWidth) ? this.maxWidth = this.width * this.maxWidth.replace(
-                                            "%", "") / 100 : this.maxWidth *= 1), this.maxHeight && (/%$/.test(this.maxHeight) ? this
-                                            .maxHeight = this.height * this.maxHeight.replace("%", "") / 100 : this.maxHeight *= 1),
-                                        this.minWidth && (/%$/.test(this.minWidth) ? this.minWidth = this.width * this.minWidth.replace(
-                                            "%", "") / 100 : this.minWidth *= 1), this.minHeight && (/%$/.test(this.minHeight) ? this
-                                            .minHeight = this.height * this.minHeight.replace("%", "") / 100 : this.minHeight *= 1),
-                                        this.alphaFade = .4, this.gravity = 1 * t.gravity || .08, this.particleGap = 1 * t.particleGap ||
-                                        3, this.layerCount = t.layerCount || 1, this.layerDistance = t.layerDistance || this.particleGap,
-                                        this.initPosition = t.initPosition || "random", this.initDirection = t.initDirection ||
-                                        "random", this.fadePosition = t.fadePosition || "none", this.fadeDirection = t.fadeDirection ||
-                                        "none", this.noise = isNaN(1 * t.noise) ? 10 : 1 * t.noise, this.disableInteraction = t.disableInteraction,
-                                        this.mouseForce = 1 * t.mouseForce || 30, this.color = t.color, this.colorArr = t.colorArr ||
-                                        this.colorArr
-                                }
-                            }, {
-                                key: "_initResponsive",
-                                value: function(t) {
-                                    var i = this;
-                                    this.responsiveWidth = this.wrapperElement && t.responsiveWidth, this.responsiveWidth && (
-                                        this.on("stopped", function() {
-                                            i.width = i.wrapperElement.clientWidth, i.start()
-                                        }), this.wrapperElement.addEventListener("resize", function() {
-                                            i.width !== i.wrapperElement.clientWidth && i.stop()
-                                        }), this.width = this.wrapperElement.clientWidth)
-                                }
-                            }, {
-                                key: "_calculate",
-                                value: function() {
-                                    for (this.vertices = [], h = 0, s = 0; s < this.particles.length; s++) {
-                                        for (o = this.origins[s], r = this.particles[s], u = o.x - r.x + (Math.random() - .5) *
-                                            this.noise, x = o.y - r.y + (Math.random() - .5) * this.noise, f = o.z - r.z + (Math.random() -
-                                                .5) * this.noise / 1e3, p = Math.sqrt(u * u + x * x + f * f), y = .01 * p, r.vx += y *
-                                            (u / p) * this.speed, r.vy += y * (x / p) * this.speed, r.vz += y * (f / p) * this.speed,
-                                            c = 0; c < this.touches.length; c++) d = this.touches[c], u = r.x - d.x, x = r.y - d.y, f =
-                                            r.z - d.z, p = Math.sqrt(u * u + x * x + f * f), y = this.mouseForce * d.force / p, r.vx +=
-                                            y * (u / p) * this.speed, r.vy += y * (x / p) * this.speed, r.vz += y * (f / p) * this.speed;
-                                        r.vx *= this.gravityFactor, r.vy *= this.gravityFactor, r.vz *= this.gravityFactor, r.x +=
-                                            r.vx, r.y += r.vy, r.z += r.vz, 0 > r.x || r.x >= this.width || 0 > r.y || r.y >= this.height ?
-                                            (r.isHidden = !0, "stopping" === this.state && (r.isDead = !0)) : ("stopping" !== this.state ||
-                                                r.isDead || h++, r.isHidden = !1), this.vertices.push(r.x, r.y, r.z)
-                                    }
-                                    "stopping" === this.state && 0 === h && (this.state = "stopped")
-                                }
-                            }, {
-                                key: "_defaultRenderer",
-                                value: function() {
-                                    for (this.depth = Math.max(this.layerDistance * this.layerCount / 2, this.mouseForce), this.minZ = -
-                                        this.depth, this.maxZ = this.depth, e = this.context.createImageData(this.width, this.height),
-                                        s = 0; s < this.origins.length; s++) o = this.origins[s], r = this.particles[s], r.isDead ||
-                                        r.isHidden || (l = ~~r.x, g = ~~r.y, H = o.color[3], this.alphaFade > 0 && this.layerCount >
-                                            1 && (v = Math.max(Math.min(r.z, this.maxZ), this.minZ) - this.minZ, H = H * (1 - this.alphaFade) +
-                                                H * this.alphaFade * (v / (this.maxZ - this.minZ)), H = Math.max(Math.min(~~H, 255), 0)
-                                            ), a = 4 * (l + g * this.width), e.data[a + 0] = o.color[0], e.data[a + 1] = o.color[1],
-                                            e.data[a + 2] = o.color[2], e.data[a + 3] = H);
-                                    this.context.putImageData(e, 0, 0)
-                                }
-                            }, {
-                                key: "_webglRenderer",
-                                value: function() {
-                                    I = new Float32Array(this.vertices), this.context.lineWidth(2.6), this.context.bufferData(
-                                        this.context.ARRAY_BUFFER, I, this.context.DYNAMIC_DRAW), this.context.clear(this.context
-                                        .COLOR_BUFFER_BIT | this.context.DEPTH_BUFFER_BIT), this.context.drawArrays(this.context.POINTS,
-                                        0, this.particles.length), this.context.flush()
-                                }
-                            }, {
-                                key: "_initParticles",
-                                value: function() {
-                                    for (this.particles = void 0, this.particles = [], s = 0; s < this.origins.length; s++) o =
-                                        this.origins[s], r = {}, this._initParticlePosition(o, r), this._initParticleDirection(r),
-                                        this.particles.push(r)
-                                }
-                            }, {
-                                key: "_initParticlePosition",
-                                value: function(t, i) {
-                                    switch (i.z = 0, this.initPosition) {
-                                        case "random":
-                                            i.x = Math.random() * this.width, i.y = Math.random() * this.height;
-                                            break;
-                                        case "top":
-                                            i.x = Math.random() * this.width * 3 - this.width, i.y = -Math.random() * this.height;
-                                            break;
-                                        case "left":
-                                            i.x = -Math.random() * this.width, i.y = Math.random() * this.height * 3 - this.height;
-                                            break;
-                                        case "bottom":
-                                            i.x = Math.random() * this.width * 3 - this.width, i.y = this.height + Math.random() *
-                                                this.height;
-                                            break;
-                                        case "right":
-                                            i.x = this.width + Math.random() * this.width, i.y = Math.random() * this.height * 3 -
-                                                this.height;
-                                            break;
-                                        case "misplaced":
-                                            i.x = t.x + Math.random() * this.width * .3 - .1 * this.width, i.y = t.y + Math.random() *
-                                                this.height * .3 - .1 * this.height;
-                                            break;
-                                        default:
-                                            i.x = t.x, i.y = t.y
-                                    }
-                                }
-                            }, {
-                                key: "_fade",
-                                value: function() {
-                                    for ("explode" === this.fadePosition || "top" === this.fadePosition || "left" === this.fadePosition ||
-                                        "bottom" === this.fadePosition || "right" === this.fadePosition ? this.state = "stopping" :
-                                        this.state = "stopped", s = 0; s < this.origins.length; s++) o = origins[s], this._fadeOriginPosition(
-                                        this.origins[s]), this._fadeOriginDirection(this.particles[s])
-                                }
-                            }, {
-                                key: "_fadeOriginPosition",
-                                value: function(t) {
-                                    switch (this.fadePosition) {
-                                        case "random":
-                                            t.x = Math.random() * this.width * 2 - this.width, t.y = Math.random() * this.height * 2 -
-                                                this.height, t.x > 0 && (t.x += this.width), t.y > 0 && (t.y += this.height);
-                                            break;
-                                        case "top":
-                                            t.x = Math.random() * this.width * 3 - this.width, t.y = -Math.random() * this.height;
-                                            break;
-                                        case "left":
-                                            t.x = -Math.random() * this.width, t.y = Math.random() * this.height * 3 - this.height;
-                                            break;
-                                        case "bottom":
-                                            t.x = Math.random() * this.width * 3 - this.width, t.y = this.height + Math.random() *
-                                                this.height;
-                                            break;
-                                        case "right":
-                                            t.x = this.width + Math.random() * this.width, t.y = Math.random() * this.height * 3 -
-                                                this.height
-                                    }
-                                }
-                            }, {
-                                key: "_initParticleDirection",
-                                value: function(t) {
-                                    switch (t.vz = 0, this.initDirection) {
-                                        case "random":
-                                            M = Math.random() * Math.PI * 2, w = Math.random(), t.vx = this.width * w * Math.sin(M) *
-                                                .1, t.vy = this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "top":
-                                            M = Math.random() * Math.PI - Math.PI / 2, w = Math.random(), t.vx = this.width * w *
-                                                Math.sin(M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "left":
-                                            M = Math.random() * Math.PI + Math.PI, w = Math.random(), t.vx = this.width * w * Math.sin(
-                                                M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "bottom":
-                                            M = Math.random() * Math.PI + Math.PI / 2, w = Math.random(), t.vx = this.width * w *
-                                                Math.sin(M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "right":
-                                            M = Math.random() * Math.PI, w = Math.random(), t.vx = this.width * w * Math.sin(M) * .1,
-                                                t.vy = this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        default:
-                                            t.vx = 0, t.vy = 0
-                                    }
-                                }
-                            }, {
-                                key: "_fadeOriginDirection",
-                                value: function(t) {
-                                    switch (this.fadeDirection) {
-                                        case "random":
-                                            M = Math.random() * Math.PI * 2, w = Math.random(), t.vx += this.width * w * Math.sin(M) *
-                                                .1, t.vy += this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "top":
-                                            M = Math.random() * Math.PI - Math.PI / 2, w = Math.random(), t.vx += this.width * w *
-                                                Math.sin(M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "left":
-                                            M = Math.random() * Math.PI + Math.PI, w = Math.random(), t.vx += this.width * w * Math.sin(
-                                                M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "bottom":
-                                            M = Math.random() * Math.PI + Math.PI / 2, w = Math.random(), t.vx += this.width * w *
-                                                Math.sin(M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        case "right":
-                                            M = Math.random() * Math.PI, w = Math.random(), t.vx += this.width * w * Math.sin(M) * .1,
-                                                t.vy += this.height * w * Math.cos(M) * .1;
-                                            break;
-                                        default:
-                                            t.vx = 0, t.vy = 0
-                                    }
-                                }
-                            }, {
-                                key: "_initOrigins",
-                                value: function() {
-                                    for (_ = document.createElement("canvas"), this.responsiveWidth && (this.width = this.wrapperElement
-                                            .clientWidth), this.ratio = Math.min(this.width, this.maxWidth || Number.POSITIVE_INFINITY) /
-                                        Math.min(this.height, this.maxHeight || Number.POSITIVE_INFINITY), this.ratio < this.imageRatio ?
-                                        (this.renderWidth = ~~Math.min(this.width || Number.POSITIVE_INFINITY, this.minWidth ||
-                                                this.imageWidth || Number.POSITIVE_INFINITY, this.maxWidth || Number.POSITIVE_INFINITY),
-                                            this.renderHeight = ~~(this.renderWidth / this.imageRatio)) : (this.renderHeight = ~~Math
-                                            .min(this.height || Number.POSITIVE_INFINITY, this.minHeight || this.imageHeight ||
-                                                Number.POSITIVE_INFINITY, this.maxHeight || Number.POSITIVE_INFINITY), this.renderWidth = ~
-                                            ~(this.renderHeight * this.imageRatio)), this.offsetX = ~~((this.width - this.renderWidth) /
-                                            2), this.offsetY = ~~((this.height - this.renderHeight) / 2), _.width = this.renderWidth,
-                                        _.height = this.renderHeight, P = _.getContext("2d"), P.drawImage(this.image, 0, 0, this.renderWidth,
-                                            this.renderHeight), b = P.getImageData(0, 0, this.renderWidth, this.renderHeight).data,
-                                        this.origins = void 0, this.origins = [], l = 0; l < this.renderWidth; l += this.particleGap
-                                    )
-                                        for (g = 0; g < this.renderHeight; g += this.particleGap)
-                                            if (s = 4 * (l + g * this.renderWidth), (H = b[s + 3]) > 0)
-                                                if (this.colorArr)
-                                                    for (n = 0; n < this.layerCount; n++) this.origins.push({
-                                                        x: this.offsetX + l,
-                                                        y: this.offsetY + g,
-                                                        z: n * this.layerDistance - this.layerCount * this.layerDistance / 2,
-                                                        color: this.colorArr
-                                                    });
-                                                else
-                                                    for (E = b[s], k = b[s + 1], F = b[s + 2], n = 0; n < this.layerCount; n++) this.origins
-                                                        .push({
-                                                            x: this.offsetX + l,
-                                                            y: this.offsetY + g,
-                                                            z: n * this.layerDistance - this.layerCount * this.layerDistance / 2,
-                                                            color: [E, k, F, H]
-                                                        });
-                                    this.speed = Math.log(this.origins.length) / 10, this.gravityFactor = 1 - this.gravity * this
-                                        .speed
-                                }
-                            }, {
-                                key: "_parseColor",
-                                value: function(t) {
-                                    var i = void 0;
-                                    if ("string" == typeof t) {
-                                        var e = t.replace(" ", "");
-                                        if (i = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/.exec(e)) i = [parseInt(i[1], 16),
-                                            parseInt(i[2], 16), parseInt(i[3], 16)
-                                        ];
-                                        else if (i = /^#([\da-fA-F])([\da-fA-F])([\da-fA-F])/.exec(e)) i = [17 * parseInt(i[1], 16),
-                                            17 * parseInt(i[2], 16), 17 * parseInt(i[3], 16)
-                                        ];
-                                        else if (i = /^rgba\(([\d]+),([\d]+),([\d]+),([\d]+|[\d]*.[\d]+)\)/.exec(e)) i = [+i[1], +i[
-                                            2], +i[3], +i[4]];
-                                        else {
-                                            if (!(i = /^rgb\(([\d]+),([\d]+),([\d]+)\)/.exec(e))) return;
-                                            i = [+i[1], +i[2], +i[3]]
-                                        }
-                                        return i
-                                    }
-                                }
-                            }, {
-                                key: "renderer",
-                                get: function() {
-                                    return this._renderer
-                                },
-                                set: function(t) {
-                                    this._renderer = t, this._draw = this["_" + t + "Renderer"];
-                                    try {
-                                        this["_" + t + "InitContext"]()
-                                    } catch (i) {
-                                        console.log(i), "default" !== t && (this.renderer = "default")
-                                    }
-                                }
-                            }, {
-                                key: "color",
-                                set: function(t) {
-                                    this.colorArr = this._parseColor(t), this.colorArr && (isNaN(this.colorArr[3]) && (this.colorArr[
-                                        3] = 255), 0 < this.colorArr[3] && this.colorArr[3] <= 1 && (this.colorArr[3] *= 255))
-                                }
-                            }, {
-                                key: "_mouseHandler",
-                                get: function() {
-                                    var t = this;
-                                    return function(i) {
-                                        t.touches = [{
-                                            x: i.offsetX,
-                                            y: i.offsetY,
-                                            z: 0,
-                                            force: 1
-                                        }]
-                                    }
-                                }
-                            }, {
-                                key: "_touchHandler",
-                                get: function() {
-                                    var t = this;
-                                    return function(i) {
-                                        for (t.touches = [], m = t.canvas.getBoundingClientRect(), c = 0; c < i.changedTouches.length; c++)
-                                            d = i.changedTouches[c], d.target === t.canvas && (t.touches.push({
-                                                x: d.pageX - m.left,
-                                                y: d.pageY - m.top,
-                                                z: 0,
-                                                force: d.force || 1
-                                            }), i.preventDefault())
-                                    }
-                                }
-                            }, {
-                                key: "_clearTouches",
-                                get: function() {
-                                    var t = this;
-                                    return function(i) {
-                                        t.touches = []
-                                    }
-                                }
-                            }]), t
-                        }();
-                    t.NextParticle = A;
-                    for (var D = document.getElementsByClassName("next-particle"), T = 0; T < D.length; T++) {
-                        var W = D[T];
-                        W.nextParticle = new A(W)
-                    }
-                }(window)
-            </script>
-            <script type="text/javascript">
-                "use strict";
-                var $toggles = document.getElementsByClassName("toggle");
-                $elems.settings.addEventListener("click", function() {
-                    $elems.sidebar.classList.toggle("open"), $elems.settings.classList.toggle("open")
-                });
-                for (var toggleIndex = 0; toggleIndex < $toggles.length; toggleIndex++) {
-                    var $toggle = $toggles[toggleIndex];
-                    ! function(e) {
-                        e.addEventListener("click", function() {
-                            e.classList.toggle("toggle--checked")
-                        })
-                    }($toggle)
-                }
-                var isHighDensity = window.matchMedia && (window.matchMedia(
-                        "only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)"
-                    ).matches || window.matchMedia(
-                        "only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)"
-                    ).matches) || window.devicePixelRatio && window.devicePixelRatio > 1.3,
-                    isRetina = (window.matchMedia && (window.matchMedia(
-                        "only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)"
-                    ).matches || window.matchMedia(
-                        "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)"
-                    ).matches) || window.devicePixelRatio && window.devicePixelRatio >= 2) && !/(iPad|iPhone|iPod)/g.test(
-                        navigator.userAgent),
-                    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-                    scalingFactor = 1;
-                isMobile || (isRetina ? (document.body.classList.add("retina"), scalingFactor = 1.5) : isHighDensity && (
-                    document.body.classList.add("high-res"), scalingFactor = 1.25));
-                var nextParticle = new NextParticle({
-                        image: $elems.image,
-                        particleGap: 1 * $elems.particleGap.value,
-                        noise: 1 * $elems.noise.value,
-                        width: ~~($elems.particleWrapper.clientWidth * scalingFactor),
-                        height: ~~($elems.particleWrapper.clientHeight * scalingFactor),
-                        maxWidth: ~~($elems.size.value * scalingFactor),
-                        maxHeight: ~~($elems.size.value * scalingFactor)
-                    }),
-                    refreshSettings = function() {
-                        nextParticle.width = ~~($elems.particleWrapper.clientWidth * scalingFactor), nextParticle.height = ~~(
-                                $elems.particleWrapper.clientHeight * scalingFactor), tint.classList.contains("toggle--checked") ?
-                            nextParticle.color = $elems.color.value : nextParticle.color = void 0, nextParticle.particleGap = 1 *
-                            $elems.particleGap.value, nextParticle.gravity = 1 * $elems.gravity.value, nextParticle.mouseForce = 1 *
-                            $elems.mouseForce.value, nextParticle.noise = 1 * $elems.noise.value, nextParticle.maxWidth = ~~($elems.size
-                                .value * scalingFactor), nextParticle.maxHeight = ~~($elems.size.value * scalingFactor), $elems.particleGapOutput
-                            .value = $elems.particleGap.value, $elems.gravityOutput.value = $elems.gravity.value, $elems.mouseForceOutput
-                            .value = $elems.mouseForce.value, $elems.noiseOutput.value = $elems.noise.value, $elems.sizeOutput.value =
-                            $elems.size.value, nextParticle.start({
-                                initPosition: "none",
-                                initDirection: "none"
-                            })
-                    };
-                $elems.tint.addEventListener("click", refreshSettings), $elems.color.addEventListener("change", refreshSettings),
-                    $elems.particleGap.addEventListener("change", refreshSettings), $elems.gravity.addEventListener("change",
-                        refreshSettings), $elems.mouseForce.addEventListener("change", refreshSettings), $elems.noise.addEventListener(
-                        "change", refreshSettings), $elems.size.addEventListener("change", refreshSettings), $elems.particleGap.addEventListener(
-                        "input", refreshSettings), $elems.gravity.addEventListener("input", refreshSettings), $elems.mouseForce.addEventListener(
-                        "input", refreshSettings), $elems.noise.addEventListener("input", refreshSettings), $elems.size.addEventListener(
-                        "input", refreshSettings), window.addEventListener("resize", refreshSettings)
-            </script>
-            <!--<script type="text/javascript">
-                "use strict";
-                null == window._gaq && (window._gaq = [], _gaq.push(["_setAccount", "UA-29865051-3"]), _gaq.push(["_setDomainName", "nextparticle.nextco.de"]), _gaq.push(["_trackPageview"]), function() { var t, e, a;
-                    t = document.createElement("script"), t.type = "text/javascript", t.async = !0, e = ".google-analytics.com/ga.js", t.src = "https:" === document.location.protocol ? "https://ssl" + e : "http://www" + e, a = document.getElementsByTagName("script")[0], a.parentNode.insertBefore(t, a) }())
-                </script>-->
-        </div>
+      </script>
     </div>
+    <div>
+      <script type="text/javascript">
+        "use strict";
+        var $elems = document.all;
+        if (!$elems) {
+          $elems = {};
+          for (var allElements = document.getElementsByTagName("*"), i = 0, n = allElements.length; i < n; ++i) {
+            var el = allElements[i];
+            el.id && ($elems[el.id] = el)
+          }
+        }
+
+      </script>
+      <script type="text/javascript">
+        "use strict";
+
+        function _classCallCheck(t, i) {
+          if (!(t instanceof i)) throw new TypeError("Cannot call a class as a function")
+        }
+        var _createClass = function () {
+          function t(t, i) {
+            for (var e = 0; e < i.length; e++) {
+              var h = i[e];
+              h.enumerable = h.enumerable || !1, h.configurable = !0, "value" in h && (h.writable = !0), Object.defineProperty(
+                t, h.key, h)
+            }
+          }
+          return function (i, e, h) {
+            return e && t(i.prototype, e), h && t(i, h), i
+          }
+        }();
+        ! function (t) {
+          var i = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+            function (t) {
+              setTimeout(t, 10)
+            },
+            e = void 0,
+            h = void 0,
+            s = void 0,
+            a = void 0,
+            n = void 0,
+            o = void 0,
+            r = void 0,
+            d = void 0,
+            c = void 0,
+            m = void 0,
+            l = void 0,
+            g = void 0,
+            v = void 0,
+            u = void 0,
+            x = void 0,
+            f = void 0,
+            p = void 0,
+            y = void 0,
+            M = void 0,
+            w = void 0,
+            I = void 0,
+            _ = void 0,
+            P = void 0,
+            b = void 0,
+            E = void 0,
+            k = void 0,
+            F = void 0,
+            H = void 0,
+            A = function () {
+              function t(i) {
+                _classCallCheck(this, t);
+                var e = {};
+                i && (i.nodeName ? (e = JSON.parse(JSON.stringify(i.dataset)), "IMG" === i.nodeName ? e.image = i : e.wrapperElement =
+                    i) : e = i), this.state = "stopped", this.touches = [], this.on("imageLoaded", this._onImageLoaded),
+                  this._initImage(e)
+              }
+              return _createClass(t, [{
+                key: "on",
+                value: function (t, i) {
+                  this.events = this.events || {}, this.events[t] = this.events[t] || [], this.events[t].push(i)
+                }
+              }, {
+                key: "emit",
+                value: function (t, i) {
+                  var e = this.events[t];
+                  if (e && e.length)
+                    for (var h = 0; h < e.length; h++) {
+                      var s = e[h];
+                      s.call(this, i)
+                    }
+                }
+              }, {
+                key: "start",
+                value: function (t) {
+                  var i = t || {};
+                  this.initPosition = i.initPosition || this.initPosition, this.initDirection = i.initDirection ||
+                    this.initDirection, this.canvas && (this.canvas.width = this.width, this.canvas.height =
+                      this.height, this.canvas.style.display = ""), this._initOrigins(), this._initParticles(),
+                    "running" !== this.state && (this.state = "running", this.disableInteraction || (
+                      "ontouchstart" in window || window.navigator.msPointerEnabled ? (document.body.addEventListener(
+                          "touchstart", this._touchHandler), document.body.addEventListener("touchmove", this
+                          ._touchHandler), document.body.addEventListener("touchend", this._clearTouches),
+                        document.body.addEventListener("touchcancel", this._clearTouches)) : (this.canvas.addEventListener(
+                        "mousemove", this._mouseHandler), this.canvas.addEventListener("mouseout", this._clearTouches))
+                    ), this._animate())
+                    var demo = this;
+                  setInterval(function () {
+                    this.initPosition = i.initPosition || this.initPosition, 
+                    this.initDirection = i.initDirection ||
+                      this.initDirection, 
+                      this.canvas && (this.canvas.width = this.width, 
+                      this.canvas.height =
+                        this.height, this.canvas.style.display = ""), 
+                        demo._initOrigins(), demo._initParticles(),
+                      "running" !== this.state && (this.state = "running",
+                       this.disableInteraction || (
+                        "ontouchstart" in window || window.navigator.msPointerEnabled ? (document.body.addEventListener(
+                            "touchstart", this._touchHandler), 
+                            document.body.addEventListener("touchmove",
+                            this
+                            ._touchHandler),
+                             document.body.addEventListener("touchend", this._clearTouches),
+                          document.body.addEventListener("touchcancel", 
+                          this._clearTouches)) : (demo.canvas.addEventListener(
+                            "mousemove", 
+                            this._mouseHandler),
+                            demo.canvas.addEventListener("mouseout",
+                            this._clearTouches))
+                      ), demo._animate())
+                  }, 3000);
+                }
+              }, {
+                key: "stop",
+                value: function (t) {
+                  var i = t || {};
+                  this.fadePosition = i.fadePosition || this.fadePosition, this.fadeDirection = i.fadeDirection ||
+                    this.fadeDirection, this._fade(), document.body.removeEventListener("touchstart", this._touchHandler),
+                    document.body.removeEventListener("touchmove", this._touchHandler), document.body.removeEventListener(
+                      "touchend", this._clearTouches), document.body.removeEventListener("touchcancel", this._clearTouches),
+                    this.canvas.removeEventListener("mousemove", this._mouseHandler), this.canvas.removeEventListener(
+                      "mouseout", this._clearTouches)
+                }
+              }, {
+                key: "_animate",
+                value: function () {
+                  var t = this;
+                  "stopped" !== this.state ? (this._calculate(), this._draw(), i(function () {
+                    return t._animate()
+                  })) : this.emit("stopped")
+                }
+              }, {
+                key: "_onImageLoaded",
+                value: function (t) {
+                  this.imageWidth = this.image.naturalWidth || this.image.width, this.imageHeight = this.image.naturalHeight ||
+                    this.image.height, this.imageRatio = this.imageWidth / this.imageHeight, this.width = this.width ||
+                    this.imageWidth, this.height = this.height || this.imageHeight, this.renderSize = (this.width +
+                      this.height) / 4, this.srcImage && (this.srcImage.style.display = "none"), this._initSettings(
+                      t), this._initContext(t), this._initResponsive(t), this.start();
+                }
+              }, {
+                key: "_initImage",
+                value: function (t) {
+                  var i = this;
+
+                  this.srcImage = t.image, !this.srcImage && t.imageId && (this.srcImage = document.getElementById(
+                      t.imageId)), this.imageUrl = t.imageUrl || this.srcImage.src, this.image = document.createElement(
+                      "img"), this.wrapperElement = t.wrapperElement || this.srcImage.parentElement, this.image
+                    .onload = function () {
+                      return i.emit("imageLoaded", t)
+                    }, this.image.crossOrigin = "Anonymous", t.addTimestamp && (/\?/.test(this.imageUrl) ? this
+                      .imageUrl += "&d=" + Date.now() : this.imageUrl += "?d=" + Date.now()), this.image.src =
+                    this.imageUrl
+                }
+              }, {
+                key: "_initContext",
+                value: function (t) {
+                  this.canvas = t.canvas, this.canvas || this.context || !this.wrapperElement || (this.canvas =
+                      document.createElement("canvas"), this.wrapperElement.appendChild(this.canvas)), this.convas &&
+                    (this.convas.style.display = "none"), this.context = t.context, this.renderer = t.renderer ||
+                    "default"
+                }
+              }, {
+                key: "_defaultInitContext",
+                value: function (t) {
+                  this.context = this.context || this.canvas.getContext("2d")
+                }
+              }, {
+                key: "_webglInitContext",
+                value: function () {
+                  this.context = this.context || this.canvas.getContext("webgl") || this.canvas.getContext(
+                      "experimental-webgl"), this.fragmentShaderScript =
+                    "\n        void main(void) {\n         gl_FragColor = vec4(1, 1, 1, 0.7);\n        }\n      ",
+                    this.vertexShaderScript =
+                    "\n        attribute vec3 vertexPosition;\n        vec3 offset = vec3(-5, 3, 100);\n        vec3 mirror = vec3(0.01, -0.01, 1);\n\n        uniform mat4 modelViewMatrix;\n        uniform mat4 perspectiveMatrix;\n\n        void main(void) {\n          gl_Position = perspectiveMatrix * modelViewMatrix * vec4(mirror * vertexPosition + offset, 1.0);\n          gl_PointSize = 1.0;\n        }\n      ",
+                    this.context.viewport(0, 0, this.width, this.height);
+                  var t = this.context.createShader(this.context.VERTEX_SHADER);
+                  this.context.shaderSource(t, this.vertexShaderScript), this.context.compileShader(t);
+                  var i = this.context.createShader(this.context.FRAGMENT_SHADER);
+                  this.context.shaderSource(i, this.fragmentShaderScript), this.context.compileShader(i), this.program =
+                    this.context.createProgram(), this.context.attachShader(this.program, t), this.context.attachShader(
+                      this.program, i), this.context.linkProgram(this.program), this.context.useProgram(this.program),
+                    this.vertexPosition = this.context.getAttribLocation(this.program, "vertexPosition"), this.context
+                    .enableVertexAttribArray(this.vertexPosition), this.context.clearColor(0, 0, 0, 1), this.context
+                    .clearDepth(1), this.context.enable(this.context.BLEND), this.context.disable(this.context.DEPTH_TEST),
+                    this.context.blendFunc(this.context.SRC_ALPHA, this.context.ONE), this.vertexBuffer = this.context
+                    .createBuffer(), this.context.bindBuffer(this.context.ARRAY_BUFFER, this.vertexBuffer),
+                    this.context.clear(this.context.COLOR_BUFFER_BIT | this.context.DEPTH_BUFFER_BIT);
+                  var e = this.width / this.height,
+                    h = 1 * Math.tan(1 * Math.PI / 360),
+                    s = -h,
+                    a = h * e,
+                    n = -a,
+                    o = (a + n) / (a - n),
+                    r = (h + s) / (h - s),
+                    d = 2 / (a - n),
+                    c = 2 / (h - s),
+                    m = [d, 0, o, 0, 0, c, r, 0, 0, 0, 10001 / 9999, 2e4 / 9999, 0, 0, -1, 0],
+                    l = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+                    g = this.context.getAttribLocation(this.program, "vertexPosition");
+                  this.context.vertexAttribPointer(g, 3, this.context.FLOAT, !1, 0, 0);
+                  var v = this.context.getUniformLocation(this.program, "modelViewMatrix"),
+                    u = this.context.getUniformLocation(this.program, "perspectiveMatrix");
+                  this.context.uniformMatrix4fv(v, !1, new Float32Array(m)), this.context.uniformMatrix4fv(u, !
+                    1, new Float32Array(l))
+                }
+              }, {
+                key: "_initSettings",
+                value: function (t) {
+                  this.width = 1 * t.width || this.width, this.height = 1 * t.height || this.height, this.maxWidth =
+                    t.maxWidth, this.maxHeight = t.maxHeight, this.minWidth = t.minWidth, this.minHeight = t.minHeight,
+                    this.maxWidth && (/%$/.test(this.maxWidth) ? this.maxWidth = this.width * this.maxWidth.replace(
+                      "%", "") / 100 : this.maxWidth *= 1), this.maxHeight && (/%$/.test(this.maxHeight) ? this
+                      .maxHeight = this.height * this.maxHeight.replace("%", "") / 100 : this.maxHeight *= 1),
+                    this.minWidth && (/%$/.test(this.minWidth) ? this.minWidth = this.width * this.minWidth.replace(
+                      "%", "") / 100 : this.minWidth *= 1), this.minHeight && (/%$/.test(this.minHeight) ? this
+                      .minHeight = this.height * this.minHeight.replace("%", "") / 100 : this.minHeight *= 1),
+                    this.alphaFade = .4, this.gravity = 1 * t.gravity || .08, this.particleGap = 1 * t.particleGap ||
+                    3, this.layerCount = t.layerCount || 1, this.layerDistance = t.layerDistance || this.particleGap,
+                    this.initPosition = t.initPosition || "random", this.initDirection = t.initDirection ||
+                    "random", this.fadePosition = t.fadePosition || "none", this.fadeDirection = t.fadeDirection ||
+                    "none", this.noise = isNaN(1 * t.noise) ? 10 : 1 * t.noise, this.disableInteraction = t.disableInteraction,
+                    this.mouseForce = 1 * t.mouseForce || 30, this.color = t.color, this.colorArr = t.colorArr ||
+                    this.colorArr
+                }
+              }, {
+                key: "_initResponsive",
+                value: function (t) {
+                  var i = this;
+                  this.responsiveWidth = this.wrapperElement && t.responsiveWidth, this.responsiveWidth && (
+                    this.on("stopped", function () {
+                      i.width = i.wrapperElement.clientWidth, i.start()
+                    }), this.wrapperElement.addEventListener("resize", function () {
+                      i.width !== i.wrapperElement.clientWidth && i.stop()
+                    }), this.width = this.wrapperElement.clientWidth)
+                }
+              }, {
+                key: "_calculate",
+                value: function () {
+                  for (this.vertices = [], h = 0, s = 0; s < this.particles.length; s++) {
+                    for (o = this.origins[s], r = this.particles[s], u = o.x - r.x + (Math.random() - .5) *
+                      this.noise, x = o.y - r.y + (Math.random() - .5) * this.noise, f = o.z - r.z + (Math.random() -
+                        .5) * this.noise / 1e3, p = Math.sqrt(u * u + x * x + f * f), y = .01 * p, r.vx += y *
+                      (u / p) * this.speed, r.vy += y * (x / p) * this.speed, r.vz += y * (f / p) * this.speed,
+                      c = 0; c < this.touches.length; c++) d = this.touches[c], u = r.x - d.x, x = r.y - d.y, f =
+                      r.z - d.z, p = Math.sqrt(u * u + x * x + f * f), y = this.mouseForce * d.force / p, r.vx +=
+                      y * (u / p) * this.speed, r.vy += y * (x / p) * this.speed, r.vz += y * (f / p) * this.speed;
+                    r.vx *= this.gravityFactor, r.vy *= this.gravityFactor, r.vz *= this.gravityFactor, r.x +=
+                      r.vx, r.y += r.vy, r.z += r.vz, 0 > r.x || r.x >= this.width || 0 > r.y || r.y >= this.height ?
+                      (r.isHidden = !0, "stopping" === this.state && (r.isDead = !0)) : ("stopping" !== this.state ||
+                        r.isDead || h++, r.isHidden = !1), this.vertices.push(r.x, r.y, r.z)
+                  }
+                  "stopping" === this.state && 0 === h && (this.state = "stopped")
+                }
+              }, {
+                key: "_defaultRenderer",
+                value: function () {
+                  for (this.depth = Math.max(this.layerDistance * this.layerCount / 2, this.mouseForce), this.minZ = -
+                    this.depth, this.maxZ = this.depth, e = this.context.createImageData(this.width, this.height),
+                    s = 0; s < this.origins.length; s++) o = this.origins[s], r = this.particles[s], r.isDead ||
+                    r.isHidden || (l = ~~r.x, g = ~~r.y, H = o.color[3], this.alphaFade > 0 && this.layerCount >
+                      1 && (v = Math.max(Math.min(r.z, this.maxZ), this.minZ) - this.minZ, H = H * (1 - this.alphaFade) +
+                        H * this.alphaFade * (v / (this.maxZ - this.minZ)), H = Math.max(Math.min(~~H, 255), 0)
+                      ), a = 4 * (l + g * this.width), e.data[a + 0] = o.color[0], e.data[a + 1] = o.color[1],
+                      e.data[a + 2] = o.color[2], e.data[a + 3] = H);
+                  this.context.putImageData(e, 0, 0)
+                }
+              }, {
+                key: "_webglRenderer",
+                value: function () {
+                  I = new Float32Array(this.vertices), this.context.lineWidth(2.6), this.context.bufferData(
+                    this.context.ARRAY_BUFFER, I, this.context.DYNAMIC_DRAW), this.context.clear(this.context
+                    .COLOR_BUFFER_BIT | this.context.DEPTH_BUFFER_BIT), this.context.drawArrays(this.context.POINTS,
+                    0, this.particles.length), this.context.flush()
+                }
+              }, {
+                key: "_initParticles",
+                value: function () {
+                  for (this.particles = void 0, this.particles = [], s = 0; s < this.origins.length; s++) o =
+                    this.origins[s], r = {}, this._initParticlePosition(o, r), this._initParticleDirection(r),
+                    this.particles.push(r)
+                }
+              }, {
+                key: "_initParticlePosition",
+                value: function (t, i) {
+                  switch (i.z = 0, this.initPosition) {
+                    case "random":
+                      i.x = Math.random() * this.width, i.y = Math.random() * this.height;
+                      break;
+                    case "top":
+                      i.x = Math.random() * this.width * 3 - this.width, i.y = -Math.random() * this.height;
+                      break;
+                    case "left":
+                      i.x = -Math.random() * this.width, i.y = Math.random() * this.height * 3 - this.height;
+                      break;
+                    case "bottom":
+                      i.x = Math.random() * this.width * 3 - this.width, i.y = this.height + Math.random() *
+                        this.height;
+                      break;
+                    case "right":
+                      i.x = this.width + Math.random() * this.width, i.y = Math.random() * this.height * 3 -
+                        this.height;
+                      break;
+                    case "misplaced":
+                      i.x = t.x + Math.random() * this.width * .3 - .1 * this.width, i.y = t.y + Math.random() *
+                        this.height * .3 - .1 * this.height;
+                      break;
+                    default:
+                      i.x = t.x, i.y = t.y
+                  }
+                }
+              }, {
+                key: "_fade",
+                value: function () {
+                  for ("explode" === this.fadePosition || "top" === this.fadePosition || "left" === this.fadePosition ||
+                    "bottom" === this.fadePosition || "right" === this.fadePosition ? this.state = "stopping" :
+                    this.state = "stopped", s = 0; s < this.origins.length; s++) o = origins[s], this._fadeOriginPosition(
+                    this.origins[s]), this._fadeOriginDirection(this.particles[s])
+                }
+              }, {
+                key: "_fadeOriginPosition",
+                value: function (t) {
+                  switch (this.fadePosition) {
+                    case "random":
+                      t.x = Math.random() * this.width * 2 - this.width, t.y = Math.random() * this.height * 2 -
+                        this.height, t.x > 0 && (t.x += this.width), t.y > 0 && (t.y += this.height);
+                      break;
+                    case "top":
+                      t.x = Math.random() * this.width * 3 - this.width, t.y = -Math.random() * this.height;
+                      break;
+                    case "left":
+                      t.x = -Math.random() * this.width, t.y = Math.random() * this.height * 3 - this.height;
+                      break;
+                    case "bottom":
+                      t.x = Math.random() * this.width * 3 - this.width, t.y = this.height + Math.random() *
+                        this.height;
+                      break;
+                    case "right":
+                      t.x = this.width + Math.random() * this.width, t.y = Math.random() * this.height * 3 -
+                        this.height
+                  }
+                }
+              }, {
+                key: "_initParticleDirection",
+                value: function (t) {
+                  switch (t.vz = 0, this.initDirection) {
+                    case "random":
+                      M = Math.random() * Math.PI * 2, w = Math.random(), t.vx = this.width * w * Math.sin(M) *
+                        .1, t.vy = this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "top":
+                      M = Math.random() * Math.PI - Math.PI / 2, w = Math.random(), t.vx = this.width * w *
+                        Math.sin(M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "left":
+                      M = Math.random() * Math.PI + Math.PI, w = Math.random(), t.vx = this.width * w * Math.sin(
+                        M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "bottom":
+                      M = Math.random() * Math.PI + Math.PI / 2, w = Math.random(), t.vx = this.width * w *
+                        Math.sin(M) * .1, t.vy = this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "right":
+                      M = Math.random() * Math.PI, w = Math.random(), t.vx = this.width * w * Math.sin(M) * .1,
+                        t.vy = this.height * w * Math.cos(M) * .1;
+                      break;
+                    default:
+                      t.vx = 0, t.vy = 0
+                  }
+                }
+              }, {
+                key: "_fadeOriginDirection",
+                value: function (t) {
+                  switch (this.fadeDirection) {
+                    case "random":
+                      M = Math.random() * Math.PI * 2, w = Math.random(), t.vx += this.width * w * Math.sin(M) *
+                        .1, t.vy += this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "top":
+                      M = Math.random() * Math.PI - Math.PI / 2, w = Math.random(), t.vx += this.width * w *
+                        Math.sin(M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "left":
+                      M = Math.random() * Math.PI + Math.PI, w = Math.random(), t.vx += this.width * w * Math.sin(
+                        M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "bottom":
+                      M = Math.random() * Math.PI + Math.PI / 2, w = Math.random(), t.vx += this.width * w *
+                        Math.sin(M) * .1, t.vy += this.height * w * Math.cos(M) * .1;
+                      break;
+                    case "right":
+                      M = Math.random() * Math.PI, w = Math.random(), t.vx += this.width * w * Math.sin(M) * .1,
+                        t.vy += this.height * w * Math.cos(M) * .1;
+                      break;
+                    default:
+                      t.vx = 0, t.vy = 0
+                  }
+                }
+              }, {
+                key: "_initOrigins",
+                value: function () {
+                  for (_ = document.createElement("canvas"), this.responsiveWidth && (this.width = this.wrapperElement
+                      .clientWidth), this.ratio = Math.min(this.width, this.maxWidth || Number.POSITIVE_INFINITY) /
+                    Math.min(this.height, this.maxHeight || Number.POSITIVE_INFINITY), this.ratio < this.imageRatio ?
+                    (this.renderWidth = ~~Math.min(this.width || Number.POSITIVE_INFINITY, this.minWidth ||
+                        this.imageWidth || Number.POSITIVE_INFINITY, this.maxWidth || Number.POSITIVE_INFINITY),
+                      this.renderHeight = ~~(this.renderWidth / this.imageRatio)) : (this.renderHeight = ~~Math
+                      .min(this.height || Number.POSITIVE_INFINITY, this.minHeight || this.imageHeight ||
+                        Number.POSITIVE_INFINITY, this.maxHeight || Number.POSITIVE_INFINITY), this.renderWidth = ~
+                      ~(this.renderHeight * this.imageRatio)), this.offsetX = ~~((this.width - this.renderWidth) /
+                      2), this.offsetY = ~~((this.height - this.renderHeight) / 2), _.width = this.renderWidth,
+                    _.height = this.renderHeight, P = _.getContext("2d"), P.drawImage(this.image, 0, 0, this.renderWidth,
+                      this.renderHeight), b = P.getImageData(0, 0, this.renderWidth, this.renderHeight).data,
+                    this.origins = void 0, this.origins = [], l = 0; l < this.renderWidth; l += this.particleGap
+                  )
+                    for (g = 0; g < this.renderHeight; g += this.particleGap)
+                      if (s = 4 * (l + g * this.renderWidth), (H = b[s + 3]) > 0)
+                        if (this.colorArr)
+                          for (n = 0; n < this.layerCount; n++) this.origins.push({
+                            x: this.offsetX + l,
+                            y: this.offsetY + g,
+                            z: n * this.layerDistance - this.layerCount * this.layerDistance / 2,
+                            color: this.colorArr
+                          });
+                        else
+                          for (E = b[s], k = b[s + 1], F = b[s + 2], n = 0; n < this.layerCount; n++) this.origins
+                            .push({
+                              x: this.offsetX + l,
+                              y: this.offsetY + g,
+                              z: n * this.layerDistance - this.layerCount * this.layerDistance / 2,
+                              color: [E, k, F, H]
+                            });
+                  this.speed = Math.log(this.origins.length) / 10, this.gravityFactor = 1 - this.gravity * this
+                    .speed
+                }
+              }, {
+                key: "_parseColor",
+                value: function (t) {
+                  var i = void 0;
+                  if ("string" == typeof t) {
+                    var e = t.replace(" ", "");
+                    if (i = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})/.exec(e)) i = [parseInt(i[1], 16),
+                      parseInt(i[2], 16), parseInt(i[3], 16)
+                    ];
+                    else if (i = /^#([\da-fA-F])([\da-fA-F])([\da-fA-F])/.exec(e)) i = [17 * parseInt(i[1], 16),
+                      17 * parseInt(i[2], 16), 17 * parseInt(i[3], 16)
+                    ];
+                    else if (i = /^rgba\(([\d]+),([\d]+),([\d]+),([\d]+|[\d]*.[\d]+)\)/.exec(e)) i = [+i[1], +i[
+                      2], +i[3], +i[4]];
+                    else {
+                      if (!(i = /^rgb\(([\d]+),([\d]+),([\d]+)\)/.exec(e))) return;
+                      i = [+i[1], +i[2], +i[3]]
+                    }
+                    return i
+                  }
+                }
+              }, {
+                key: "renderer",
+                get: function () {
+                  return this._renderer
+                },
+                set: function (t) {
+                  this._renderer = t, this._draw = this["_" + t + "Renderer"];
+                  try {
+                    this["_" + t + "InitContext"]()
+                  } catch (i) {
+                    console.log(i), "default" !== t && (this.renderer = "default")
+                  }
+                }
+              }, {
+                key: "color",
+                set: function (t) {
+                  this.colorArr = this._parseColor(t), this.colorArr && (isNaN(this.colorArr[3]) && (this.colorArr[
+                    3] = 255), 0 < this.colorArr[3] && this.colorArr[3] <= 1 && (this.colorArr[3] *= 255))
+                }
+              }, {
+                key: "_mouseHandler",
+                get: function () {
+                  var t = this;
+                  return function (i) {
+                    t.touches = [{
+                      x: i.offsetX,
+                      y: i.offsetY,
+                      z: 0,
+                      force: 1
+                    }]
+                  }
+                }
+              }, {
+                key: "_touchHandler",
+                get: function () {
+                  var t = this;
+                  return function (i) {
+                    for (t.touches = [], m = t.canvas.getBoundingClientRect(), c = 0; c < i.changedTouches.length; c++)
+                      d = i.changedTouches[c], d.target === t.canvas && (t.touches.push({
+                        x: d.pageX - m.left,
+                        y: d.pageY - m.top,
+                        z: 0,
+                        force: d.force || 1
+                      }), i.preventDefault())
+                  }
+                }
+              }, {
+                key: "_clearTouches",
+                get: function () {
+                  var t = this;
+                  return function (i) {
+                    t.touches = []
+                  }
+                }
+              }]), t
+            }();
+          t.NextParticle = A;
+          for (var D = document.getElementsByClassName("next-particle"), T = 0; T < D.length; T++) {
+            var W = D[T];
+            W.nextParticle = new A(W)
+          }
+        }(window)
+
+      </script>
+    </div>
+  </div>
 
 
-    <!-- Please uncomment to see the issue
+  <!-- Please uncomment to see the issue
     The css has to change, body header id now but when in particle it will change-->
-    <!-- <particle></particle> -->
-    <div class="main--holder">
-        <guardian></guardian>
-    </div>
+  <!-- <particle></particle> -->
+  <div class="main--holder">
+    <guardian></guardian>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <script href="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+  <script href="assets/js/main.js"></script>
 </body>
 
 </html>
