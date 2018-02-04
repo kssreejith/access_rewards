@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col col-lg-4" *ngFor="let item of brands">
               <div (click)="getOfferData(item.brand_id)">
-                <a class="offers__blk" data-toggle="modal" data-target="#exampleModal">
+                <a class="offers__blk">
                   <div>
                     <img src="{{item.logo}}" alt="">
                   </div>
@@ -32,40 +32,43 @@
         </div>
         <!-- Button trigger modal -->
 
-
-        <!-- Modal -->
-        <div class="modal fade offer__popup" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <div class="modal-body" *ngIf="offerDetails">
-                <div class="carousel slide media-carousel" id="media">
-
-                  <div class="row align-items-center">
-                    <a *ngIf="sliderPagination > 0" (click)="showOfferDetails(offers.length, false)" data-slide="prev" class="left carousel-control">
-                      <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                    <div class="col text-center">
-                      <div class="sub_heading">{{offerDetails.tittle}}</div>
-                      <h3>{{offerDetails.end_date}}</h3>
-                      <p>{{offerDetails.description}}</p>
-                      <img src="{{offerDetails.logo}}" alt="Offer Logo">
-                    </div>
-                    <a *ngIf="sliderPagination < offers.length-1" (click)="showOfferDetails(offers.length, true)" data-slide="next" class="right carousel-control">
-                      <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
+        <div *ngIf="showDiv">
+          <div class="gokul">
+            <div class="modal-body" *ngIf="offerDetails">
+              <div (click)="closeDiv()">
+                <a class="offers__blk">
+                  <div>
+                    <span aria-hidden="true">&times;</span>
                   </div>
+                </a>
+              </div>
+              <div class="carousel slide media-carousel" id="media">
 
-
-
+                <div class="row align-items-center">
+                  <a *ngIf="sliderPagination > 0" (click)="showOfferDetails(offers.length, false)" data-slide="prev" class="left carousel-control">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  </a>
+                  <div class="col text-center">
+                    <div class="sub_heading">{{offerDetails.tittle}}</div>
+                    <h3>{{offerDetails.end_date}}</h3>
+                    <p>{{offerDetails.description}}</p>
+                    <img src="{{offerDetails.logo}}" alt="Offer Logo">
+                  </div>
+                  <a *ngIf="sliderPagination < offers.length-1" (click)="showOfferDetails(offers.length, true)" data-slide="next" class="right carousel-control">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </a>
                 </div>
 
+
+
               </div>
+
             </div>
           </div>
         </div>
+
+        <!-- Modal -->
+
       </div>
     </div>
   </div>
