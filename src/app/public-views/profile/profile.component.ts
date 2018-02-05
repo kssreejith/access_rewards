@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
   }
   ngOnInit() {
     const d = new Date();
-    for (let i = (d.getFullYear() - 18); i > (d.getFullYear() - 100); i--) {
+    for (let i = (d.getFullYear() - 1); i > (d.getFullYear() - 100); i--) {
       this.years.push(i);
     }
   }
