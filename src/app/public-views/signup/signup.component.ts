@@ -7,6 +7,9 @@ import { RegisterService } from 'app/shared/services/register.service';
 import { Router } from '@angular/router';
 import { ToastsManager } from 'ng2-toastr';
 
+import { LoginService } from 'app/shared/services/login.service';
+import { WebStorageService } from 'app/shared/services/web-storage.service';
+
 @Component({
   selector: 'signup',
   templateUrl: './signup.component.html',
@@ -36,7 +39,9 @@ export class SignupComponent implements OnInit {
     public registerService: RegisterService,
     public router: Router,
     public toastr: ToastsManager,
-    public vcr: ViewContainerRef
+    public vcr: ViewContainerRef,
+    public loginService: LoginService,
+    private _webStorageService: WebStorageService
   ) {
     this.toastr.setRootViewContainerRef(vcr);
 
@@ -101,7 +106,25 @@ export class SignupComponent implements OnInit {
         this.toastr.success('Successfully registered.', 'Success!');
 
         console.log('responseData', responseData.status);
-        this.router.navigate(['/login']);
+        const login = {
+          'mobile': this.signupForm.value.MobileNo
+        };
+        let registerData: any;
+        this.loginService.generateOTP('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GenerateOTP',
+          // this.loginService.generateOTP('/api/GenerateOTP',
+          login).subscribe(
+          data => registerData = data,
+          error => {
+            console.error('api ERROR');
+
+          },
+          () => {
+
+            console.log('responseData', registerData);
+            this._webStorageService.saveData('RequestID', registerData.RequestID);
+
+            this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
+          });
 
       });
 

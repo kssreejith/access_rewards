@@ -11,6 +11,7 @@ export class OffersComponent {
   public brands: any;
   public offerDetails: any;
   public sliderPagination = 0;
+  public showDiv = false;
   constructor(
     public offerService: OfferService,
     public brandService: BrandService
@@ -34,8 +35,15 @@ export class OffersComponent {
 
       });
   }
+
+  closeDiv() {
+    this.showDiv = false;
+    console.log('showDiv hide');
+
+  }
   getOfferData(id?: number) {
     this.sliderPagination = 0;
+    console.log('showDiv');
 
     let responseData: any;
     this.offerService.getOfferData('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/fetchOffers/' + id, '').subscribe(
@@ -45,6 +53,7 @@ export class OffersComponent {
       },
       () => {
         console.log('responseData', responseData);
+        this.showDiv = true;
         this.offers = responseData.data;
         this.offerDetails = this.offers[0];
 
