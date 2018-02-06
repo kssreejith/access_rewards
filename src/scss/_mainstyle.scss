@@ -1,8 +1,4 @@
-.nav__access {
-    position: absolute;
-    width: 100%;
-    float: left;
-}
+
 
 .top_banner--blk {
     width: 100%;
@@ -63,6 +59,7 @@
     min-height: 100%;
     width: 100%;
     padding: 167px 0 0 0;
+    background:#fff;
     @media (max-width: 768px) {
         padding: 100px 0 0 0;
     }
@@ -1126,5 +1123,15 @@
         margin: 10px 5% 30px;
         width: 90%;
         float: left;
+    }
+}
+
+.animation__blk {
+    #page-header-wrap, #header-space, #header-outer {
+        height: auto!important;
+        padding:0!important;
+    }
+    #canvas {
+        background: rgba(34, 34, 34, 0);
     }
 }
