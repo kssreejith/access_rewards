@@ -148,7 +148,8 @@
     </section>
 
     <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map [center]="mapProps.center" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
+        <ngui-map [center]="mapProps.center"
+        [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
             <marker *ngFor="let pos of positions.pos" [icon]="{
         url: 'assets/img/marker.svg',
         anchor: [16,16],
