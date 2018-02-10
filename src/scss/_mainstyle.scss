@@ -1,8 +1,4 @@
-.nav__access {
-    position: absolute;
-    width: 100%;
-    float: left;
-}
+
 
 .top_banner--blk {
     width: 100%;
@@ -63,6 +59,7 @@
     min-height: 100%;
     width: 100%;
     padding: 167px 0 0 0;
+    background:#fff;
     @media (max-width: 768px) {
         padding: 100px 0 0 0;
     }
@@ -332,9 +329,9 @@
     position: relative;
     z-index: 99;
     margin: 100vh 0 0 0;
-    @media (max-width: 768px) {
-        margin: 0 0 0 0;
-    }
+    // @media (max-width: 768px) {
+    //     margin: 0 0 0 0;
+    // }
     h1,
     h2,
     p {
@@ -950,8 +947,8 @@
     color: #fff;
     @extend %gradient__navmain-bg;
     @media (max-width: 660px) {
-        padding-top: 10vh;
-        position: absolute;
+        padding-top: 0;
+        position: fixed;
     }
     .nav_close {
         position: absolute;
@@ -1034,6 +1031,11 @@
         width: 80%;
         margin: 0 10%;
         position: relative;
+        @media (max-width: 660px) {
+            width: 100%;
+            margin: 0;
+        }
+
     }
     .media-carousel {
         margin-bottom: 0;
@@ -1066,6 +1068,10 @@
         align-self: center !important;
         text-decoration: none !important;
         width: 100%;
+        opacity:1!important;
+        @media (max-width: 660px) {
+            padding:10px 0;
+        }
         .carousel-control {
             &.left,
             &.right {
@@ -1079,6 +1085,12 @@
                 line-height: 48px;
                 position: absolute;
                 top: calc(50% - 40px);
+                @media (max-width: 660px) {
+                    height: 36px;
+                    font-size: 26px;
+                    width: 36px;
+                    line-height: 32px;
+                }
             }
             &.left {
                 left: 0;
@@ -1126,5 +1138,15 @@
         margin: 10px 5% 30px;
         width: 90%;
         float: left;
+    }
+}
+
+.animation__blk {
+    #page-header-wrap, #header-space, #header-outer {
+        height: auto!important;
+        padding:0!important;
+    }
+    #canvas {
+        background: rgba(34, 34, 34, 0);
     }
 }

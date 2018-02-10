@@ -3,7 +3,7 @@
 </ur-header>
 
 <main role="main">
-    <div id="myCarousel" class="carousel slide slider__blk" data-ride="carousel">
+    <!-- <div id="myCarousel" class="carousel slide slider__blk" data-ride="carousel">
         <div class="pagination-dots carousel-indicators pagination-navigation">
             <button data-target="#myCarousel" data-slide-to="0" class="pagination-dot active" style="transform: translate(0px, 0px); opacity: 1;"></button>
             <button data-target="#myCarousel" data-slide-to="1" class="pagination-dot" style="transform: translate(0px, 0px); opacity: 1;"></button>
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <section class="rewards__blk">
@@ -148,7 +148,8 @@
     </section>
 
     <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map [center]="mapProps.center" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
+        <ngui-map [center]="mapProps.center"
+        [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
             <marker *ngFor="let pos of positions.pos" [icon]="{
         url: 'assets/img/marker.svg',
         anchor: [16,16],

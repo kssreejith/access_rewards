@@ -2,7 +2,11 @@
     min-height: 42px;
     margin: 0 0 0 0;
     padding: 20px 40px;
-    z-index: 1;
+    z-index: 3;
+   
+        position: absolute;
+        width: 100%;
+        float: left;
     &.inner__nav--bg {
         @extend %gradient__nav;
     }
