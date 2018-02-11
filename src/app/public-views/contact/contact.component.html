@@ -3,44 +3,46 @@
 </auth-header>
 
 <section class="main__container">
-  <div class="container ">
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-12 contacts--blk">
-        <div class="main_heading">Contacts and Feedback</div>
-        <div class="row">
-          <div class="col-lg-5 col-md-5 left_blk">
-            <img src="assets/img/contact_img.svg" alt="">
-          </div>
+    <div class="container ">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 contacts--blk">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 left_blk">
+                        <img src="assets/img/contact.svg" alt="">
+                    </div>
 
-          <div class="col-lg-5 col-md-6 right_blk">
+                    <div class="col-lg-5 col-md-6 right_blk">
+                        <div class="main_heading">Contacts and Feedback</div>
+                        <p>Do you have a question, comment or suggestion to pass along? Please use the contact form to write to us.</p>
 
 
-            <form class="form-horizontal" [formGroup]="signupForm">
-              <div class="form-group">
 
-                <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name">
-                <!-- <small id="emailHelp" class="form-text text-muted">Enter Name</small> -->
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email">
-                <!-- <small id="emailHelp" class="form-text text-muted">Enter Email</small> -->
-              </div>
-              <div class="form-group">
-                <input type="tel" class="form-control" id="mobile" formControlName="mobile" placeholder="MobileNo" aria-describedby="MobileNo">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control h130" id="message" formControlName="message" placeholder="Message" rows="3"></textarea>
+                        <form class="form-horizontal" [formGroup]="signupForm">
+                            <div class="form-group">
 
-                <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
-              </div>
+                                <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name">
+                                <!-- <small id="emailHelp" class="form-text text-muted">Enter Name</small> -->
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email">
+                                <!-- <small id="emailHelp" class="form-text text-muted">Enter Email</small> -->
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="mobile" formControlName="mobile" placeholder="MobileNo" aria-describedby="MobileNo">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control h130" id="message" formControlName="message" placeholder="Message" rows="3"></textarea>
 
-              <button type="submit" [disabled]="!signupForm.valid || disableClick" (click)="onFormSubmit()" class="btn">Send Message</button>
+                                <!-- <small id="emailHelp" class="form-text text-muted">Enter Phone number</small> -->
+                            </div>
 
-            </form>
+                            <button type="submit" [disabled]="!signupForm.valid || disableClick" (click)="onFormSubmit()" class="btn">Send Message</button>
 
-          </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>

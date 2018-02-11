@@ -3,73 +3,6 @@
 </ur-header>
 
 <main role="main">
-    <!-- <div id="myCarousel" class="carousel slide slider__blk" data-ride="carousel">
-        <div class="pagination-dots carousel-indicators pagination-navigation">
-            <button data-target="#myCarousel" data-slide-to="0" class="pagination-dot active" style="transform: translate(0px, 0px); opacity: 1;"></button>
-            <button data-target="#myCarousel" data-slide-to="1" class="pagination-dot" style="transform: translate(0px, 0px); opacity: 1;"></button>
-            <button data-target="#myCarousel" data-slide-to="2" class="pagination-dot " style="transform: translate(0px, 0px); opacity: 1;"></button>
-            <button data-target="#myCarousel" data-slide-to="3" class="pagination-dot " style="transform: translate(0px, 0px); opacity: 1;"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="top_banner--blk">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <img class="animated lightSpeedIn" src="assets/img/banner_logo_icon.svg" alt="">
-                            <h1 class="animated flipInX">WHAT’S ON YOUR
-                                <span>LIST TODAY? </span>
-                            </h1>
-                            <p class="animated lightSpeedIn">100% FREE membership. Joining bonus of 150 points.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item item1">
-                <div class="top_banner--blk">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <img class="animated lightSpeedIn" src="assets/img/banner_logo_icon.svg" alt="">
-                            <h1 class="animated flipInX">WHAT’S ON YOUR LIST TODAY? </h1>
-                            <p class="animated lightSpeedIn">100% FREE membership. Joining bonus of 150 points.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="top_banner--blk">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <img class="animated lightSpeedIn" src="assets/img/banner_logo_icon.svg" alt="">
-                            <h1 class="animated flipInX">WHAT’S ON YOUR LIST TODAY? </h1>
-
-                            <p class="animated lightSpeedIn">100% FREE membership. Joining bonus of 150 points.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item item1">
-                <div class="top_banner--blk">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <img class="animated lightSpeedIn" src="assets/img/banner_logo_icon.svg" alt="">
-                            <h1 class="animated flipInX">WHAT’S ON YOUR LIST TODAY? </h1>
-                            <p>100% FREE membership. Joining bonus of 150 points.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
     <section class="rewards__blk">
         <div class="container">
             <div class="row justify-content-md-center">
@@ -77,23 +10,24 @@
                     <h1>Why Access Rewards?</h1>
                     <div class="row">
                         <div class="col-lg-4 text-center">
-                            <img src="assets/img/reward1.svg" alt="">
-                            <h2>Lightweight Rewards </h2>
-                            <p>No heap of loyalty cards to bog you down. Earn points using just your mobile number.
+                            <img src="assets/img/cardless.svg" alt="">
+                            <h2>Cardless Rewards</h2>
+                            <p>With the new card-less program, you can now earn points using just your mobile number</p>
+                        </div>
+
+                        <div class="col-lg-4 text-center">
+                            <img src="assets/img/accepted.svg" alt="">
+                            <h2>Accepted Everywhere</h2>
+                            <p>You can use your Access Reward points to earn discounts at every Tablez stores across the country
+
                             </p>
                         </div>
 
                         <div class="col-lg-4 text-center">
-                            <img src="assets/img/reward2.svg" alt="">
-                            <h2>Accepted at Tablez stores </h2>
-                            <p>Use your Access Rewards points to reap discounts at Tablez brand stores across India.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4 text-center">
-                            <img src="assets/img/reward3.svg" alt="">
+                            <img src="assets/img/exclusive.svg" alt="">
                             <h2>Exclusive Offers</h2>
-                            <p>Member-only previews and tailor-made deals. More and even more benefits for you
+                            <p>
+                                Be delighted with our exclusive offers tailor – made to fit your needs
                             </p>
                         </div>
                     </div>
@@ -148,8 +82,7 @@
     </section>
 
     <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map [center]="mapProps.center"
-        [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
+        <ngui-map [center]="mapProps.center" [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
             <marker *ngFor="let pos of positions.pos" [icon]="{
         url: 'assets/img/marker.svg',
         anchor: [16,16],
