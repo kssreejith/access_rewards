@@ -58,6 +58,7 @@
     width: 100%;
     padding: 167px 0 0 0;
     background: #fff;
+    position: relative;
     @media (max-width: 768px) {
         padding: 100px 0 0 0;
     }
@@ -132,8 +133,8 @@
     margin: 5px 0 100px 0;
     padding: 0;
     font-size: 35px;
-    color: #000;
-    font-weight: 100;
+    color: #6652a0;
+    font-weight: 500;
     width: 100%;
     text-align: center;
     @media (max-width: 768px) {
@@ -144,9 +145,9 @@
 .sub_heading {
     margin: 5px 0 50px 0;
     padding: 0;
-    font-size: 38px;
-    color: #000;
-    font-weight: 300;
+    font-size: 35px;
+    color: #6652a0;
+    font-weight: 500;
     width: 100%;
     text-align: center;
     @media (max-width: 768px) {
@@ -561,6 +562,22 @@
             font-weight: 300;
         }
     }
+    .carousel {
+        opacity: 1 !important;
+        margin: 0 0 80px 0;
+        .carousel-indicators {
+            bottom: -45px;
+            li {
+                width: 10px;
+                height: 10px;
+                border-radius: 50px;
+                background-color: hsla(241, 59%, 56%, 0.5);
+            }
+            .active {
+                background-color: #504ed2!important;
+            }
+        }
+    }
 }
 
 .map__search__blk {
@@ -619,8 +636,9 @@
         margin: 0 0 10px 0;
     }
     p {
-        font-weight: 300;
-        font-size: 14px;
+        font-weight: 400;
+        font-size: 17px;
+        color: #000;
     }
     a {
         color: #f17f21;
@@ -1174,4 +1192,59 @@
     #canvas {
         background: rgba(34, 34, 34, 0);
     }
+}
+
+ourbrand {
+    height: auto;
+}
+
+.brand__details--blk {
+    margin: 0px 0 57vh 0;
+    z-index: 1;
+}
+
+.ToysRUs__bottom-bg {
+    position: absolute;
+    bottom: 0;
+    height: 68vh;
+    width: 100%;
+    background: url(../assets/img/con-bg-1.svg);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+}
+
+.BabiesRUs__top-bg {
+    position: absolute;
+    top: 87px;
+    height: 28%;
+    width: 100%;
+    background: url(../assets/img/con-bg-4.svg);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.BabiesRUs__bottom-bg {
+    position: absolute;
+    bottom: 0;
+    height: 55vh;
+    width: 100%;
+    background: url(../assets/img/con-bg-7.svg);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.about__bottom-bg {
+    position: absolute;
+    bottom: 30px;
+    height: 25vh;
+    width: 100%;
+    background: url(../assets/img/about_bg.svg);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }

@@ -2,70 +2,30 @@
     margin: 0;
     padding: 0;
     background: #fff;
+    float: left;
+    width: 100%;
     .left_blk {
         margin: 0;
-        padding: 0;
+        padding: 87px 0 0 0;
         height: 100vh;
         display: flex;
         float: left;
-        @extend %gradient__bg;
+        text-align: center;
         @media (max-width: 768px) {
             height: auto;
-            padding: 25px 0 50px;
         }
         img {
-            position: absolute;
-            top: 30px;
-            left: 40px;
-        }
-        .content__blk {
-            padding: 0 100px;
-            @media (max-width: 900px) {
-                padding: 110px 24px 0px;
-            }
-            @media (max-width: 550px) {
-                padding: 70px 24px 0px;
-            }
-            h1,
-            p {
-                margin: 0;
-                padding: 0;
-                color: #fff;
-                font-weight: 300;
-                @media (max-width: 550px) {
-                    display: none;
-                }
-            }
-            h1 {
-                font-size: 28px;
-            }
-            p {
-                font-size: 14px;
-                margin: 20px 0 16px 0;
-            }
-            .btn {
-                background: transparent;
-                width: 162px;
-                height: 38px;
-                text-align: center;
-                border: 1px solid #fff;
-                color: #fff;
-                font-weight: 300;
-                border-radius: 0;
-                font-size: 13px;
-                line-height: 36px;
-                padding: 0;
-                .fa {
-                    font-size: 16px;
-                    display: inline-block;
-                    padding: 0 0px 0 4px;
-                }
+            margin-left: auto!important;
+            width: 70%;
+            @media (max-width: 768px) {
+                margin: 0px auto 0 !important;
+                width: 50%;
             }
         }
     }
     .right_blk {
         margin: 0;
-        padding: 0;
+        padding: 87px 0 0 0;
         height: 100vh;
         display: flex;
         float: left;
@@ -76,21 +36,31 @@
         .login__form {
             width: 300px;
             margin: 0 auto;
+            img {
+                margin: 80px 0 40px 0;
+                @media (max-width: 768px) {
+                    margin: 0px 0 40px 0;
+                }
+            }
             h2,
             h3 {
                 width: 100%;
-                text-align: center;
+                text-align: left;
                 font-size: 33px;
                 color: #606060;
                 font-weight: 300;
-                margin: 0 0 35px 0;
+                margin: 0 0 15px 0;
+            }
+            h2 {
+                font-size: 19px;
+                color: #6652a0;
             }
             h3 {
-                font-size: 20px;
+                font-size: 15px;
+                letter-spacing: 0.08em;
                 text-align: left;
                 color: #606060;
-                font-weight: 400;
-                margin: 60px 0 0 0;
+                margin: 0px 0 15px 0;
             }
             p {
                 margin: 20px 0 40px 0;
@@ -110,9 +80,9 @@
                 }
                 a {
                     color: #ff8e4e;
-                    font-size: 12px;
+                    font-size: 13px;
                     font-weight: 400;
-                    margin: -10px 0 10px 0;
+                    margin: 5px 0 0px 0;
                 }
             }
             .btn {

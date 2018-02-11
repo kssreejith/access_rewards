@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanActivateViaAuthGuard } from './authGuard.service';
 import { ParticlesModule } from 'angular-particle';
 import { ParticleComponent } from './particle.component';
+import { CarouselModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ParticleComponent } from './particle.component';
     BrowserAnimationsModule,
     ParticlesModule,
     ToastModule.forRoot(),
+    CarouselModule.forRoot(),
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],

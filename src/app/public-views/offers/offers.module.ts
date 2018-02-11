@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { OffersComponent } from 'app/public-views/offers/offers.component';
 import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AuthHeaderModule,
-    RouterModule
+    RouterModule,
+    CarouselModule.forRoot(),
   ],
   exports: [
     OffersComponent
