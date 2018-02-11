@@ -11,6 +11,8 @@ import { ToastsManager } from 'ng2-toastr';
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
+
+  public loading = false;
   availablePoints: any;
 
   // Property for the user
@@ -43,9 +45,9 @@ export class ProfileComponent implements OnInit {
     public vcr: ViewContainerRef
   ) {
     this.toastr.setRootViewContainerRef(vcr);
+    this.loading = true;
 
-    this.getProfileDetails();
-    this.getCustomerAvailablePoints();
+
 
     // Use the formbuilder to build the Form model
     this.signupForm = this.fb.group({
@@ -70,6 +72,8 @@ export class ProfileComponent implements OnInit {
 
   }
   ngOnInit() {
+    this.getProfileDetails();
+    this.getCustomerAvailablePoints();
     const d = new Date();
     for (let i = (d.getFullYear() - 1); i > (d.getFullYear() - 100); i--) {
       this.years.push(i);
@@ -86,19 +90,24 @@ export class ProfileComponent implements OnInit {
       data => responseData = data,
       error => {
         console.error('api ERROR');
+        this.loading = false;
+
       },
       () => {
         console.log('responseData', new Date(responseData.DateOfBirth));
+        this.loading = false;
 
         this.userDetails = responseData;
         const date = new Date(responseData.DateOfBirth);
 
         if (date) {
+
           this.userDetails.day = date.getDate();
           this.userDetails.month = this.months[date.getMonth()];
           this.userDetails.year = date.getFullYear();
 
         }
+
 
       });
   }
@@ -123,6 +132,9 @@ export class ProfileComponent implements OnInit {
       });
   }
   public onFormSubmit() {
+
+    this.loading = true;
+
     this.user = this.signupForm.value;
     this.user.DateOfBirth = this.signupForm.value.day + ' ' + this.signupForm.value.month + ' ' + this.signupForm.value.year;
     this.user.ChildDOB = this.signupForm.value.childDay + ' ' + this.signupForm.value.childMonth + ' ' + this.signupForm.value.childYear;
@@ -136,8 +148,12 @@ export class ProfileComponent implements OnInit {
       data => responseData = data,
       error => {
         console.error('api ERROR');
+        this.loading = false;
+
       },
       () => {
+        this.loading = false;
+
         console.log('responseData', responseData);
         this.toastr.success('Profile updated successfully.', 'Success!');
 

@@ -1,6 +1,7 @@
 <!-- Top Navigation -->
 <auth-header>
 </auth-header>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 
 <section class="main__container">
   <div class="container profile__blk" *ngIf="userDetails">
@@ -101,7 +102,7 @@
                 <div class="col-4">
                   <div class="form-group">
                     <select class="custom-select form-control" [ngModel]="userDetails.month" formControlName="month">
-                      <option value="null" disabled="true" [selected]="true">Months</option>                      
+                      <option value="null" disabled="true" [selected]="true">Months</option>
                       <option *ngFor="let item of months; let i=index" [value]="item">
                         {{item}}</option>
                     </select>
@@ -119,7 +120,7 @@
                 <div class="col-lg-5">
                   <!-- <div class="form-group">
                     <label>Marital Status</label>
-                    <input type="email" class="form-control" 
+                    <input type="email" class="form-control"
                     placeholder="Enter Marital Status">
                   </div> -->
                 </div>

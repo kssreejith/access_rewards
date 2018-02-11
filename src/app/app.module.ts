@@ -30,6 +30,7 @@ import { CanActivateViaAuthGuard } from './authGuard.service';
 import { ParticlesModule } from 'angular-particle';
 import { ParticleComponent } from './particle.component';
 import { CarouselModule } from 'ngx-bootstrap';
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,14 @@ import { CarouselModule } from 'ngx-bootstrap';
     ParticlesModule,
     ToastModule.forRoot(),
     CarouselModule.forRoot(),
+    LoadingModule.forRoot({
+      animationType: ANIMATION_TYPES.cubeGrid,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+      backdropBorderRadius: '10px',
+      primaryColour: 'blue',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff'
+    }),
     NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
 
   ],
