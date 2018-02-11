@@ -58,7 +58,8 @@ export class AuthHeaderComponent {
     this.toastr.success('Logged Out Successfully', 'Success!');
     setTimeout(() => {
       this._webStorageService.removeData('mobile');
-      this.router.navigate(['/index']);
+      window.location.href = '/index';
+      // this.router.navigate(['/index']);
     }, 1000);
 
 
