@@ -59,13 +59,18 @@ export class OtpComponent {
         console.error('api ERROR');
       },
       () => {
-        this.toastr.success('Successfully updated.', 'Success!');
-        setTimeout(() => {
+        if (responseData.ReturnCode === '0') {
+          this.toastr.success('Successfully updated.', 'Success!');
+          setTimeout(() => {
 
-          console.log('responseData', responseData);
-          this._webStorageService.saveData('mobile', this.signupForm.value.mobile);
-          this.router.navigate(['/profile']);
-        }, 1000);
+            console.log('responseData', responseData.ReturnCode);
+            this._webStorageService.saveData('mobile', this.signupForm.value.mobile);
+            this.router.navigate(['/profile']);
+          }, 1000);
+        } else {
+          this.toastr.error(responseData.ReturnMessage, 'Error!');
+        }
+
       });
   }
 }

@@ -1,9 +1,11 @@
-import { Component, ViewChild, HostListener, Inject } from '@angular/core';
+import { Component, ViewChild, HostListener, Inject, ViewContainerRef } from '@angular/core';
 import { SideMenuComponent } from 'app/shared/layouts/side-menu/side-menu.component';
 import { DOCUMENT } from '@angular/platform-browser';
 import { WindowRefService } from 'app/window.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { Router } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 
 @Component({
   selector: 'ur-header',
@@ -22,9 +24,13 @@ export class HeaderComponent {
     @Inject(DOCUMENT) private document: Document,
     @Inject(WindowRefService) private window: Window,
     private _webStorageService: WebStorageService,
-    public router: Router
+    public router: Router,
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef
   ) {
     this.loggedIn = this._webStorageService.getData('mobile');
+    this.toastr.setRootViewContainerRef(vcr);
+
   }
 
   @HostListener('window:scroll', [])
@@ -51,8 +57,11 @@ export class HeaderComponent {
   }
 
   logout() {
-    this._webStorageService.removeData('mobile');
-    this.document.location.href = '/index';
+    this.toastr.success('Logged Out Successfully', 'Success!');
+    setTimeout(() => {
+      this._webStorageService.removeData('mobile');
+      this.router.navigate(['/index']);
+    }, 1000);
 
   }
 

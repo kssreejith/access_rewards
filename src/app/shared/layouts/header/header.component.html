@@ -1,13 +1,12 @@
 <!-- Top Navigation -->
 <div (scrollPosition)="onWindowScroll($event)"></div>
 <nav class="navbar navbar-expand-md navbar-dark nav__access " [class.nav__fixed]="navIsFixed">
-  <a class="navbar-brand" [routerLink]="['/']">
-    <img src="assets/img/logo.svg">
-  </a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item tablez--logo">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="145.42px" height="40px" viewBox="0 0 110.755 30.463" enable-background="new 0 0 110.755 30.463" xml:space="preserve">
+    <a class="navbar-brand" [routerLink]="['/']">
+        <img src="assets/img/logo.svg">
+    </a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item tablez--logo">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="145.42px" height="40px" viewBox="0 0 110.755 30.463" enable-background="new 0 0 110.755 30.463" xml:space="preserve">
         <g class="">
           <path fill="#FFFFFF" d="M60.125,17.367h-3.691l-0.835,2.27h-1.216l3.406-8.81h1.022l3.352,8.81h-1.216L60.125,17.367z
                                   M56.803,16.369h2.965l-1.452-4.011h-0.036L56.803,16.369z" />
@@ -50,23 +49,22 @@
         </g>
       </svg>
 
-    </li>
-    <li class="nav-item" *ngIf="(loggedIn | json) == '{}'">
-      <a class="login_btn" [routerLink]="['/login']">Login
+        </li>
+        <li class="nav-item" *ngIf="(loggedIn | json) == '{}'">
+            <a class="login_btn" [routerLink]="['/login']">Login
       </a>
-    </li>
-    <li class="nav-item" *ngIf="(loggedIn | json) != '{}'">
-      <a class="login_btn" [routerLink]="['/profile']">Profile
+        </li>
+        <li class="nav-item" *ngIf="(loggedIn | json) != '{}'">
+            <a class="login_btn" [routerLink]="['/profile']">Profile
       </a>
-    </li>
-    <li class="nav-item" *ngIf="(loggedIn | json) != '{}'" (click)="logout()">
-      <a class="login_btn">Logout
+        </li>
+        <li class="nav-item" *ngIf="(loggedIn | json) != '{}'" (click)="logout()">
+            <a class="login_btn">Logout
       </a>
-    </li>
-    <li class="nav-item" (click)="showSearchMenu(true)">
-      <a class="nav-link search">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="18px" height="18px" viewBox="0 0 10.996 10.997" enable-background="new 0 0 10.996 10.997" xml:space="preserve">
+        </li>
+        <li class="nav-item" (click)="showSearchMenu(true)">
+            <a class="nav-link search">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 10.996 10.997" enable-background="new 0 0 10.996 10.997" xml:space="preserve">
           <g class="">
             <path fill="#FFFFFF" d="M4.656,9.312c-1.244,0-2.413-0.484-3.293-1.364C0.483,7.069,0,5.9,0,4.656s0.483-2.413,1.363-3.293
                          C2.243,0.484,3.412,0,4.656,0c1.243,0,2.412,0.484,3.292,1.363c0.88,0.88,1.363,2.049,1.363,3.293S8.828,7.069,7.948,7.948
@@ -77,72 +75,72 @@
             />
           </g>
         </svg>
-      </a>
-    </li>
-    <li class="nav-item" (click)="showNav(true)">
-      <a class="nav-link">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
+            </a>
+        </li>
+        <li class="nav-item" (click)="showNav(true)">
+            <a class="nav-link">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
 </nav>
 <div *ngIf="showSideMenu">
-  <div class="nav__holder  animated slideInRight">
-    <a class="nav_close" (click)="showNav(false)">
-      <img src="assets/img/close.svg" alt="">
-    </a>
-    <div class="row justify-content-around no-gutters">
-      <div class="col-12 col-lg-3 col-md-3">
-        <a (click)="showNav(false)" href='/index#fws_5a5a4fb8d4bfc' class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Store Locator</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-
-          </div>
+    <div class="nav__holder  animated slideInRight">
+        <a class="nav_close" (click)="showNav(false)">
+            <img src="assets/img/close.svg" alt="">
         </a>
+        <div class="row justify-content-around no-gutters">
+            <div class="col-12 col-lg-3 col-md-3">
+                <a (click)="showNav(false)" href='/index#fws_5a5a4fb8d4bfc' class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/rm-1.svg" alt="">
+                        <h1>Store Locator</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a [routerLink]="['/brand']" class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Brands</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+                    </div>
+                </a>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a [routerLink]="['/offers']" class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Offers</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a [routerLink]="['/brand']" class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/rm-2.svg" alt="">
+                        <h1>Brands</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a [routerLink]="['/points-calculator']" class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Points Calculator</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a [routerLink]="['/offers']" class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/rm-3.svg" alt="">
+                        <h1>Offers</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
 
-      </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a [routerLink]="['/points-calculator']" class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/rm-4.svg" alt="">
+                        <h1>Points Calculator</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- search -->
 <div id="search__holder" *ngIf="searchMenu" class="row align-items-center animated pulse">
-  <a class="nav_close" (click)="showSearchMenu(false)">
-    <i class="fa fa-times" aria-hidden="true"></i>
-  </a>
-  <div>
-    <input type="text" placeholder="Start Typing...">
-  </div>
+    <a class="nav_close" (click)="showSearchMenu(false)">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
+    <div>
+        <input type="text" placeholder="Start Typing...">
+    </div>
 </div>
