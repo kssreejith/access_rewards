@@ -3,91 +3,105 @@
 </auth-header>
 
 <section class="main__container">
-    <div class="container ">
-        <div class="row align-items-center justify-content-md-center">
-            <div class="col col-lg-10 offer--blk">
-                <div class="main_heading">Offers</div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 left_blk">
-                        <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising in apparel, food and beverage, toys, and baby wear. Special offers, especially for you. Find limited-time offers to maximize
-                            savings, earn reward points, enjoy additional benefits and more. Check back here more often to know the latest lip-smacking deals and start enjoying the benefits right away.</p>
+  <div class="container ">
+    <div class="row align-items-center justify-content-md-center">
+      <div class="col col-lg-10 offer--blk">
+        <div class="main_heading">Offers</div>
+        <carousel>
+          <slide>
+            <img src="https://i.ytimg.com/vi/_jlVhEs75Fo/maxresdefault.jpg" alt="First slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="https://i.ytimg.com/vi/_jlVhEs75Fo/maxresdefault.jpg" alt="Second slide" style="display: block; width: 100%;">
+          </slide>
+          <slide>
+            <img src="https://i.ytimg.com/vi/_jlVhEs75Fo/maxresdefault.jpg" alt="Third slide" style="display: block; width: 100%;">
+          </slide>
+        </carousel>
 
-                    </div>
-                </div>
-                <div class="col col-lg-6 ">
-                    <div class="row">
-                        <div class="col col-lg-4" *ngFor="let item of brands">
-                            <div (click)="getOfferData(item.brand_id)">
-                                <a class="offers__blk">
-                                    <div>
-                                        <img src="{{item.logo}}" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 left_blk">
+            <p>Tablez provides ACCESS REWARDS members best deals and promotions across its many brands - specialising in apparel,
+              food and beverage, toys, and baby wear. Special offers, especially for you. Find limited-time offers to maximize
+              savings, earn reward points, enjoy additional benefits and more. Check back here more often to know the latest
+              lip-smacking deals and start enjoying the benefits right away.</p>
 
-                </div>
-                <!-- Button trigger modal -->
-
-
-
-                <!-- Modal -->
-
-            </div>
+          </div>
         </div>
+        <div class="col col-lg-6 ">
+          <div class="row">
+            <div class="col col-lg-4" *ngFor="let item of brands">
+              <div (click)="getOfferData(item.brand_id)">
+                <a class="offers__blk">
+                  <div>
+                    <img src="{{item.logo}}" alt="">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Button trigger modal -->
+
+
+
+        <!-- Modal -->
+
+      </div>
     </div>
+  </div>
 </section>
 <footer class="footer">
-    <div class="container">
-        <ul>
-            <li>
-                <a [routerLink]="['/about']">ABOUT </a>
-            </li>
-            <li>
-                <a [routerLink]="['/brand']">BRANDS </a>
-            </li>
-            <li>
-                <a>OFFERS </a>
-            </li>
-            <li>
-                <a [routerLink]="['/contact']">CONTACT US</a>
-            </li>
-        </ul>
-        <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
+  <div class="container">
+    <ul>
+      <li>
+        <a [routerLink]="['/about']">ABOUT </a>
+      </li>
+      <li>
+        <a [routerLink]="['/brand']">BRANDS </a>
+      </li>
+      <li>
+        <a>OFFERS </a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']">CONTACT US</a>
+      </li>
+    </ul>
+    <span class="text-muted">© 2017 Accessrewards. All Rights Reserved
     </span>
-    </div>
+  </div>
 </footer>
 
 <div *ngIf="showDiv && offerDetails">
-    <div class="offer__detail--blk animated zoomIn">
-        <div class="modal-body" *ngIf="offerDetails">
+  <div class="offer__detail--blk animated zoomIn">
+    <div class="modal-body" *ngIf="offerDetails">
 
-            <a class="nav_close" (click)="closeDiv()">
-                <img src="assets/img/close.svg" alt="">
-            </a>
+      <a class="nav_close" (click)="closeDiv()">
+        <img src="assets/img/close.svg" alt="">
+      </a>
 
-            <div class="carousel slide media-carousel" id="media">
+      <div class="carousel slide media-carousel" id="media">
 
-                <div class="cont__blk">
-                    <a *ngIf="sliderPagination > 0" (click)="showOfferDetails(offers.length, false)" data-slide="prev" class="left carousel-control">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                    <div class="col text-center">
-                        <div class="sub_heading">{{offerDetails.tittle}}</div>
-                        <h3>{{offerDetails.end_date}}</h3>
-                        <p>{{offerDetails.description}}</p>
-                        <img src="{{offerDetails.logo}}" alt="Offer Logo">
-                    </div>
-                    <a *ngIf="sliderPagination < offers.length-1" (click)="showOfferDetails(offers.length, true)" data-slide="next" class="right carousel-control">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-
-
-
-            </div>
-
+        <div class="cont__blk">
+          <a *ngIf="sliderPagination > 0" (click)="showOfferDetails(offers.length, false)" data-slide="prev" class="left carousel-control">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
+          <div class="col text-center">
+            <div class="sub_heading">{{offerDetails.tittle}}</div>
+            <h3>{{offerDetails.end_date}}</h3>
+            <p>{{offerDetails.description}}</p>
+            <img src="{{offerDetails.logo}}" alt="Offer Logo">
+          </div>
+          <a *ngIf="sliderPagination < offers.length-1" (click)="showOfferDetails(offers.length, true)" data-slide="next" class="right carousel-control">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
         </div>
+
+
+
+      </div>
+
     </div>
+  </div>
 </div>

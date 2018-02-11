@@ -38,6 +38,8 @@
     "angular2-ladda": "1.2.1",
     "angular2-text-mask": "8.0.1",
     "angular2-toaster": "4.0.0",
+    "angular4-carousel": "^3.1.8",
+    "angular4-events": "^4.0.1",
     "bootstrap": "4.0.0-beta.2",
     "chart.js": "2.6.0",
     "core-js": "2.4.1",
