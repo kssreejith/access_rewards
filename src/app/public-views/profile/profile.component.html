@@ -93,7 +93,7 @@
                 <div class="col-4">
                   <div class="form-group">
                     <select class="custom-select form-control" [ngModel]="userDetails.day" formControlName="day">
-                      <option value="null" disabled="true" [selected]="true">Days</option>
+                      <option value="userDetails.day" disabled="true" [selected]="true">Days</option>
                       <option *ngFor="let item of days; let i=index" [value]="item">
                         {{item}}</option>
                     </select>

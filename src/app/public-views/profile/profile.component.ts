@@ -101,11 +101,9 @@ export class ProfileComponent implements OnInit {
         const date = new Date(responseData.DateOfBirth);
 
         if (date) {
-
-          this.userDetails.day = date.getDate();
+          this.userDetails.day = this.days[date.getDate() - 1];
           this.userDetails.month = this.months[date.getMonth()];
-          this.userDetails.year = date.getFullYear();
-
+          this.userDetails.year = date.getUTCFullYear();
         }
 
 

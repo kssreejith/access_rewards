@@ -55,6 +55,9 @@ export class HeaderComponent {
     this.searchMenu = status;
 
   }
+  reload() {
+    window.location.href = '/index';
+  }
 
   logout() {
     this.toastr.success('Logged Out Successfully', 'Success!');

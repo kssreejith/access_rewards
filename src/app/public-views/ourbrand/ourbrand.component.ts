@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BrandService } from 'app/shared/services/brand.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class OurbrandComponent {
   public brandDetails: any;
   constructor(
     public activateRoute: ActivatedRoute,
-    public brandService: BrandService
+    public brandService: BrandService,
+    public router: Router,
 
   ) {
     this.activateRoute.params.subscribe(params => {
@@ -20,7 +21,9 @@ export class OurbrandComponent {
     })
 
   }
-
+  reload() {
+    this.router.navigate(['/brand']);
+  }
   getBrandDetails(id?: number) {
 
     let responseData: any;

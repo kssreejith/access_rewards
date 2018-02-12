@@ -1,6 +1,6 @@
 <!-- Top Navigation -->
 <nav (scroll)="onWindowScroll($event)" class="navbar navbar-expand-md navbar-dark nav__access inner__nav--bg" [class.nav__fixed]="navIsFixed">
-    <a class="navbar-brand" [routerLink]="['/']">
+    <a class="navbar-brand" (click)="reload()">
         <img src="assets/img/logo.svg">
     </a>
     <ul class="navbar-nav ml-auto">
@@ -10,9 +10,9 @@
           <path fill="#FFFFFF" d="M60.125,17.367h-3.691l-0.835,2.27h-1.216l3.406-8.81h1.022l3.352,8.81h-1.216L60.125,17.367z
                                   M56.803,16.369h2.965l-1.452-4.011h-0.036L56.803,16.369z" />
           <polygon fill="#FFFFFF" points="82.137,18.698 86.305,18.698 86.305,19.635 80.944,19.635 80.944,10.827 82.137,10.827 	" />
-          <polygon fill="#FFFFFF" points="105.829,18.698 110.755,18.698 110.755,19.635 104.486,19.635 104.486,18.746 109.193,11.764 
+          <polygon fill="#FFFFFF" points="105.829,18.698 110.755,18.698 110.755,19.635 104.486,19.635 104.486,18.746 109.193,11.764
                                  104.554,11.764 104.554,10.827 110.555,10.827 110.555,11.68 	" />
-          <polygon fill="#FFFFFF" points="93.671,18.698 93.671,11.764 98.258,11.764 98.258,10.827 92.479,10.827 92.479,19.635 
+          <polygon fill="#FFFFFF" points="93.671,18.698 93.671,11.764 98.258,11.764 98.258,10.827 92.479,10.827 92.479,19.635
                                  98.324,19.635 98.324,18.698 	" />
           <rect x="94.864" y="14.615" fill="#FFFFFF" width="3.236" height="0.937" />
           <path fill="#FFFFFF" d="M74.202,15.728c-0.304-0.407-0.722-0.667-1.255-0.78c0.408-0.15,0.735-0.379,0.985-0.688
