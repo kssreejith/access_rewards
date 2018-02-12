@@ -47,18 +47,31 @@
 
                             <div class="card ">
 
-                                <div class="card-header">
+                                <!-- <div class="card-header">
                                     <div>
-                                        <img src="{{item.logo}}" alt="Brand Logo">
+                                        
                                     </div>
                                 </div>
-                                <div class="card-body align-items-center">
+                             
                                     <div>
-                                        <h5 class="card-title">{{item.brand_name}}</h5>
-                                        <p class="card-text">{{item.description | truncate : 100 : "…"}}</p>
+                                       
+                                    </div>
+                                </div> -->
+
+                                <div class="expandable_box">
+                                    <span class="shape-icon"><img src="{{item.logo}}" alt="Brand Logo"></span>
+                                    <div class="hover-icon"></div>
+                                    <div class="category">
+                                        <!-- <h5 class="card-title">{{item.brand_name}}</h5> -->
+                                        <p class="card-text">{{item.description | truncate : 75 : "…"}}</p>
                                     </div>
                                 </div>
+
+
                             </div>
+
+
+
 
                         </a>
                         <div class="col-lg-3 col-md-6">
@@ -71,6 +84,7 @@
 
                             </div>
                         </div>
+
 
                     </div>
 
