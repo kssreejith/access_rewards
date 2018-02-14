@@ -105,6 +105,16 @@ export class ProfileComponent implements OnInit {
           this.userDetails.month = this.months[date.getMonth()];
           this.userDetails.year = date.getUTCFullYear();
         }
+        const childDate = new Date(responseData.ChildDOB);
+
+        console.log(childDate.getDate(), childDate.getMonth(), childDate.getUTCFullYear());
+        if (childDate) {
+          this.userDetails.childDay = this.days[childDate.getDate() - 1];
+          this.userDetails.childMonth = this.months[childDate.getMonth()];
+          this.userDetails.childYear = childDate.getUTCFullYear();
+        }
+        console.log("this.userDetails", this.userDetails);
+
 
 
       });
