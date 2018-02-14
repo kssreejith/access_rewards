@@ -3,22 +3,22 @@
 </auth-header>
 
 <section class="main__container grey_bg">
-    <div class="container ">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-10 contacts--blk content__holder">
-                <div class="sub_heading">Participating Brands</div>
-                <div *ngFor="let item of brands" class="row content__blk row align-items-center">
-                    <div class="media" (click)="getBrandDetails(item.brand_id)">
-                        <div class="img__blk">
-                            <img class="mr-3" src="{{item.logo}}" alt="Generic placeholder image">
-                        </div>
-                        <div class="media-body">
-                            <p>{{item.description}}</p>
-                            <a target="blank" href="{{item.website_url}}">{{item.brand_name}}</a>
-                        </div>
-                    </div>
-                </div>
+  <div class="container ">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-10 contacts--blk content__holder">
+        <div class="sub_heading">Participating Brands</div>
+        <div *ngFor="let item of brands" class="row content__blk row align-items-center">
+          <div class="media" (click)="getBrandDetails(item.brand_id)">
+            <div class="img__blk">
+              <img class="mr-3" src="{{item.logo}}" alt="Generic placeholder image">
             </div>
+            <div class="media-body">
+              <p>{{item.description}}</p>
+              <a target="blank" href="{{item.website_url}}">Visit website</a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>

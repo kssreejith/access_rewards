@@ -13,6 +13,7 @@ export class OtpComponent {
   public showSideMenu = false;
   public searchMenu = false;
   public mobileNum: number;
+  public last4: number;
   public signupForm: FormGroup;
   public disableClick = false;
 
@@ -29,6 +30,7 @@ export class OtpComponent {
 
     this.activateRoute.params.subscribe(params => {
       this.mobileNum = params['id'];
+      this.last4 = params['id'].substring(params['id'].length - 4, params['id'].length);
     });
     this.signupForm = this.fb.group({
       mobile: [this.mobileNum, Validators.required],

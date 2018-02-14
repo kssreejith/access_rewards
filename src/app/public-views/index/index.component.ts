@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BrandService } from 'app/shared/services/brand.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { Router } from '@angular/router';
 @Component({
   selector: 'index',
   templateUrl: './index.component.html'
@@ -109,7 +110,8 @@ export class IndexComponent {
   };
   mapInfo: any = {};
   constructor(
-    public brandService: BrandService
+    public brandService: BrandService,
+    public router: Router
   ) {
 
     this.getBrandData();
@@ -364,5 +366,10 @@ export class IndexComponent {
         this.brands = responseData.data;
 
       });
+  }
+
+  getBrandDetails(id?: number) {
+    this.router.navigate(['/ourbrand', id], { skipLocationChange: true });
+
   }
 }

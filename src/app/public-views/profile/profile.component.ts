@@ -75,7 +75,7 @@ export class ProfileComponent implements OnInit {
     this.getProfileDetails();
     this.getCustomerAvailablePoints();
     const d = new Date();
-    for (let i = (d.getFullYear() - 1); i > (d.getFullYear() - 100); i--) {
+    for (let i = (d.getFullYear()); i > (d.getFullYear() - 100); i--) {
       this.years.push(i);
     }
   }
@@ -96,7 +96,8 @@ export class ProfileComponent implements OnInit {
       () => {
         console.log('responseData', new Date(responseData.DateOfBirth));
         this.loading = false;
-
+        this.userDetails = {};
+        this.userDetails.ChildName = '';
         this.userDetails = responseData;
         const date = new Date(responseData.DateOfBirth);
 

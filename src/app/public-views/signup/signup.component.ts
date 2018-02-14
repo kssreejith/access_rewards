@@ -50,7 +50,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
 
     const d = new Date();
-    for (let i = (d.getFullYear() - 1); i > (d.getFullYear() - 100); i--) {
+    for (let i = (d.getFullYear()); i > (d.getFullYear() - 100); i--) {
       this.years.push(i);
     }
 
