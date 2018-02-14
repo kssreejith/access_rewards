@@ -1263,10 +1263,10 @@ ourbrand {
 
 .expandable_box {
     width: 100%;
-    background: #f5f5f5;
+    // background: #f5f5f5;
     height: 100%;
     position: relative;
-    border: 1px solid rgba(72, 88, 211, 0.06);
+    // border: 1px solid rgba(72, 88, 211, 0.06);
     overflow: hidden;
     display: inline-block;
     transition: .5s;
@@ -1283,10 +1283,10 @@ ourbrand {
         -moz-transition: .5s;
         -webkit-transition: .5s;
         transition: .5s;
-        -webkit-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        -ms-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        -moz-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
+        // -webkit-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
+        // -ms-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
+        // box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
+        // -moz-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
         .shape-icon {
             transform: translate(50%, -50%) rotate(360deg);
             -moz-transform: translate(50%, -50%) rotate(360deg);
