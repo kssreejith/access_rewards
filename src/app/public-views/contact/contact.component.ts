@@ -2,6 +2,7 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'app/shared/services/contact.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'contact',
@@ -30,7 +31,8 @@ export class ContactComponent {
     this.disableClick = true;
 
     let responseData: any;
-    this.contactService.createContactUs('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/contactMail',
+    this.contactService.createContactUs(
+      AppSettings.API_ENDPOINT + AppSettings.contactMail,
       this.signupForm.value).subscribe(
       data => responseData = data,
       error => {

@@ -5,6 +5,7 @@ import { RegisterService } from 'app/shared/services/register.service';
 import { User } from 'app/public-views/signup/User';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { ToastsManager } from 'ng2-toastr';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'profile',
@@ -86,7 +87,8 @@ export class ProfileComponent implements OnInit {
     };
 
     let responseData: any;
-    this.profileService.getProfileDetails('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/Searchmember', demo).subscribe(
+    this.profileService.getProfileDetails(
+      AppSettings.API_ENDPOINT + AppSettings.Searchmember, demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
@@ -129,7 +131,7 @@ export class ProfileComponent implements OnInit {
 
     let responseData: any;
     this.profileService.getCustomerAvailablePoints(
-      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/CustomerAvailablePoints', demo).subscribe(
+      AppSettings.API_ENDPOINT + AppSettings.CustomerAvailablePoints, demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
@@ -152,7 +154,8 @@ export class ProfileComponent implements OnInit {
 
 
     let responseData: any;
-    this.registerService.registerToApp('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/RegisterEasyAccount',
+    this.registerService.registerToApp(
+      AppSettings.API_ENDPOINT + AppSettings.RegisterEasyAccount,
       this.user).subscribe(
       data => responseData = data,
       error => {

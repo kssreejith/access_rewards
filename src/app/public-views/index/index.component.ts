@@ -3,6 +3,8 @@ import { BrandService } from 'app/shared/services/brand.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { Router } from '@angular/router';
+import { AppSettings } from 'app/app.constant';
+
 @Component({
   selector: 'index',
   templateUrl: './index.component.html'
@@ -311,14 +313,9 @@ export class IndexComponent {
     this.mapProps.center = this.bandList[this.brandIndex].brand_city[this.cityIndex].brand_centre;
     this.mapProps.zoom = 11;
     this.positions = this.getRandomMarkers();
-
-
-    console.log("this.mapProps", this.mapProps)
   }
 
   onBrandChange(val) {
-    console.log('onBrandChange', val);
-    console.log('brandIndex', this.brandIndex);
     this.cityList = {};
 
     this.brandIndex = val;
@@ -327,19 +324,12 @@ export class IndexComponent {
   }
 
   onCityChange(val) {
-    console.log('onCityChange', val);
-    console.log('cityIndex', this.cityIndex);
     this.cityIndex = val;
 
 
   }
 
   getRandomMarkers() {
-
-    console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].lat);
-    console.log('selectedBrand.cityIndex', this.bandList[this.brandIndex].brand_city[this.cityIndex].long);
-
-
     const positions = {
       pos: [],
       addr: null
@@ -356,7 +346,8 @@ export class IndexComponent {
   getBrandData() {
 
     let responseData: any;
-    this.brandService.getBrandData('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/fetchBrands/1', '').subscribe(
+    this.brandService.getBrandData(
+      AppSettings.API_ENDPOINT + AppSettings.fetchBrands, '').subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');

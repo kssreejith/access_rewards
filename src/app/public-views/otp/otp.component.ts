@@ -4,6 +4,7 @@ import { LoginService } from 'app/shared/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'otp',
@@ -54,7 +55,7 @@ export class OtpComponent {
   enter() {
     let responseData: any;
 
-    this.loginService.confirmOtp('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/ConfirmOTP',
+    this.loginService.confirmOtp(AppSettings.API_ENDPOINT + AppSettings.ConfirmOTP,
       this.signupForm.value).subscribe(
       data => responseData = data,
       error => {

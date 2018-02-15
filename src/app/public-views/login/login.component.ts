@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
 import { LoginService } from 'app/shared/services/login.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'login',
@@ -47,7 +48,7 @@ export class LoginComponent {
     };
     this.disableClick = true;
     let responseData: any;
-    this.loginService.generateOTP('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GenerateOTP',
+    this.loginService.generateOTP(AppSettings.API_ENDPOINT + AppSettings.GenerateOTP,
       // this.loginService.generateOTP('/api/GenerateOTP',
       login).subscribe(
       data => responseData = data,

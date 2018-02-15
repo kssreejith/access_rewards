@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BrandService } from 'app/shared/services/brand.service';
 import { Router } from '@angular/router';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'brand',
@@ -20,7 +21,7 @@ export class BrandComponent {
   getBrandData() {
 
     let responseData: any;
-    this.brandService.getBrandData('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/fetchBrands/1', '').subscribe(
+    this.brandService.getBrandData(AppSettings.API_ENDPOINT + AppSettings.fetchBrands, '').subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');

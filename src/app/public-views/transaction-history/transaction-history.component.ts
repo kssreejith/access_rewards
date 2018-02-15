@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'transaction-history',
@@ -23,7 +24,7 @@ export class TransactionHistoryComponent {
 
     let responseData: any;
     this.transcationHistory.getTranscationHistory(
-      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GetCustomerTransactionDetails', demo).subscribe(
+      AppSettings.API_ENDPOINT + AppSettings.GetCustomerTransactionDetails, demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');

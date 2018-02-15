@@ -9,6 +9,7 @@ import { ToastsManager } from 'ng2-toastr';
 
 import { LoginService } from 'app/shared/services/login.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
+import { AppSettings } from 'app/app.constant';
 
 @Component({
   selector: 'signup',
@@ -60,7 +61,7 @@ export class SignupComponent implements OnInit {
     // Use the formbuilder to build the Form model
     this.signupForm = this.fb.group({
       FirstName: ['', Validators.required],
-      LastName: ['', Validators.required],
+      LastName: [''],
       MobileNo: ['', Validators.required],
       day: ['', Validators.required],
       month: ['', Validators.required],
@@ -97,7 +98,7 @@ export class SignupComponent implements OnInit {
 
     let responseData: any;
     this.registerService.registerToApp(
-      'http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/RegisterEasyAccount',
+      AppSettings.API_ENDPOINT + AppSettings.RegisterEasyAccount,
       this.user).subscribe(
       data => responseData = data,
       error => {
@@ -111,7 +112,8 @@ export class SignupComponent implements OnInit {
           'mobile': this.signupForm.value.MobileNo
         };
         let registerData: any;
-        this.loginService.generateOTP('http://www.myaccessrewards.com/accessrewards/index.php/Api/v1.1/GenerateOTP',
+        this.loginService.generateOTP(
+          AppSettings.API_ENDPOINT + AppSettings.GenerateOTP,
           // this.loginService.generateOTP('/api/GenerateOTP',
           login).subscribe(
           data => registerData = data,
