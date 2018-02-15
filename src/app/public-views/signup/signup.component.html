@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" (click)="onFormSubmit()" class="btn btn-primary">Get Started</button>
+        <button type="submit" [disabled]="!signupForm.valid || disableClick" (click)="onFormSubmit()" class="btn btn-primary">Get Started</button>
       </form>
     </div>
   </div>

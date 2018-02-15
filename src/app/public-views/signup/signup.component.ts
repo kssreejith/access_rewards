@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
 
   // Property for the user
   private user: User;
+  public disableClick = false;
 
 
   day: number;
