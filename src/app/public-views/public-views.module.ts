@@ -22,33 +22,33 @@ import { TablezModule } from './tablez/tablez.module';
 
 /** /Sub modules */
 @NgModule({
-	declarations: [
-		PublicViewsComponent
-	],
-	imports: [
-		BrowserModule,
-		RouterModule,
-		publicRoute,
-		IndexModule,
-		LoginModule,
-		ForgotPasswordModule,
-		ProfileModule,
-		SignupModule,
-		TransactionHistoryModule,
-		PointsCalculatorModule,
-		ContactModule,
-		OffersModule,
-		AboutModule,
-		BrandModule,
-		OurbrandModule,
-		OtpModule,
-		FaqModule,
-		FaqModule,
-		TablezModule,
-		RouterModule
-	],
-	exports: [
-		PublicViewsComponent
-	]
+  declarations: [
+    PublicViewsComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    publicRoute,
+    IndexModule,
+    LoginModule,
+    ForgotPasswordModule,
+    ProfileModule,
+    SignupModule,
+    TransactionHistoryModule,
+    PointsCalculatorModule,
+    ContactModule,
+    OffersModule,
+    AboutModule,
+    BrandModule,
+    OurbrandModule,
+    OtpModule,
+    FaqModule,
+    FaqModule,
+    TablezModule,
+    RouterModule
+  ],
+  exports: [
+    PublicViewsComponent
+  ]
 })
 export class PublicViewsModule { }
