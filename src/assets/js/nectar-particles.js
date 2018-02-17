@@ -3,20 +3,20 @@
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
                                    || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
- 
+
     if (!window.requestAnimationFrame)
         window.requestAnimationFrame = function(callback, element) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
               timeToCall);
             lastTime = currTime + timeToCall;
             return id;
         };
- 
+
     if (!window.cancelAnimationFrame)
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
@@ -40,10 +40,10 @@ function initSetup() {
   	   	 colorMapping: ($(this).attr('data-color-mapping').length > 0) ? $(this).attr('data-color-mapping') : 'original',
   	   	 color: ($(this).attr('data-color').length > 0) ? $(this).attr('data-color') : '#fefefe',
   	  	 backgroundColor: ($(this).attr('data-bg-color').length > 0) ? $(this).attr('data-bg-color') : 'transparent',
-  	   	 colorAlpha: ($(this).attr('data-alpha').length > 0) ? $(this).attr('data-alpha') : 'original', 
-  	   	 density: ($(this).attr('data-density').length > 0) ? parseInt($(this).attr('data-density')) : 13, 
-  	   	 densityOriginal: ($(this).attr('data-density').length > 0) ? parseInt($(this).attr('data-density')) : 13, 
-  	   	 maxParticleSize: ($(this).attr('data-max-size').length > 0) ? parseInt($(this).attr('data-max-size')) : 3, 
+  	   	 colorAlpha: ($(this).attr('data-alpha').length > 0) ? $(this).attr('data-alpha') : 'original',
+  	   	 density: ($(this).attr('data-density').length > 0) ? parseInt($(this).attr('data-density')) : 13,
+  	   	 densityOriginal: ($(this).attr('data-density').length > 0) ? parseInt($(this).attr('data-density')) : 13,
+  	   	 maxParticleSize: ($(this).attr('data-max-size').length > 0) ? parseInt($(this).attr('data-max-size')) : 3,
   	   	 maxParticleSizeOriginal : ($(this).attr('data-max-size').length > 0) ? parseInt($(this).attr('data-max-size')) : 3
   	};
   	$(this).remove();
@@ -55,7 +55,7 @@ var Nodes = {
 
   // Settings
   canvasID: null,
-  
+
   drawDistance: 28,
   maxLineThickness: 4,
   reactionSensitivity: 3,
@@ -100,7 +100,7 @@ var Nodes = {
   elapsed: 0,
   init: function(canvasID) {
 
-    // Set up the visual canvas 
+    // Set up the visual canvas
     this.canvas = $(canvasID)[0];
     this.context = canvas.getContext( '2d' );
     this.context.globalCompositeOperation = "lighter";
@@ -132,7 +132,7 @@ var Nodes = {
 		    	Nodes.mouse.x = e.clientX;
 		    	Nodes.mouse.y = e.clientY;
 
-		    } 
+		    }
 	    });
 	    //$('body').on('mouseout',function(){
 	    //	Nodes.mouse.x = 1000;
@@ -150,7 +150,7 @@ var Nodes = {
 	  		Nodes.mouse.down = false;
 	    });
     }
-    
+
 
     //for non fullscreen mobile
     if($('#page-header-bg:not(.fullscreen-header)').length > 0 && $(window).width() < 1000) {
@@ -159,8 +159,8 @@ var Nodes = {
 
           Nodes.canvas.width = ($(canvasID).parents('.nectar-box-roll').length > 0 ) ? window.innerWidth : $(canvasID).parents('.nectar-particles').width();
           Nodes.canvas.height = ($(canvasID).parents('.nectar-box-roll').length > 0 ) ? window.innerHeight : $(canvasID).parents('.nectar-particles').height();
-          Nodes.onWindowResize();    
-          
+          Nodes.onWindowResize();
+
           },50);
 
        });
@@ -172,7 +172,7 @@ var Nodes = {
 
       Nodes.canvas.width = ($(canvasID).parents('.nectar-box-roll').length > 0 ) ? window.innerWidth : $(canvasID).parents('.nectar-particles').width();
       Nodes.canvas.height = ($(canvasID).parents('.nectar-box-roll').length > 0 ) ? window.innerHeight : $(canvasID).parents('.nectar-particles').height();
-      Nodes.onWindowResize();    
+      Nodes.onWindowResize();
     }
 
     //count shapes
@@ -199,7 +199,7 @@ var Nodes = {
     	if(typeof Nodes.imgsToDraw[i].shape === 'object'){
 
     		for(j=0; j < Nodes.imgsToDraw[i].shape.length; j++) {
-    			this.loadData(Nodes.imgsToDraw[i].shape[j],i,j,true);	
+    			this.loadData(Nodes.imgsToDraw[i].shape[j],i,j,true);
     		}
     	} else {
     		this.loadData(Nodes.imgsToDraw[i].shape,i,null,false);
@@ -215,9 +215,9 @@ var Nodes = {
 		this.points[index] = [];
   	} else {
   		if(typeof this.points[index] !== 'object') this.points[index] = {};
-  		this.points[index][index2] = [];	
+  		this.points[index][index2] = [];
   	}
-    
+
     var width, height, i, j;
 
     var colors = this.bgContextPixelData.data;
@@ -227,31 +227,31 @@ var Nodes = {
       for ( j = 0; j < this.canvas.width; j += this.imgsToDraw[index].density ) {
 
         var pixelPosition = ( j + i * this.bgContextPixelData.width ) * 4;
-        
+
         // Dont use whiteish pixels
         if ( colors[pixelPosition] > 200 && (colors[pixelPosition + 1]) > 200 && (colors[pixelPosition + 2]) > 200 || colors[pixelPosition + 3] === 0 ) {
           continue;
         }
-     
+
         //first shape while loading
         if(index == 0) {
         	var rndNumX = (Math.random() > 0.5) ? Math.random()*window.innerWidth : Math.random()*-window.innerWidth;
 	        var rndNumY = (Math.random() > 0.5) ? Math.random()*window.innerHeight : Math.random()*-window.innerHeight;
 	        var xPos = Math.random()*(window.innerWidth*2) +rndNumX;
 	       	var yPos = Math.random()*(window.innerHeight*2) +rndNumY;
-	        
+
 	    }
 
-	    //all others 
+	    //all others
 	    else {
-	  
+
 	    	//sequenced
-	    	/*if(!jQuery.isArray(this.points[index]) && typeof this.points[index] === 'object') { 
-	    		
+	    	/*if(!jQuery.isArray(this.points[index]) && typeof this.points[index] === 'object') {
+
 	    		//inside sequenced
 	    		if(index2 == 0) {
 	    			var prevIndex = (index == this.points[index].length) ? 0 : index-1;
-	    		
+
 	    			var xPos = this.points[prevIndex][Math.floor(Math.random()*this.points[prevIndex].length)].originalX;
 	       			var yPos = this.points[prevIndex][Math.floor(Math.random()*this.points[prevIndex].length)].originalY;
 	    		} else {
@@ -260,17 +260,17 @@ var Nodes = {
 	    			var xPos = this.points[index][prevIndex][Math.floor(Math.random()*this.points[index][prevIndex].length)].originalX;
 	       			var yPos = this.points[index][prevIndex][Math.floor(Math.random()*this.points[index][prevIndex].length)].originalY;
 	    		}
-	    		
+
 
 	    	} */
-	
+
 	    	//regular
 	    	//else {
 
 	    		//going back into sequenced
 	    		var prevIndex = (index == this.points.length) ? 0 : index-1;
 	    		if(!jQuery.isArray(this.points[prevIndex]) && typeof this.points[prevIndex] === 'object') {
-	    			var prevIndex2 = (index2 == this.points[prevIndex].length) ? 0 : index2-1; 
+	    			var prevIndex2 = (index2 == this.points[prevIndex].length) ? 0 : index2-1;
 	    			var mathRnd = Math.random();
 	    			var xPos = this.points[prevIndex][prevIndex2][Math.floor(mathRnd *this.points[prevIndex][prevIndex2].length)].originalX;
 	       			var yPos = this.points[prevIndex][prevIndex2][Math.floor(mathRnd *this.points[prevIndex][prevIndex2].length)].originalY;
@@ -330,58 +330,58 @@ var Nodes = {
 	    		break;
 	    }
 
-      
+
         var flashChance = (Math.random() < 0.5) ? true : false;
         var rndNum = Math.random();
-       
+
         if(!jQuery.isArray(this.bgImage[index])) {
 
-	        this.points[index].push({ 
-	        	x: xPos, 
-	        	y: yPos, 
-	        	originalX: j, 
-	        	originalY: i, 
-	        	toX: Math.random()*(window.innerWidth), 
-	        	toY: Math.random()*(window.innerHeight), 
+	        this.points[index].push({
+	        	x: xPos,
+	        	y: yPos,
+	        	originalX: j,
+	        	originalY: i,
+	        	toX: Math.random()*(window.innerWidth),
+	        	toY: Math.random()*(window.innerHeight),
 	        	r: r,
 	        	g: g,
 	        	b: b,
 	        	a: alpha,
 	        	hiddenDuringTrans: false,
 	        	originalAlpha: alpha,
-	        	color: color, 
-	        	baseRadius: Math.ceil(rndNum*this.imgsToDraw[index].maxParticleSize), 
+	        	color: color,
+	        	baseRadius: Math.ceil(rndNum*this.imgsToDraw[index].maxParticleSize),
 	        	baseRadiusOriginal: Math.ceil(rndNum*this.imgsToDraw[index].maxParticleSize),
 	        	randomPosX: Math.random()*6,
 	        	randomPosY: Math.random()*6,
-	        	shrinking: false, 
+	        	shrinking: false,
 	        	shrinkDelay: Math.random()*100,
-	        	flashSize: flashChance, 
+	        	flashSize: flashChance,
 	        	used: false, //used already when seeking points in explosion
 	        	duplicate: false, // duplicate point in explosion to fade in during shape trans
-	        	randomNum: rndNum 
+	        	randomNum: rndNum
 	        });
 
 	        if(this.points[index].baseRadius < 1) { this.points[index].baseRadius = 1; this.points[index].baseRadiusOriginal = 1; }
 	    } else {
-	    
-	  		this.points[index][index2].push({ 
-	        	x: j, 
-	        	y: i, 
-	        	originalX: j, 
-	        	originalY: i, 
+
+	  		this.points[index][index2].push({
+	        	x: j,
+	        	y: i,
+	        	originalX: j,
+	        	originalY: i,
 	        	seqX: j,
 	        	seqY: i,
 	        	sequenceUsed: false,
-	        	toX: Math.random()*(window.innerWidth), 
-	        	toY: Math.random()*(window.innerHeight), 
-	        	color: color, 
-	        	baseRadius: Math.ceil(rndNum*3), 
+	        	toX: Math.random()*(window.innerWidth),
+	        	toY: Math.random()*(window.innerHeight),
+	        	color: color,
+	        	baseRadius: Math.ceil(rndNum*3),
 	        	baseRadiusOriginal: Math.ceil(rndNum*3),
-	        	shrinking: false, 
+	        	shrinking: false,
 	        	shrinkDelay: Math.random()*100,
-	        	flashSize: flashChance, 
-	        	randomNum: rndNum 
+	        	flashSize: flashChance,
+	        	randomNum: rndNum
 	        });
 	  	}
 
@@ -408,24 +408,24 @@ var Nodes = {
     		}
     		else if (this.points[index].length <= 400) {
     		 	var divider = 1.5;
-    		} 
+    		}
 
     		if(this.points[index].length > 350 && randomNum > Math.floor(this.points[index].length/divider)) {
 		    	this.points[index][u].hiddenDuringTrans = true;
 		    }
     	}
-    	
+
     }
 
 
-    //initiate 
+    //initiate
     if(index == Nodes.imgsToDraw.length -1) {
 
     	Nodes.draw();
 
 		//start the rotate timer
     	if(resize == false) Nodes.particlesRotate(false);
-	   
+
 
  	}
 
@@ -448,27 +448,27 @@ var Nodes = {
     	for(var i=0; i<this.points.length;i++){
     		shapePointArr[i] = this.points[index].length
     	}
-    	
+
     	var largest = Math.max.apply(Math, shapePointArr); */
-    
+
 
     //reset to first shape at end
-    //if(Math.floor(this.currentShapeIndex) == this.points.length) this.currentShapeIndex = 0;	
+    //if(Math.floor(this.currentShapeIndex) == this.points.length) this.currentShapeIndex = 0;
 
     //handle indexing for sequencing and static shapes
-    /*if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') {  
+    /*if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') {
     	var shapeIndex = this.points[Math.floor(this.currentShapeIndex)][0];
     } else { */
     	var shapeIndex = this.points[Math.floor(this.currentShapeIndex)];
     /*}*/
    if(this.onMobile == true) {
-	    if(Nodes.decMultiplier < 0.23) Nodes.decMultiplier += 0.0015; 
+	    if(Nodes.decMultiplier < 0.23) Nodes.decMultiplier += 0.0015;
 	 }
-	 else { 
-	 	if(Nodes.decMultiplier < 0.125) Nodes.decMultiplier += 0.0004; 
+	 else {
+	 	if(Nodes.decMultiplier < 0.125) Nodes.decMultiplier += 0.0004;
 	 }
-	
-	    
+
+
 
 	//proc
     for (i = 0; i < shapeIndex.length; i++ ){
@@ -478,22 +478,22 @@ var Nodes = {
       theta = Math.atan2( currentPoint.y - this.mouse.y, currentPoint.x - this.mouse.x);
 
 
-    
-           	 
+
+
         distance = this.reactionSensitivity * 60 / Math.sqrt((this.mouse.x - currentPoint.x) * (this.mouse.x - currentPoint.x) +
-         (this.mouse.y - currentPoint.y) * (this.mouse.y - currentPoint.y));  
+         (this.mouse.y - currentPoint.y) * (this.mouse.y - currentPoint.y));
          if(distance > 50) distance = 0;
-   
+
 
 
         if (! shapeIndex[i].time)  {
 
             shapeIndex[i].time  = this.ran(70, 200);
             shapeIndex[i].deg   = this.ran(-120, 180);
-            shapeIndex[i].vel   = this.ran(0.08, 0.14);  
+            shapeIndex[i].vel   = this.ran(0.08, 0.14);
            // this.points[Math.floor(this.currentShapeIndex)][i].curve = this.ran(0, 1);
             //this.points[Math.floor(this.currentShapeIndex)][i].fade  = this.ran(0, 1);
-        }                
+        }
 
         // Calc movement
 
@@ -564,12 +564,12 @@ var Nodes = {
 	    		}
 			}
 
-			//random movement 
+			//random movement
 			else {
 
-			
+
 				if(i == 0 && this.reactionSensitivity < 8) this.reactionSensitivity = 8;
-	
+
 				/*if(shapeIndex[i].time == 0) {
 					currentPoint.randomPosX = 1-2*Math.random() *sizeMovement*2;
 					currentPoint.randomPosY = 1-2*Math.random() *sizeMovement*2;
@@ -581,18 +581,18 @@ var Nodes = {
 	    		//currentPoint.y += Math.sin(theta) * distance + (currentPoint.originalY - currentPoint.y) * .11;
 
 
-		
-				//hide particles accoirding to density
-				
 
-           
+				//hide particles accoirding to density
+
+
+
 	    		var sizeMovement = shapeIndex[i].randomNum*currentPoint.baseRadius/4;
 	    		if(sizeMovement < 0.25) sizeMovement = 0.25;
 
 
 	    		if (! shapeIndex[i].time2)  {
 		            shapeIndex[i].time2 = this.ran(300, 900);
-		        }    
+		        }
 
 		        shapeIndex[i].time2 = shapeIndex[i].time2 - 1;
 
@@ -605,13 +605,13 @@ var Nodes = {
 					shapeIndex[i].time2 = this.ran(300, 900);
 				}*/
 
-				
-			
+
+
 
 	    		currentPoint.x += Math.cos(theta) * distance + ((shapeIndex[i].toX - currentPoint.x) * .027);
 	    		currentPoint.y += Math.sin(theta) * distance + ((shapeIndex[i].toY - currentPoint.y) * .027);
-	    		
-	    		
+
+
 
 	    		  // check for bounds
 	              if(currentPoint.x < -(this.canvas.width*0.1)) {
@@ -634,12 +634,12 @@ var Nodes = {
 
 	               currentPoint.toX += Math.floor(this.impulsX  * sizeMovement*30/30) + (this.impulsX/7*currentPoint.randomPosX);
               	   currentPoint.toY += Math.floor(this.impulsY * sizeMovement*30/30) + (this.impulsY/7*currentPoint.randomPosY);
-              	     
+
               	   //sparkle
               	  if(currentPoint.shrinkDelay >= 0 ) currentPoint.shrinkDelay = currentPoint.shrinkDelay - 0.5;
-     
-              	   if(currentPoint.flashSize == true && currentPoint.shrinkDelay <= 0) { 
-              	  	 
+
+              	   if(currentPoint.flashSize == true && currentPoint.shrinkDelay <= 0) {
+
               	   	 ////start large
               	   	 if(currentPoint.baseRadius == currentPoint.baseRadiusOriginal && currentPoint.shrinking == false) {
               	   	 	currentPoint.baseRadius = Nodes.imgsToDraw[Math.floor(this.currentShapeIndex)].maxParticleSize+4;
@@ -652,7 +652,7 @@ var Nodes = {
               	   	 currentPoint.baseRadius = (currentPoint.baseRadius - 0.3 > 1) ? currentPoint.baseRadius - 0.3 : 1;
               	   	 currentPoint.alpha = (currentPoint.alpha >= currentPoint.originalAlpha && currentPoint.originalAlpha != 1) ? currentPoint.alpha - 0.01 : currentPoint.originalAlpha;
               	   	 currentPoint.color = 'rgba(' + currentPoint.r + ',' + currentPoint.g + ',' + currentPoint.b + ',' + currentPoint.alpha+')';
-              	   	 
+
               	   	 ////end size
               	   	 if(currentPoint.baseRadius <= currentPoint.baseRadiusOriginal && currentPoint.shrinking == true) {
               	   	 	currentPoint.baseRadius = currentPoint.baseRadiusOriginal;
@@ -665,11 +665,11 @@ var Nodes = {
               	   	 	shapeIndex[Math.floor(Math.random()*shapeIndex.length)].flashSize = true;
               	   	 }
 
-              	   	
+
 
               	   }
-              	
-              	
+
+
 
 			}
 
@@ -678,7 +678,7 @@ var Nodes = {
     }
 
 
-   
+
 
   },
 
@@ -686,7 +686,7 @@ var Nodes = {
   drawPoints: function() {
 
     var i, currentPoint;
-    //if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') {  
+    //if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') {
     //	var shapeIndex = this.points[Math.floor(this.currentShapeIndex)][0];
     //} else {
     var shapeIndex = this.points[Math.floor(this.currentShapeIndex)];
@@ -708,21 +708,21 @@ var Nodes = {
       this.context.fillStyle = currentPoint.color;
       this.context.fill();
       this.context.closePath();
-      
+
     }
   },
 
   draw: function() {
-  
+
 	  	//if($('.no-scroll').length > 0) {
 
 	  		//box roll logic that will need to be bound
-	  		//$(Nodes.canvasID).parents('.nectar-box-roll').find('.canvas-bg.topBoxOut').length == 0 && $(Nodes.canvasID).parents('.nectar-box-roll').find('.canvas-bg.topBoxIn').length == 0 
-	  		
+	  		//$(Nodes.canvasID).parents('.nectar-box-roll').find('.canvas-bg.topBoxOut').length == 0 && $(Nodes.canvasID).parents('.nectar-box-roll').find('.canvas-bg.topBoxIn').length == 0
+
 	  		var $that = this;
 
 	  		if(Nodes.regularAnimation == true || Nodes.randomMovement == true) {
-         
+
 	  			  Nodes.animation = requestAnimationFrame( Nodes.draw );
 
             //throttle fps to 60
@@ -730,15 +730,15 @@ var Nodes = {
             Nodes.elapsed = Nodes.now - Nodes.then;
             if (Nodes.elapsed > 16.666) {
                 Nodes.then = Nodes.now - (Nodes.elapsed % 16.666);
-                //stop drawing when the slider is out of view 
+                //stop drawing when the slider is out of view
                 if($('#page-header-bg.out-of-sight').length == 0) {
                     Nodes.clear();
                     Nodes.updatePoints();
                     Nodes.drawPoints();
                 }
-             } 
+             }
 
-	  		} 
+	  		}
 	  		else {
 	  			Nodes.fpsDec +=0.23;
 	  			Nodes.fps = (Nodes.fps >= 0) ?  Nodes.fps - Nodes.fpsDec : 0;
@@ -748,15 +748,15 @@ var Nodes = {
 			        // Drawing code goes here
 			    }, 1000 / Nodes.fps);
 
-          //stop drawing when the slider is out of view 
+          //stop drawing when the slider is out of view
           if($('#page-header-bg.out-of-sight').length == 0) {
               Nodes.clear();
               Nodes.updatePoints();
               Nodes.drawPoints();
           }
-				
-	  		} 
-		  
+
+	  		}
+
 		//}
   },
 
@@ -764,8 +764,8 @@ var Nodes = {
   	this.context.clearRect(0, 0, canvas.width, canvas.height);
   },
 
-  ran: function(min, max)  {  
-     return Math.floor(Math.random() * (max - min + 1)) + min;  
+  ran: function(min, max)  {
+     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
 
   // The filereader has loaded the image... add it to image object to be drawn
@@ -781,7 +781,7 @@ var Nodes = {
   		this.bgImage[index] = new Image;
     	this.bgImage[index].src = data;
   	}
-  	
+
   	if(!jQuery.isArray(this.bgImage[index])) {
 	    this.bgImage[index].onload = function(){
 	    	Nodes.callDrawImageToBackground(index,index2);
@@ -794,39 +794,39 @@ var Nodes = {
 	    }
 	}
 
-	
+
 
   },
 
   particlesRotate: function(skipInitialDelay){
-  		 
+
   		 initTimeOut = (skipInitialDelay == true) ? 0 : 800;
 
-   		 setTimeout(function(){ 
+   		 setTimeout(function(){
 
    		 	 //interval between shapes - extra fo first load to balance initial scatter animation
    		 	 var timeoutInterval = (Nodes.loaded == false) ? Nodes.rotateTimer + 1000 : Nodes.rotateTimer;
 
-   		 	Nodes.loaded = true; 
+   		 	Nodes.loaded = true;
    		 	setTimeout(function(){ $(Nodes.canvasID).attr('data-loaded','true'); }, 1000);
 
    		 	if(Nodes.imgsToDraw.length > 1) Nodes.timeoutHolder = setTimeout( function(){ Nodes.particleRotateLogic(false) }, timeoutInterval);
 
 			  Nodes.canvasBgColor();
 		  	initTextEffect(Nodes.canvasID);
-			
+
 
    		 }, initTimeOut);
 
        //fadeout loading animation
       if(skipInitialDelay != true) {
-        $('#ajax-loading-screen').stop().transition({'opacity':0},1000,function(){ $(this).css({'display':'none'}); }); 
-        $('#ajax-loading-screen .loading-icon').transition({'opacity':0},1000) 
+        $('#ajax-loading-screen').stop().transition({'opacity':0},1000,function(){ $(this).css({'display':'none'}); });
+        $('#ajax-loading-screen .loading-icon').transition({'opacity':0},1000)
       }
 
   },
 
-  
+
   particleRotateLogic: function(seek) {
 
 			//clear current timeout incase seeked
@@ -845,9 +845,9 @@ var Nodes = {
    		 		//update shape index
    		 		if(seek !== false) {
    		 			Nodes.prevShapeIndex = Nodes.currentShapeIndex;
-   		 			Nodes.currentShapeIndex = seek; 
+   		 			Nodes.currentShapeIndex = seek;
    		 		} else {
-   		 			Nodes.currentShapeIndex = (Nodes.currentShapeIndex+1 == Nodes.imgsToDraw.length) ? 0 : Nodes.currentShapeIndex+1; 
+   		 			Nodes.currentShapeIndex = (Nodes.currentShapeIndex+1 == Nodes.imgsToDraw.length) ? 0 : Nodes.currentShapeIndex+1;
    		 		}
 
    		 		//slow particles during trans
@@ -855,7 +855,7 @@ var Nodes = {
    		 		else { Nodes.decMultiplier = 0.06; }
 
    		 		//sequenced shape
-   		 		/*if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') { 
+   		 		/*if(!jQuery.isArray(Nodes.points[Nodes.currentShapeIndex]) && typeof Nodes.points[Nodes.currentShapeIndex] === 'object') {
    		 			clearInterval(rotation);
    		 			Nodes.sequenceActive = true;
    		 			Nodes.particleSequenceRotate();
@@ -864,7 +864,7 @@ var Nodes = {
    		 		var prevIndex = (Nodes.currentShapeIndex == Nodes.points.length) ? 0 : Math.floor(Nodes.currentShapeIndex-1);
 				if(Math.floor(Nodes.currentShapeIndex) - 1 == -1) prevIndex = Nodes.points.length - 1;
 				var prevPrevIndex = (prevIndex-1 == -1) ? Nodes.points.length - 1 : prevIndex-1;
-			
+
    		 		//set next shape x/y pos to match the previos one after rnd movement
    		 		for (i = 0; i < Nodes.points[Nodes.currentShapeIndex].length; i++ ) {
    		 			var mathRnd = Math.random();
@@ -882,7 +882,7 @@ var Nodes = {
 				   					//var color = Nodes.points[prevIndex][Math.floor(mathRnd*Nodes.points[prevIndex].length)].color;
 				   					//Nodes.points[Nodes.currentShapeIndex][i].color = color;
 				   				//	break;
-				   				//} 
+				   				//}
 				   				//hide duplicate points now and fade them in mid way as they're going to the next shape
 				   				/*else if(Nodes.points[prevIndex][Math.floor(mathRnd*Nodes.points[prevIndex].length)].hiddenDuringTrans == false && Nodes.points[prevIndex][Math.floor(mathRnd*Nodes.points[prevIndex].length)].used == true) {
 				   					var currentPoint = Nodes.points[Nodes.currentShapeIndex][i];
@@ -900,7 +900,7 @@ var Nodes = {
 				   			var yPos = Nodes.points[prevIndex][Math.floor(mathRnd*Nodes.points[prevIndex].length)].y;
 	   		 			}
 
-	   		 		
+
 	   		 			//reset used attr on end of loop
 	   		 			//if(i == Nodes.points[Nodes.currentShapeIndex].length - 1) {
 	   		 			//	for(j = 0; j < Nodes.points[prevIndex].length; j++) {
@@ -908,14 +908,14 @@ var Nodes = {
 	   		 			//	}
 	   		 			//}
 
-	   		 			
-   		 				
+
+
    		 			}
-					
+
 			   		Nodes.points[Nodes.currentShapeIndex][i].x = xPos;
 			   		Nodes.points[Nodes.currentShapeIndex][i].y = yPos;
 
-			   	} 
+			   	}
 
 			   	var $paginationTimeout = (Nodes.randomMovement == true) ? 300 : 300;
    		 		Nodes.randomMovement = false;
@@ -929,23 +929,23 @@ var Nodes = {
 			   		Nodes.points[prevIndex][i].x = xPos;
 			   		Nodes.points[prevIndex][i].y = yPos;
 
-			   		Nodes.points[prevIndex][i].toX = Math.random()*(window.innerWidth); 
-    				Nodes.points[prevIndex][i].toY = Math.random()*(window.innerHeight); 
+			   		Nodes.points[prevIndex][i].toX = Math.random()*(window.innerWidth);
+    				Nodes.points[prevIndex][i].toY = Math.random()*(window.innerHeight);
 
     				//reset flash chance
      				var flashChance = (Math.random() < 0.5) ? true: false;
        				Nodes.points[prevIndex][i].flashSize = flashChance;
-			   	} 
+			   	}
 
-         if(this.reactionSensitivity > 4) this.reactionSensitivity = (window.innerWidth > 690) ? 4 : 1; 
+         if(this.reactionSensitivity > 4) this.reactionSensitivity = (window.innerWidth > 690) ? 4 : 1;
 
 			   //handle captions
 			   if(seek !== false) {
 			  	   var currentCaptionIndex = seek+1;
-			       var nextCaptionIndex = seek+1;	
+			       var nextCaptionIndex = seek+1;
 			   } else {
 			   	   var currentCaptionIndex = (Nodes.currentShapeIndex == 0) ? Nodes.imgsToDraw.length : Nodes.currentShapeIndex;
-			       var nextCaptionIndex = (Nodes.currentShapeIndex == Nodes.points.length) ? 0 : Math.floor(Nodes.currentShapeIndex+1);	
+			       var nextCaptionIndex = (Nodes.currentShapeIndex == Nodes.points.length) ? 0 : Math.floor(Nodes.currentShapeIndex+1);
 			   }
 
 			   Nodes.shapeTextDisplay(currentCaptionIndex, nextCaptionIndex, seek);
@@ -977,8 +977,8 @@ var Nodes = {
    		 	}
 
    		 	Nodes.canvasBgColor();
-	   		 
-	   		 
+
+
 
   },
 
@@ -986,7 +986,13 @@ var Nodes = {
 
   		jQuery(Nodes.canvasID).parents('.nectar-particles').find('.canvas-bg').css({
 	 		'background-color': Nodes.imgsToDraw[Nodes.currentShapeIndex].backgroundColor
-	 	});
+     });
+     jQuery(Nodes.canvasID).parents('.nectar-particles').find('.canvas-bg').removeClass( "Slide0 Slide1 Slide2 Slide3" )
+
+     jQuery(Nodes.canvasID).parents('.nectar-particles').find('.canvas-bg').addClass('Slide'+Nodes.currentShapeIndex);
+
+     console.log("Nodes.currentShapeIndex",Nodes.currentShapeIndex);
+
   },
 
   resetShapeTextTimeout: null,
@@ -1005,14 +1011,14 @@ var Nodes = {
 	  			});
 	  		});
 	  		Nodes.resetShapeTextTimeout = setTimeout(function(){ jQuery(Nodes.canvasID).parents($selector).find('.inner-wrap:not(.shape-'+index+') > *').delay(50).transition({ 'rotateX': $rotate, 'y': '30px'}, 0); }, jQuery(Nodes.canvasID).parents($selector).find('.inner-wrap:not(.shape-'+index+')').length * 200 );
-	  			
+
   		} else {
   			jQuery(Nodes.canvasID).parents($selector).find('.shape-'+index+' > *').each(function(i){
 	  			$(this).stop(true,true).delay(i*150).transition({'opacity':'0'}, 250, 'ease');
 	  		});
 
 	  		Nodes.resetShapeTextTimeout = setTimeout(function(){ jQuery(Nodes.canvasID).parents($selector).find('.shape-'+index+' > *').transition({'rotateX': $rotate, 'y': '30px'}, 0); }, jQuery(Nodes.canvasID).parents($selector).find('.shape-'+index+' > *').length * 200 );
-	  		
+
   		}
 
   		jQuery(Nodes.canvasID).parents($selector).find('.shape-'+index2).css('z-index',100);
@@ -1029,8 +1035,8 @@ var Nodes = {
 
 
   		 var seqXPos, seqYPos, currentPoint, otherPoint, otherPointCache, distance, nextIndex, closestMatchX, closestMatchY, def;
-	   
-  		
+
+
 	    for( var i=0; i < Nodes.points.length; i++) {
 
 	    	//check for sequenced
@@ -1038,42 +1044,42 @@ var Nodes = {
 
 	    		for(j=0; j < 1; j++) {
 
-	    			
+
 
 	    			//nextIndex = ( j+1 > Object.keys(Nodes.points[i]).length -1 ) ?  0 : j+1;
 
 	    			for(var k=0; k < Nodes.points[i][0].length; k++) {
 
 	    				currentPoint = Nodes.points[i][0][k];
-	    				
+
 	    				def = 1000;
 	    				closestMatchX = 0;
 	    				closestMatchY = 0;
 
 						for(var u=0; u < Nodes.points[i][Nodes.currentSequenceIndex].length; u++) {
-							
+
 							 otherPoint = Nodes.points[i][Nodes.currentSequenceIndex][u];
-								
+
 							if ( otherPoint.sequenceUsed != true) {
-					  			
+
 					  			distance = Math.sqrt((otherPoint.originalX - currentPoint.x) * (otherPoint.originalX - currentPoint.x) + (otherPoint.originalY - currentPoint.y) * (otherPoint.originalY - currentPoint.y));
-								
+
 						        if(distance <= def && def > 10 ) {
 							        def = distance;
-							 		
+
 							        currentPoint.seqX = otherPoint.originalX;
 							        currentPoint.seqY = otherPoint.originalY;
-						
+
 							        otherPointCache = otherPoint;
 							    }
-								
-								
-				
+
+
+
 								if(u ==  Nodes.points[i][Nodes.currentSequenceIndex].length -1) {
-	        				
+
 	        					 	otherPointCache.sequenceUsed = true;
 	        					 }
-        					 
+
         					}
 						}
 
@@ -1083,23 +1089,23 @@ var Nodes = {
 								Nodes.points[i][Nodes.currentSequenceIndex][u].sequenceUsed = false;
 							}
 						}
-						
+
 	    			}
-	    			
+
 	    		}
 
-	    	} 
+	    	}
 	    }
 
 
   		//update shape index
-	   	Nodes.currentSequenceIndex = (Nodes.currentSequenceIndex+1 == Object.keys(Nodes.points[Nodes.currentShapeIndex]).length) ? 0 : Nodes.currentSequenceIndex+1; 
+	   	Nodes.currentSequenceIndex = (Nodes.currentSequenceIndex+1 == Object.keys(Nodes.points[Nodes.currentShapeIndex]).length) ? 0 : Nodes.currentSequenceIndex+1;
   	},80);
   },
   callDrawImageToBackground: function(index,index2){
 
   		 Nodes.loadedCount += 1;
-  		
+
 	      //wait until all are loaded
 	      if(Nodes.loadedCount == Nodes.totalImgCount) {
 
@@ -1107,17 +1113,17 @@ var Nodes = {
 	      	for(var i=0;i<Nodes.imgsToDraw.length;i++) {
 
 	      		if(!jQuery.isArray(this.bgImage[i])) {
-	      		
+
 		      		Nodes.drawImageToBackground(i,null,false,true);
 		      	} else {
 		      		for(j=0; j < Nodes.imgsToDraw[i].shape.length; j++) {
-	      	
+
 	      				Nodes.drawImageToBackground(i,j,false,true);
 	      			}
 		      	}
 	      	}
 
-	      } 
+	      }
   },
   // Image is loaded... draw to bg canvas
   drawImageToBackground: function (index,index2,resize,sequence) {
@@ -1159,7 +1165,7 @@ var Nodes = {
 	      } else if (maxRatio <= 3){
 	      		this.imgsToDraw[index].density = this.imgsToDraw[index].densityOriginal;
 	      		this.imgsToDraw[index].maxParticleSize = this.imgsToDraw[index].maxParticleSizeOriginal;
-	      		
+
 	      }
 	  } else {
 	  		this.imgsToDraw[index].density = this.imgsToDraw[index].densityOriginal;
@@ -1181,10 +1187,10 @@ var Nodes = {
 
     this.preparePoints(index,index2,userResized);
 
-  
+
 
   },
-  
+
 
 
   // Resize and redraw the canvas.
@@ -1266,14 +1272,14 @@ function initTextEffect(canvasID){
 
 	function initGooPagination(){
 		startPos=0;
-	
+
 		$current.data("pos",{y:startPos});
-		
+
 		$dots.click(function(event){
 
 
 			var $cur=$(this);
-			
+
 
 			var dest=($cur.index())*spacing;
 			TweenMax.to($current.data("pos"),0.7,{
@@ -1310,7 +1316,7 @@ function initTextEffect(canvasID){
 	    	y:pos+startPos,
 	    	scale:scale*1.15,
 	    	force3D:true
-	    });	
+	    });
 
 	    var curItem=pos/spacing,
 	    	curItemR=Math.round(curItem)
@@ -1324,7 +1330,7 @@ function initTextEffect(canvasID){
 var perspect = 'not-rolled';
 var animating = 'false';
 function boxRoll(e,d) {
-	
+
 	if($('#slide-out-widget-area.open').length > 0) return false;
 
 	if(perspect == 'not-rolled' && animating == 'false' && d == -1 && $('.nectar-box-roll canvas[data-loaded="true"]').length > 0) {
@@ -1336,29 +1342,29 @@ function boxRoll(e,d) {
 
 	  	//slow fps
 	  	Nodes.regularAnimation = false;
-	  	
-		setTimeout(function(){ 
-					animating ='false'; 
+
+		setTimeout(function(){
+					animating ='false';
 		},1650);
-		
+
 		clearTimeout(Nodes.timeoutHolder);
 
 	}
 
 	else if(perspect == 'rolled' && animating == 'false' && d == 1 && $(window).scrollTop() < 100) {
 
-	
+
 		perspect = 'not-rolled';
 		animating = 'true';
-		
-		setTimeout(function(){ 
-			
-			animating ='false'; 
+
+		setTimeout(function(){
+
+			animating ='false';
 			Nodes.regularAnimation = true;
 		},1600);
 
 		if(Nodes.randomMovement == false) {
-			setTimeout(function(){ 
+			setTimeout(function(){
 				//start animation again
 			    Nodes.draw();
 				Nodes.fps = 43;
@@ -1374,16 +1380,16 @@ function boxRoll(e,d) {
 			 setTimeout(function(){
 			 	Nodes.impulsX = Math.random()*800-400;
        	   	    Nodes.impulsY = -Math.random()*400;
-       	   	   
+
 			 },400);
 			 setTimeout(function(){  Nodes.particleRotateLogic(false); },3400);
-			 
+
 		}
 		//Nodes.randomMovement = false;
-		if(Nodes.randomMovement == false) Nodes.particlesRotate(true); 
-	
+		if(Nodes.randomMovement == false) Nodes.particlesRotate(true);
+
 	}
-	
+
 }
 
 if($shapes.length > 0) {
@@ -1399,7 +1405,7 @@ if($shapes.length > 0) {
   	return false;
   });
 
-  //touch 
+  //touch
   if(navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/)) {
   	$('body').swipe({
       swipeStatus: function(event, phase, direction, distance, duration, fingers) {
@@ -1428,7 +1434,7 @@ function updateRowRightPadding(d){
         $(this).css('padding-right',parseInt($(this).css('padding-right')) - parseInt($('body').attr('data-scrollbar-width')) + 'px' ).removeClass('extraPadding');
       } else {
         $(this).css('padding-right',parseInt($('body').attr('data-scrollbar-width')) + parseInt($(this).css('padding-right')) + 'px' ).addClass('extraPadding');
-      } 
+      }
     });
 }
 
