@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif!important;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden!important;
 }
 
@@ -130,10 +130,53 @@ a {
 }
 
 %gradient__navlink_click {
-    background: #5a4b9f;
-    background: -moz-linear-gradient(top, rgba(90, 75, 159, 0.5) 1%, rgba(68, 123, 190, 0.5) 100%);
-    background: -webkit-linear-gradient(top, rgba(90, 75, 159, 0.5) 1%, rgba(68, 123, 190, 0.5) 100%);
-    background: linear-gradient(to bottom, rgba(90, 75, 159, 0.5) 1%, rgba(68, 123, 190, 0.5) 100%);
+    background: rgba(154, 64, 227, 1);
+    background: -moz-linear-gradient(top, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(154, 64, 227, 1)), color-stop(12%, rgba(154, 64, 227, 1)), color-stop(52%, rgba(0, 160, 252, 1)), color-stop(82%, rgba(0, 241, 213, 1)), color-stop(100%, rgba(0, 241, 213, 1)));
+    background: -webkit-linear-gradient(top, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -o-linear-gradient(top, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: linear-gradient(to bottom, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+}
+
+%slide0 {
+    background: rgba(154, 64, 227, 1);
+    background: -moz-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 5%, rgba(0, 147, 252, 1) 54%, rgba(0, 221, 214, 1) 88%, rgba(0, 221, 214, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(154, 64, 227, 1)), color-stop(5%, rgba(154, 64, 227, 1)), color-stop(54%, rgba(0, 147, 252, 1)), color-stop(88%, rgba(0, 221, 214, 1)), color-stop(100%, rgba(0, 221, 214, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 5%, rgba(0, 147, 252, 1) 54%, rgba(0, 221, 214, 1) 88%, rgba(0, 221, 214, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 5%, rgba(0, 147, 252, 1) 54%, rgba(0, 221, 214, 1) 88%, rgba(0, 221, 214, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 5%, rgba(0, 147, 252, 1) 54%, rgba(0, 221, 214, 1) 88%, rgba(0, 221, 214, 1) 100%);
+    background: linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 5%, rgba(0, 147, 252, 1) 54%, rgba(0, 221, 214, 1) 88%, rgba(0, 221, 214, 1) 100%);
+}
+
+%slide1 {
+    background: rgba(255, 33, 163, 1);
+    background: -moz-linear-gradient(45deg, rgba(255, 33, 163, 1) 0%, rgba(255, 93, 34, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255, 33, 163, 1)), color-stop(100%, rgba(255, 93, 34, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(255, 33, 163, 1) 0%, rgba(255, 93, 34, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(255, 33, 163, 1) 0%, rgba(255, 93, 34, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(255, 33, 163, 1) 0%, rgba(255, 93, 34, 1) 100%);
+    background: linear-gradient(45deg, rgba(255, 33, 163, 1) 0%, rgba(255, 93, 34, 1) 100%);
+}
+
+%slide2 {
+    background: rgba(0, 141, 157, 1);
+    background: -moz-linear-gradient(45deg, rgba(0, 141, 157, 1) 0%, rgba(2, 238, 116, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0, 141, 157, 1)), color-stop(100%, rgba(2, 238, 116, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(0, 141, 157, 1) 0%, rgba(2, 238, 116, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(0, 141, 157, 1) 0%, rgba(2, 238, 116, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(0, 141, 157, 1) 0%, rgba(2, 238, 116, 1) 100%);
+    background: linear-gradient(45deg, rgba(0, 141, 157, 1) 0%, rgba(2, 238, 116, 1) 100%);
+}
+
+%left_nav-bg {
+    background: rgba(154, 64, 227, 1);
+    background: -moz-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(154, 64, 227, 1)), color-stop(12%, rgba(154, 64, 227, 1)), color-stop(52%, rgba(0, 160, 252, 1)), color-stop(82%, rgba(0, 241, 213, 1)), color-stop(100%, rgba(0, 241, 213, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
+    background: linear-gradient(45deg, rgba(154, 64, 227, 1) 0%, rgba(154, 64, 227, 1) 12%, rgba(0, 160, 252, 1) 52%, rgba(0, 241, 213, 1) 82%, rgba(0, 241, 213, 1) 100%);
 }
 
 .grey_color {
@@ -249,4 +292,177 @@ a {
 
 .modal {
     z-index: 99999999;
+}
+
+@font-face {
+    font-family: 'Futura LH';
+    src: url('../assets/fonts/FuturaLH-Light.woff2') format('woff2'), url('../assets/fonts/FuturaLH-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Light.woff2') format('woff2'), url('../assets/fonts/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Bk';
+    src: url('../assets/fonts/Futura-Book.woff2') format('woff2'), url('../assets/fonts/Futura-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Lt BT';
+    src: url('../assets/fonts/FuturaBT-Light.woff2') format('woff2'), url('../assets/fonts/FuturaBT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.woff2') format('woff2'), url('../assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Medium.woff2') format('woff2'), url('../assets/fonts/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Thin.woff2') format('woff2'), url('../assets/fonts/Roboto-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('../assets/fonts/BentonSans-Regular.woff2') format('woff2'), url('../assets/fonts/BentonSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('../assets/fonts/FuturaBT-Medium.woff2') format('woff2'), url('../assets/fonts/FuturaBT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('../assets/fonts/FuturaBT-Book.woff2') format('woff2'), url('../assets/fonts/FuturaBT-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('../assets/fonts/AvenirLTStd-Black.woff2') format('woff2'), url('../assets/fonts/AvenirLTStd-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.custom-select {
+    width: 100% !important;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: 'Futura Md BT';
+}
+.form-control{
+    font-size: 14px;
+    font-family: 'Futura Md BT';
+}
+
+
+// .path {
+//     stroke-dasharray: 100;
+//     stroke-dashoffset: 10;
+//     -webkit-animation: dash 15s ;
+//     animation: dash 15s  ;
+//     -webkit-animation-duration: 1s;
+//     animation-duration: 25s;
+//   }
+  
+//   @keyframes dash {
+//     from {
+//       stroke-dashoffset: 1000;
+//     }
+//     to {
+//       stroke-dashoffset: 0;
+//     }
+//   }
+
+.path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 10;
+    -webkit-animation: dash 15s;
+    animation: dash0 15s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 15s;
+}
+@keyframes dash0 {
+    from {
+        stroke-dashoffset: 150;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.path1 {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 10;
+    -webkit-animation: dash 15s;
+    animation: dash1 15s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 15s;
+}
+@keyframes dash1 {
+    from {
+        stroke-dashoffset: 300;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.path2 {
+    stroke-dasharray: 250;
+    stroke-dashoffset: 10;
+    -webkit-animation: dash 15s;
+    animation: dash2 15s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 15s;
+}
+@keyframes dash2 {
+    from {
+        stroke-dashoffset: 250;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.path3 {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 10;
+    -webkit-animation: dash 15s;
+    animation: dash3 15s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 15s;
+}
+@keyframes dash3 {
+    from {
+        stroke-dashoffset: 200;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
 }

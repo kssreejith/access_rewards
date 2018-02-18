@@ -1,6 +1,7 @@
 <!-- Top Navigation -->
 <auth-header>
 </auth-header>
+<div *ngIf="brandDetails.brand_id === '10'" class="BabiesRUs__top-bg"><img class="about_img" src="assets/img/con-bg-4.svg" alt=""></div>
 
 <section class="main__container">
     <div class="container ">
@@ -37,7 +38,6 @@
 
 <!-- Our Brand Background -->
 <div *ngIf="brandDetails">
-    <div *ngIf="brandDetails.brand_id === '9'" class="ToysRUs__bottom-bg"></div>
-    <div *ngIf="brandDetails.brand_id === '10'" class="BabiesRUs__top-bg"></div>
-    <div *ngIf="brandDetails.brand_id === '10'" class="BabiesRUs__bottom-bg"></div>
+    <div *ngIf="brandDetails.brand_id === '9'" class="ToysRUs__bottom-bg"><img class="about_img" src="assets/img/con-bg-1.svg" alt=""></div>
+    <div *ngIf="brandDetails.brand_id === '10'" class="BabiesRUs__bottom-bg"><img class="about_img" src="assets/img/con-bg-7.svg" alt=""></div>
 </div>

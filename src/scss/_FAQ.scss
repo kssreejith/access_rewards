@@ -13,12 +13,13 @@
         -ms-flex: 1;
         flex: 1;
         h1 {
-            font-size: 42px;
+            font-size: 35px;
             font-weight: 500;
             line-height: 1.2em;
             letter-spacing: -0.01em;
             margin-bottom: 0.6rem;
             margin-top: 0;
+            font-family: 'Futura Md BT';
             transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.2s;
             -webkit-transform: translateY(40px);
             transform: translateY(40px);
@@ -104,6 +105,7 @@
     margin: 60px 0 0 0;
     padding: 0;
     .faq__name {
+        font-family: 'Futura Md BT';
         font-size: 38px;
         font-weight: 500;
         line-height: 1.2em;
@@ -136,7 +138,8 @@
         }
         &.card-body {
             p {
-                font-weight: 400;
+                font-family: 'Futura Lt BT';
+                font-weight: 300;
                 font-size: 15px;
                 margin: 10px 0;
                 float: left;
@@ -145,6 +148,7 @@
                 span {
                     color: #6652a0;
                     font-size: 22px;
+                    font-family: 'Futura Bk BT';
                 }
             }
             ul {
@@ -155,6 +159,7 @@
                 li {
                     color: #6652a0;
                     font-size: 20px;
+                    font-family: 'Futura Md BT';
                     font-weight: 500;
                     float: left;
                     width: 100%;
@@ -170,10 +175,11 @@
                         width: 100%;
                         float: left;
                         position: relative;
-                        font-size: 15px;
+                        font-family: 'Futura Lt BT';
+                        font-size: 16px;
                         color: #606060;
                         padding: 5px 0 5px 22px;
-                        font-weight: 400;
+                        font-weight: 300;
                         &:after {
                             content: '';
                             position: absolute;
@@ -189,9 +195,21 @@
                         font-weight: 400;
                         font-size: 15px;
                         color: #606060;
+                        font-family: 'Futura Bk BT';
                     }
                 }
             }
         }
     }
 }
+
+
+// .path {
+//     animation: draw 3.5s infinite;
+//   }
+   
+//    @keyframes draw {
+//     50% {
+//       stroke-dashoffset: 0;
+//     }
+//   }

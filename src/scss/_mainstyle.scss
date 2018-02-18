@@ -132,6 +132,7 @@
 .main_heading {
     margin: 5px 0 100px 0;
     padding: 0;
+    font-family: 'Futura Md BT';
     font-size: 35px;
     color: #6652a0;
     font-weight: 500;
@@ -145,8 +146,10 @@
 .sub_heading {
     margin: 5px 0 50px 0;
     padding: 0;
-    font-size: 35px;
+    font-size: 36px;
     color: #6652a0;
+    font-family: 'Futura Md BT';
+
     font-weight: 500;
     width: 100%;
     text-align: center;
@@ -165,7 +168,7 @@
         p {
             color: #000;
             font-size: 15px;
-            font-weight: 300;
+            font-family: 'Futura Bk';
         }
         ul {
             margin: 40px 0 0 0;
@@ -178,6 +181,7 @@
                 font-size: 18px;
                 color: #606060;
                 padding: 0 0 3px 22px;
+                font-family: 'Futura Bk';
                 span {
                     font-weight: 500;
                 }
@@ -227,6 +231,7 @@
                 @extend %gradient__btn;
                 border-radius: 0;
                 color: #fff;
+                font-family: 'Futura Md BT';
                 &:active {
                     @extend %gradient__btn;
                 }
@@ -347,29 +352,33 @@
     p {
         font-size: 32px;
         color: #6652a0;
-        font-weight: 300;
         margin: 0 0 40px 0;
         width: 100%;
         text-align: center;
     }
     h1 {
-        font-weight: 500;
         margin: 0 0 60px 0;
+        font-family: 'Futura Bk BT';
+        font-size: 30px;
     }
     h2 {
-        font-size: 17px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: normal;
         margin: 25px 0 15px;
+        font-family: 'Futura Bk';
     }
     p {
         font-size: 13px;
-        font-weight: 400;
+        font-family: 'Futura LH';
         width: 80%;
         margin: 0 auto 40px;
         color: #000;
     }
     img {
-        width: 160px;
+        width: 70%;
+        @media (max-width: 767px) {
+            width: 50%;
+        }
     }
 }
 
@@ -385,9 +394,9 @@
     background-attachment: fixed!important;
     position: relative;
     h1 {
-        font-size: 32px;
+        font-size: 34px;
         color: #fff;
-        font-weight: 300;
+        font-family: 'Futura Md BT';
         margin: 0 0 40px 0;
         width: 100%;
         text-align: center;
@@ -402,11 +411,13 @@
         }
     }
     .card {
-        padding: 15px;
+        padding: 0;
         border-radius: 0;
         margin: 0 0 0 0;
         height: 100%;
+        min-height:170px;
         cursor: pointer;
+        border:none;
         .card-header {
             height: 150px;
             text-align: center;
@@ -520,6 +531,7 @@
             font-size: 15px;
             font-weight: 300;
             margin: 0 0 50px 0;
+           
         }
     }
     .main_heading {
@@ -560,6 +572,7 @@
             color: #a1a1a1;
             line-height: normal;
             font-weight: 300;
+            font-family: 'Futura LH';
         }
     }
     .carousel {
@@ -632,18 +645,24 @@
     }
     h1 {
         font-weight: 300;
-        font-size: 22px;
-        margin: 0 0 10px 0;
+        font-size: 15px;
+        color: #000;
+        font-family: 'Futura Lt BT';
+        margin: 0 0 15px 0;
     }
     p {
-        font-weight: 400;
-        font-size: 17px;
+        font-weight: 300;
+        font-size: 16px;
         color: #000;
+        font-family: 'Futura Lt BT';
     }
     a {
         color: #f17f21!important;
         text-decoration: none;
         float: left;
+        font-family: 'Futura Bk';
+        font-size:15px;
+        margin:-5px 0 0 0;
         &:hover {
             color: #4a55d3;
             text-decoration: underline;
@@ -657,7 +676,7 @@
         -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
         -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
-        padding: 40px 20px;
+        padding: 35px 20px;
         margin: 0 0 10px 0;
         cursor: pointer;
         &:hover {
@@ -667,6 +686,10 @@
         }
         p {
             margin: 0 0 10px 0;
+            font-family: 'Futura LH';
+            font-weight:300;
+            font-size:14px;
+
         }
         .img__blk {
             width: 12vw;
@@ -686,7 +709,7 @@
 }
 
 .about_img {
-    width: 60%!important;
+    width: 100%!important;
 }
 
 .grey_bg {
@@ -701,11 +724,16 @@
         width: 100%;
     }
 }
+.grey_bg1 {
+    background: #f2f3f6;
+
+}
 
 .brand__img--blk {
     width: 100%;
     float: left;
-    margin: 30px 0 -273px 0;
+    // margin: 30px 0 -273px 0;
+    margin: 30px 0 0 0;
     text-align: center;
     img {
         width: 100%;
@@ -1168,6 +1196,8 @@
         padding: 0;
         font-size: 26px;
         color: #fff;
+        font-family: 'Futura Md BT';
+
         font-weight: 500;
         width: 100%;
         text-transform: capitalize;
@@ -1205,42 +1235,60 @@ ourbrand {
 }
 
 .brand__details--blk {
-    margin: 0px 0 57vh 0;
+    margin: 0px 0 0 0;
+    // margin: 0px 0 57vh 0;
     z-index: 1;
+
 }
 
 .ToysRUs__bottom-bg {
-    position: absolute;
-    bottom: 0;
-    height: 68vh;
-    width: 100%;
-    background: url(../assets/img/con-bg-1.svg);
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-repeat: no-repeat;
+    // position: absolute;
+    // bottom: 0;
+    // height: 68vh;
+    // width: 100%;
+    // background: url(../assets/img/con-bg-1.svg);
+    // background-size: cover;
+    // background-position: 0 0;
+    // background-repeat: no-repeat;
+    // background-repeat: no-repeat;
 }
 
 .BabiesRUs__top-bg {
+    // position: absolute;
+    // top: 87px;
+    // height: 28%;
+    // width: 100%;
+    // background: url(../assets/img/con-bg-4.svg);
+    // background-size: cover;
+    // background-position: 0 0;
+    // background-repeat: no-repeat;
+    margin: 87px 0 0 0;
     position: absolute;
-    top: 87px;
-    height: 28%;
+    z-index: 1;
     width: 100%;
-    background: url(../assets/img/con-bg-4.svg);
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    @media (max-width: 768px){
+        margin: 66px 0 -322px 0;
+    }
+    @media (max-width: 440px){
+        margin: 61px 0 -12vh 0;
+        position: relative;
+    
+    }
+    
+        img{
+        width: 96% !important;
+    }
 }
 
 .BabiesRUs__bottom-bg {
-    position: absolute;
-    bottom: 0;
-    height: 55vh;
-    width: 100%;
-    background: url(../assets/img/con-bg-7.svg);
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    // position: absolute;
+    // bottom: 0;
+    // height: 55vh;
+    // width: 100%;
+    // background: url(../assets/img/con-bg-7.svg);
+    // background-size: cover;
+    // background-position: 0 0;
+    // background-repeat: no-repeat;
 }
 
 .about__bottom-bg {
@@ -1253,22 +1301,13 @@ ourbrand {
     background-position: 0 0;
     background-repeat: no-repeat;
     background-repeat: no-repeat;
-    // animation-iteration-count: infinite;
-    // animation-name: slideInLeft;
-    // transform-origin: center bottom;
-    // animation-duration: 1s;
-    // animation-fill-mode: both;
-    // transition-duration: 0.5s;
+
 }
 
 .expandable_box {
     width: 100%;
-    // background: #f5f5f5;
     height: 100%;
     position: relative;
-    // border: 1px solid rgba(72, 88, 211, 0.06);
-    overflow: hidden;
-    display: inline-block;
     transition: .5s;
     text-align: center;
     -webkit-box-align: center !important;
@@ -1277,37 +1316,44 @@ ourbrand {
     /* display: -webkit-box; */
     display: -ms-flexbox;
     display: flex;
-    &:hover {
-        -o-transition: .5s;
-        -ms-transition: .5s;
-        -moz-transition: .5s;
-        -webkit-transition: .5s;
-        transition: .5s;
-        // -webkit-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        // -ms-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        // box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        // -moz-box-shadow: 1px 4px 12px 1px rgba(0, 0, 0, 0.18);
-        .shape-icon {
-            transform: translate(50%, -50%) rotate(360deg);
-            -moz-transform: translate(50%, -50%) rotate(360deg);
-            -webkit-transform: translate(50%, -50%) rotate(360deg);
-            -ms-transform: translate(50%, -50%) rotate(360deg);
-            right: 80%;
-            top: 45px
-        }
-        .hover-icon {
-            width: 700px;
-            height: 700px;
-            top: -20px;
-            transform: translate(0, -50%) rotate(0deg) scale(2);
-            -ms-transform: translate(0, -50%) rotate(0deg) scale(2);
-            -moz-transform: translate(0, -50%) rotate(0deg) scale(2);
-            -webkit-transform: translate(0, -50%) rotate(0deg) scale(2)
-        }
-        .category {
-            opacity: 1;
-        }
+  
+    .qodef-underline-icon-box-line{
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        line-height: 0;
+        box-sizing: border-box;
+        @extend %slide0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        -webkit-transition: height .3s cubic-bezier(.25,.46,.45,.94);
+        transition: height .3s cubic-bezier(.25,.46,.45,.94);
+
     }
+    .shape-icon {
+        -ms-transition: -ms-transform .2s ease-out;
+        -webkit-transition: -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out;
+    }
+    &:hover {       
+        .shape-icon {
+            -webkit-transform: translateY(-7vh) translateZ(0);
+            -moz-transform: translateY(-7vh) translateZ(0);
+            transform: translateY(-7vh) translateZ(0);
+            -o-transition: .5s;
+            -ms-transition: .5s;
+            -moz-transition: .5s;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+        .qodef-underline-icon-box-line{  
+            height: 100%;
+        } 
+        .category{
+             opacity: 1;
+        }   
+    }  
     .shape-icon {
         text-align: center;
         left: 0;
@@ -1344,17 +1390,17 @@ ourbrand {
         -o-transition: 800ms cubic-bezier(.4, 0, .2, 1);
     }
     .category {
-        opacity: 0;
         position: relative;
         z-index: 100;
-        padding: 15px;
+        padding: 10px;
         padding-top: 70px;
         text-align: left;
         opacity: 0;
-        transition: opacity 0.5s linear;
-        font-size: 13px;
+        font-size: 14px;
         color: #222;
         text-align: center;
+        color:#fff;
+        font-family: 'Futura Md BT';
     }
 }
 
@@ -1365,5 +1411,39 @@ ourbrand {
                 display: none;
             }
         }
+    }
+}
+
+#page-header-bg {
+    .canvas-bg {
+        &.Slide0 {
+            @extend %slide0;
+        }
+        &.Slide1 {
+            @extend %slide1;
+        }
+        &.Slide2 {
+            @extend %slide2;
+        }
+        &.Slide3 {
+            @extend %slide1;
+        }
+    }
+    h1 {
+        font-family: 'Futura Md BT';
+        font-size: 55px;
+        font-weight: normal!important;
+        @media (max-width: 666px) {
+            font-size: 33px!important;
+            line-height: 37px;
+        }
+        span {
+            font-family: 'Futura Lt BT';
+        }
+    }
+    .subheader {
+        font-family: 'Futura LH';
+        font-size: 16px;
+        font-weight: normal!important;
     }
 }

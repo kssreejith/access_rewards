@@ -12,7 +12,7 @@
     @media (max-width: 768px) {
         margin: 0 0 0 0;
         padding: 15px 20px;
-        position: absolute;
+        position: fixed;
         top: 0;
         min-height: 20px;
         width: 100%;
@@ -93,11 +93,15 @@
                     color: #fff;
                     text-align: center;
                     padding: 0!important;
-                    font-weight: 400;
+                    font-weight: 600;
                     font-size: 12px;
                     line-height: 20px;
                     display: block;
                     text-decoration: none;
+                    &:hover {
+                        @extend %gradient__btn;
+                        border: 1px solid rgba(64, 41, 41, 0);
+                    }
                     @media (max-width: 600px) {
                         margin: 9px 4px 0 0px;
                     }
@@ -123,7 +127,7 @@
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
     padding: 10px 40px 5px;
     @media (max-width: 660px) {
-        padding: 10px 20px 5px;
-        position: initial;
+        padding: 10px 20px;
+        position: fixed;
     }
 }

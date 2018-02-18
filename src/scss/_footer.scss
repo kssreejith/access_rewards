@@ -6,9 +6,10 @@ footer {
     padding: 50px 0 70px;
     z-index: 99;
     h4 {
-        font-weight: 400;
+        font-family: 'Futura Md BT';
+        font-weight: 500;
         font-size: 16px;
-        color: #777777!important;
+        color: #fff!important;
         margin: 0 0 20px 0;
         @media (max-width: 768px) {
             margin: 20px 0 10px 0;
@@ -18,8 +19,9 @@ footer {
         width: 100%;
         float: left;
         display: inline-block;
+        font-family: 'Futura LH';
         font-weight: 300;
-        color: #cccccc;
+        color: #9baabb;
         font-size: 16px;
         margin: 0 0 10px 0;
         text-decoration: none;
@@ -34,14 +36,15 @@ footer {
             width: 100%;
             float: left;
             display: inline-block;
-            font-weight: 300;
-            color: #ccc;
-            font-size: 16px;
             margin: 0 0 5px 0;
             text-decoration: none;
+            font-family: 'Futura LH';
+            font-weight: 300;
+            color: #9baabb;
             a {
+                font-family: 'Futura LH';
                 font-weight: 300;
-                color: #ccc;
+                color: #9baabb;
                 font-size: 16px;
                 text-decoration: none;
                 &:hover {
@@ -112,6 +115,7 @@ footer {
     }
     span {
         float: right;
+        font-family: 'Futura Lt BT';
         @media (max-width: 460px) {
             width: 100%;
             text-align: center;

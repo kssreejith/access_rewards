@@ -5,7 +5,7 @@
     top: 0;
     z-index: 999999999;
     color: #fff;
-    @extend %gradient__navmain-bg;
+    @extend %left_nav-bg;
     @media (max-width: 660px) {
         padding-top: 10vh;
         position: fixed;
@@ -30,7 +30,6 @@
         display: flex;
         -ms-flex-item-align: center!important;
         align-self: center!important;
-        @extend %gradient__navlink;
         text-decoration: none!important;
         &:hover {
             @extend %gradient__navlink_click;
@@ -49,8 +48,9 @@
                 width: 100%;
                 text-align: center;
                 color: #fff;
-                font-size: 25px;
-                font-weight: 700;
+                font-family: 'Futura Md BT';
+                font-size: 18px;
+                font-weight: 500;
                 text-transform: capitalize;
                 margin: 40px 0 0 0;
                 text-decoration: none;
