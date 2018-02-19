@@ -1,6 +1,7 @@
 export class AppSettings {
   public static API_ENDPOINT = 'http://www.myaccessrewards.com/accessrewards/index.php/Api/';
   public static GenerateOTP = 'v1.1/GenerateOTP';
+  public static uaeLogin = 'v1.1/uaeLogin';
   public static ConfirmOTP = 'v1.1/ConfirmOTP';
   public static fetchOffers = 'v1.1/fetchOffers';
   public static fetchBrands = 'v1.1/fetchBrands/1';

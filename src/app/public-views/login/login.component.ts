@@ -16,6 +16,7 @@ export class LoginComponent {
   public searchMenu = false;
   public signupForm: FormGroup;
   public disableClick = false;
+  public configConstant = AppSettings;
 
   constructor(
     public router: Router,
@@ -23,10 +24,19 @@ export class LoginComponent {
     public loginService: LoginService,
     private _webStorageService: WebStorageService
   ) {
-    // Use the formbuilder to build the Form model
-    this.signupForm = this.fb.group({
-      MobileNo: ['', Validators.required]
-    })
+    if (AppSettings.currentCountry === 'india') {
+      // Use the formbuilder to build the Form model
+      this.signupForm = this.fb.group({
+        MobileNo: ['', Validators.required]
+      })
+    } else {
+      // Use the formbuilder to build the Form model
+      this.signupForm = this.fb.group({
+        phoneno: ['', Validators.required],
+        countrycode: ['', Validators.required],
+      })
+    }
+
   }
 
   showNav(status) {
@@ -64,6 +74,30 @@ export class LoginComponent {
         this._webStorageService.saveData('RequestID', responseData.RequestID);
 
         this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
+      });
+  }
+
+  public loginUae() {
+    console.log('login', this.signupForm.value);
+    const login = {
+      'countrycode': '+91',
+      'phoneno': '9605671724'
+    }
+    this.disableClick = true;
+    let responseData: any;
+    this.loginService.generateOTP(AppSettings.API_ENDPOINT + AppSettings.uaeLogin,
+      login).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+        this.disableClick = false;
+
+      },
+      () => {
+        this.disableClick = false;
+
+        console.log('responseData', responseData);
+
       });
   }
 

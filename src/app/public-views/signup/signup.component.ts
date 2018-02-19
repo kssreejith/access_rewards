@@ -35,6 +35,8 @@ export class SignupComponent implements OnInit {
   days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   years = [];
 
+  public configConstant = AppSettings;
+
   // Inject the formbuilder into the constructor
   constructor(
     private fb: FormBuilder,
@@ -58,26 +60,51 @@ export class SignupComponent implements OnInit {
 
     this.genderList = ['Male', 'Female', 'Others'];
 
-    // Use the formbuilder to build the Form model
-    this.signupForm = this.fb.group({
-      FirstName: ['', Validators.required],
-      LastName: [''],
-      MobileNo: ['', Validators.required],
-      day: ['', Validators.required],
-      month: ['', Validators.required],
-      year: ['', Validators.required],
-      email: ['', [Validators.required,
-      Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      ChildName: [''],
-      childDay: [''],
-      childMonth: [''],
-      childYear: [''],
-      PinCode: [''],
-      annDay: [''],
-      annMonth: [''],
-      annYear: [''],
-      Gender: ['']
-    });
+    if (AppSettings.currentCountry === 'india') {
+      // Use the formbuilder to build the Form model
+      this.signupForm = this.fb.group({
+        FirstName: ['', Validators.required],
+        LastName: [''],
+        MobileNo: ['', Validators.required],
+        day: ['', Validators.required],
+        month: ['', Validators.required],
+        year: ['', Validators.required],
+        email: ['', [Validators.required,
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+        ChildName: [''],
+        childDay: [''],
+        childMonth: [''],
+        childYear: [''],
+        PinCode: [''],
+        annDay: [''],
+        annMonth: [''],
+        annYear: [''],
+        Gender: ['']
+      });
+    } else {
+      // Use the formbuilder to build the Form model
+      this.signupForm = this.fb.group({
+        FirstName: ['', Validators.required],
+        LastName: [''],
+        MobileNo: ['', Validators.required],
+        day: ['', Validators.required],
+        month: ['', Validators.required],
+        year: ['', Validators.required],
+        email: ['', [Validators.required,
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+        ChildName: [''],
+        childDay: [''],
+        childMonth: [''],
+        childYear: [''],
+        PinCode: [''],
+        annDay: [''],
+        annMonth: [''],
+        annYear: [''],
+        Gender: [''],
+        countrycode: ['', Validators.required]
+      });
+    }
+
 
 
   }
