@@ -377,11 +377,11 @@ a {
     font-size: 14px;
     font-family: 'Futura Md BT';
 }
-.form-control{
+
+.form-control {
     font-size: 14px;
     font-family: 'Futura Md BT';
 }
-
 
 // .path {
 //     stroke-dasharray: 100;
@@ -391,7 +391,6 @@ a {
 //     -webkit-animation-duration: 1s;
 //     animation-duration: 25s;
 //   }
-  
 //   @keyframes dash {
 //     from {
 //       stroke-dashoffset: 1000;
@@ -400,34 +399,36 @@ a {
 //       stroke-dashoffset: 0;
 //     }
 //   }
-
 .path {
-    stroke-dasharray: 150;
+    stroke-dasharray: 350;
     stroke-dashoffset: 10;
     -webkit-animation: dash 15s;
     animation: dash0 15s;
     -webkit-animation-duration: 1s;
     animation-duration: 15s;
 }
+
 @keyframes dash0 {
     from {
-        stroke-dashoffset: 150;
+        stroke-dashoffset: 350;
     }
     to {
         stroke-dashoffset: 0;
     }
 }
+
 .path1 {
-    stroke-dasharray: 300;
+    stroke-dasharray: 400;
     stroke-dashoffset: 10;
     -webkit-animation: dash 15s;
     animation: dash1 15s;
     -webkit-animation-duration: 1s;
     animation-duration: 15s;
 }
+
 @keyframes dash1 {
     from {
-        stroke-dashoffset: 300;
+        stroke-dashoffset: 400;
     }
     to {
         stroke-dashoffset: 0;
@@ -435,32 +436,35 @@ a {
 }
 
 .path2 {
-    stroke-dasharray: 250;
+    stroke-dasharray: 450;
     stroke-dashoffset: 10;
     -webkit-animation: dash 15s;
     animation: dash2 15s;
     -webkit-animation-duration: 1s;
     animation-duration: 15s;
 }
+
 @keyframes dash2 {
     from {
-        stroke-dashoffset: 250;
+        stroke-dashoffset: 450;
     }
     to {
         stroke-dashoffset: 0;
     }
 }
+
 .path3 {
-    stroke-dasharray: 200;
+    stroke-dasharray: 500;
     stroke-dashoffset: 10;
     -webkit-animation: dash 15s;
     animation: dash3 15s;
     -webkit-animation-duration: 1s;
     animation-duration: 15s;
 }
+
 @keyframes dash3 {
     from {
-        stroke-dashoffset: 200;
+        stroke-dashoffset: 500;
     }
     to {
         stroke-dashoffset: 0;

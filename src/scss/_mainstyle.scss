@@ -149,7 +149,6 @@
     font-size: 36px;
     color: #6652a0;
     font-family: 'Futura Md BT';
-
     font-weight: 500;
     width: 100%;
     text-align: center;
@@ -415,9 +414,9 @@
         border-radius: 0;
         margin: 0 0 0 0;
         height: 100%;
-        min-height:170px;
+        min-height: 170px;
         cursor: pointer;
-        border:none;
+        border: none;
         .card-header {
             height: 150px;
             text-align: center;
@@ -531,7 +530,6 @@
             font-size: 15px;
             font-weight: 300;
             margin: 0 0 50px 0;
-           
         }
     }
     .main_heading {
@@ -661,8 +659,8 @@
         text-decoration: none;
         float: left;
         font-family: 'Futura Bk';
-        font-size:15px;
-        margin:-5px 0 0 0;
+        font-size: 15px;
+        margin: -5px 0 0 0;
         &:hover {
             color: #4a55d3;
             text-decoration: underline;
@@ -687,19 +685,18 @@
         p {
             margin: 0 0 10px 0;
             font-family: 'Futura LH';
-            font-weight:300;
-            font-size:14px;
-
+            font-weight: 300;
+            font-size: 14px;
         }
         .img__blk {
             width: 12vw;
-            margin: 0 30px 0 0;
+            margin: 0 30px 0 20px;
             text-align: center;
             @media (max-width: 768px) {
-                width: 15vw;
+                width: 18vw;
             }
             img {
-                width: auto;
+                width: 90%;
                 @media (max-width: 768px) {
                     width: 100%;
                 }
@@ -724,16 +721,16 @@
         width: 100%;
     }
 }
+
 .grey_bg1 {
     background: #f2f3f6;
-
 }
 
 .brand__img--blk {
     width: 100%;
     float: left;
     // margin: 30px 0 -273px 0;
-    margin: 30px 0 0 0;
+    margin: 30px 0 40px 0;
     text-align: center;
     img {
         width: 100%;
@@ -1197,7 +1194,6 @@
         font-size: 26px;
         color: #fff;
         font-family: 'Futura Md BT';
-
         font-weight: 500;
         width: 100%;
         text-transform: capitalize;
@@ -1238,7 +1234,6 @@ ourbrand {
     margin: 0px 0 0 0;
     // margin: 0px 0 57vh 0;
     z-index: 1;
-
 }
 
 .ToysRUs__bottom-bg {
@@ -1266,16 +1261,14 @@ ourbrand {
     position: absolute;
     z-index: 1;
     width: 100%;
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
         margin: 66px 0 -322px 0;
     }
-    @media (max-width: 440px){
+    @media (max-width: 440px) {
         margin: 61px 0 -12vh 0;
         position: relative;
-    
     }
-    
-        img{
+    img {
         width: 96% !important;
     }
 }
@@ -1301,7 +1294,6 @@ ourbrand {
     background-position: 0 0;
     background-repeat: no-repeat;
     background-repeat: no-repeat;
-
 }
 
 .expandable_box {
@@ -1316,44 +1308,42 @@ ourbrand {
     /* display: -webkit-box; */
     display: -ms-flexbox;
     display: flex;
-  
-    .qodef-underline-icon-box-line{
+    .qodef-underline-icon-box-line {
         display: inline-block;
         width: 100%;
         height: 1px;
         line-height: 0;
         box-sizing: border-box;
-        @extend %slide0;
+        // @extend %slide0;
         position: absolute;
         bottom: 0;
         left: 0;
-        -webkit-transition: height .3s cubic-bezier(.25,.46,.45,.94);
-        transition: height .3s cubic-bezier(.25,.46,.45,.94);
-
+        -webkit-transition: height .3s cubic-bezier(.25, .46, .45, .94);
+        transition: height .3s cubic-bezier(.25, .46, .45, .94);
     }
     .shape-icon {
         -ms-transition: -ms-transform .2s ease-out;
         -webkit-transition: -webkit-transform .2s ease-out;
         transition: transform .2s ease-out;
     }
-    &:hover {       
+    &:hover {
         .shape-icon {
-            -webkit-transform: translateY(-7vh) translateZ(0);
-            -moz-transform: translateY(-7vh) translateZ(0);
-            transform: translateY(-7vh) translateZ(0);
+            -webkit-transform: translateY(-40px) translateZ(0);
+            -moz-transform: translateY(-40px) translateZ(0);
+            transform: translateY(-40px) translateZ(0);
             -o-transition: .5s;
             -ms-transition: .5s;
             -moz-transition: .5s;
             -webkit-transition: .5s;
             transition: .5s;
         }
-        .qodef-underline-icon-box-line{  
+        .qodef-underline-icon-box-line {
             height: 100%;
-        } 
-        .category{
-             opacity: 1;
-        }   
-    }  
+        }
+        .category {
+            opacity: 1;
+        }
+    }
     .shape-icon {
         text-align: center;
         left: 0;
@@ -1399,7 +1389,6 @@ ourbrand {
         font-size: 14px;
         color: #222;
         text-align: center;
-        color:#fff;
         font-family: 'Futura Md BT';
     }
 }
@@ -1445,5 +1434,11 @@ ourbrand {
         font-family: 'Futura LH';
         font-size: 16px;
         font-weight: normal!important;
+    }
+}
+
+.sub_heading {
+    img {
+        width: 18%;
     }
 }
