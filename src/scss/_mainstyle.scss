@@ -356,7 +356,7 @@
         text-align: center;
     }
     h1 {
-        margin: 0 0 60px 0;
+        margin: 0 0 30px 0;
         font-family: 'Futura Bk BT';
         font-size: 30px;
     }
@@ -378,6 +378,8 @@
         @media (max-width: 767px) {
             width: 50%;
         }
+        // width: 400px;
+        // margin: 0 -50px;
     }
 }
 
@@ -392,6 +394,9 @@
     background-position: 0% 0%!important;
     background-attachment: fixed!important;
     position: relative;
+    .col-lg-10 {
+        padding: 0 50px;
+    }
     h1 {
         font-size: 34px;
         color: #fff;
@@ -414,7 +419,7 @@
         border-radius: 0;
         margin: 0 0 0 0;
         height: 100%;
-        min-height: 170px;
+        // min-height: 200px;
         cursor: pointer;
         border: none;
         .card-header {
@@ -1232,31 +1237,10 @@ ourbrand {
 
 .brand__details--blk {
     margin: 0px 0 0 0;
-    // margin: 0px 0 57vh 0;
     z-index: 1;
 }
 
-.ToysRUs__bottom-bg {
-    // position: absolute;
-    // bottom: 0;
-    // height: 68vh;
-    // width: 100%;
-    // background: url(../assets/img/con-bg-1.svg);
-    // background-size: cover;
-    // background-position: 0 0;
-    // background-repeat: no-repeat;
-    // background-repeat: no-repeat;
-}
-
 .BabiesRUs__top-bg {
-    // position: absolute;
-    // top: 87px;
-    // height: 28%;
-    // width: 100%;
-    // background: url(../assets/img/con-bg-4.svg);
-    // background-size: cover;
-    // background-position: 0 0;
-    // background-repeat: no-repeat;
     margin: 87px 0 0 0;
     position: absolute;
     z-index: 1;
@@ -1271,17 +1255,6 @@ ourbrand {
     img {
         width: 96% !important;
     }
-}
-
-.BabiesRUs__bottom-bg {
-    // position: absolute;
-    // bottom: 0;
-    // height: 55vh;
-    // width: 100%;
-    // background: url(../assets/img/con-bg-7.svg);
-    // background-size: cover;
-    // background-position: 0 0;
-    // background-repeat: no-repeat;
 }
 
 .about__bottom-bg {
@@ -1308,6 +1281,7 @@ ourbrand {
     /* display: -webkit-box; */
     display: -ms-flexbox;
     display: flex;
+    padding: 28px 0;
     .qodef-underline-icon-box-line {
         display: inline-block;
         width: 100%;
@@ -1328,9 +1302,9 @@ ourbrand {
     }
     &:hover {
         .shape-icon {
-            -webkit-transform: translateY(-40px) translateZ(0);
-            -moz-transform: translateY(-40px) translateZ(0);
-            transform: translateY(-40px) translateZ(0);
+            -webkit-transform: translateY(-35px) translateZ(0);
+            -moz-transform: translateY(-35px) translateZ(0);
+            transform: translateY(-35px) translateZ(0);
             -o-transition: .5s;
             -ms-transition: .5s;
             -moz-transition: .5s;
@@ -1390,6 +1364,10 @@ ourbrand {
         color: #222;
         text-align: center;
         font-family: 'Futura Md BT';
+        line-height: normal;
+        -ms-transition: -ms-transform .2s ease-out;
+        -webkit-transition: -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out;
     }
 }
 
@@ -1421,6 +1399,7 @@ ourbrand {
     h1 {
         font-family: 'Futura Md BT';
         font-size: 55px;
+        text-transform: uppercase;
         font-weight: normal!important;
         @media (max-width: 666px) {
             font-size: 33px!important;

@@ -6,11 +6,11 @@
 
 <!-- Sign Up Form -->
 <div class="col-lg-12 login__blk">
-  <div class="row no-gutters">
-    <div class="col-lg-5 col-md-5  align-items-center left_blk">
-      <img src="assets/img/login-img.svg" alt="">
+    <div class="row no-gutters">
+        <div class="col-lg-5 col-md-5  align-items-center left_blk">
+            <img src="assets/img/login-img.svg" alt="">
 
-      <!-- <div class="content__blk">
+            <!-- <div class="content__blk">
                 <h1>Lorem Ipsum is simply dummy text </h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
                 <a [routerLink]="['/signup']">
@@ -20,22 +20,22 @@
           </button>
                 </a>
             </div> -->
-    </div>
-    <div class="col-lg-6 col-md-6  align-items-center right_blk text-center">
-      <div class="login__form">
-        <img src="assets/img/login_head.svg" alt="">
-        <form class="form-horizontal" [formGroup]="signupForm">
-          <div class="form-group" *ngIf="configConstant.currentCountry === 'india'">
-            <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
-            <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
-          </div>
-          <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
-            <input type="tel" class="form-control" id="MobileNo" formControlName="phoneno" placeholder="MobileNo" aria-describedby="MobileNo">
-            <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
-          </div>
-          <!-- Country Code -->
-          <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
-            <select class="custom-select form-control" formControlName="countrycode">
+        </div>
+        <div class="col-lg-6 col-md-6  align-items-center right_blk text-center">
+            <div class="login__form">
+                <img src="assets/img/login_head.svg" alt="">
+                <form class="form-horizontal" [formGroup]="signupForm">
+                    <div class="form-group" *ngIf="configConstant.currentCountry === 'india'">
+                        <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
+                        <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
+                    </div>
+                    <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
+                        <input type="tel" class="form-control" id="MobileNo" formControlName="phoneno" placeholder="MobileNo" aria-describedby="MobileNo">
+                        <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
+                    </div>
+                    <!-- Country Code -->
+                    <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
+                        <select class="custom-select form-control" formControlName="countrycode">
               <option selected="selected" value=""></option>
               <option value="+966">+966</option>
               <option value="+971">+971</option>
@@ -256,86 +256,85 @@
               <option value="+1869">+1869</option>
               <option value="+1876">+1876</option>
             </select>
-          </div>
-          <div class="row spacing10">
-            <div class="col-lg-6">
-              <button [disabled]="!signupForm.valid || disableClick" (click)="(configConstant.currentCountry === 'uae')?loginUae():login()"
-                class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="row spacing10">
+                        <div class="col-lg-6">
+                            <button [disabled]="!signupForm.valid || disableClick" (click)="(configConstant.currentCountry === 'uae')?loginUae():login()" class="btn btn-primary">Login</button>
 
+                        </div>
+                        <div class="col-lg-6">
+                            <button [routerLink]="['/signup']" class="btn btn-primary">Register</button>
+
+
+                        </div>
+                    </div>
+                    <a class="back" [routerLink]="['/']">
+                        < Back</a>
+                </form>
             </div>
-            <div class="col-lg-6">
-              <button [routerLink]="['/signup']" class="btn btn-primary">Register</button>
+        </div>
 
-
-            </div>
-          </div>
-          <a class="back" [routerLink]="['/']">
-            < Back</a>
-        </form>
-      </div>
     </div>
-
-  </div>
 </div>
 
 <div *ngIf="showSideMenu">
-  <div class="nav__holder animated slideInRight">
-    <a class="nav_close" (click)="showNav(false)">
-      <img src="assets/img/close.svg" alt="">
-    </a>
-    <div class="row justify-content-around no-gutters">
-      <div class="col-12 col-lg-3 col-md-3">
-        <a class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Store Locator</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-
-          </div>
+    <div class="nav__holder animated slideInRight">
+        <a class="nav_close" (click)="showNav(false)">
+            <img src="assets/img/close.svg" alt="">
         </a>
+        <div class="row justify-content-around no-gutters">
+            <div class="col-12 col-lg-3 col-md-3">
+                <a class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/menu_icon.svg" alt="">
+                        <h1>Store Locator</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a [routerLink]="['/brand']" class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Brands</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+                    </div>
+                </a>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Offers</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a [routerLink]="['/brand']" class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/menu_icon.svg" alt="">
+                        <h1>Brands</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
 
-      </div>
-      <div class="col-12 col-lg-3 col-md-3">
-        <a class="nav">
-          <div class="nav__item">
-            <img src="assets/img/menu_icon.svg" alt="">
-            <h1>Points Calculator</h1>
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-          </div>
-        </a>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/menu_icon.svg" alt="">
+                        <h1>Offers</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
 
-      </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <a class="nav">
+                    <div class="nav__item">
+                        <img src="assets/img/menu_icon.svg" alt="">
+                        <h1>Points Calculator</h1>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <!-- search -->
 <div *ngIf="searchMenu" id="search__holder" class="row align-items-center animated pulse">
-  <a class="nav_close" (click)="showSearchMenu(false)">
-    <i class="fa fa-times" aria-hidden="true"></i>
-  </a>
-  <div>
-    <input type="text" placeholder="Start Typing...">
-  </div>
+    <a class="nav_close" (click)="showSearchMenu(false)">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
+    <div>
+        <input type="text" placeholder="Start Typing...">
+    </div>
 </div>
