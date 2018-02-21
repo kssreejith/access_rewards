@@ -1,10 +1,10 @@
 {
-    "name": "Access Rewards",
+    "name": "Guardian",
     "version": "1.8.4",
     "description": "Bootstrap 4 Admin Template",
     "author": "",
-    "url": "http://myaccessrewards.com.com",
-    "copyright": "Copyright 2017 Access Rewards",
+    "url": "http://Guardian.com",
+    "copyright": "Copyright 2017 Guardian",
     "license": "MIT",
     "angular-cli": {},
     "scripts": {
