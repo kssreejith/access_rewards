@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BrandService } from 'app/shared/services/brand.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { Router } from '@angular/router';
 import { AppSettings } from 'app/app.constant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'index',
@@ -30,196 +30,196 @@ export class IndexComponent {
     { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
     { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
     {
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "saturation": 36
-            },
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 40
-            }
-        ]
+      'featureType': 'all',
+      'elementType': 'labels.text.fill',
+      'stylers': [
+        {
+          'saturation': 36
+        },
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 40
+        }
+      ]
     },
     {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 16
-            }
-        ]
+      'featureType': 'all',
+      'elementType': 'labels.text.stroke',
+      'stylers': [
+        {
+          'visibility': 'on'
+        },
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 16
+        }
+      ]
     },
     {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      'featureType': 'all',
+      'elementType': 'labels.icon',
+      'stylers': [
+        {
+          'visibility': 'off'
+        }
+      ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 20
-            }
-        ]
+      'featureType': 'administrative',
+      'elementType': 'geometry.fill',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 20
+        }
+      ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 17
-            },
-            {
-                "weight": 1.2
-            }
-        ]
+      'featureType': 'administrative',
+      'elementType': 'geometry.stroke',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 17
+        },
+        {
+          'weight': 1.2
+        }
+      ]
     },
     {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 20
-            }
-        ]
+      'featureType': 'landscape',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 20
+        }
+      ]
     },
     {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 21
-            }
-        ]
+      'featureType': 'poi',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 21
+        }
+      ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 17
-            }
-        ]
+      'featureType': 'road.highway',
+      'elementType': 'geometry.fill',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 17
+        }
+      ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
-        ]
+      'featureType': 'road.highway',
+      'elementType': 'geometry.stroke',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 29
+        },
+        {
+          'weight': 0.2
+        }
+      ]
     },
     {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 18
-            }
-        ]
+      'featureType': 'road.arterial',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 18
+        }
+      ]
     },
     {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 16
-            }
-        ]
+      'featureType': 'road.local',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 16
+        }
+      ]
     },
     {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 19
-            }
-        ]
+      'featureType': 'transit',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 19
+        }
+      ]
     },
     {
-        "featureType": "transit.line",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "lightness": "-86"
-            }
-        ]
+      'featureType': 'transit.line',
+      'elementType': 'geometry.stroke',
+      'stylers': [
+        {
+          'lightness': '-86'
+        }
+      ]
     },
     {
-        "featureType": "transit.line",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "lightness": "-59"
-            }
-        ]
+      'featureType': 'transit.line',
+      'elementType': 'labels.text.fill',
+      'stylers': [
+        {
+          'lightness': '-59'
+        }
+      ]
     },
     {
-        "featureType": "transit.line",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "lightness": "-71"
-            }
-        ]
+      'featureType': 'transit.line',
+      'elementType': 'labels.text.stroke',
+      'stylers': [
+        {
+          'lightness': '-71'
+        }
+      ]
     },
     {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#000000"
-            },
-            {
-                "lightness": 17
-            }
-        ]
+      'featureType': 'water',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#000000'
+        },
+        {
+          'lightness': 17
+        }
+      ]
     }
   ];
   mapProps: any = {
@@ -232,7 +232,11 @@ export class IndexComponent {
     public router: Router
   ) {
 
-    this.getBrandData();
+    if (AppSettings.currentCountry === 'india') {
+      this.getBrandData();
+    } else {
+      this.getBrandDataUae();
+    }
     this.bandList = [
       {
         brand_name: 'Bloomsburys',
@@ -292,6 +296,7 @@ export class IndexComponent {
           // tslint:disable-next-line:max-line-length
           city: 'Bangalore',
           brand_centre: 'Ergotek seating system building,Whitefield Bangalore',
+          // tslint:disable-next-line:max-line-length
           brand_location: 'C.S. Creamery Pvt. Ltd, Ground Floor, Plot No.120, Export promotion & Industrial Park (EPIP),Ergotek seating system building,Whitefield Bangalore',
           lat: '12.976789', long: '77.725735'
         },
@@ -299,6 +304,7 @@ export class IndexComponent {
           // tslint:disable-next-line:max-line-length
           city: 'Bangalore',
           brand_centre: 'Orion Mall,Brigade Gateway, 26/1 Dr. Rajkumar Road, Malleshwaram West, Bengaluru, Karnataka',
+          // tslint:disable-next-line:max-line-length
           brand_location: 'C S Creamery Pvt.Ltd, Upper Ground Floor,Orion Mall,Brigade Gateway, 26/1 Dr. Rajkumar Road, Malleshwaram West, Bengaluru, Karnataka 560055',
           lat: '13.0030624', long: '77.5642928'
         },
@@ -429,6 +435,9 @@ export class IndexComponent {
     this.mapProps.center = this.bandList[this.brandIndex].brand_city[this.cityIndex].brand_centre;
     this.mapProps.zoom = 11;
     this.positions = this.getRandomMarkers();
+
+
+    console.log('this.mapProps', this.mapProps)
   }
 
   onBrandChange(val) {
@@ -475,6 +484,21 @@ export class IndexComponent {
       });
   }
 
+  getBrandDataUae() {
+
+    let responseData: any;
+    this.brandService.getBrandData(
+      AppSettings.API_ENDPOINT + AppSettings.fetchBrandsUae, '').subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+      },
+      () => {
+        console.log('responseData', responseData);
+        this.brands = responseData.data;
+
+      });
+  }
   getBrandDetails(id?: number) {
     this.router.navigate(['/ourbrand', id], { skipLocationChange: true });
 

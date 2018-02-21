@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
 
   public loading = false;
   availablePoints: any;
+  public configConstant = AppSettings;
 
   // Property for the user
   private user: User;
@@ -22,6 +23,8 @@ export class ProfileComponent implements OnInit {
   // Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
+  signupFormUae: FormGroup;
+
   public disableClick = false;
 
 
@@ -68,13 +71,33 @@ export class ProfileComponent implements OnInit {
       annDay: [''],
       annMonth: [''],
       annYear: [''],
-      Gender: ['']
+      Gender: [''],
+      countrycode: [''],
     });
-
+    // Use the formbuilder to build the Form model
+    this.signupFormUae = this.fb.group({
+      FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
+      PhoneNo: ['', Validators.required],
+      EmailAddress: ['', [Validators.required,
+      Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      day: ['', Validators.required],
+      month: ['', Validators.required],
+      year: ['', Validators.required],
+      Nationality: [''],
+      Gender: [''],
+      CountryCode: [''],
+    });
   }
   ngOnInit() {
-    this.getProfileDetails();
-    this.getCustomerAvailablePoints();
+
+    if (AppSettings.currentCountry === 'india') {
+      this.getProfileDetails();
+      this.getCustomerAvailablePoints();
+    } else {
+      this.getProfileDetailsUae();
+    }
+
     const d = new Date();
     for (let i = (d.getFullYear()); i > (d.getFullYear() - 100); i--) {
       this.years.push(i);
@@ -131,7 +154,44 @@ export class ProfileComponent implements OnInit {
 
       });
   }
+  getProfileDetailsUae() {
 
+    const demo = {
+      'secretToken': this._webStorageService.getData('SecretToken')
+    };
+
+    let responseData: any;
+    this.profileService.getProfileDetailsUae(
+      AppSettings.API_ENDPOINT + AppSettings.SearchmemberUae, demo).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+        this.loading = false;
+
+      },
+      () => {
+        console.log('responseData', responseData);
+        this.loading = false;
+        if (responseData.Data) {
+          this.userDetails = responseData.Data;
+          if (this.userDetails.BirthDate) {
+            const date = new Date(this.userDetails.BirthDate);
+
+            if (date) {
+              this.userDetails.day = this.days[date.getDate() - 1];
+              this.userDetails.month = this.months[date.getMonth()];
+              this.userDetails.year = date.getUTCFullYear();
+            }
+          }
+        } else {
+          this.userDetails = '';
+        }
+
+
+
+
+      });
+  }
   getCustomerAvailablePoints() {
 
     const demo = {
@@ -182,5 +242,35 @@ export class ProfileComponent implements OnInit {
         this.getCustomerAvailablePoints();
       });
   }
+  public onFormSubmitUae() {
 
+    this.loading = true;
+
+    this.user = this.signupFormUae.value;
+    console.log('demo', this.signupFormUae.value);
+
+    this.user.BirthDate = this.signupFormUae.value.day + ' ' + this.signupFormUae.value.month + ' ' + this.signupFormUae.value.year;
+    this.user.secretToken = this._webStorageService.getData('SecretToken');
+    console.log(this.user);
+
+
+    let responseData: any;
+    this.registerService.registerToUaeApp(
+      AppSettings.API_ENDPOINT + AppSettings.uaeSetGuest,
+      this.user).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+        this.loading = false;
+
+      },
+      () => {
+        this.loading = false;
+
+        console.log('responseData', responseData);
+        this.toastr.success('Profile updated successfully.', 'Success!');
+
+        this.getProfileDetailsUae();
+      });
+  }
 }
