@@ -3,7 +3,7 @@ import { LoginService } from 'app/shared/services/login.service';
 import { Router, NavigationStart } from '@angular/router';
 
 @Component({
-  selector: 'guardian',
+  selector: 'Access Rewards',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
