@@ -5,31 +5,30 @@
 
 <!-- Sign Up Form -->
 <div class="col-lg-12 login__blk">
-  <div class="row no-gutters">
-    <div class="col-lg-5 col-md-5  align-items-center left_blk">
-      <img src="assets/img/otp.svg" alt="">
+    <div class="row no-gutters">
+        <div class="col-lg-5 col-md-5  align-items-center left_blk">
+            <img src="assets/img/otp.svg" alt="">
+
+        </div>
+        <div class="col-lg-6 col-md-6  align-items-center right_blk text-center">
+            <div class="login__form">
+                <h2>Enter One Time Password (OTP)</h2>
+                <h3>OTP has been sent to your mobile ******{{last4}}. Enter the OTP to login.</h3>
+                <form class="form-horizontal" [formGroup]="signupForm">
+
+                    <div class="form-group">
+                        <input type="number" class="form-control" formControlName="otp" placeholder="otp" id="exampleInputEmail1" aria-describedby="OTP" placeholder="Enter OTP" max="4">
+                        <a class="pull-left">Please enter OTP.</a>
+                        <!-- <a class="pull-right">Get OTP on call
+                        </a> -->
+                    </div>
+
+                    <button [disabled]="!signupForm.valid || disableClick" (click)="enter()" class="btn btn-primary">Enter</button>
+                    <a class="back" [routerLink]="['/']">
+                        < Back</a>
+                </form>
+            </div>
+        </div>
 
     </div>
-    <div class="col-lg-6 col-md-6  align-items-center right_blk text-center">
-      <div class="login__form">
-        <h2>Enter One Time Password (OTP)</h2>
-        <h3>OTP has been sent to your mobile ******{{last4}}. Enter the OTP to login.</h3>
-        <form class="form-horizontal" [formGroup]="signupForm">
-
-          <div class="form-group">
-            <input type="number" class="form-control" formControlName="otp" placeholder="otp" id="exampleInputEmail1" aria-describedby="OTP"
-              placeholder="Enter OTP" max="4">
-            <a class="pull-left">Please enter OTP.</a>
-            <a class="pull-right">Get OTP on call
-            </a>
-          </div>
-
-          <button [disabled]="!signupForm.valid || disableClick" (click)="enter()" class="btn btn-primary">Enter</button>
-          <a class="back" [routerLink]="['/']">
-            < Back</a>
-        </form>
-      </div>
-    </div>
-
-  </div>
 </div>

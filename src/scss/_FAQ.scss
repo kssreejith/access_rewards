@@ -48,6 +48,9 @@
         margin: 64px auto 0;
         width: 100%;
         float: left;
+        @media (max-width: 660px) {
+            margin: 0;
+        }
         .faq-nav__link {
             text-align: center;
             text-align: center;
@@ -133,8 +136,10 @@
         border-radius: 0;
         margin: 0 0 50px 0;
         padding: 0;
-        @media (max-width: 600px) {
+        @media (max-width: 660px) {
             padding: 15px 1rem;
+            padding: 15px 1rem 0;
+            margin: 0 0 10px 0;
         }
         &.card-body {
             p {
@@ -203,11 +208,9 @@
     }
 }
 
-
 // .path {
 //     animation: draw 3.5s infinite;
 //   }
-   
 //    @keyframes draw {
 //     50% {
 //       stroke-dashoffset: 0;
