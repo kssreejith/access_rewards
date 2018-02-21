@@ -14,7 +14,11 @@ export class BrandComponent {
     public router: Router
   ) {
 
-    this.getBrandData();
+    if (AppSettings.currentCountry === 'india') {
+      this.getBrandData();
+    } else {
+      this.getBrandDataUae();
+    }
 
   }
 
@@ -33,6 +37,21 @@ export class BrandComponent {
       });
   }
 
+
+  getBrandDataUae() {
+
+    let responseData: any;
+    this.brandService.getBrandData(AppSettings.API_ENDPOINT + AppSettings.fetchBrandsUae, '').subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+      },
+      () => {
+        console.log('responseData', responseData);
+        this.brands = responseData.data;
+
+      });
+  }
   getBrandDetails(id?: number) {
     this.router.navigate(['/ourbrand', id], { skipLocationChange: true });
 

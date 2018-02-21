@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -6,6 +6,7 @@ import { RegisterService } from 'app/shared/services/register.service';
 import { LoginService } from 'app/shared/services/login.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppSettings } from 'app/app.constant';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'login',
@@ -17,12 +18,15 @@ export class LoginComponent {
   public signupForm: FormGroup;
   public disableClick = false;
   public configConstant = AppSettings;
+  public loading = false;
 
   constructor(
     public router: Router,
     private fb: FormBuilder,
     public loginService: LoginService,
-    private _webStorageService: WebStorageService
+    private _webStorageService: WebStorageService,
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef
   ) {
     if (AppSettings.currentCountry === 'india') {
       // Use the formbuilder to build the Form model
@@ -52,6 +56,8 @@ export class LoginComponent {
   }
 
   public login() {
+    this.loading = true;
+
     console.log('login', this.signupForm.value);
     const login = {
       'mobile': this.signupForm.value.MobileNo
@@ -65,10 +71,12 @@ export class LoginComponent {
       error => {
         console.error('api ERROR');
         this.disableClick = false;
+        this.loading = false;
 
       },
       () => {
         this.disableClick = false;
+        this.loading = false;
 
         console.log('responseData', responseData);
         this._webStorageService.saveData('RequestID', responseData.RequestID);
@@ -79,24 +87,32 @@ export class LoginComponent {
 
   public loginUae() {
     console.log('login', this.signupForm.value);
-    const login = {
-      'countrycode': '+91',
-      'phoneno': '9605671724'
-    }
     this.disableClick = true;
+    this.loading = true;
+
     let responseData: any;
     this.loginService.generateOTP(AppSettings.API_ENDPOINT + AppSettings.uaeLogin,
-      login).subscribe(
+      this.signupForm.value).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
         this.disableClick = false;
+        this.loading = false;
 
       },
       () => {
         this.disableClick = false;
+        this.toastr.success('Successfully updated.', 'Success!');
+        this.loading = false;
 
         console.log('responseData', responseData);
+        if (responseData.Data) {
+          this._webStorageService.saveData('mobile', this.signupForm.value.phoneno);
+          this._webStorageService.saveData('SecretToken', responseData.Data.SecretToken);
+          this.router.navigate(['/profile']);
+        } else {
+          this.toastr.error(responseData.ReturnMessage, 'Error!');
+        }
 
       });
   }

@@ -16,6 +16,7 @@ import { AppSettings } from 'app/app.constant';
   templateUrl: './signup.component.html',
 })
 export class SignupComponent implements OnInit {
+
   // Gender list for the select control element
   genderList: string[];
   signupForm: FormGroup;
@@ -48,18 +49,6 @@ export class SignupComponent implements OnInit {
     private _webStorageService: WebStorageService
   ) {
     this.toastr.setRootViewContainerRef(vcr);
-
-  }
-
-  ngOnInit() {
-
-    const d = new Date();
-    for (let i = (d.getFullYear()); i > (d.getFullYear() - 100); i--) {
-      this.years.push(i);
-    }
-
-    this.genderList = ['Male', 'Female', 'Others'];
-
     if (AppSettings.currentCountry === 'india') {
       // Use the formbuilder to build the Form model
       this.signupForm = this.fb.group({
@@ -86,24 +75,23 @@ export class SignupComponent implements OnInit {
       this.signupForm = this.fb.group({
         FirstName: ['', Validators.required],
         LastName: [''],
-        MobileNo: ['', Validators.required],
-        day: ['', Validators.required],
-        month: ['', Validators.required],
-        year: ['', Validators.required],
+        PhoneNo: ['', Validators.required],
         email: ['', [Validators.required,
         Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-        ChildName: [''],
-        childDay: [''],
-        childMonth: [''],
-        childYear: [''],
-        PinCode: [''],
-        annDay: [''],
-        annMonth: [''],
-        annYear: [''],
-        Gender: [''],
-        countrycode: ['', Validators.required]
+        CountryCode: ['', Validators.required]
       });
     }
+  }
+
+  ngOnInit() {
+
+    const d = new Date();
+    for (let i = (d.getFullYear()); i > (d.getFullYear() - 100); i--) {
+      this.years.push(i);
+    }
+
+    this.genderList = ['Male', 'Female', 'Others'];
+
 
 
 
@@ -155,6 +143,30 @@ export class SignupComponent implements OnInit {
 
             this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
           });
+
+      });
+
+  }
+
+  public onFormSubmitUae() {
+    this.user = this.signupForm.value;
+    this.user.EmailAddress = this.signupForm.value.email;
+    console.log(this.user);
+
+
+    let responseData: any;
+    this.registerService.uaeSignUp(
+      AppSettings.API_ENDPOINT + AppSettings.uaeSignUp,
+      this.user).subscribe(
+      data => responseData = data,
+      error => {
+        console.error('api ERROR');
+      },
+      () => {
+        this.toastr.success('Successfully registered.', 'Success!');
+
+        console.log('responseData', responseData);
+
 
       });
 

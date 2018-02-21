@@ -7,31 +7,43 @@ import { ApiService } from './api.services';
 
 @Injectable()
 export class ProfileService {
-    constructor(public http: Http, private apiService: ApiService) {
+  constructor(public http: Http, private apiService: ApiService) {
 
-    }
-    getProfileDetails(url: string, param?: any) {
-        return new Observable(observer => {
-            this.apiService.post(url, param)
-                .map((res: any) => res.json())
-                .subscribe(response => {
-                    console.log("res", response.MemberResponse);
-                    observer.next(response.MemberResponse);
-                    observer.complete();
-                });
+  }
+  getProfileDetails(url: string, param?: any) {
+    return new Observable(observer => {
+      this.apiService.post(url, param)
+        .map((res: any) => res.json())
+        .subscribe(response => {
+          console.log("res", response.MemberResponse);
+          observer.next(response.MemberResponse);
+          observer.complete();
         });
+    });
 
-    }
-    getCustomerAvailablePoints(url: string, param?: any) {
-        return new Observable(observer => {
-            this.apiService.post(url, param)
-                .map((res: any) => res.json())
-                .subscribe(response => {
-                    console.log("res", response);
-                    observer.next(response);
-                    observer.complete();
-                });
+  }
+  getProfileDetailsUae(url: string, param?: any) {
+    return new Observable(observer => {
+      this.apiService.post(url, param)
+        .map((res: any) => res.json())
+        .subscribe(response => {
+          console.log("res", response);
+          observer.next(response);
+          observer.complete();
         });
+    });
 
-    }
+  }
+  getCustomerAvailablePoints(url: string, param?: any) {
+    return new Observable(observer => {
+      this.apiService.post(url, param)
+        .map((res: any) => res.json())
+        .subscribe(response => {
+          console.log("res", response);
+          observer.next(response);
+          observer.complete();
+        });
+    });
+
+  }
 }

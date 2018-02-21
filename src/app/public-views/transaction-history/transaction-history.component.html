@@ -2,7 +2,7 @@
 <auth-header>
 </auth-header>
 
-<section class="main__container">
+<section class="main__container" *ngIf="configConstant.currentCountry === 'india'">
   <div class="container ">
     <div class="row justify-content-md-center">
       <div class="col col-lg-11">
@@ -87,6 +87,112 @@
                   <td>{{item.TotalAccruedPoints}}</td>
                   <td>{{item.TotalBilledAmount}}</td>
                   <td>{{item.TotalRedeemPoints}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="logos__blk">
+            <img src="assets/img/logo1.svg">
+            <img src="assets/img/logo2.svg">
+            <img src="assets/img/logo3.svg">
+            <img src="assets/img/logo4.svg">
+            <img src="assets/img/logo5.svg">
+            <img src="assets/img/logo6.svg">
+            <img src="assets/img/logo7.svg">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="main__container" *ngIf="configConstant.currentCountry === 'uae'">
+  <div class="container ">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-11">
+        <div class="row">
+          <div class="col-lg-12 profile__blk">
+            <ul class="top_nav">
+              <li>
+                <a>
+                  <svg class="plus2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="36.833px" height="36.832px" viewBox="0 0 36.833 36.832" enable-background="new 0 0 36.833 36.832"
+                    xml:space="preserve">
+                    <g>
+                      <g>
+                        <path fill="#75CEDD" d="M36.833,18.416c0,10.171-8.246,18.416-18.416,18.416C8.246,36.832,0,28.587,0,18.416
+                C0,8.244,8.246,0,18.417,0C28.587,0,36.833,8.244,36.833,18.416" />
+                      </g>
+                      <g>
+                        <rect x="17.757" y="10.868" fill="#FFFFFF" width="1" height="15.096" />
+                      </g>
+                      <g>
+                        <rect x="10.869" y="17.755" fill="#FFFFFF" width="15.096" height="1" />
+                      </g>
+                    </g>
+                  </svg>
+                  <span>Transaction history</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-12 transaction__history--blk">
+
+
+          <!-- Date Range  -->
+
+
+
+          <!-- <form>
+                        <div class="row spacing6 top__table-search">
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Enter Date">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Enter Date">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option value="" disabled selected>Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <a href="">
+                                    <img src="assets/img/download_icon.svg">
+                                </a>
+                            </div>
+
+                        </div>
+                    </form> -->
+          <div class="table-responsive">
+            <table class="table table-bordered table__blk">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Invoice</th>
+                  <th scope="col">Store</th>
+                  <th scope="col">Points earned</th>
+                  <th scope="col">Invoice Value</th>
+                  <th scope="col">Points redeemed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of transcationHistoryList">
+                  <td>{{item.Date}}</td>
+                  <td>{{item.InvoiceNo}}</td>
+                  <td>{{item.LocationName}}</td>
+                  <td>{{item.PointsEarned}}</td>
+                  <td>{{item.InvoiceValue}}</td>
+                  <td>{{item.PointsRedeemed}}</td>
                 </tr>
               </tbody>
             </table>

@@ -4,6 +4,9 @@ import { LoginComponent } from './login.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr';
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { RouterModule } from '@angular/router';
     AuthHeaderModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    LoadingModule
   ],
   exports: [
     LoginComponent

@@ -18,8 +18,11 @@ export class OffersComponent {
     public brandService: BrandService
   ) {
 
-    this.getBrandData();
-
+    if (AppSettings.currentCountry === 'india') {
+      this.getBrandData();
+    } else {
+      this.getBrandDataUae();
+    }
   }
 
   getBrandData() {
@@ -36,6 +39,21 @@ export class OffersComponent {
 
       });
   }
+
+  getBrandDataUae() {
+
+        let responseData: any;
+        this.brandService.getBrandData(AppSettings.API_ENDPOINT + AppSettings.fetchBrandsUae, '').subscribe(
+          data => responseData = data,
+          error => {
+            console.error('api ERROR');
+          },
+          () => {
+            console.log('responseData', responseData);
+            this.brands = responseData.data;
+
+          });
+      }
 
   closeDiv() {
     this.showDiv = false;
