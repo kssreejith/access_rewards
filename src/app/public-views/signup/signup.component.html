@@ -321,6 +321,9 @@
 
                     </div>
                 </div>
+                <div class="form-group">
+                            <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
+                        </div>
                 <div class="row spacing10">
 
 
@@ -551,16 +554,15 @@
                         </div>
                     </div>
                     <div class="col-8">
-                        <div class="form-group">
-                            <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
+                    	 <div class="form-group">
                     <input type="tel" class="form-control" id="MobileNo" formControlName="PhoneNo" placeholder="PhoneNo" aria-describedby="PhoneNo">
                     <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
                 </div>
+                        
+                    </div>
+                </div>
+
+               
 
                 <button type="submit" [disabled]="!signupForm.valid" (click)="onFormSubmitUae()" class="btn btn-primary">Get Started</button>
             </form>
