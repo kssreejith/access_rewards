@@ -15,8 +15,9 @@
             height: auto;
         }
         img {
-            margin-left: auto!important;
-            width: 70%;
+            margin-left: auto !important;
+            width: 90%;
+            margin: 0 -10% 0 0;
             @media (max-width: 768px) {
                 margin: 0px auto 0 !important;
                 width: 50%;
@@ -36,6 +37,10 @@
         .login__form {
             width: 300px;
             margin: 0 auto;
+            @media (max-width: 400px) {
+                width: 90%;
+                margin: 0 5%;
+            }
             img {
                 margin: 80px 0 40px 0;
                 @media (max-width: 768px) {
@@ -74,7 +79,7 @@
                 .form-control {
                     height: 40px;
                     border-radius: 0;
-                    border:1px solid rgba(0, 0, 0, 0.2196078431372549);
+                    border: 1px solid rgba(0, 0, 0, 0.2196078431372549);
                     font-weight: 400px;
                     color: #606060;
                 }
@@ -189,7 +194,7 @@
                 .form-control {
                     height: 40px;
                     border-radius: 0;
-                    border:1px solid rgba(0, 0, 0, 0.2196078431372549);
+                    border: 1px solid rgba(0, 0, 0, 0.2196078431372549);
                     font-weight: 400px;
                     color: #606060;
                 }
