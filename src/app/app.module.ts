@@ -31,6 +31,8 @@ import { ParticlesModule } from 'angular-particle';
 import { ParticleComponent } from './particle.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
+import { OverlayModule } from 'angular-io-overlay';
+import { DatePickerModule } from 'angular-io-datepicker/src/datepicker/index';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
     ParticleComponent
   ],
   imports: [
+    OverlayModule,
+    DatePickerModule,
     BrowserModule,
     FormsModule,
     HttpModule,

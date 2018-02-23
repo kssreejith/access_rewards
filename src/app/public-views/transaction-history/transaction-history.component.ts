@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranscationHistoryService } from 'app/shared/services/transcation_history.service';
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppSettings } from 'app/app.constant';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'transaction-history',
   templateUrl: './transaction-history.component.html'
 })
-export class TransactionHistoryComponent {
+export class TransactionHistoryComponent implements OnInit {
   public transcationHistoryList: any;
   public configConstant = AppSettings;
+  public fromDate = new Date();
+  public toDate = new Date();
+  signupForm: FormGroup;
 
   constructor(
     public transcationHistory: TranscationHistoryService,
-    private _webStorageService: WebStorageService
+    private _webStorageService: WebStorageService,
+    private fb: FormBuilder,
   ) {
     if (AppSettings.currentCountry === 'india') {
       this.getTranscationHistory();
@@ -24,11 +29,22 @@ export class TransactionHistoryComponent {
     }
 
   }
+
+  ngOnInit() {
+    this.signupForm = this.fb.group({
+      fromDate: new Date(),
+      toDate: new Date()
+    });
+  }
+
+  getData() {
+    this.getTranscationHistoryUaeGetTransactions();
+  }
   getTranscationHistoryUaeGetTransactions() {
 
     const demo = {
-      'DateFrom': '2018-01-12',
-      'DateTo': '2018-02-05',
+      'DateFrom': this.fromDate,
+      'DateTo': this.toDate,
       'secretToken': this._webStorageService.getData('SecretToken')
     };
 

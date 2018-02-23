@@ -143,7 +143,21 @@
 
 
           <!-- Date Range  -->
+          <form [formGroup]="signupForm">
+            <div class="col-4">
+              <date-picker [showClearButton]="false" formControlName="fromDate">From Date</date-picker>
+            </div>
+            <div class="col-4">
 
+              <date-picker [showClearButton]="false" formControlName="toDate">To date</date-picker>
+            </div>
+            <div class="col-4">
+
+              <button class="btn btn-primary" (click)="getData()">
+                Get Data
+              </button>
+            </div>
+          </form>
 
 
           <!-- <form>

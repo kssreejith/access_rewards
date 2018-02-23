@@ -102,14 +102,18 @@ export class LoginComponent {
       },
       () => {
         this.disableClick = false;
-        this.toastr.success('Successfully updated.', 'Success!');
         this.loading = false;
 
         console.log('responseData', responseData);
         if (responseData.Data) {
-          this._webStorageService.saveData('mobile', this.signupForm.value.phoneno);
-          this._webStorageService.saveData('SecretToken', responseData.Data.SecretToken);
-          this.router.navigate(['/profile']);
+          this.toastr.success('Successfully LoggedIn.', 'Success!');
+          setTimeout(() => {
+
+            this._webStorageService.saveData('mobile', this.signupForm.value.phoneno);
+            this._webStorageService.saveData('SecretToken', responseData.Data.SecretToken);
+            this.router.navigate(['/profile']);
+
+          });
         } else {
           this.toastr.error(responseData.ReturnMessage, 'Error!');
         }
