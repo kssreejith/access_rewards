@@ -26,7 +26,11 @@
             "scss/style.scss",
             "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
         ],
-        "scripts": [],
+        "scripts": [
+          "../node_modules/moment/min/moment.min.js",
+          "../node_modules/moment/moment.js",
+          "../node_modules/angular-moment/angular-moment.js"
+        ],
         "environmentSource": "environments/environment.ts",
         "environments": {
             "dev": "environments/environment.ts",

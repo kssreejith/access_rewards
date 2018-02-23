@@ -30,10 +30,10 @@
                         <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
                     </div>
                     <div class="row spacing10">
-                        <div class="col-4">
+                        <div class="col-6">
                             <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
                                 <select class="custom-select form-control" formControlName="countrycode">
-                                    <option selected="selected" value=""></option>
+                                    <option selected="selected" value="">Country Code</option>
                                     <option value="+966">+966</option>
                                     <option value="+971">+971</option>
                                     <option value="+973">+973</option>
@@ -255,7 +255,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-6">
                             <div class="form-group" *ngIf="configConstant.currentCountry === 'uae'">
                                 <input type="tel" class="form-control" id="MobileNo" formControlName="phoneno" placeholder="MobileNo" aria-describedby="MobileNo">
                                 <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->

@@ -3,6 +3,7 @@ import { TranscationHistoryService } from 'app/shared/services/transcation_histo
 import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppSettings } from 'app/app.constant';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'transaction-history',
@@ -32,8 +33,6 @@ export class TransactionHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = this.fb.group({
-      fromDate: new Date(),
-      toDate: new Date()
     });
   }
 
@@ -41,9 +40,9 @@ export class TransactionHistoryComponent implements OnInit {
     this.getTranscationHistoryUaeGetTransactions();
   }
   getTranscationHistoryUaeGetTransactions() {
-
+    var demosss = moment(this.fromDate).format('DD-MM-YYYY')
     const demo = {
-      'DateFrom': this.fromDate,
+      'DateFrom': demosss,
       'DateTo': this.toDate,
       'secretToken': this._webStorageService.getData('SecretToken')
     };
