@@ -99,6 +99,11 @@
                 border: none;
                 @extend %gradient__btn;
             }
+            .register__btn {
+                background: transparent!important;
+                border: 1px solid #ddd;
+                color: #848484;
+            }
             .back {
                 font-weight: 400;
                 color: #606060;

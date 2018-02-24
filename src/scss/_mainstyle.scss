@@ -234,7 +234,7 @@
                 font-weight: 500;
                 font-size: 16px;
                 @extend %gradient__btn;
-                border-radius: 0;
+                border-radius: 50px;
                 color: #fff;
                 font-family: 'Futura Md BT';
                 &:active {
@@ -303,7 +303,7 @@
                 font-weight: 500;
                 font-size: 16px;
                 @extend %gradient__btn;
-                border-radius: 0;
+                border-radius: 50px;
                 color: #fff;
                 &:active {
                     @extend %gradient__btn;
@@ -384,8 +384,6 @@
         @media (max-width: 767px) {
             width: 50%;
         }
-        // width: 400px;
-        // margin: 0 -50px;
     }
 }
 
@@ -425,7 +423,6 @@
         border-radius: 0;
         margin: 0 0 0 0;
         height: 100%;
-        // min-height: 200px;
         cursor: pointer;
         border: none;
         .card-header {
@@ -551,7 +548,6 @@
         height: 100%;
         border: 1px solid #dcdcdc;
         margin: 0 auto 20px;
-        // border-radius: 50%;
         text-align: center;
         -webkit-box-align: center !important;
         -ms-flex-align: center !important;
@@ -567,7 +563,6 @@
             width: 100%;
             text-align: center;
             img {
-                // width: 70px;
                 margin: 40px 0 20px;
             }
         }
@@ -731,7 +726,6 @@
         height: calc(100vh - 529px);
         content: '';
         position: absolute;
-        /* bottom: 0; */
         background: #f2f3f6;
         z-index: 1;
         width: 100%;
@@ -745,7 +739,6 @@
 .brand__img--blk {
     width: 100%;
     float: left;
-    // margin: 30px 0 -273px 0;
     margin: 30px 0 40px 0;
     text-align: center;
     img {
@@ -1371,10 +1364,10 @@ ourbrand {
         padding-top: 70px;
         text-align: left;
         opacity: 0;
-        font-size: 14px;
+        font-size: 13px;
         color: #222;
         text-align: center;
-        font-family: 'Futura Md BT';
+        font-family: 'Futura Bk';
         line-height: normal;
         -ms-transition: -ms-transform .2s ease-out;
         -webkit-transition: -webkit-transform .2s ease-out;
@@ -1438,8 +1431,38 @@ ourbrand {
     bottom: 0;
     width: 100%;
     height: 60px;
-    /* Set the fixed height of the footer here */
     line-height: 60px;
-    /* Vertically center the text there */
     background-color: #f5f5f5;
+}
+
+.breadcrumb__blk {
+    float: left;
+    width: 100%;
+    margin: -30px 0 35px 0;
+    position: relative;
+    z-index: 99;
+    &.inner {
+        margin: 137px 0 -130px 0!important;
+    }
+    a {
+        float: left;
+        .cls-1 {
+            fill: #5454ec;
+        }
+        img {
+            width: 24px;
+        }
+    }
+    span {
+        float: left;
+        margin: 2px 0 0 0;
+    }
+    .arrow {
+        color: #cccdcf;
+        margin: 3px 30px 0;
+    }
+    .text {
+        font-size: 17px;
+        color: #a3a4a6;
+    }
 }
