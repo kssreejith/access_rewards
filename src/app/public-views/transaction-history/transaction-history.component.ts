@@ -4,16 +4,28 @@ import { WebStorageService } from 'app/shared/services/web-storage.service';
 import { AppSettings } from 'app/app.constant';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import { IMyDpOptions } from 'mydatepicker';
 
 @Component({
   selector: 'transaction-history',
   templateUrl: './transaction-history.component.html'
 })
 export class TransactionHistoryComponent implements OnInit {
+
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'dd-mm-yyyy',
+    showTodayBtn: false,
+    inline: false,
+  };
+  // Initialized to specific date (09.10.2018).
+  public modelTo: any = { date: { year: 2018, month: 2, day: 24 } };
+  public modelFrom: any = { date: { year: 2018, month: 2, day: 24 } };
+
   public transcationHistoryList: any;
   public configConstant = AppSettings;
-  public fromDate = new Date();
-  public toDate = new Date();
+  public fromDate = moment(new Date()).format('DD-MM-YYYY');
+  public toDate = moment(new Date()).format('DD-MM-YYYY');
   signupForm: FormGroup;
   daypickerConfig = {
     monthFormat: "MM-YYYY",
@@ -45,10 +57,9 @@ export class TransactionHistoryComponent implements OnInit {
     this.getTranscationHistoryUaeGetTransactions();
   }
   getTranscationHistoryUaeGetTransactions() {
-    var demosss = moment(this.fromDate).format('DD-MM-YYYY')
     const demo = {
-      'DateFrom': demosss,
-      'DateTo': this.toDate,
+      'DateFrom': (this.modelFrom.formatted) ? this.modelFrom.formatted : this.fromDate,
+      'DateTo': (this.modelTo.formatted) ? this.modelTo.formatted : this.toDate,
       'secretToken': this._webStorageService.getData('SecretToken')
     };
 

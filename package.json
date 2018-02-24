@@ -46,6 +46,7 @@
         "core-js": "2.4.1",
         "dragula": "3.7.2",
         "moment": "^2.20.1",
+        "mydatepicker": "^2.6.2",
         "mydaterangepicker": "^4.2.1",
         "ng2-carouselamos": "^3.2.0",
         "ng2-charts": "1.6.0",

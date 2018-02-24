@@ -143,12 +143,14 @@
 
 
           <!-- Date Range  -->
-          <dp-day-calendar [config]="daypickerConfig" [(ngModel)]="toDate"></dp-day-calendar>
 
-          <form [formGroup]="signupForm">
+          <form #myForm="ngForm">
             <div class="col-4">
+              <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="modelFrom" required></my-date-picker>
+
             </div>
             <div class="col-4">
+              <my-date-picker name="mydated" [options]="myDatePickerOptions" [(ngModel)]="modelTo" required></my-date-picker>
 
             </div>
             <div class="col-4">
