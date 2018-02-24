@@ -41,6 +41,11 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col col-lg-10">
+          <video autoplay muted loop id="myVideo">
+            <source src="assets/video/video_access website.mp4"
+            type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
           <h1>Our Brands</h1>
           <div class="row spacing10">
             <a class="col-lg-3 col-md-6" *ngFor="let item of brands" (click)="getBrandDetails(item.brand_id)">
