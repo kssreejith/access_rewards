@@ -5,5 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './faq.component.html'
 })
 export class FaqComponent {
- 
+  reload() {
+    window.location.href = '/index';
+  }
 }
