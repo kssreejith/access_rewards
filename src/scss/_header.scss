@@ -9,6 +9,11 @@
     &.inner__nav--bg {
         @extend %gradient__nav;
     }
+    .tablez--logo {
+        svg {
+            width: 125px;
+        }
+    }
     @media (max-width: 768px) {
         margin: 0 0 0 0;
         padding: 15px 20px;
