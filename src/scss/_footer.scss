@@ -27,6 +27,12 @@ footer {
         text-decoration: none;
         a {
             color: #9baabb;
+            &:hover {
+                @extend %gradient__btn;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
         }
     }
     ul {
@@ -34,7 +40,6 @@ footer {
         margin: 0;
         padding: 0;
         float: left;
-        ;
         li {
             width: 100%;
             float: left;
@@ -55,11 +60,13 @@ footer {
                     @extend %gradient__btn;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+                    color: transparent;
                 }
                 &.active-link {
                     @extend %gradient__btn;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+                    color: transparent;
                 }
             }
         }
