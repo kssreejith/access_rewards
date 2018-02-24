@@ -25,6 +25,9 @@ footer {
         font-size: 16px;
         margin: 0 0 10px 0;
         text-decoration: none;
+        a {
+            color: #9baabb;
+        }
     }
     ul {
         width: 100%;
@@ -38,17 +41,25 @@ footer {
             display: inline-block;
             margin: 0 0 5px 0;
             text-decoration: none;
-            font-family: 'Futura LH';
+            // font-family: 'Futura LH';
+            // font-family: 'Futura Bk';
             font-weight: 300;
             color: #9baabb;
             a {
-                font-family: 'Futura LH';
+                font-family: 'Futura Bk';
                 font-weight: 300;
                 color: #9baabb;
                 font-size: 16px;
                 text-decoration: none;
                 &:hover {
-                    color: #9baabb;
+                    @extend %gradient__btn;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &.active-link {
+                    @extend %gradient__btn;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
             }
         }
@@ -71,6 +82,7 @@ footer {
         width: 100%;
         float: left;
         margin: 0;
+        font-size: 14px;
         a {
             float: right;
             color: #777;

@@ -19,6 +19,7 @@ import { OurbrandModule } from './ourbrand/ourbrand.module'
 import { FaqModule } from './faq/faq.module'
 import { OtpModule } from './otp/otp.module';
 import { TablezModule } from './tablez/tablez.module';
+import { FooterModule } from 'app/shared/layouts/footer/footer.module';
 
 /** /Sub modules */
 @NgModule({
@@ -26,6 +27,7 @@ import { TablezModule } from './tablez/tablez.module';
     PublicViewsComponent
   ],
   imports: [
+    FooterModule,
     BrowserModule,
     RouterModule,
     publicRoute,

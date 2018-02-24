@@ -15,7 +15,12 @@ export class TransactionHistoryComponent implements OnInit {
   public fromDate = new Date();
   public toDate = new Date();
   signupForm: FormGroup;
-
+  daypickerConfig = {
+    monthFormat: "MM-YYYY",
+    closeOnSelect: false,
+    format: "MM-YYYY",
+    returnedValueType: 'Moment'
+  };
   constructor(
     public transcationHistory: TranscationHistoryService,
     private _webStorageService: WebStorageService,

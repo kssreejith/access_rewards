@@ -4,7 +4,7 @@ import { TransactionHistoryComponent } from './transaction-history.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {DpDatePickerModule} from 'ng2-date-picker';
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
   declarations: [

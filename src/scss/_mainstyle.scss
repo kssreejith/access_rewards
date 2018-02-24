@@ -384,8 +384,6 @@
         @media (max-width: 767px) {
             width: 50%;
         }
-        // width: 400px;
-        // margin: 0 -50px;
     }
 }
 
@@ -425,7 +423,6 @@
         border-radius: 0;
         margin: 0 0 0 0;
         height: 100%;
-        // min-height: 200px;
         cursor: pointer;
         border: none;
         .card-header {
@@ -551,7 +548,6 @@
         height: 100%;
         border: 1px solid #dcdcdc;
         margin: 0 auto 20px;
-        // border-radius: 50%;
         text-align: center;
         -webkit-box-align: center !important;
         -ms-flex-align: center !important;
@@ -567,7 +563,6 @@
             width: 100%;
             text-align: center;
             img {
-                // width: 70px;
                 margin: 40px 0 20px;
             }
         }
@@ -731,7 +726,6 @@
         height: calc(100vh - 529px);
         content: '';
         position: absolute;
-        /* bottom: 0; */
         background: #f2f3f6;
         z-index: 1;
         width: 100%;
@@ -745,7 +739,6 @@
 .brand__img--blk {
     width: 100%;
     float: left;
-    // margin: 30px 0 -273px 0;
     margin: 30px 0 40px 0;
     text-align: center;
     img {
