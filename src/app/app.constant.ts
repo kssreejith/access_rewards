@@ -17,7 +17,7 @@ export class AppSettings {
   public static CustomerAvailablePoints = 'v1.1/CustomerAvailablePoints';
   public static contactMail = 'v1.1/contactMail';
   // public static currentCountry = 'uae';
-    public static currentCountry = 'india';
+    public static currentCountry = 'uae';
 
 
 }
