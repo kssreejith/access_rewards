@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FaqComponent } from './faq.component';
 import { AuthHeaderModule } from 'app/shared/layouts/auth-header/auth-header.module';
 
+
 @NgModule({
   declarations: [
     FaqComponent

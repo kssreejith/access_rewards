@@ -104,7 +104,7 @@
                     text-decoration: none;
                     &:hover {
                         @extend %gradient__btn;
-                        border: 1px solid rgba(64, 41, 41, 0);
+                        border: 1px solid rgba(254, 254, 254, 0.5);
                     }
                     @media (max-width: 600px) {
                         margin: 9px 4px 0 0px;
