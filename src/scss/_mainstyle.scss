@@ -388,16 +388,37 @@
 }
 
 .our__brand--blk {
-    background: url(../assets/img/ourbrand__bg.svg);
     padding: 42px 0 110px;
     width: 100%;
     float: left;
     z-index: 99;
+    background: url(../assets/img/ourbrand__bg.svg);
     background-repeat: no-repeat!important;
     background-size: cover!important;
     background-position: 0% 0%!important;
     background-attachment: fixed!important;
     position: relative;
+    .container {
+        position: relative;
+        z-index: 9;
+    }
+    #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(72, 88, 211, 0.31);
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
     .col-lg-10 {
         padding: 0 50px;
     }
