@@ -21,7 +21,7 @@ import { ParticlesModule } from 'angular-particle';
     RouterModule,
     FormsModule,
     ParticlesModule,
-    NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })    
+    NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDU7PYdFvUZjLLwyBX4uA-psFtF6-OjpIo' })
   ],
   exports: [
     IndexComponent

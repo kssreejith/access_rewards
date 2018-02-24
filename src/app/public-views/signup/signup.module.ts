@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { SignupComponent } from './signup.component';
 import { HeaderModule } from 'app/shared/layouts/header/header.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'ng2-toastr';
 
 @NgModule({
