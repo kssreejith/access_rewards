@@ -415,11 +415,22 @@
         z-index: 9;
     }
     #myVideo {
+        // position: absolute;
+        // right: 0;
+        // bottom: 0;
+        // width: 102%;
+        // height: 772px;
+        /* Make video to at least 100% wide and tall */
+        min-width: 100%;
+        min-height: 100%;
+        /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+        width: auto;
+        height: auto;
+        /* Center the video */
         position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 102%;
-        height: 772px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .col-lg-10 {
         padding: 0 50px;
