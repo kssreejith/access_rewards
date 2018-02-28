@@ -77,11 +77,18 @@ export class LoginComponent {
       () => {
         this.disableClick = false;
         this.loading = false;
+        if (responseData.ReturnCode === 0) {
+          this.toastr.success('OTP send successfully.', 'Success!');
+          setTimeout(() => {
+            this._webStorageService.saveData('RequestID', responseData.RequestID);
 
-        console.log('responseData', responseData);
-        this._webStorageService.saveData('RequestID', responseData.RequestID);
+            this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
 
-        this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
+          });
+        } else {
+          this.toastr.error(responseData.ReturnMessage, 'Error!');
+        }
+
       });
   }
 
@@ -105,7 +112,7 @@ export class LoginComponent {
         this.loading = false;
 
         console.log('responseData', responseData);
-        if (responseData.Data) {
+        if (responseData.Status === 1) {
           this.toastr.success('Successfully LoggedIn.', 'Success!');
           setTimeout(() => {
 
@@ -115,7 +122,7 @@ export class LoginComponent {
 
           });
         } else {
-          this.toastr.error(responseData.ReturnMessage, 'Error!');
+          this.toastr.error(responseData.StatusMessage, 'Error!');
         }
 
       });

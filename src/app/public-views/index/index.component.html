@@ -3,147 +3,158 @@
 </ur-header>
 
 <main role="main">
-    <section class="rewards__blk">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col col-lg-10">
-                    <h1>Why Access Rewards?</h1>
-                    <div class="row">
-                        <div class="col-md-4 col-lg-4 text-center">
-                            <img src="assets/img/1.gif" alt="">
-                            <h2>Hassle-free Rewards </h2>
-                            <p>No heap of loyalty cards to bog you down. Earn points using just your mobile number.</p>
-                        </div>
-
-                        <div class="col-md-4 col-lg-4 text-center">
-                            <img src="assets/img/2.gif" alt="">
-                            <h2>Accepted Everywhere</h2>
-                            <p>You can use your Access Reward points to earn discounts at every Tablez stores across the country.
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-4 col-lg-4 text-center">
-                            <img src="assets/img/3.gif" alt="">
-                            <h2>Exclusive Offers</h2>
-                            <p>
-                                Member-only previews and tailor-made deals. More and even more benefits for you.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <section class="rewards__blk">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-10">
+          <h1>Why Access Rewards?</h1>
+          <div class="row">
+            <div class="col-md-4 col-lg-4 text-center">
+              <img src="assets/img/1.gif" alt="">
+              <h2>Hassle-free Rewards </h2>
+              <p>No heap of loyalty cards to bog you down. Earn points using just your mobile number.</p>
             </div>
-        </div>
-    </section>
 
-    <div id="display"></div>
-    <section class="our__brand--blk">
-        <video autoplay muted loop id="myVideo">
-                    <source src="http://myaccessrewards.com/videos/Access_Rewards_Brand_Video.mp4"
-                    type="video/mp4">
-                  </video>
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col col-lg-10">
+            <div class="col-md-4 col-lg-4 text-center">
+              <img src="assets/img/2.gif" alt="">
+              <h2>Accepted Everywhere</h2>
+              <p>You can use your Access Reward points to earn discounts at every Tablez stores across the country.
 
-                    <h1>Our Brands</h1>
-                    <div class="row spacing10">
-                        <a class="col-lg-3 col-md-6" *ngFor="let item of brands" (click)="getBrandDetails(item.brand_id)">
-
-                            <div class="card ">
-
-
-
-                                <div class="expandable_box">
-                                    <span class="shape-icon">
-                      <img src="{{item.logo}}" alt="Brand Logo">
-                    </span>
-                                    <div class="hover-icon"></div>
-                                    <div class="category">
-                                        <!-- <h5 class="card-title">{{item.brand_name}}</h5> -->
-                                        <p class="card-text">{{item.description | truncate : 75 : "…"}}</p>
-                                    </div>
-                                    <div class="qodef-underline-icon-box-line"></div>
-
-                                </div>
-
-                            </div>
-
-
-
-
-                        </a>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card view__all--brand">
-                                <div class="card-header">
-                                    <div class="o_auto">
-                                        <a [routerLink]="['/brand']" class="btn">View All Brands</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
+              </p>
             </div>
-        </div>
 
-    </section>
-
-    <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
-        <ngui-map [center]="mapProps.center" [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}" [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
-            <marker *ngFor="let pos of positions.pos" [icon]="{
-          url: 'assets/img/marker.svg',
-          anchor: [16,16],
-          size: [29,50],
-          scaledSize: [29,50]
-        }" [position]="pos" (click)="clicked($event, positions)">
-            </marker>
-            <info-window id="iw">
-                <div *ngIf="marker.display">
-                    {{marker.addr}}
-                </div>
-
-            </info-window>
-        </ngui-map>
-        <div class="map__search__blk">
-            <div class="row justify-content-md-center">
-                <div class="col col-lg-6 col-md-10 col-sm-10">
-                    <div class="row no-gutters">
-                        <div class="col-10 col-lg-10 col-md-10 col-sm-10">
-                            <div class="search">
-                                <div class="row">
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <label>Select Brand</label>
-                                        <select class="custom-select" [ngModel]="brandIndex" (ngModelChange)="onBrandChange($event)">
-                        <option *ngFor="let item of bandList; let i=index" [value]="i">
-                          {{item.brand_name}}</option>
-                      </select>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <label>Select City</label>
-                                        <select class="custom-select" [ngModel]="cityIndex" (ngModelChange)="onCityChange($event)">
-                        <option *ngFor="let item of cityList; let i=index" [value]="i">
-                          {{item.city}}</option>
-                      </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-2 col-lg-2 col-md-2 col-sm-2">
-                            <button (click)="showZoom();">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4 col-lg-4 text-center">
+              <img src="assets/img/3.gif" alt="">
+              <h2>Exclusive Offers</h2>
+              <p>
+                Member-only previews and tailor-made deals. More and even more benefits for you.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
+
+  <div id="display"></div>
+  <section class="our__brand--blk">
+    <video autoplay muted loop id="myVideo">
+      <source src="http://myaccessrewards.com/videos/Access_Rewards_Brand_Video.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-10">
+
+          <h1>Our Brands</h1>
+          <div class="row spacing10">
+            <a class="col-lg-3 col-md-6" *ngFor="let item of brands" (click)="getBrandDetails(item.brand_id)">
+
+              <div class="card ">
+
+
+
+                <div class="expandable_box">
+                  <span class="shape-icon">
+                    <img src="{{item.logo}}" alt="Brand Logo">
+                  </span>
+                  <div class="hover-icon"></div>
+                  <div class="category">
+                    <!-- <h5 class="card-title">{{item.brand_name}}</h5> -->
+                    <p class="card-text">{{item.description | truncate : 75 : "…"}}</p>
+                  </div>
+                  <div class="qodef-underline-icon-box-line"></div>
+
+                </div>
+
+              </div>
+
+
+
+
+            </a>
+            <div class="col-lg-3 col-md-6">
+              <div class="card view__all--brand">
+                <div class="card-header">
+                  <div class="o_auto">
+                    <a [routerLink]="['/brand']" class="btn">View All Brands</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div *ngIf="mapProps.center" class="map__block" id="fws_5a5a4fb8d4bfc" data-midnight="dark" style="float:left;width:100%; position:relative;">
+    <ngui-map [center]="mapProps.center" [styles]="grayStyles" [zoom]="mapProps.zoom" [zoomControlOptions]="{position: 'TOP_CENTER'}"
+      [fullscreenControl]="true" [fullscreenControlOptions]="{position: 'TOP_CENTER'}" [scrollwheel]="false">
+      <div *ngIf="config === 'india'">
+        <marker *ngFor="let pos of positions.pos" [icon]="{
+            url: '/assets/img/map_pin-india' + mapIcons + '.svg',
+            anchor: [16, 16],
+            size: [29, 50],
+            scaledSize: [29, 50]
+          }" [position]="pos" (click)="clicked($event, positions)">
+        </marker>
+      </div>>
+      <div *ngIf="config === 'uae'">
+        <marker *ngFor="let pos of positions.pos" [icon]="{
+              url: '/assets/img/map_pin-uae' + mapIcons + '.svg',
+              anchor: [16, 16],
+              size: [29, 50],
+              scaledSize: [29, 50]
+            }" [position]="pos" (click)="clicked($event, positions)">
+        </marker>
+      </div>>
+      <info-window id="iw">
+        <div *ngIf="marker.display">
+          {{marker.addr}}
+        </div>
+
+      </info-window>
+    </ngui-map>
+    <div class="map__search__blk">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-6 col-md-10 col-sm-10">
+          <div class="row no-gutters">
+            <div class="col-10 col-lg-10 col-md-10 col-sm-10">
+              <div class="search">
+                <div class="row">
+
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <label>Select Brand</label>
+                    <select class="custom-select" [ngModel]="brandIndex" (ngModelChange)="onBrandChange($event)">
+                      <option *ngFor="let item of bandList; let i=index" [value]="i">
+                        {{item.brand_name}}</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <label>Select City</label>
+                    <select class="custom-select" [ngModel]="cityIndex" (ngModelChange)="onCityChange($event)">
+                      <option *ngFor="let item of cityList; let i=index" [value]="i">
+                        {{item.city}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-2 col-lg-2 col-md-2 col-sm-2">
+              <button (click)="showZoom();">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

@@ -16,6 +16,8 @@ export class IndexComponent {
     addr: null
   };
 
+  public config = AppSettings.currentCountry;
+
   public cityIndex = 0;
   public brandIndex = 0;
   public bandList: any;
@@ -222,6 +224,7 @@ export class IndexComponent {
       ]
     }
   ];
+  public mapIcons: number;
   mapProps: any = {
     center: 'Bengaluru, India',
     zoom: 5
@@ -233,9 +236,12 @@ export class IndexComponent {
   ) {
 
     if (AppSettings.currentCountry === 'india') {
+      document.getElementById('myVideo').style.display = 'none';
+
       this.getBrandData();
     } else {
       this.getBrandDataUae();
+      document.getElementById('myVideo').style.display = 'block';
     }
     this.bandList = [
       {
@@ -457,10 +463,20 @@ export class IndexComponent {
   getRandomMarkers() {
     const positions = {
       pos: [],
-      addr: null
+      addr: null,
+      mapLocatorIcon: {}
     };
     positions.addr = this.bandList[this.brandIndex].brand_city[this.cityIndex].brand_location;
     positions.pos = [];
+    if (AppSettings.currentCountry === 'india') {
+
+      this.mapIcons = +this.brandIndex + 1;
+
+    } else {
+      this.mapIcons = +this.brandIndex + 1;
+
+    }
+
 
     positions.pos.push([this.bandList[this.brandIndex].brand_city[this.cityIndex].lat,
     this.bandList[this.brandIndex].brand_city[this.cityIndex].long]);

@@ -2,118 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Access rewards</title>
-    <base href="/">
+  <meta charset="utf-8">
+  <title>Access rewards</title>
+  <base href="/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <meta name="description" content="Moving particles to the next level">
-    <meta name="keywords" content="particle, particle canvas, particle js, particle javascript, particle filter, particle image, particle webgl, particleslider">
-    <meta name="author" content="Nextcode">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1,user-scalable=0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="Moving particles to the next level">
+  <meta name="keywords" content="particle, particle canvas, particle js, particle javascript, particle filter, particle image, particle webgl, particleslider">
+  <meta name="author" content="Nextcode">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="/assets/style.css" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch.png">
-    <meta property="og:site_name" content="NextParticle">
-    <meta property="og:site" content="https://nextparticle.nextco.de">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nextparticle.nextco.de">
-    <meta property="og:title" content="NextParticle">
-    <meta property="og:description" content="Moving particles to the next level">
-    <meta property="og:image" content="https://nextparticle.nextco.de/og-image.png">
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch.png">
+  <meta property="og:site_name" content="NextParticle">
+  <meta property="og:site" content="https://nextparticle.nextco.de">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nextparticle.nextco.de">
+  <meta property="og:title" content="NextParticle">
+  <meta property="og:description" content="Moving particles to the next level">
+  <meta property="og:image" content="https://nextparticle.nextco.de/og-image.png">
 
-    <link rel='stylesheet' id='main-styles-css' href='/assets/css/style.css' type='text/css' media='all' />
-    <style id='main-styles-inline-css' type='text/css'>
-        html:not(.page-trans-loaded) {
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-    <link rel='stylesheet' id='js_composer_front-css' href='/assets/css/js_composer.min.css' type='text/css' media='all' />
-    <script type='text/javascript' src='/assets/js/jquery.js'></script>
-    <script type='text/javascript' src='/assets/js/jquery-migrate.min.js'></script>
-    <script type='text/javascript' src='/assets/js/modernizr.js'></script>
+  <link rel='stylesheet' id='main-styles-css' href='/assets/css/style.css' type='text/css' media='all' />
+  <style id='main-styles-inline-css' type='text/css'>
+    html:not(.page-trans-loaded) {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+  <link rel='stylesheet' id='js_composer_front-css' href='/assets/css/js_composer.min.css' type='text/css' media='all' />
+  <script type='text/javascript' src='/assets/js/jquery.js'></script>
+  <script type='text/javascript' src='/assets/js/jquery-migrate.min.js'></script>
+  <script type='text/javascript' src='/assets/js/modernizr.js'></script>
 </head>
 
 <body>
-    <div id="authenticationOuterIdentityBlock" style="display: none;" class="animation__blk">
-        <div id="header-space" data-header-mobile-fixed='1'></div>
-        <div id="header-outer" data-has-menu="false" data-transparent-header="true" data-remove-border="true" class="transparent" data-using-pr-menu="false" data-mobile-fixed="1" data-ptnm="1" data-lhe="animated_underline" data-user-set-bg="#ffffff" data-format="centered-menu"
-            data-permanent-transparent="false" data-megamenu-rt="0" data-remove-fixed="0" data-cart="false" data-transparency-option="" data-box-shadow="small" data-shrink-num="6" data-full-width="true" data-using-secondary="0" data-using-logo="1" data-logo-height="40"
-            data-m-logo-height="24" data-padding="10" data-header-resize="0">
+  <div id="authenticationOuterIdentityBlock" style="display: none;" class="animation__blk">
+    <div id="header-space" data-header-mobile-fixed='1'></div>
+    <div id="header-outer" data-has-menu="false" data-transparent-header="true" data-remove-border="true" class="transparent"
+      data-using-pr-menu="false" data-mobile-fixed="1" data-ptnm="1" data-lhe="animated_underline" data-user-set-bg="#ffffff"
+      data-format="centered-menu" data-permanent-transparent="false" data-megamenu-rt="0" data-remove-fixed="0" data-cart="false"
+      data-transparency-option="" data-box-shadow="small" data-shrink-num="6" data-full-width="true" data-using-secondary="0"
+      data-using-logo="1" data-logo-height="40" data-m-logo-height="24" data-padding="10" data-header-resize="0">
 
-            <div class="ns-loading-cover"></div>
-        </div>
+      <div class="ns-loading-cover"></div>
+    </div>
 
-        <!-- UAE Top Video Block -->
-        <section class="uae_top_video--blk">
-            <video autoplay muted loop id="myVideo">
-                <source src="http://myaccessrewards.com/videos/Access_Rewards_Brand_Video.mp4"
-                type="video/mp4">
-            </video>
-        </section>
+    <!-- UAE Top Video Block -->
+    <section class="uae_top_video--blk" id="myVideo">
+      <video autoplay muted loop id="myVideo">
+        <source src="http://myaccessrewards.com/videos/Access_Rewards_Brand_Video.mp4" type="video/mp4">
+      </video>
+    </section>
 
-        <!-- India Top Slider Block -->
+    <!-- India Top Slider Block -->
 
-        <!-- <div id="ajax-content-wrap">
-            <div class="blurred-wrap">
-                <div id="page-header-wrap" data-animate-in-effect="zoom-out" data-midnight="light" class="fullscreen-header">
-                    <div class=" fullscreen-header" data-animate-in-effect="zoom-out" id="page-header-bg" data-text-effect="none" data-bg-pos="center" data-alignment="center" data-alignment-v="bottom" data-parallax="1" data-height="350" style="background-color: #000;  height: 350px;">
+    <div id="ajax-content-wrap">
+      <div class="blurred-wrap">
+        <div id="page-header-wrap" data-animate-in-effect="zoom-out" data-midnight="light" class="fullscreen-header">
+          <div class=" fullscreen-header" data-animate-in-effect="zoom-out" id="page-header-bg" data-text-effect="none" data-bg-pos="center"
+            data-alignment="center" data-alignment-v="bottom" data-parallax="1" data-height="350" style="background-color: #000;  height: 350px;">
 
-                        <div class=" nectar-particles" data-disable-explosion="off" data-rotation-timing="3000">
-                            <div class="canvas-bg">
-                                <canvas id="canvas" data-active-index="0"></canvas>
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col span_6">
-                                        <div class="shape" data-src="/assets/deeperlogo-04-04.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid" data-color="#fefefe" data-bg-color="rgb(244, 103, 97)"></div>
-                                        <div class="inner-wrap shape-1">
-                                            <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
-                                                <span>Rewards</span>
-                                                <span style="font-weight:200" ;=""></span>
-                                            </h1>
-                                            <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">The exclusive customer loyalty program by
+            <div class=" nectar-particles" data-disable-explosion="off" data-rotation-timing="3000">
+              <div class="canvas-bg">
+                <canvas id="canvas" data-active-index="0"></canvas>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col span_6">
+                    <div class="shape" data-src="/assets/deeperlogo-04-04.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid"
+                      data-color="#fefefe" data-bg-color="rgb(244, 103, 97)"></div>
+                    <div class="inner-wrap shape-1">
+                      <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
+                        <span>Rewards</span>
+                        <span style="font-weight:200" ;=""></span>
+                      </h1>
+                      <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">The exclusive customer loyalty program by
                         <span> Tablez India.</span>
-                                            </span>
-                                        </div>
-                                        <div class="shape" data-src="/assets/deeperlogo-04-05.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid" data-color="#fefefe" data-bg-color="rgb(236, 96, 160)"></div>
-                                        <div class="inner-wrap shape-2">
-                                            <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
-                                                <span>Rewards</span>
-                                                <span style="font-weight:200" ;=""></span>
-                                            </h1>
-                                            <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Exclusive offers and promotions. Member-only previews.</span>
-                                        </div>
-                                        <div class="shape" data-src="/assets/deeperlogo-04-06.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid" data-color="#fefefe" data-bg-color="rgb(247, 132, 100)"></div>
-                                        <div class="inner-wrap shape-3">
-                                            <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
-                                                <span>Rewards</span>
-                                                <span style="font-weight:200" ;=""></span>
-                                            </h1>
-                                            <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Easy signup and earn instant points for snap redemption with every purchase.</span>
-                                        </div>
-                                        <div class="shape" data-src="/assets/deeperlogo-04-07.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid" data-color="#fefefe" data-bg-color="rgb(209, 67, 73)"></div>
-                                        <div class="inner-wrap shape-4">
-                                            <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">What's on your
-                                                <span> list today?</span>
-                                                <span style="font-weight:200" ;=""></span>
-                                            </h1>
-                                            <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">100% FREE membership. Joining bonus of 150 points.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                      </span>
+                    </div>
+                    <div class="shape" data-src="/assets/deeperlogo-04-05.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid"
+                      data-color="#fefefe" data-bg-color="rgb(236, 96, 160)"></div>
+                    <div class="inner-wrap shape-2">
+                      <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
+                        <span>Rewards</span>
+                        <span style="font-weight:200" ;=""></span>
+                      </h1>
+                      <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Exclusive offers and promotions. Member-only previews.</span>
+                    </div>
+                    <div class="shape" data-src="/assets/deeperlogo-04-06.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid"
+                      data-color="#fefefe" data-bg-color="rgb(247, 132, 100)"></div>
+                    <div class="inner-wrap shape-3">
+                      <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Access
+                        <span>Rewards</span>
+                        <span style="font-weight:200" ;=""></span>
+                      </h1>
+                      <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">Easy signup and earn instant points for snap redemption with every purchase.</span>
+                    </div>
+                    <div class="shape" data-src="/assets/deeperlogo-04-07.png" data-max-size="3" data-alpha="original" data-density="10" data-color-mapping="solid"
+                      data-color="#fefefe" data-bg-color="rgb(209, 67, 73)"></div>
+                    <div class="inner-wrap shape-4">
+                      <h1 style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">What's on your
+                        <span> list today?</span>
+                        <span style="font-weight:200" ;=""></span>
+                      </h1>
+                      <span class="subheader" style="opacity: 0; transform: translate(0px, 30px) rotateX(0deg);">100% FREE membership. Joining bonus of 150 points.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="690">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="690">
                 <defs>
                   <filter id="goo">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
@@ -122,43 +130,46 @@
                   </filter>
                 </defs>
               </svg>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
+          </div>
+        </div>
 
 
-        </div> -->
+      </div>
+
+
     </div>
-    <div class="main--holder">
-        <guardian></guardian>
-    </div>
-    <script type='text/javascript' src='/assets/js/jquery.form.min.js'></script>
-    <script type='text/javascript' src='/assets/js/magnific.js'></script>
-    <script type='text/javascript' src='/assets/js/superfish.js'></script>
-    <script type='text/javascript'>
-        var nectarLove = {
-            "ajaxurl": "http:\/\/spread.ooo\/wp-admin\/admin-ajax.php",
-            "postID": "7328",
-            "rooturl": "http:\/\/spread.ooo",
-            "pluginPages": [],
-            "disqusComments": "false",
-            "loveNonce": "7a44775468",
-            "mapApiKey": ""
-        };
-    </script>
-    <script type='text/javascript' src='/assets/js/init.js'></script>
-    <script type='text/javascript' src='/assets/js/touchswipe.min.js'></script>
-    <script type='text/javascript' src='/assets/js/nectar-particles.js'></script>
-    <script type='text/javascript' src='/assets/js/js_composer_front.min.js'></script>
+  </div>
+  <div class="main--holder">
+    <guardian></guardian>
+  </div>
+  <script type='text/javascript' src='/assets/js/jquery.form.min.js'></script>
+  <script type='text/javascript' src='/assets/js/magnific.js'></script>
+  <script type='text/javascript' src='/assets/js/superfish.js'></script>
+  <script type='text/javascript'>
+    var nectarLove = {
+      "ajaxurl": "http:\/\/spread.ooo\/wp-admin\/admin-ajax.php",
+      "postID": "7328",
+      "rooturl": "http:\/\/spread.ooo",
+      "pluginPages": [],
+      "disqusComments": "false",
+      "loveNonce": "7a44775468",
+      "mapApiKey": ""
+    };
 
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  </script>
+  <script type='text/javascript' src='/assets/js/init.js'></script>
+  <script type='text/javascript' src='/assets/js/touchswipe.min.js'></script>
+  <script type='text/javascript' src='/assets/js/nectar-particles.js'></script>
+  <script type='text/javascript' src='/assets/js/js_composer_front.min.js'></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <script href="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+  <script href="assets/js/main.js"></script>
 </body>
 
 </html>
