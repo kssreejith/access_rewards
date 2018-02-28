@@ -4,106 +4,106 @@
 
 <!-- Sign Up Form -->
 <section class="sign_up--blk align-items-center" *ngIf="configConstant.currentCountry === 'india'">
-  <div class="signup__wrapper">
-    <h1>Let's get stared</h1>
-    <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
-    <div class="signup__holder">
-      <h2>Signup for Access</h2>
-      <form class="form-horizontal" [formGroup]="signupForm">
-        <div class="form-group">
-          <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
-          <!-- Email error block -->
-          <div *ngIf="email.invalid && email.touched" class="text-danger">
-            <small *ngIf="email.errors?.required" class="form-text text-muted"> Email field can't be blank
+    <div class="signup__wrapper">
+        <h1>Let's get stared</h1>
+        <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
+        <div class="signup__holder">
+            <h2>Signup for Access</h2>
+            <form class="form-horizontal" [formGroup]="signupForm">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
+                    <!-- Email error block -->
+                    <div *ngIf="email.invalid && email.touched" class="text-danger">
+                        <small *ngIf="email.errors?.required" class="form-text text-muted"> Email field can't be blank
             </small>
-            <small *ngIf="email.errors?.pattern" class="form-text text-muted"> The Email id doesn't seem right
+                        <small *ngIf="email.errors?.pattern" class="form-text text-muted"> The Email id doesn't seem right
             </small>
 
 
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
-        </div>
-        <div class="form-group">
-          <input type="name" class="form-control" id="inputLastName" formControlName="LastName" placeholder="LastName" aria-describedby="LastName">
-        </div>
-        <div class="form-group">
-          <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
-          <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
-        </div>
-        <div class="row spacing6">
-          <div class="col-lg-12">
-            <label for="exampleFormControlSelect1">Enter Date of Birth</label>
-          </div>
-          <div class="col-4">
-            <div class="form-group">
-              <label>Day</label>
-              <select class="custom-select form-control" [ngModel]="day" formControlName="day">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
+                </div>
+                <div class="form-group">
+                    <input type="name" class="form-control" id="inputLastName" formControlName="LastName" placeholder="LastName" aria-describedby="LastName">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" id="MobileNo" formControlName="MobileNo" placeholder="MobileNo" aria-describedby="MobileNo">
+                    <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
+                </div>
+                <div class="row spacing6">
+                    <div class="col-lg-12">
+                        <label for="exampleFormControlSelect1">Enter Date of Birth</label>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Day</label>
+                            <select class="custom-select form-control" [ngModel]="day" formControlName="day">
                 <option selected>Day</option>
                 <option *ngFor="let item of days; let i=index" [value]="item">
                   {{item}}</option>
               </select>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="form-group">
-              <label>Months</label>
-              <select class="custom-select form-control" [ngModel]="month" formControlName="month">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Months</label>
+                            <select class="custom-select form-control" [ngModel]="month" formControlName="month">
                 <option *ngFor="let item of months; let i=index" [value]="item">
                   {{item}}</option>
               </select>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="form-group">
-              <label>Years</label>
-              <select class="custom-select form-control" [ngModel]="year" formControlName="year">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Years</label>
+                            <select class="custom-select form-control" [ngModel]="year" formControlName="year">
                 <option *ngFor="let item of years; let i=index" [value]="item">
                   {{item}}</option>
               </select>
-            </div>
-          </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!signupForm.valid" (click)="onFormSubmit()" class="btn btn-primary">Get Started</button>
+            </form>
         </div>
-        <button type="submit" [disabled]="!signupForm.valid" (click)="onFormSubmit()" class="btn btn-primary">Get Started</button>
-      </form>
     </div>
-  </div>
 </section>
 
 <!-- Sign Up Form -->
 <section class="sign_up--blk align-items-center" *ngIf="configConstant.currentCountry === 'uae'">
-  <div class="signup__wrapper">
-    <h1>Let's get stared</h1>
-    <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
-    <div class="signup__holder">
-      <h2>Signup for Access</h2>
-      <form class="form-horizontal" [formGroup]="signupForm">
-        <div class="form-group">
-          <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
-          <!-- Email error block -->
-          <div *ngIf="email.invalid && email.touched" class="text-danger">
-            <small *ngIf="email.errors?.required" class="form-text text-muted"> Email field can't be blank
+    <div class="signup__wrapper">
+        <h1>Let's get stared</h1>
+        <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
+        <div class="signup__holder">
+            <h2>Signup for Access</h2>
+            <form class="form-horizontal" [formGroup]="signupForm">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
+                    <!-- Email error block -->
+                    <div *ngIf="email.invalid && email.touched" class="text-danger">
+                        <small *ngIf="email.errors?.required" class="form-text text-muted"> Email field can't be blank
             </small>
-            <small *ngIf="email.errors?.pattern" class="form-text text-muted"> The Email id doesn't seem right
+                        <small *ngIf="email.errors?.pattern" class="form-text text-muted"> The Email id doesn't seem right
             </small>
 
 
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
-        </div>
-        <div class="form-group">
-          <input type="name" class="form-control" id="inputLastName" formControlName="LastName" placeholder="LastName" aria-describedby="LastName">
-        </div>
-        <div class="row spacing10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="name" class="form-control" id="inputFirstName" formControlName="FirstName" placeholder="FirstName" aria-describedby="FirstName">
+                </div>
+                <div class="form-group">
+                    <input type="name" class="form-control" id="inputLastName" formControlName="LastName" placeholder="LastName" aria-describedby="LastName">
+                </div>
+                <div class="row spacing10">
 
 
-          <!-- Country Code -->
-          <div class="col-4">
-            <div class="form-group">
-              <select class="custom-select form-control" formControlName="CountryCode">
+                    <!-- Country Code -->
+                    <div class="col-4">
+                        <div class="form-group">
+                            <select class="custom-select form-control" formControlName="CountryCode">
                 <option selected="selected" value="">Country Code</option>
                 <option value="+966">+966</option>
                 <option value="+971">+971</option>
@@ -324,21 +324,21 @@
                 <option value="+1869">+1869</option>
                 <option value="+1876">+1876</option>
               </select>
-            </div>
-          </div>
-          <div class="col-8">
-            <div class="form-group">
-              <input type="tel" class="form-control" id="MobileNo" formControlName="PhoneNo" placeholder="PhoneNo" aria-describedby="PhoneNo">
-              <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
-            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="MobileNo" formControlName="PhoneNo" placeholder="PhoneNo" aria-describedby="PhoneNo">
+                            <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
+                        </div>
 
-          </div>
+                    </div>
+                </div>
+
+
+
+                <button type="submit" [disabled]="!signupForm.valid" (click)="onFormSubmitUae()" class="btn btn-primary">Get Started</button>
+            </form>
         </div>
-
-
-
-        <button type="submit" [disabled]="!signupForm.valid" (click)="onFormSubmitUae()" class="btn btn-primary">Get Started</button>
-      </form>
     </div>
-  </div>
 </section>

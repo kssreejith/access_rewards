@@ -1310,104 +1310,147 @@ ourbrand {
 
 .expandable_box {
     width: 100%;
-    height: 100%;
+    height: 180px;
     position: relative;
     transition: .5s;
     text-align: center;
     -webkit-box-align: center !important;
     -ms-flex-align: center !important;
     align-items: center !important;
-    /* display: -webkit-box; */
     display: -ms-flexbox;
     display: flex;
     padding: 28px 0;
-    .qodef-underline-icon-box-line {
-        display: inline-block;
-        width: 100%;
-        height: 1px;
-        line-height: 0;
-        box-sizing: border-box;
-        // @extend %slide0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        -webkit-transition: height .3s cubic-bezier(.25, .46, .45, .94);
-        transition: height .3s cubic-bezier(.25, .46, .45, .94);
-    }
-    .shape-icon {
-        -ms-transition: -ms-transform .2s ease-out;
-        -webkit-transition: -webkit-transform .2s ease-out;
-        transition: transform .2s ease-out;
-    }
     &:hover {
-        .shape-icon {
-            -webkit-transform: translateY(-35px) translateZ(0);
-            -moz-transform: translateY(-35px) translateZ(0);
-            transform: translateY(-35px) translateZ(0);
-            -o-transition: .5s;
-            -ms-transition: .5s;
-            -moz-transition: .5s;
-            -webkit-transition: .5s;
-            transition: .5s;
-        }
-        .qodef-underline-icon-box-line {
-            height: 100%;
-        }
         .category {
             opacity: 1;
         }
-    }
-    .shape-icon {
-        text-align: center;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        position: absolute;
-        color: #fff;
-        z-index: 1;
-        text-align: center;
-        transition: 1200ms cubic-bezier(.4, 0, .2, 1);
-        -webkit-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
-        -ms-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
-        -o-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
-        img {
-            margin: auto;
+        .shape-icon {
+            img {
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                transform: scale(1.05);
+            }
         }
     }
-    .hover-icon {
-        width: 143px;
-        height: 143px;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -ms-border-radius: 50%;
-        top: 50%;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        margin-top: -70px;
-        position: absolute;
-        transition: 800ms cubic-bezier(.4, 0, .2, 1);
-        -moz-transition: 800ms cubic-bezier(.4, 0, .2, 1);
-        -ms-transition: 800ms cubic-bezier(.4, 0, .2, 1);
-        -o-transition: 800ms cubic-bezier(.4, 0, .2, 1);
+    .shape-icon {
+        width: 100%;
+        img {
+            transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+        }
     }
     .category {
-        position: relative;
-        z-index: 100;
-        padding: 10px;
-        padding-top: 70px;
-        text-align: left;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        padding: 0 20px;
+        height: 100%;
         opacity: 0;
-        font-size: 13px;
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+        font-size: 15px;
         color: #222;
         text-align: center;
-        font-family: 'Futura Bk';
-        line-height: normal;
-        -ms-transition: -ms-transform .2s ease-out;
-        -webkit-transition: -webkit-transform .2s ease-out;
-        transition: transform .2s ease-out;
+        font-family: Futura Md BT;
+        background: rgba(255, 255, 255, 0.9);
+        transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
     }
+    // .qodef-underline-icon-box-line {
+    //     display: inline-block;
+    //     width: 100%;
+    //     height: 1px;
+    //     line-height: 0;
+    //     box-sizing: border-box;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     -webkit-transition: height .3s cubic-bezier(.25, .46, .45, .94);
+    //     transition: height .3s cubic-bezier(.25, .46, .45, .94);
+    // }
+    // .shape-icon {
+    //     -ms-transition: -ms-transform .2s ease-out;
+    //     -webkit-transition: -webkit-transform .2s ease-out;
+    //     transition: transform .2s ease-out;
+    // }
+    // &:hover {
+    //     .shape-icon {
+    //         -webkit-transform: translateY(-35px) translateZ(0);
+    //         -moz-transform: translateY(-35px) translateZ(0);
+    //         transform: translateY(-35px) translateZ(0);
+    //         -o-transition: .5s;
+    //         -ms-transition: .5s;
+    //         -moz-transition: .5s;
+    //         -webkit-transition: .5s;
+    //         transition: .5s;
+    //     }
+    //     .qodef-underline-icon-box-line {
+    //         height: 100%;
+    //     }
+    //     .category {
+    //         opacity: 1;
+    //     }
+    // }
+    // .shape-icon {
+    //     text-align: center;
+    //     left: 0;
+    //     right: 0;
+    //     margin: 0 auto;
+    //     position: absolute;
+    //     color: #fff;
+    //     z-index: 1;
+    //     text-align: center;
+    //     transition: 1200ms cubic-bezier(.4, 0, .2, 1);
+    //     -webkit-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
+    //     -ms-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
+    //     -o-transition: 1200ms cubic-bezier(.4, 0, .2, 1);
+    //     img {
+    //         margin: auto;
+    //     }
+    // }
+    // .hover-icon {
+    //     width: 143px;
+    //     height: 143px;
+    //     border-radius: 50%;
+    //     -moz-border-radius: 50%;
+    //     -webkit-border-radius: 50%;
+    //     -ms-border-radius: 50%;
+    //     top: 50%;
+    //     left: 0;
+    //     right: 0;
+    //     margin: 0 auto;
+    //     margin-top: -70px;
+    //     position: absolute;
+    //     transition: 800ms cubic-bezier(.4, 0, .2, 1);
+    //     -moz-transition: 800ms cubic-bezier(.4, 0, .2, 1);
+    //     -ms-transition: 800ms cubic-bezier(.4, 0, .2, 1);
+    //     -o-transition: 800ms cubic-bezier(.4, 0, .2, 1);
+    // }
+    // .category {
+    //     position: relative;
+    //     z-index: 100;
+    //     padding: 10px;
+    //     padding-top: 70px;
+    //     text-align: left;
+    //     opacity: 0;
+    //     font-size: 13px;
+    //     color: #222;
+    //     text-align: center;
+    //     font-family: 'Futura Bk';
+    //     line-height: normal;
+    //     -ms-transition: -ms-transform .2s ease-out;
+    //     -webkit-transition: -webkit-transform .2s ease-out;
+    //     transition: transform .2s ease-out;
+    // }
 }
 
 .navbar {
@@ -1547,14 +1590,15 @@ ourbrand {
     background-position: 0% 0%!important;
     background-attachment: fixed!important;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    z-index: 3;
     &:before {
         content: '';
         position: absolute;
         width: 100%;
         height: 100%;
         background: #212121 !important;
-        opacity: 0.65!important;
+        opacity: 0.6!important;
         top: 0;
         z-index: 1;
     }
@@ -1571,5 +1615,38 @@ ourbrand {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    .big-text {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        width: 100%;
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+        text-align: center;
+        font-family: Futura Md BT;
+        font-size: 55px;
+        text-transform: uppercase;
+        font-weight: 400!important;
+        line-height: 25px;
+        color: #ededed;
+        z-index: 20;
+        span {
+            font-family: Futura Lt BT;
+        }
+    }
+    .small-text {
+        position: absolute;
+        top: 50%;
+        margin-top: 35px;
+        width: 100%;
+        font-family: Futura LH;
+        font-size: 16px;
+        font-weight: 400 !important;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        z-index: 20;
+        color: #fff !important;
+        text-transform: initial;
     }
 }
