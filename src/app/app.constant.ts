@@ -1,5 +1,5 @@
 export class AppSettings {
-  public static API_ENDPOINT = 'http://www.myaccessrewards.com/accessrewards/index.php/Api/';
+  public static API_ENDPOINT = 'http://tablezrewards.com/accessrewards/index.php/Api/';
   public static GenerateOTP = 'v1.1/GenerateOTP';
   public static uaeLogin = 'v1.1/uaeLogin';
   public static ConfirmOTP = 'v1.1/ConfirmOTP';
@@ -16,8 +16,8 @@ export class AppSettings {
   public static GetCustomerTransactionDetails = 'v1.1/GetCustomerTransactionDetails';
   public static CustomerAvailablePoints = 'v1.1/CustomerAvailablePoints';
   public static contactMail = 'v1.1/contactMail';
-  // public static currentCountry = 'uae';
-    public static currentCountry = 'uae';
+ // public static currentCountry = 'uae';
+  public static currentCountry = 'india';
 
 
 }
