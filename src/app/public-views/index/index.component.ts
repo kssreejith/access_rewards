@@ -275,7 +275,7 @@ export class IndexComponent {
             lat: '10.026941', long: '76.30765'
           }]
         },
-        {
+		{
           brand_name: 'Tablez & Toyz',
           brand_city: [{
             city: 'Bangalore',
@@ -283,6 +283,13 @@ export class IndexComponent {
             brand_location: 'Phonix Market City, No.S-61, Second Floor, Whitefield Main Road,' +
               ' Mahadevpura, Devasandra Industrial Estate, Krishnarajapura, Bengaluru, Karnataka 560048',
             lat: '12.9969211', long: '77.6967062'
+          },
+		  {
+            city: 'Bangalore(Vegacity)',
+            brand_centre: 'Vegacity  Bangalore',
+            brand_location: 'Tablez Toyz Pvt Ltd., Vegacity Mall, (Unit No) – R – 04 & 05,' +
+              'Third Floor, No 172/1, Srinivas Industrial Estate, Banerghatta Road, Bangalore- 560076',
+            lat: '12.907817', long: '77.601103'
           },
           {
             city: 'Bangalore',
