@@ -7,14 +7,14 @@
     <div class="row justify-content-md-center">
       <div class="col col-lg-9 points__calculator--blk">
         <div class="main_heading">Points Calculator</div>
-        <div class="row">
+        <div class="row" *ngIf="configConstant.currentCountry === 'india'">
           <div class="col-lg-7 col-md-7 left_blk">
             <p>The Points Calculator is the easiest way to find the reward points you gain for an intended purchase. Simply
               pick your brand and enter the price in the calculator to reveal your windfall.
             </p>
             <ul>
               <li>Rs 1.00 equals 01
-                <span>ACCESS REWARDS</span> Point</li>
+                <span>TABLEZ REWARDS</span> Point</li>
               <li class="orange_color">4 reward points earned per purchase of Rs.100 </li>
               <li class="blue_color">Reward points credited within 24 hours.</li>
             </ul>
@@ -43,6 +43,45 @@
 
           </div>
         </div>
+		<!------UAE ---->
+		 <div class="row" *ngIf="configConstant.currentCountry === 'uae'">
+          <div class="col-lg-7 col-md-7 left_blk">
+            <p>The Points Calculator is the easiest way to find the reward points you gain for an intended purchase. Simply
+              pick your brand and enter the price in the calculator to reveal your windfall.
+            </p>
+            <ul>
+              <li>AED 1.00 equals 01
+                <span>TABLEZ REWARDS</span> Point</li>
+              <li class="orange_color">10 reward points earned per purchase of AED.100 </li>
+              <li class="blue_color">Reward points credited within 24 hours.</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5 col-md-5 right_blk">
+
+
+            <form [formGroup]="signupForm">
+              <!-- <div class="form-group">
+                <select class="custom-select">
+                  <option *ngFor="let item of brands" [value]="item.brand_id">
+                    {{item.brand_name}}</option>
+                </select>
+                <small id="emailHelp" class="form-text text-muted">Enter Phone number</small>
+              </div> -->
+              <div class="form-group">
+                <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Enter item amount(Rs)">
+                <!-- <small id="emailHelp" class="form-text text-muted">Enter First name</small> -->
+              </div>
+              <button class="btn" (click)="calculateUae()">CALCULATE POINTS</button>
+              <div class="point-blk">
+                <span>{{amountCalculated}}</span>
+              </div>
+            </form>
+
+          </div>
+        </div>
+		
+		
       </div>
     </div>
   </div>
