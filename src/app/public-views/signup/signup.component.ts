@@ -120,6 +120,10 @@ export class SignupComponent implements OnInit {
         console.error('api ERROR');
       },
       () => {
+		  if (responseData.ReturnCode !== '0') {
+			   this.toastr.error(responseData.ReturnMessage, 'Error!');
+		  }else{
+		  
         this.toastr.success('Successfully registered.', 'Success!');
 
         console.log('responseData', responseData.status);
@@ -143,7 +147,7 @@ export class SignupComponent implements OnInit {
 
             this.router.navigate(['/otp', this.signupForm.value.MobileNo], { skipLocationChange: true });
           });
-
+		  }
       });
 
   }

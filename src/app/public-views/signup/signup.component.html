@@ -6,9 +6,9 @@
 <section class="sign_up--blk align-items-center" *ngIf="configConstant.currentCountry === 'india'">
     <div class="signup__wrapper">
         <h1>Let's get stared</h1>
-        <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
+        <p>Use the form below to sign up for Tablez. It’s really easy, you’ll see.</p>
         <div class="signup__holder">
-            <h2>Signup for Access</h2>
+            <h2>Sign up for Tablez</h2>
             <form class="form-horizontal" [formGroup]="signupForm">
                 <div class="form-group">
                     <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
@@ -75,9 +75,9 @@
 <section class="sign_up--blk align-items-center" *ngIf="configConstant.currentCountry === 'uae'">
     <div class="signup__wrapper">
         <h1>Let's get stared</h1>
-        <p>Use the from below to sign up for Access. It’s really easy, you’ll see.</p>
+        <p>Use the form below to sign up for Tablez. It’s really easy, you’ll see.</p>
         <div class="signup__holder">
-            <h2>Signup for Access</h2>
+            <h2>Sign up for Tablez</h2>
             <form class="form-horizontal" [formGroup]="signupForm">
                 <div class="form-group">
                     <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" aria-describedby="Email">
@@ -103,8 +103,8 @@
                     <!-- Country Code -->
                     <div class="col-4">
                         <div class="form-group">
-                            <select class="custom-select form-control" formControlName="CountryCode">
-                <option selected="selected" value="">Country Code</option>
+                 <select class="custom-select form-control" formControlName="CountryCode">
+                <option selected="selected" value="">Country Name</option>
                 <option value="+966">+966</option>
                 <option value="+971">+971</option>
                 <option value="+973">+973</option>
@@ -328,7 +328,7 @@
                     </div>
                     <div class="col-8">
                         <div class="form-group">
-                            <input type="tel" class="form-control" id="MobileNo" formControlName="PhoneNo" placeholder="PhoneNo" aria-describedby="PhoneNo">
+                            <input type="tel" class="form-control" id="MobileNo" minlength="9" maxlength="14" formControlName="PhoneNo" placeholder="PhoneNo" aria-describedby="PhoneNo">
                             <!-- <small id="emailHelp" class="form-text text-muted text-left">Mobile Number</small> -->
                         </div>
 
