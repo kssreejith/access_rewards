@@ -4,6 +4,8 @@ import { User } from './User';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'app/shared/services/register.service';
+
+import { ProfileService } from 'app/shared/services/profile.service';
 import { Router } from '@angular/router';
 import { ToastsManager } from 'ng2-toastr';
 
@@ -24,7 +26,7 @@ export class SignupComponent implements OnInit {
   // Property for the user
   private user: User;
   public disableClick = false;
-
+  public exist_not = false;
 
   day: number;
   month: string;
@@ -42,6 +44,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public registerService: RegisterService,
+	public profileService: ProfileService,
     public router: Router,
     public toastr: ToastsManager,
     public vcr: ViewContainerRef,
@@ -108,28 +111,39 @@ export class SignupComponent implements OnInit {
   public onFormSubmit() {
     this.user = this.signupForm.value;
     this.user.DateOfBirth = this.signupForm.value.day + ' ' + this.signupForm.value.month + ' ' + this.signupForm.value.year;
-    console.log(this.user);
-
-
-    let responseData: any;
-    this.registerService.registerToApp(
-      AppSettings.API_ENDPOINT + AppSettings.RegisterEasyAccount,
-      this.user).subscribe(
+   
+   const demo = {
+      'mobile': this.user.MobileNo
+    };
+	let responseData: any;
+    this.profileService.getProfileDetails(
+      AppSettings.API_ENDPOINT + AppSettings.Searchmember, demo).subscribe(
       data => responseData = data,
       error => {
         console.error('api ERROR');
-      },
-      () => {
+       },
+	  () => {
+		  
+		  if (responseData.ReturnCode === '0') {
+			   this.toastr.error("User Already Exist", 'Error!');
+		  }else{
+			 
+			let responseData: any;
+			this.registerService.registerToApp(
+			AppSettings.API_ENDPOINT + AppSettings.RegisterEasyAccount,
+			this.user).subscribe(
+			data => responseData = data,
+			error => {
+				console.error('api ERROR');
+			},
+		() => {
 		  if (responseData.ReturnCode !== '0') {
 			   this.toastr.error(responseData.ReturnMessage, 'Error!');
 		  }else{
-		  
-        this.toastr.success('Successfully registered.', 'Success!');
-
-        console.log('responseData', responseData.status);
-        const login = {
-          'mobile': this.signupForm.value.MobileNo
-        };
+				this.toastr.success('Successfully registered.', 'Success!');
+			const login = {
+				'mobile': this.signupForm.value.MobileNo
+			};
         let registerData: any;
         this.loginService.generateOTP(
           AppSettings.API_ENDPOINT + AppSettings.GenerateOTP,
@@ -149,8 +163,13 @@ export class SignupComponent implements OnInit {
           });
 		  }
       });
-
-  }
+			 
+			 
+	}
+	  }
+      );
+	
+}
 
   public onFormSubmitUae() {
     this.user = this.signupForm.value;

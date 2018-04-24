@@ -15,8 +15,11 @@ export class ProfileService {
       this.apiService.post(url, param)
         .map((res: any) => res.json())
         .subscribe(response => {
-          console.log("res", response.MemberResponse);
-          observer.next(response.MemberResponse);
+			if(response.MemberResponse){
+				observer.next(response.MemberResponse);
+			}else{
+				observer.next(response);
+			}
           observer.complete();
         });
     });
